@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Standing-L
+  m_Controller: {fileID: 9100000, guid: f857e886030aafa40996d6ad0aa308a7, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: fd425ce69d3a34a4482b795bfb7996f3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 86c5aa82bc31a0544903a96deefaeacf, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e7a7e8dab89638b45a9e0ea6cbe1daa1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d36ced2579757a24c8d9c487ec0dddd6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 47af66b1314f70a49b3e49d83e783efa, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 207aa21ecfe0e96438290cef3302ee1e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 186f116695220a34f94e30b4819fbdf1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1bb75a33caa522941bf7e7d62feec77f, type: 2}
