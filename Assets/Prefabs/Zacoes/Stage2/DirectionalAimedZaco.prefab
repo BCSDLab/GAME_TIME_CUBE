@@ -4774,7 +4774,7 @@ GameObject:
   - component: {fileID: 172328664871883220}
   - component: {fileID: 1331919750288802457}
   m_Layer: 0
-  m_Name: DirectionalAimedZaco_1
+  m_Name: DirectionalAimedZaco
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4913,6 +4913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 0}
+  startDelay: 0
   count: 8
   speed: 6
 --- !u!114 &3298016160526166707
@@ -4929,6 +4930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
   audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
+  startDelay: 3
   target: {fileID: 0}
   count: 5
   speed: 5

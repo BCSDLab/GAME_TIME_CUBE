@@ -4774,7 +4774,7 @@ GameObject:
   - component: {fileID: 5201615914378317357}
   - component: {fileID: 1331919750288802457}
   m_Layer: 0
-  m_Name: DonutZaco
+  m_Name: DonutZaco_0.3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4914,7 +4914,7 @@ MonoBehaviour:
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
   startDelay: 0
-  count: 8
+  count: 4
   speed: 6
 --- !u!114 &3421259152459687949
 MonoBehaviour:
@@ -4930,12 +4930,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
-  startDelay: 3
+  startDelay: 2
   target: {fileID: 0}
-  count: 8
+  count: 6
   speed: 5
-  delay: 3
-  radius: 0.5
+  delay: 1
+  radius: 0.3
 --- !u!114 &5201615914378317357
 MonoBehaviour:
   m_ObjectHideFlags: 0

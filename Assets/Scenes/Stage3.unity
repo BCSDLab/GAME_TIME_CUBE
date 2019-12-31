@@ -8300,152 +8300,67 @@ MonoBehaviour:
     engageTime: 0
     repeatCount: 2
     repeatDelay: 2
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 2142a0c51d1f34347a22512091a26a22, type: 3}
+    pathName: Rigth1
+    engageTime: 4
+    repeatCount: 1
     repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 51db8ed054aefc7428df7f811133833b, type: 3}
+    pathName: Rigth3
+    engageTime: 4
+    repeatCount: 1
     repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-  m_bossEngageTime: 32
+  - mob: {fileID: 7473877153406667978, guid: e539632592eec114986380055d518280, type: 3}
+    pathName: Ground
+    engageTime: 7
+    repeatCount: 3
+    repeatDelay: 2
+  - mob: {fileID: 7473877153406667978, guid: 419b480602213ee4391407477574210f, type: 3}
+    pathName: Sky
+    engageTime: 8
+    repeatCount: 3
+    repeatDelay: 2
+  - mob: {fileID: 7473877153406667978, guid: a0e6fcd2230d7694084cda2c7d89cc98, type: 3}
+    pathName: UTurn_Down
+    engageTime: 13
+    repeatCount: 3
+    repeatDelay: 2
+  - mob: {fileID: 7473877153406667978, guid: a0e6fcd2230d7694084cda2c7d89cc98, type: 3}
+    pathName: UTurn_Up
+    engageTime: 14
+    repeatCount: 3
+    repeatDelay: 2
+  - mob: {fileID: 7466608742450977111, guid: b65581744fbb8a04cb29cc8c0665b778, type: 3}
+    pathName: A1
+    engageTime: 18
+    repeatCount: 2
+    repeatDelay: 3
+  - mob: {fileID: 7466608742450977111, guid: b65581744fbb8a04cb29cc8c0665b778, type: 3}
+    pathName: A2
+    engageTime: 19
+    repeatCount: 2
+    repeatDelay: 3
+  - mob: {fileID: 7473877153406667978, guid: e8060e9d780c5df4bb68fb79dac212fa, type: 3}
+    pathName: Center
+    engageTime: 26
+    repeatCount: 2
+    repeatDelay: 4
+  - mob: {fileID: 7473877153406667978, guid: 07f371fead95daf4798d757bd8e798f2, type: 3}
+    pathName: Down
+    engageTime: 28
+    repeatCount: 2
+    repeatDelay: 4
+  - mob: {fileID: 7473877153406667978, guid: 07f371fead95daf4798d757bd8e798f2, type: 3}
+    pathName: Sky
+    engageTime: 29
+    repeatCount: 2
+    repeatDelay: 4
+  - mob: {fileID: 7473877153406667978, guid: 07f371fead95daf4798d757bd8e798f2, type: 3}
+    pathName: Ground
+    engageTime: 30
+    repeatCount: 2
+    repeatDelay: 4
+  m_bossEngageTime: 38
   m_boss: {fileID: 2131298837335977617}
   m_bossTracker: {fileID: 4125893928747804409}
 --- !u!4 &1189885912 stripped
@@ -14447,6 +14362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 10
   speed: 5
   delay: 0.5
@@ -14464,6 +14380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 1
   delay: 0.5
 --- !u!1 &1630448853
@@ -18147,6 +18064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   target: {fileID: 0}
   count: 5
   speed: 5
@@ -18166,6 +18084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 5
   speed: 6
   inDelay: 0.1
@@ -18200,6 +18119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 5
   speed: 5
   delay: 0.1
@@ -18353,6 +18273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   target: {fileID: 0}
   count: 10
   minSpeed: 4
@@ -18374,6 +18295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   count: 10
   speed: 5
@@ -18691,7 +18613,7 @@ MonoBehaviour:
   poolList:
   - prefab: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb,
       type: 3}
-    m_poolCount: 50
+    m_poolCount: 100
     m_pooledItems: []
   - prefab: {fileID: 4277858064308411520, guid: 8b331472d4e3a644287de8b659207720,
       type: 3}
@@ -18714,6 +18636,10 @@ MonoBehaviour:
     m_poolCount: 50
     m_pooledItems: []
   - prefab: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f,
       type: 3}
     m_poolCount: 50
     m_pooledItems: []
@@ -24247,6 +24173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 10
   speed: 6
   delay: 0.5

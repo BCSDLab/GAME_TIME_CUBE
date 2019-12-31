@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
+  startDelay: 3
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   count: 10
   minSpeed: 4
@@ -178,6 +179,7 @@ MonoBehaviour:
   pathName: 
   speed: 5
   m_hp: 200
+  isDestroyed: 1
 --- !u!82 &5157527336776316314
 AudioSource:
   m_ObjectHideFlags: 0

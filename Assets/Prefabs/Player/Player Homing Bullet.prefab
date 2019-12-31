@@ -158,4 +158,4 @@ MonoBehaviour:
   damage: 15
   speed: 20
   spellCharge: 5
-  alpha: 1000
+  alpha: 3000

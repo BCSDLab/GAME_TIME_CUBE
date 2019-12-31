@@ -4913,6 +4913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 0}
+  startDelay: 0
   count: 8
   speed: 6
 --- !u!114 &3298016160526166707
@@ -4929,6 +4930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
   audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
+  startDelay: 1
   target: {fileID: 0}
   count: 2
   speed: 4
