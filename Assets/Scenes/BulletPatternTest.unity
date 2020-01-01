@@ -226,7 +226,7 @@ MonoBehaviour:
   poolList:
   - prefab: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f,
       type: 3}
-    m_poolCount: 400
+    m_poolCount: 4000
     m_pooledItems: []
   - prefab: {fileID: 273016974476332618, guid: 1c84cf874527fbf49b92c303b5c0c1f8, type: 3}
     m_poolCount: 50
@@ -360,8 +360,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
+  startDelay: 0
   count: 7
-  speed: 1
+  speed: 2
   delay: 2
 --- !u!82 &1723751477
 AudioSource:
@@ -474,6 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 273016974476332618, guid: 1c84cf874527fbf49b92c303b5c0c1f8, type: 3}
   audioclip: {fileID: 0}
+  startDelay: 0
   count: 1
   speed: 4
   delay: 0.2
@@ -493,6 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
+  startDelay: 0
   count: 1
   speed: 1
   inDelay: 0.1
@@ -511,6 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 0}
+  startDelay: 0
   speed: 2
   angle1: 0
   angle2: 0
