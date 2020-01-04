@@ -17,6 +17,18 @@ public class StageChanger : MonoBehaviour
     private void LoadNextStage()
     {
         PlayerController.instance.moveNextStage = false;
-        SceneManager.LoadScene("Menu");
+        string currStageName = SceneManager.GetActiveScene().name;
+
+        //Debug.Log(currStageName);
+
+        if (currStageName.StartsWith("Stage"))
+        {
+            int currStage = int.Parse(currStageName.Substring(5));
+            SceneManager.LoadScene("Stage" + ++currStage);
+        }
+        else
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }
