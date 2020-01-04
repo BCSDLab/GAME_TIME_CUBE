@@ -23,11 +23,17 @@ public class InGameUIManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject gameOverPanel;
     public GameObject stageClearPanel;
+    public GameObject moveNextZone; // 다음 스테이지로 넘어가는 영역
     public Text killCountText;
     public Text hitCountText;
     public Text stageScoreText;
     public Text totalScoreText;
+    public Text continueText;
+    public AudioClip scoreSound;
 
+    private AudioSource m_audioSource;
+    private object[] paramArr; // killCount, hitCount, stageScore, totalScore
+    private int paramIdx;
     private const float UPDATE_DELAY = 0.05f;
     private Image timeCubeSliderFill;
     private Image spellSliderFill1;
@@ -133,6 +139,76 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
+    IEnumerator UpdateClearPanel()
+    {
+        float delta = 0f;
+        switch (paramIdx)
+        {
+            case 0: // killCount
+                while (delta < 1f)
+                {
+                    delta += 0.1f;
+
+                    m_score = Mathf.Lerp(0, (int)paramArr[paramIdx], delta);
+                    killCountText.text = ((int)m_score).ToString();
+
+                    yield return new WaitForSeconds(UPDATE_DELAY);
+                }
+                break;
+            case 1: // hitCount
+                while (delta < 1f)
+                {
+                    delta += 0.1f;
+
+                    m_score = Mathf.Lerp(0, (int)paramArr[paramIdx], delta);
+                    hitCountText.text = ((int)m_score).ToString();
+
+                    yield return new WaitForSeconds(UPDATE_DELAY);
+                }
+                break;
+            case 2: // stageScore
+                while (delta < 1f)
+                {
+                    delta += 0.1f;
+
+                    m_score = Mathf.Lerp(0, (float)paramArr[paramIdx], delta);
+                    stageScoreText.text = ((int)m_score).ToString();
+
+                    yield return new WaitForSeconds(UPDATE_DELAY);
+                }
+                break;
+            case 3: // totalScore
+                while (delta < 1f)
+                {
+                    delta += 0.1f;
+                    m_score = Mathf.Lerp(0, (float)paramArr[paramIdx], delta);
+                    totalScoreText.text = ((int)m_score).ToString();
+
+                    yield return new WaitForSeconds(UPDATE_DELAY);
+                }
+                break;
+            default:
+                break;
+        }
+        paramIdx++;
+        m_audioSource.Play();
+    }
+    public void CallUpdateClearPanel()
+    {
+        StopCoroutine("UpdateClearPanel");
+        if (paramIdx < 4)
+        {
+            StartCoroutine("UpdateClearPanel");
+        }
+        else
+        {
+            CancelInvoke("CallUpdateClearPanel");
+            paramIdx = 0;
+            continueText.text = "CONTINUE >>>";
+            moveNextZone.SetActive(true);
+        }
+    }
+
     #region BOSS
     public void DisplayBossHPSlider(bool display = true, int hp = 0)
     {
@@ -203,10 +279,15 @@ public class InGameUIManager : MonoBehaviour
 
     public void ClearStage(int killCount, int hitCount, float stageScore, float totalScore)
     {
-        killCountText.text = killCount.ToString();
-        hitCountText.text = hitCount.ToString();
-        stageScoreText.text = stageScore.ToString();
-        totalScoreText.text = totalScore.ToString();
+        paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
+
+        m_audioSource = gameObject.AddComponent<AudioSource>();
+        m_audioSource.clip = scoreSound;
+        m_audioSource.loop = false;
+
         stageClearPanel.SetActive(true);
+        scoreText.gameObject.SetActive(false);
+
+        InvokeRepeating("CallUpdateClearPanel", 0, 1.5f);
     }
 }
