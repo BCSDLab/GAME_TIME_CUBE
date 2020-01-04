@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D), typeof(AudioSource))]
 public abstract class ZacoController : EnemyController
 {
+    [SerializeField]
+    protected ItemList m_dropItemList = null;
+
     private AudioSource[] m_audioSources;
 
     void Awake()
@@ -27,8 +30,7 @@ public abstract class ZacoController : EnemyController
 
         if (m_hp <= 0)
         {
-            m_isInvincible = true;
-            StartCoroutine("Die");
+            Die();
             return;
         }
 
@@ -39,13 +41,13 @@ public abstract class ZacoController : EnemyController
     {
         if (m_isInvincible) return;
 
-        m_isInvincible = true;
-        StartCoroutine("Die");
+        Die();
     }
 
     public override void Die()
     {
-        //m_isInvincible = true;
+        m_isInvincible = true;
+        DropItems(m_dropItemList);
 
         ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem particleSystem in particleSystems)
