@@ -23,7 +23,7 @@ public class DirectionalAimedRandom : AimedBulletPattern
         yield return new WaitForSeconds(startDelay);
         while (true)
         {
-            Vector2 direction = target.position - transform.position;
+            Vector2 direction = target.position - bulletSpawn.position;
             float atan = Mathf.Atan(direction.y / direction.x);
 
             GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
@@ -33,7 +33,7 @@ public class DirectionalAimedRandom : AimedBulletPattern
                 m_angleRange = Random.Range(-angleRange, angleRange);
                 m_speed = Random.Range(minSpeed, maxSpeed);
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = transform.position;
+                bulletInst.transform.position = bulletSpawn.position;
                 bulletInst.SetActive(true);
 
                 if (direction.x < 0)  // 몹이 오른쪽

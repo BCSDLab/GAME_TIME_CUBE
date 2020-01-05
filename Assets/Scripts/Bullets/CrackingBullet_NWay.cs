@@ -7,7 +7,7 @@ public class CrackingBullet_NWay : Bullet
     private BulletPattern m_endPattern;
     private float m_time = 0f;
     [SerializeField]
-    private float m_endTime;
+    private float m_endTime = 0f;
 
     void Awake()
     {

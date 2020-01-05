@@ -17,7 +17,7 @@ public class DirectionalAimed : AimedBulletPattern
         while (true)
         {
             m_targetPos = target.position;
-            Vector2 direction = m_targetPos - transform.position;
+            Vector2 direction = m_targetPos - bulletSpawn.position;
             float atan = Mathf.Atan2(direction.y, direction.x);
             float cos = Mathf.Cos(atan);
             float sin = Mathf.Sin(atan);
@@ -28,7 +28,7 @@ public class DirectionalAimed : AimedBulletPattern
             {
                 GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = transform.position;
+                bulletInst.transform.position = bulletSpawn.position;
                 bulletInst.transform.rotation = rotation;
                 bulletInst.SetActive(true);
 

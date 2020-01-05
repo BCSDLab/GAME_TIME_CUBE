@@ -22,7 +22,7 @@ public class SpiralMulti : BulletPattern
             for (int i = 0; i < count; i++)
             {
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = transform.position;
+                bulletInst.transform.position = bulletSpawn.position;
                 bulletInst.SetActive(true);
 
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos((Mathf.PI * 2f * i / count) + angle), speed * Mathf.Sin((Mathf.PI * 2f * i / count) + angle));
