@@ -170,19 +170,21 @@ public class PlayerController : MonoBehaviour
         }
         else if (GameManager.instance.playerPower < 2000)
         {
-            ShootDirectional();
-            ShootHoming();
+            ShootDirectional(0f, 0.1f, 0.6f);
+            ShootDirectional(0f, -0.1f, 0.6f);
         }
         else if (GameManager.instance.playerPower < 3000)
         {
-            ShootDirectional();
-            ShootHoming();
-            ShootAimed();
+            ShootDirectional(0f, 0.1f, 0.6f);
+            ShootDirectional(0f, -0.1f, 0.6f);
+            ShootHoming(0.3f);
         }
         else if (GameManager.instance.playerPower <= 4000)
         {
-            ShootDirectional();
-            ShootHoming();
+            ShootDirectional(0f, 0.1f, 0.5f);
+            ShootDirectional(0f, -0.1f, 0.5f);
+            ShootHoming(0.3f);
+            ShootAimed(0.3f);
         }
 
         // 딜레이
@@ -190,22 +192,21 @@ public class PlayerController : MonoBehaviour
         m_attackTimer = Time.time + attackDelay;
     }
 
-    void ShootDirectional(float dx = 0f, float dy = 0f, int damage = -1)
+    void ShootDirectional(float offX = 0f, float offY = 0f, float damageMultiplier = -1f)
     {
         GameObject bulletInst = PoolManager.instance.PopFromPool(directionalBullet.name);
-        bulletInst.transform.position = transform.position + Vector3.right * dx + Vector3.up * dy;
-        if (damage != -1)
-            bulletInst.GetComponent<PlayerBullet>().damage = damage;
+        bulletInst.transform.position = transform.position + Vector3.right * offX + Vector3.up * offY;
+        if (damageMultiplier != -1)
+            bulletInst.GetComponent<PlayerBullet>().damage = (int)(bulletInst.GetComponent<PlayerBullet>().damage * damageMultiplier);
         bulletInst.SetActive(true);
         bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(directionalBullet.GetComponent<PlayerBullet>().speed, 0f);
 
         m_audioSources[0].Play();
     }
 
-    void ShootAimed(float dx = 0f, float dy = 0f, int damage = -1)
+    void ShootAimed(float offX = 0f, float offY = 0f, float damageMultiplier = -1f)
     {
-        if ((m_target = ChooseTarget()) == null)
-            return;
+        if ((m_target = ChooseTarget()) == null) return;
 
         float speed = aimedBullet.GetComponent<PlayerBullet>().speed;
         Vector2 direction = m_target.position - transform.position;
@@ -215,10 +216,10 @@ public class PlayerController : MonoBehaviour
 
         GameObject bulletInst = PoolManager.instance.PopFromPool(aimedBullet.name);
 
-        bulletInst.transform.position = transform.position + Vector3.right * dx + Vector3.up * dy;
+        bulletInst.transform.position = transform.position + Vector3.right * offX + Vector3.up * offY;
         bulletInst.transform.rotation = rotation;
-        if (damage != -1)
-            bulletInst.GetComponent<PlayerBullet>().damage = damage;
+        if (damageMultiplier != -1)
+            bulletInst.GetComponent<PlayerBullet>().damage = (int)(bulletInst.GetComponent<PlayerBullet>().damage * damageMultiplier);
         bulletInst.SetActive(true);
 
         bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(atan), speed * Mathf.Sin(atan));
@@ -226,11 +227,12 @@ public class PlayerController : MonoBehaviour
         m_audioSources[1].Play();
     }
 
-    void ShootHoming(int damage = -1)
+    void ShootHoming(float damageMultiplier = -1)
     {
         GameObject bulletInst = PoolManager.instance.PopFromPool(homingBullet.name);
         bulletInst.transform.position = transform.position;
-        if (damage != -1) bulletInst.GetComponent<PlayerBullet>().damage = damage;
+        if (damageMultiplier != -1)
+            bulletInst.GetComponent<PlayerBullet>().damage = (int)(bulletInst.GetComponent<PlayerBullet>().damage * damageMultiplier);
         bulletInst.SetActive(true);
 
         m_audioSources[2].Play();

@@ -63,6 +63,8 @@ public abstract class EnemyController : MonoBehaviour
     // 여러 종류 아이템 드롭
     protected void DropItems(ItemList itemList)
     {
+        if (itemList == null) return;
+
         for (int i = 0; i < itemList.items.Count; i++)
         {
             DropItem(itemList.items[i], itemList.counts[i]);
