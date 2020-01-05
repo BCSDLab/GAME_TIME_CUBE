@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private AudioSource[] m_audioSources;
     private Animator m_spriteAnimator;
 
+    [HideInInspector]public bool moveNextStage = false;
+
     #region INPUTS
     private const string AXIS_HORIZONTAL = "Horizontal";
     private const string AXIS_VERTICAL = "Vertical";
@@ -106,7 +108,8 @@ public class PlayerController : MonoBehaviour
         //    return;
         //}
 
-        Move();
+        if (moveNextStage) MoveOut();
+        else Move();
     }
 
     void Move()  // 이동 관련
@@ -129,6 +132,13 @@ public class PlayerController : MonoBehaviour
         velocity.x = (horizontal > 0f && m_rigidbody.position.x >= boundary.xMax) || (horizontal < 0f && m_rigidbody.position.x <= boundary.xMin) ? 0 : velocity.x;
         velocity.y = (vertical > 0f && m_rigidbody.position.y >= boundary.yMax) || (vertical < 0f && m_rigidbody.position.y <= boundary.yMin) ? 0 : velocity.y;
 
+        m_rigidbody.velocity = velocity;
+    }
+
+    void MoveOut()
+    {
+        Vector2 velocity = m_rigidbody.velocity;
+        velocity.x = 8f;
         m_rigidbody.velocity = velocity;
     }
 
