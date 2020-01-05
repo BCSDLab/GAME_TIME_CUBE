@@ -57,6 +57,7 @@ public abstract class ZacoController : EnemyController
             Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
         }
 
+        GameManager.instance.AddKillCount();
         Destroy(gameObject);
     }
 }
