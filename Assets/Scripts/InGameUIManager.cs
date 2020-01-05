@@ -7,29 +7,55 @@ public class InGameUIManager : MonoBehaviour
 {
     public static InGameUIManager instance = null;
 
+    #region SERIALIZED_FIELDS
     [Header("플레이어")]
-    public Transform playerHPSlots;
-    public Slider timeCubeSlider;
-    public Slider spellSlider1;
-    public Slider spellSlider2;
-    public Slider powerSlider;
-    public Text scoreText;
+    [SerializeField]
+    private Transform playerHPSlots = null;
+    [SerializeField]
+    private Slider timeCubeSlider = null;
+    [SerializeField]
+    private Slider spellSlider1 = null;
+    [SerializeField]
+    private Slider spellSlider2 = null;
+    [SerializeField]
+    private Slider powerSlider = null;
+    [SerializeField]
+    private Text powerText = null;
+    [SerializeField]
+    private Transform powerIcons = null;
+    [SerializeField]
+    private Text scoreText = null;
     [Header("보스")]
-    public Slider bossHPSlider;
-    public Transform bossPhaseSlots;  // 빈 오브젝트
-    public GameObject bossPhaseSlot;  // 프리팹
-    public float phaseSlotDistance = 40f;
+    [SerializeField]
+    private Slider bossHPSlider = null;
+    [SerializeField]
+    private Transform bossPhaseSlots = null;  // 빈 오브젝트
+    [SerializeField]
+    private GameObject bossPhaseSlot = null;  // 프리팹
+    [SerializeField]
+    private float phaseSlotDistance = 40f;
     [Header("패널")]
-    public GameObject pausePanel;
-    public GameObject gameOverPanel;
-    public GameObject stageClearPanel;
-    public GameObject moveNextZone; // 다음 스테이지로 넘어가는 영역
-    public Text killCountText;
-    public Text hitCountText;
-    public Text stageScoreText;
-    public Text totalScoreText;
-    public Text continueText;
-    public AudioClip scoreSound;
+    [SerializeField]
+    private GameObject pausePanel = null;
+    [SerializeField]
+    private GameObject gameOverPanel = null;
+    [SerializeField]
+    private GameObject stageClearPanel = null;
+    [SerializeField]
+    private Text killCountText = null;
+    [SerializeField]
+    private Text hitCountText = null;
+    [SerializeField]
+    private Text stageScoreText = null;
+    [SerializeField]
+    private Text totalScoreText = null;
+    [SerializeField]
+    private AudioClip scoreSound = null;
+    [SerializeField]
+    private Text continueText = null;
+    [SerializeField]
+    private GameObject moveNextZone = null;
+    #endregion
 
     private AudioSource m_audioSource;
     private object[] paramArr; // killCount, hitCount, stageScore, totalScore
@@ -39,6 +65,7 @@ public class InGameUIManager : MonoBehaviour
     private Image spellSliderFill1;
     private Image spellSliderFill2;
 
+    private int m_power = 0;
     private float m_score = 0f;
     private int m_bossHP = 0;
     private bool m_isFilling = false;
@@ -72,7 +99,7 @@ public class InGameUIManager : MonoBehaviour
         pausePanel.SetActive(false);
         gameOverPanel.SetActive(false);
         stageClearPanel.SetActive(false);
-}
+    }
 
     public void DamagePlayer(int playerHP)
     {
@@ -115,9 +142,27 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
-    public void UpdatePowerSlider(int power)
+    public void UpdatePower(int power)
     {
         powerSlider.value = power;
+        StopCoroutine("CountUpToPower");
+        StartCoroutine("CountUpToPower", power);
+        powerIcons.GetChild(0).gameObject.SetActive(power >= 1000);
+        powerIcons.GetChild(1).gameObject.SetActive(power >= 2000);
+        powerIcons.GetChild(2).gameObject.SetActive(power >= 3000);
+    }
+
+    IEnumerator CountUpToPower(int targetPower)
+    {
+        int origPower = m_power;
+        float delta = 0;
+        while (delta < 1f)
+        {
+            delta += 0.1f;
+            m_power = (int)Mathf.Lerp(origPower, targetPower, delta);
+            powerText.text = m_power.ToString();
+            yield return new WaitForSeconds(UPDATE_DELAY);
+        }
     }
 
     public void UpdateScoreText(float score)

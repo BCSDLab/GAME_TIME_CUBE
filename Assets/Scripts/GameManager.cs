@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         InGameUIManager.instance.UpdateTimeCubeSlider(cubeEnergy);
         InGameUIManager.instance.UpdateSpellSlider(spellEnergy);
-        InGameUIManager.instance.UpdatePowerSlider(playerPower);
+        InGameUIManager.instance.UpdatePower(playerPower);
         InGameUIManager.instance.UpdateScoreText(m_score);
     }
 
@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
     {
         playerPower += amount;
         playerPower = (playerPower > PLAYER_POWER_MAX) ? PLAYER_POWER_MAX : (playerPower < 0) ? 0 : playerPower;
-        InGameUIManager.instance.UpdatePowerSlider(playerPower);
+        InGameUIManager.instance.UpdatePower(playerPower);
     }
     #endregion
 
@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
 
         // 파워 드롭
         playerPower /= 2;  // 50%
-        InGameUIManager.instance.UpdatePowerSlider(playerPower);
+        InGameUIManager.instance.UpdatePower(playerPower);
 
         if (m_playerHP == 0)
         {

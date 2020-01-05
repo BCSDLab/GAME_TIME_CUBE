@@ -206,8 +206,7 @@ public class BossController : EnemyController
         //yield return new WaitForSeconds(1f);
 
         DropSubWeaponItem();
-
-        //TODO: 업그레이드 선택 및 아이템 획득 시간 부여
+        
         yield return new WaitForSeconds(3f);
 
         GameManager.instance.StageClear();
