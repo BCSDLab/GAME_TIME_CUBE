@@ -23,13 +23,15 @@ public class InGameUIManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject gameOverPanel;
     public GameObject stageClearPanel;
-    public GameObject moveNextZone; // 다음 스테이지로 넘어가는 영역
     public Text killCountText;
     public Text hitCountText;
     public Text stageScoreText;
     public Text totalScoreText;
     public Text continueText;
     public AudioClip scoreSound;
+
+    [System.NonSerialized]
+    public GameObject stageChanger; // 다음 스테이지로 넘어가는 영역
 
     private AudioSource m_audioSource;
     private object[] paramArr; // killCount, hitCount, stageScore, totalScore
@@ -55,6 +57,8 @@ public class InGameUIManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
+
+        stageChanger = GameObject.Find("StageChanger");
     }
 
     void OnEnable()
@@ -205,7 +209,7 @@ public class InGameUIManager : MonoBehaviour
             CancelInvoke("CallUpdateClearPanel");
             paramIdx = 0;
             continueText.text = "CONTINUE >>>";
-            moveNextZone.SetActive(true);
+            stageChanger.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 

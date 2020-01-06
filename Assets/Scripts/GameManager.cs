@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        InitializeStat();
         InitializeUI();
         ResetScore();
     }
@@ -68,6 +69,15 @@ public class GameManager : MonoBehaviour
         {
             m_pauseToggled = false;
         }
+    }
+
+    void InitializeStat()
+    {
+        StageChanger sc = InGameUIManager.instance.stageChanger.GetComponent<StageChanger>();
+        //if (sc) Debug.Log("Stat Initialized!");
+        spellEnergy = sc.spellEnergy;
+        playerPower = sc.playerPower;
+        m_playerHP = sc.playerHP;
     }
 
     void InitializeUI()
@@ -196,6 +206,8 @@ public class GameManager : MonoBehaviour
         m_playerHP++;
         InGameUIManager.instance.HealPlayer(m_playerHP);
     }
+
+    public int getPlayerHP() { return m_playerHP; }
     #endregion
 
     #region GAME FLOW
