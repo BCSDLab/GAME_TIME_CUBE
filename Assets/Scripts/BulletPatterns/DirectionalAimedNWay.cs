@@ -21,8 +21,6 @@ public class DirectionalAimedNWay : AimedBulletPattern
     {
         yield return new WaitForSeconds(m_startDelay);
 
-        
-
         while (true)
         {
             m_angle = (count == 1) ? 0f : -angleRange / 2;
