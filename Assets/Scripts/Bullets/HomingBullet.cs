@@ -6,8 +6,11 @@ using UnityEngine;
 public class HomingBullet : Bullet
 {
     public GameObject target;
-    public float alpha = 200f;
-    public int hp = 70;
+    public float speed = 5f;
+    [SerializeField]
+    private float m_alpha = 200f;
+    [SerializeField]
+    private int m_hp = 70;
 
     private Rigidbody2D m_rigidbody;
 
@@ -19,22 +22,24 @@ public class HomingBullet : Bullet
 
     void FixedUpdate()
     {
+        if (target == null) return;
+
         Vector2 direction = transform.position - target.transform.position;
         direction.Normalize();
         float crossZ = Vector3.Cross(direction, transform.right).z;
 
         m_rigidbody.velocity = -transform.right * speed;
-        m_rigidbody.angularVelocity = -alpha * crossZ;
+        m_rigidbody.angularVelocity = -m_alpha * crossZ;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerBullet"))
         {
-            hp -= collision.GetComponent<PlayerBullet>().damage;
+            m_hp -= collision.GetComponent<PlayerBullet>().damage;
             PoolManager.instance.PushToPool(collision.gameObject);
 
-            if (hp <= 0)
+            if (m_hp <= 0)
             {
                 PoolManager.instance.PushToPool(gameObject);
             }

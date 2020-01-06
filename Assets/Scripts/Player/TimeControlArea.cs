@@ -48,7 +48,7 @@ public class TimeControlArea : MonoBehaviour
             if (!bullet) break;
 
             HomingBullet homingBullet = bullet.GetComponent<HomingBullet>();
-            if (homingBullet)
+            if (homingBullet != null)
             {
                 homingBullet.speed *= reverseMultiplier;
                 return;
