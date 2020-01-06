@@ -11,14 +11,14 @@ public class DirectionalNormal : BulletPattern
 
     protected override IEnumerator Fire()
     {
-        yield return new WaitForSeconds(startDelay);
+        yield return new WaitForSeconds(m_startDelay);
         while (true)
         {
             for (int i = 0; i < count; i++)
             {
                 GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = bulletSpawn.position;
+                bulletInst.transform.position = m_bulletSpawn.position;
                 bulletInst.SetActive(true);
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, 0f);
 

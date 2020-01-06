@@ -2,42 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DirectionalAimed : AimedBulletPattern
+public class DirectionalAimedNWay : AimedBulletPattern
 {
     public int count = 5;
-    public float speed = 5f;
-    public float inDelay = 0.1f;
-    public float outDelay = 1f;
+    public float speed = 3f;
+    public float delay = 0.5f;
+    public float angleRange = 60f;
 
-    private Vector3 m_targetPos;
+    private float m_angle;
+    private float m_omega;
+
+    void Start()
+    {
+        angleRange *= Mathf.Deg2Rad;
+    }
 
     protected override IEnumerator Fire()
     {
         yield return new WaitForSeconds(m_startDelay);
+
+        
+
         while (true)
         {
-            m_targetPos = target.position;
-            Vector2 direction = m_targetPos - m_bulletSpawn.position;
+            m_angle = (count == 1) ? 0f : -angleRange / 2;
+            m_omega = (count == 1) ? 0f : angleRange / (count - 1);
+
+            Vector2 direction = target.position - m_bulletSpawn.position;
             float atan = Mathf.Atan2(direction.y, direction.x);
-            float cos = Mathf.Cos(atan);
-            float sin = Mathf.Sin(atan);
             float angle = atan * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+            GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
+
             for (int i = 0; i < count; i++)
             {
-                GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                 bulletInst.transform.position = m_bulletSpawn.position;
                 bulletInst.transform.rotation = rotation;
                 bulletInst.SetActive(true);
 
+                float cos = Mathf.Cos(atan + m_angle);
+                float sin = Mathf.Sin(atan + m_angle);
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * cos, speed * sin);
 
-                yield return new WaitForSeconds(inDelay);
+                m_angle += m_omega;
             }
 
-            yield return new WaitForSeconds(outDelay);
+            yield return new WaitForSeconds(delay);
         }
     }
 }

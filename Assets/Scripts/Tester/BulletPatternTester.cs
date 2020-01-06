@@ -5,9 +5,10 @@ using UnityEngine;
 public class BulletPatternTester : MonoBehaviour
 {
     private BulletPattern m_testPattern;
+
     void Start()
     {
-        m_testPattern = GetComponent<DirectionalAimed>();
+        m_testPattern = GetComponent<BiDirectional>();
 
         m_testPattern.StartPattern();
     }

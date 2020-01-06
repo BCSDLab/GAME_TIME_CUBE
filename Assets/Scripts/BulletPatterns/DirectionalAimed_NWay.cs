@@ -17,10 +17,10 @@ public class DirectionalAimed_NWay : AimedBulletPattern
 
     protected override IEnumerator Fire()
     {
-        yield return new WaitForSeconds(startDelay);
+        yield return new WaitForSeconds(m_startDelay);
         while (true)
         {
-            Vector2 direction = target.position - bulletSpawn.position;
+            Vector2 direction = target.position - m_bulletSpawn.position;
             float atan = Mathf.Atan(direction.y / direction.x);
 
             m_angleAlpha = 2 * angleRange / (count - 1);
@@ -32,7 +32,7 @@ public class DirectionalAimed_NWay : AimedBulletPattern
             {
                 m_speed = Speed;
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = bulletSpawn.position;
+                bulletInst.transform.position = m_bulletSpawn.position;
                 bulletInst.SetActive(true);
 
                 if (direction.x < 0)  // 몹이 오른쪽

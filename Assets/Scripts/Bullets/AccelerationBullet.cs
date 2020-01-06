@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AccelerationBullet : Bullet
 {
-    public float accelRate;
+    [SerializeField]
+    private float m_accelRate = 1.0f;
 
     private Rigidbody2D m_rigidbody;
 
@@ -15,8 +16,7 @@ public class AccelerationBullet : Bullet
 
     void FixedUpdate()
     {
-        var m_vector = m_rigidbody.velocity;
-        m_vector = new Vector2(m_vector.x * accelRate * Time.deltaTime, m_vector.y * accelRate * Time.deltaTime);
-        m_rigidbody.velocity = m_rigidbody.velocity + new Vector2(m_vector.x, m_vector.y);
+        Vector2 newVelocity = m_rigidbody.velocity * (m_accelRate * Time.deltaTime);
+        m_rigidbody.velocity += newVelocity;
     }
 }

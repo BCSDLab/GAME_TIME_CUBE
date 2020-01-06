@@ -11,7 +11,7 @@ public class CrackingBullet_NWay : Bullet
 
     void Awake()
     {
-        m_endPattern = GetComponent<DirectionalAimed_NWay>();
+        m_endPattern = GetComponent<DirectionalAimedNWay>();
     }
 
     void OnEnable()
