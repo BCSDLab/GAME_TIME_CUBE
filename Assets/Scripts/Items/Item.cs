@@ -7,18 +7,18 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public abstract class Item : MonoBehaviour
 {
-    protected bool m_isPickedUp = false;
-
     private const float FALLING_FORCE = 3f;
-    private const float AUTO_ACHIEVE = 10f;
-    private const float ALPHA = 4000f;
+    private const float AUTO_ACHIEVE_SPEED = 10f;
 
     private Rigidbody2D m_rigidbody;
     private SpriteRenderer m_spriteRenderer;
     private ParticleSystem m_particleSystem;
     private AudioSource m_audioSource;
 
-    public GameObject target;
+    private Transform m_target = null;
+    private bool m_isPickedUp = false;
+    private bool m_isAutoAchieved = false;
+
 
     void Start()
     {
@@ -27,11 +27,17 @@ public abstract class Item : MonoBehaviour
         m_particleSystem = GetComponent<ParticleSystem>();
         m_audioSource = GetComponent<AudioSource>();
 
-        target = GameObject.FindGameObjectWithTag("Player");
+        m_target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void FixedUpdate()
     {
+        if (m_isAutoAchieved)
+        {
+            AutoAchieve();
+            return;
+        }
+
         // 화면 왼쪽으로 움직임
         m_rigidbody.AddForce(Vector2.left * FALLING_FORCE);
         if (m_rigidbody.velocity.x < -3f)
@@ -47,9 +53,9 @@ public abstract class Item : MonoBehaviour
             m_rigidbody.AddForce(Vector2.down);
         }
 
-        if (GameManager.instance.isPlayerSpelling || GameManager.instance.isDialogueOn)
+        if (!m_isAutoAchieved && GameManager.instance.isPlayerSpelling || GameManager.instance.isDialogueOn)
         {
-            AutoAchieve();
+            m_isAutoAchieved = true;
         }
     }
 
@@ -71,14 +77,14 @@ public abstract class Item : MonoBehaviour
 
     void AutoAchieve()
     {
-        m_rigidbody.velocity = new Vector2(0, 0);
+        if (m_target == null) return;
 
-        Vector2 direction = transform.position - target.transform.position;
-        direction.Normalize();
-        float crossZ = Vector3.Cross(direction, transform.right).z;
+        Vector2 direction = m_target.position - transform.position;
+        float atan = Mathf.Atan2(direction.y, direction.x);
+        float cos = Mathf.Cos(atan);
+        float sin = Mathf.Sin(atan);
 
-        m_rigidbody.velocity = -transform.right * AUTO_ACHIEVE;
-        m_rigidbody.angularVelocity = -ALPHA * crossZ;
+        m_rigidbody.velocity = new Vector2(AUTO_ACHIEVE_SPEED * cos, AUTO_ACHIEVE_SPEED * sin);
     }
 
     protected abstract void PickUp();
