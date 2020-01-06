@@ -7,6 +7,6 @@ public class Bi_DirectionalZaco : ShootingZaco
     protected override void Start()
     {
         base.Start();
-        m_bulletPattern = GetComponent<Bi_Directional>();
+        m_bulletPattern = GetComponent<BiDirectional>();
     }
 }

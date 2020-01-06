@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class AccelerationBullet : Bullet
 {
-    public float accelRate;
+    [SerializeField]
+    private float m_accelRate = 0.5f;
+    [SerializeField]
+    private bool m_useMaxSpeed = true;
+    [SerializeField]
+    private float m_maxSpeed = 10;
+    [SerializeField]
+    private bool m_useMinSpeed = true;
+    [SerializeField]
+    private float m_minSpeed = 1f;
 
     private Rigidbody2D m_rigidbody;
 
@@ -15,8 +24,10 @@ public class AccelerationBullet : Bullet
 
     void FixedUpdate()
     {
-        var m_vector = m_rigidbody.velocity;
-        m_vector = new Vector2(m_vector.x * accelRate * Time.deltaTime, m_vector.y * accelRate * Time.deltaTime);
-        m_rigidbody.velocity = m_rigidbody.velocity + new Vector2(m_vector.x, m_vector.y);
+        Debug.Log(m_rigidbody.velocity.magnitude);
+        if (m_useMaxSpeed && m_rigidbody.velocity.magnitude >= m_maxSpeed) return;
+        if (m_useMinSpeed && m_rigidbody.velocity.magnitude <= m_minSpeed) return;
+        Vector2 newVelocity = m_rigidbody.velocity * (m_accelRate * Time.deltaTime);
+        m_rigidbody.velocity += newVelocity;
     }
 }

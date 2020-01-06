@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class SpiralMulti : BulletPattern
 {
-    public int count = 5;
-    public float speed = 200f;
-    public float delay = 0.1f;
+    public int count = 3;
+    public float speed = 3f;
+    public float inDelay = 0.1f;
     [Tooltip("초기 발사각")]
     public float angle = 0f;
     [Tooltip("각속도")]
-    public float alpha = 1f;
+    public float omega = 10f;
+
+    void Start()
+    {
+        angle *= Mathf.Deg2Rad;
+        omega *= Mathf.Deg2Rad;
+    }
 
     protected override IEnumerator Fire()
     {
-        yield return new WaitForSeconds(startDelay);
+        yield return new WaitForSeconds(m_startDelay);
         while (true)
         {
             GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
@@ -22,17 +28,18 @@ public class SpiralMulti : BulletPattern
             for (int i = 0; i < count; i++)
             {
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = transform.position;
+                bulletInst.transform.position = m_bulletSpawn.position;
                 bulletInst.SetActive(true);
 
-                bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos((Mathf.PI * 2f * i / count) + angle), speed * Mathf.Sin((Mathf.PI * 2f * i / count) + angle));
+                float a = 2f * Mathf.PI * i / count;
+                bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(a + angle), speed * Mathf.Sin(a + angle));
                 //obj.transform.Rotate(new Vector3(0f, 0f, 360f * i / SpiralShooting - 90f));
 
-                angle += alpha;
-                if (angle > 3600f) angle -= 3600f;
+                angle += omega;
+                //TODO: 오버플로 예방
             }
 
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(inDelay);
         }
     }
 }
