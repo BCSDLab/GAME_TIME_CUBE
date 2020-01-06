@@ -656,11 +656,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ead040f22bb02449f7d44d50f27a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
   m_bulletSpawn: {fileID: 0}
   m_startDelay: 0
-  speed: 3
+  speed: 7
   angle1: 0
   angle2: 180
   omega1: 30
