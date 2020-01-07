@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomingCrackingBullet : Bullet
+public class CrackingHomingBullet : Bullet
 {
     public GameObject target;
     public float speed = 5f;
@@ -30,17 +30,17 @@ public class HomingCrackingBullet : Bullet
     {
         if (target == null) return;
 
-        if(Vector2.Distance(transform.position,target.transform.position) < destroyedDist)
-        {
-            StartCoroutine("BulletDestroy");
-        }
-
         Vector2 direction = transform.position - target.transform.position;
         direction.Normalize();
         float crossZ = Vector3.Cross(direction, transform.right).z;
 
         m_rigidbody.velocity = -transform.right * speed;
         m_rigidbody.angularVelocity = -m_alpha * crossZ;
+
+        if (Vector2.Distance(transform.position, target.transform.position) < destroyedDist)
+        {
+            StartCoroutine("BulletDestroy");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
