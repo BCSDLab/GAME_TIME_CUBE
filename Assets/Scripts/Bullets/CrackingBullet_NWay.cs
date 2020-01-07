@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CrackingBullet_NWay : Bullet
 {
-    private BulletPattern m_endPattern;
+    private BulletPattern m_bulletPattern;
     private float m_time = 0f;
     [SerializeField]
     private float m_endTime = 0f;
 
     void Awake()
     {
-        m_endPattern = GetComponent<DirectionalAimedNWay>();
+        m_bulletPattern = GetComponent<DirectionalAimedNWay>();
     }
 
     void OnEnable()
@@ -31,7 +31,7 @@ public class CrackingBullet_NWay : Bullet
 
     IEnumerator BulletDestroy()
     {
-        m_endPattern.StartPattern();
+        m_bulletPattern.StartPattern();
         yield return new WaitForSeconds(0.01f);
         PoolManager.instance.PushToPool(this.gameObject);
     }

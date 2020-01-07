@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolList:
-  - prefab: {fileID: 8760339693924824446, guid: e6ba91f4daaf30d4ca075823bfdb7cc8,
+  - prefab: {fileID: 8760339693924824446, guid: 360d5d5b69dbe6f4781fb3f96558c8ac,
       type: 3}
     m_poolCount: 100
     m_pooledItems: []
@@ -975,13 +975,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c62600e8d41e7d458c248d4a3e35156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  bullet: {fileID: 8760339693924824446, guid: 360d5d5b69dbe6f4781fb3f96558c8ac, type: 3}
   audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
   m_bulletSpawn: {fileID: 0}
   m_startDelay: 0
-  count: 50
+  count: 2
   speed: 3
-  inDelay: 0.2
+  inDelay: 2
+  isCountChange: 0
 --- !u!114 &1723751479
 MonoBehaviour:
   m_ObjectHideFlags: 0
