@@ -31,7 +31,7 @@ public class InGameUIManager : MonoBehaviour
     public AudioClip scoreSound;
 
     [System.NonSerialized]
-    public GameObject stageChanger; // 다음 스테이지로 넘어가는 영역
+    public GameObject stageChanger;
 
     private AudioSource m_audioSource;
     private object[] paramArr; // killCount, hitCount, stageScore, totalScore
@@ -194,12 +194,14 @@ public class InGameUIManager : MonoBehaviour
             default:
                 break;
         }
+
         paramIdx++;
         m_audioSource.Play();
     }
     public void CallUpdateClearPanel()
     {
         StopCoroutine("UpdateClearPanel");
+
         if (paramIdx < 4)
         {
             StartCoroutine("UpdateClearPanel");
@@ -207,6 +209,7 @@ public class InGameUIManager : MonoBehaviour
         else
         {
             CancelInvoke("CallUpdateClearPanel");
+
             paramIdx = 0;
             continueText.text = "CONTINUE >>>";
             stageChanger.GetComponent<BoxCollider2D>().enabled = true;

@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     {
         StageChanger sc = InGameUIManager.instance.stageChanger.GetComponent<StageChanger>();
         //if (sc) Debug.Log("Stat Initialized!");
+
         spellEnergy = sc.savedSpellEnergy;
         playerPower = sc.savedPlayerPower;
         m_playerHP = sc.savedPlayerHP;
