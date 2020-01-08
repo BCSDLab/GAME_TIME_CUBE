@@ -75,9 +75,9 @@ public class GameManager : MonoBehaviour
     {
         StageChanger sc = InGameUIManager.instance.stageChanger.GetComponent<StageChanger>();
         //if (sc) Debug.Log("Stat Initialized!");
-        spellEnergy = sc.spellEnergy;
-        playerPower = sc.playerPower;
-        m_playerHP = sc.playerHP;
+        spellEnergy = sc.savedSpellEnergy;
+        playerPower = sc.savedPlayerPower;
+        m_playerHP = sc.savedPlayerHP;
     }
 
     void InitializeUI()
@@ -86,6 +86,10 @@ public class GameManager : MonoBehaviour
         InGameUIManager.instance.UpdateSpellSlider(spellEnergy);
         InGameUIManager.instance.UpdatePowerSlider(playerPower);
         InGameUIManager.instance.UpdateScoreText(m_score);
+        for(int hpSlot = PLAYER_HP_MAX; hpSlot > m_playerHP; hpSlot--)
+        {
+            InGameUIManager.instance.DamagePlayer(hpSlot - 1);
+        }
     }
 
     #region TIME CUBE

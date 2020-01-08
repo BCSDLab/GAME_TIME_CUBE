@@ -7,9 +7,9 @@ public class StageChanger : MonoBehaviour
 {
     public static StageChanger instance = null;
 
-    public int spellEnergy = GameManager.SPELL_ENERGY_MAX;
-    public int playerPower = 0;
-    public int playerHP = 5;
+    public int savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+    public int savedPlayerPower = 0;
+    public int savedPlayerHP = 5;
 
     private void Awake()
     {
@@ -52,8 +52,8 @@ public class StageChanger : MonoBehaviour
 
     private void SaveData()
     {
-        spellEnergy = GameManager.instance.spellEnergy;
-        playerPower = GameManager.instance.playerPower;
-        playerHP = GameManager.instance.getPlayerHP();
+        savedSpellEnergy = GameManager.instance.spellEnergy;
+        savedPlayerPower = GameManager.instance.playerPower;
+        savedPlayerHP = GameManager.instance.getPlayerHP();
     }
 }
