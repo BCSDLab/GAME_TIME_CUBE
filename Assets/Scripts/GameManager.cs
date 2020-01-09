@@ -215,7 +215,7 @@ public class GameManager : MonoBehaviour
         InGameUIManager.instance.HealPlayer(m_playerHP);
     }
 
-    public int getPlayerHP() { return m_playerHP; }
+    public int GetPlayerHP() { return m_playerHP; }
     #endregion
 
     #region GAME FLOW

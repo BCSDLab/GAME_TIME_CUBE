@@ -7,9 +7,13 @@ public class StageChanger : MonoBehaviour
 {
     public static StageChanger instance = null;
 
+    [HideInInspector]
     public int savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+    [HideInInspector]
     public int savedPlayerPower = 0;
+    [HideInInspector]
     public int savedPlayerHP = 5;
+    [HideInInspector]
     public float savedTotalScore = 0;
 
     private void Awake()
@@ -53,7 +57,7 @@ public class StageChanger : MonoBehaviour
     {
         savedSpellEnergy = GameManager.instance.spellEnergy;
         savedPlayerPower = GameManager.instance.playerPower;
-        savedPlayerHP = GameManager.instance.getPlayerHP();
+        savedPlayerHP = GameManager.instance.GetPlayerHP();
         savedTotalScore += GameManager.instance.GetScore();
     }
 }
