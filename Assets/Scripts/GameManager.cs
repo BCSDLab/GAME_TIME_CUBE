@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     private bool m_pauseToggled = false;
     
     private float m_score = 0;
+    private float m_totalScore = 0;
     private int m_playerHP = PLAYER_HP_MAX;
     private int m_killCount = 0;
     private int m_hitCount = 0;
@@ -79,6 +80,8 @@ public class GameManager : MonoBehaviour
         spellEnergy = sc.savedSpellEnergy;
         playerPower = sc.savedPlayerPower;
         m_playerHP = sc.savedPlayerHP;
+
+        m_totalScore = sc.savedTotalScore;
     }
 
     void InitializeUI()
@@ -278,6 +281,6 @@ public class GameManager : MonoBehaviour
 
     public void StageClear()
     {
-        InGameUIManager.instance.ClearStage(m_killCount, m_hitCount, m_score, m_score);
+        InGameUIManager.instance.ClearStage(m_killCount, m_hitCount, m_score, m_score + m_totalScore);
     }
 }

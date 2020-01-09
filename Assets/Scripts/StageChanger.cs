@@ -10,6 +10,7 @@ public class StageChanger : MonoBehaviour
     public int savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
     public int savedPlayerPower = 0;
     public int savedPlayerHP = 5;
+    public float savedTotalScore = 0;
 
     private void Awake()
     {
@@ -53,5 +54,6 @@ public class StageChanger : MonoBehaviour
         savedSpellEnergy = GameManager.instance.spellEnergy;
         savedPlayerPower = GameManager.instance.playerPower;
         savedPlayerHP = GameManager.instance.getPlayerHP();
+        savedTotalScore += GameManager.instance.GetScore();
     }
 }
