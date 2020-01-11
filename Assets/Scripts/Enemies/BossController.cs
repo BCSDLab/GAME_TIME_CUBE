@@ -35,6 +35,10 @@ public class BossController : EnemyController
     [SerializeField]
     private ItemList[] m_dropItemLists = null;
 
+    [SerializeField]
+    [Header("자코 배치")]
+    private MobInfo[] m_mobInfoes = null;
+
     private DialogueTrigger m_dialogueTrigger;
 
     private const int PHASE_COUNT = 6;
@@ -43,6 +47,11 @@ public class BossController : EnemyController
     private int m_phaseHP = 0;  // 현재 페이즈 HP
     private int m_totalHP;  // 총 HP
     private bool m_hasTalked = false;
+
+    // 보스 소환수 소환
+    private bool m_isSpawning = true;
+    private int m_indexToSpawn = 0; 
+    private float m_zacoSpawnTime = 0f;
 
     protected override void Start()
     {
@@ -83,6 +92,18 @@ public class BossController : EnemyController
                 StartPhase();
             }
         }
+
+        if (m_indexToSpawn >= m_mobInfoes.Length)
+            return;
+
+        if (m_zacoSpawnTime >= m_mobInfoes[m_indexToSpawn].engageTime && m_mobInfoes[m_indexToSpawn].engagePhase == m_phase)
+        {
+            StartCoroutine("SpawnZaco", m_indexToSpawn);
+            m_indexToSpawn++;
+        }
+
+        Debug.Log(m_indexToSpawn);
+        m_zacoSpawnTime += Time.deltaTime;
     }
 
     void StartPhase()
@@ -90,6 +111,7 @@ public class BossController : EnemyController
         m_isInvincible = false;
         m_phase++;
         m_phaseHP += m_maxPhaseHP;
+        m_zacoSpawnTime = 0f;
         InGameUIManager.instance.DisplayBossHPSlider(hp: m_phaseHP);
 
         Debug.Log("보스 페이즈 전환: m_phase = " + m_phase.ToString() + " HP = " + m_totalHP.ToString());
@@ -142,6 +164,25 @@ public class BossController : EnemyController
     public int GetTotalHP()
     {
         return m_totalHP;
+    }
+
+    IEnumerator SpawnZaco(int index)
+    {
+        MobInfo mobInfo = m_mobInfoes[index];
+        while (true)
+        {
+            if (!m_isSpawning || mobInfo.repeatCount <= 0)
+                yield break;
+
+            mobInfo.repeatCount--;
+
+            GameObject mobInst = Instantiate(mobInfo.mob);
+
+            if (mobInfo.pathName.Length > 0)
+                mobInst.GetComponent<EnemyController>().pathName = mobInfo.pathName;
+
+            yield return new WaitForSeconds(mobInfo.repeatDelay);
+        }
     }
 
     public override void Damage(int damage)

@@ -15,4 +15,6 @@ public class MobInfo
     public int repeatCount = 1;
     [Tooltip("반복 등장하는 시간 간격")]
     public float repeatDelay = 1f;
+    [Tooltip("보스소환수일시 페이즈")]
+    public int engagePhase = 0;
 }
