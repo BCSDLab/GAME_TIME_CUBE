@@ -4769,10 +4769,10 @@ GameObject:
   - component: {fileID: 431137591380629858}
   - component: {fileID: 2208657292544630285}
   - component: {fileID: 1297947435120890667}
-  - component: {fileID: 5875172913077719939}
-  - component: {fileID: 3298016160526166707}
-  - component: {fileID: 172328664871883220}
   - component: {fileID: 1331919750288802457}
+  - component: {fileID: 3298016160526166707}
+  - component: {fileID: 5875172913077719939}
+  - component: {fileID: 172328664871883220}
   m_Layer: 0
   m_Name: DirectionalAimedZaco
   m_TagString: Enemy
@@ -4899,59 +4899,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.455
---- !u!114 &5875172913077719939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 0}
-  startDelay: 0
-  count: 8
-  speed: 6
---- !u!114 &3298016160526166707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e26b5d1969335f488e81eddb5ff7b0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
-  audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
-  startDelay: 4
-  target: {fileID: 0}
-  count: 5
-  speed: 5
-  inDelay: 0.1
-  outDelay: 1
---- !u!114 &172328664871883220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee1f36e349267ad4fa5e5200c24bd715, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: 
-  speed: 5
-  m_hp: 200
-  isDestroyed: 1
 --- !u!82 &1331919750288802457
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5049,3 +4996,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3298016160526166707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e26b5d1969335f488e81eddb5ff7b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
+  target: {fileID: 0}
+  count: 5
+  speed: 5
+  inDelay: 0.1
+  outDelay: 1
+--- !u!114 &5875172913077719939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
+  count: 8
+  speed: 6
+--- !u!114 &172328664871883220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1f36e349267ad4fa5e5200c24bd715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: 
+  speed: 5
+  m_hp: 200
+  m_destroyOnArrival: 1
+  m_dropItemList:
+    items: []
+    counts: 

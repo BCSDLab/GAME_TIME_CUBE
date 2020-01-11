@@ -14,6 +14,7 @@ public class BiDirectional : BulletPattern
 
     void Start()
     {
+        m_audioSource = GetComponent<AudioSource>();
         angle1 *= Mathf.Deg2Rad;
         angle2 *= Mathf.Deg2Rad;
         omega1 *= Mathf.Deg2Rad;
@@ -26,7 +27,7 @@ public class BiDirectional : BulletPattern
 
         while (true)
         {
-            GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
+            m_audioSource.Play();
 
             for (int i = 0; i < spiral; i++)
             {

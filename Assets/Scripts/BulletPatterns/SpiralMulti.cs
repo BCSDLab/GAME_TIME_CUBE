@@ -7,15 +7,18 @@ public class SpiralMulti : BulletPattern
     public int count = 3;
     public float speed = 3f;
     public float inDelay = 0.1f;
+    [SerializeField]
     [Tooltip("초기 발사각")]
-    public float angle = 0f;
+    private float m_angle = 0f;
+    [SerializeField]
     [Tooltip("각속도")]
-    public float omega = 10f;
+    private float m_omega = 10f;
 
     void Start()
     {
-        angle *= Mathf.Deg2Rad;
-        omega *= Mathf.Deg2Rad;
+        m_audioSource = GetComponent<AudioSource>();
+        m_angle *= Mathf.Deg2Rad;
+        m_omega *= Mathf.Deg2Rad;
     }
 
     protected override IEnumerator Fire()
@@ -23,7 +26,7 @@ public class SpiralMulti : BulletPattern
         yield return new WaitForSeconds(m_startDelay);
         while (true)
         {
-            GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
+            m_audioSource.Play();
 
             for (int i = 0; i < count; i++)
             {
@@ -32,10 +35,10 @@ public class SpiralMulti : BulletPattern
                 bulletInst.SetActive(true);
 
                 float a = 2f * Mathf.PI * i / count;
-                bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(a + angle), speed * Mathf.Sin(a + angle));
+                bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(a + m_angle), speed * Mathf.Sin(a + m_angle));
                 //obj.transform.Rotate(new Vector3(0f, 0f, 360f * i / SpiralShooting - 90f));
 
-                angle += omega;
+                m_angle += m_omega;
                 //TODO: 오버플로 예방
             }
 

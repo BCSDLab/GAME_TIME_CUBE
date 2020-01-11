@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrackingBullet_NWay : Bullet
+[RequireComponent(typeof(DirectionalAimedNWay))]
+public class NWayCrackingBullet : Bullet
 {
-    private BulletPattern m_endPattern;
+    private BulletPattern m_bulletPattern;
     private float m_time = 0f;
     [SerializeField]
-    private float m_endTime = 0f;
+    private float m_crackTime = 3f;
 
     void Awake()
     {
-        m_endPattern = GetComponent<DirectionalAimedNWay>();
+        m_bulletPattern = GetComponent<DirectionalAimedNWay>();
     }
 
     void OnEnable()
@@ -23,7 +24,7 @@ public class CrackingBullet_NWay : Bullet
     {
         m_time += Time.deltaTime;
 
-        if (m_endTime < m_time)
+        if (m_crackTime < m_time)
         {
             StartCoroutine("BulletDestroy");
         }
@@ -31,8 +32,8 @@ public class CrackingBullet_NWay : Bullet
 
     IEnumerator BulletDestroy()
     {
-        m_endPattern.StartPattern();
+        m_bulletPattern.StartPattern();
         yield return new WaitForSeconds(0.01f);
-        PoolManager.instance.PushToPool(this.gameObject);
+        PoolManager.instance.PushToPool(gameObject);
     }
 }

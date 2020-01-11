@@ -11,8 +11,9 @@ public abstract class EnemyController : MonoBehaviour
     public float speed = 5f;
     [SerializeField]
     protected int m_hp = 100;
+    [SerializeField]
     [Tooltip("(필요 시) 경로 끝에서 파괴")]
-    public bool isDestroyed = true;
+    protected bool m_destroyOnArrival = true;
 
     protected Collider2D m_collider;
     protected SpriteRenderer m_spriteRenderer;
@@ -28,7 +29,7 @@ public abstract class EnemyController : MonoBehaviour
 
         if (pathName.Length > 0)
         {
-            if (isDestroyed)
+            if (m_destroyOnArrival)
             {
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathName), "easetype", iTween.EaseType.linear, "speed", speed, "oncomplete", "Die"));
             }

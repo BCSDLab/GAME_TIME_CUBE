@@ -8,7 +8,7 @@ public class BulletPatternTester : MonoBehaviour
 
     void Start()
     {
-        m_testPattern = GetComponent<BiDirectional>();
+        m_testPattern = GetComponent<Vertical>();
 
         m_testPattern.StartPattern();
     }

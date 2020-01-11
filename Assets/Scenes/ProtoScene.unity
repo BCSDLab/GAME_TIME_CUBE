@@ -14347,11 +14347,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   count: 10
   speed: 5
-  delay: 0.5
+  inDelay: 0.2
+  m_isCountChange: 0
 --- !u!114 &1581552407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14365,8 +14366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
-  audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   count: 1
   delay: 0.5
 --- !u!1 &1630448853
@@ -18056,8 +18057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   target: {fileID: 0}
   count: 5
   speed: 5
@@ -18076,8 +18077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   count: 5
   speed: 6
   inDelay: 0.1
@@ -18111,13 +18112,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   count: 5
   speed: 5
-  delay: 0.1
-  angle: 0
-  alpha: 1
+  inDelay: 0.1
+  m_angle: 0
+  m_omega: 10
 --- !u!95 &2131298837335977622
 Animator:
   serializedVersion: 3
@@ -18152,7 +18153,7 @@ MonoBehaviour:
   pathName: 
   speed: 5
   m_hp: 100
-  isDestroyed: 1
+  m_destroyOnArrival: 0
   m_enterPos: {fileID: 2079523269}
   m_pathNames:
   - Boss 0
@@ -18265,8 +18266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   target: {fileID: 0}
   count: 10
   minSpeed: 4
@@ -18287,8 +18288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   count: 10
   speed: 5
@@ -24161,11 +24162,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   count: 10
   speed: 6
-  delay: 0.5
+  inDelay: 0.2
+  m_isCountChange: 0
 --- !u!114 &6887332921535989914
 MonoBehaviour:
   m_ObjectHideFlags: 0
