@@ -21,7 +21,6 @@ public class DonutAimed : AimedBulletPattern
         float theta = 360f / count;
         yield return new WaitForSeconds(m_startDelay);
 
-
         while (true)
         {
             yield return new WaitForSeconds(1f);
@@ -32,7 +31,7 @@ public class DonutAimed : AimedBulletPattern
             float cos = Mathf.Cos(atan);
             float sin = Mathf.Sin(atan);
 
-            GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
+            m_audioSource.Play();
 
             for (int i = 0; i < count; i++)
             {

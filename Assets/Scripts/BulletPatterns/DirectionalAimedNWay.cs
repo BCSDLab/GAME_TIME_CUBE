@@ -14,6 +14,7 @@ public class DirectionalAimedNWay : AimedBulletPattern
 
     void Start()
     {
+        m_audioSource = GetComponent<AudioSource>();
         angleRange *= Mathf.Deg2Rad;
     }
 
@@ -31,7 +32,7 @@ public class DirectionalAimedNWay : AimedBulletPattern
             float angle = atan * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
+            m_audioSource.Play();
 
             for (int i = 0; i < count; i++)
             {

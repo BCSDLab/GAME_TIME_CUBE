@@ -12,7 +12,7 @@ public class Homing : BulletPattern
         yield return new WaitForSeconds(m_startDelay);
         while (true)
         {
-            GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
+            m_audioSource.Play();
 
             for (int i = 0; i < count; i++)
             {
