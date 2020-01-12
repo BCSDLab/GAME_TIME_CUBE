@@ -17,7 +17,7 @@ public class Homing : BulletPattern
             for (int i = 0; i < count; i++)
             {
                 GameObject obj = PoolManager.instance.PopFromPool(bullet.name);
-                obj.transform.position = m_bulletSpawn.position;
+                obj.transform.position = m_spawnPos.position;
                 obj.SetActive(true);             
             }
 

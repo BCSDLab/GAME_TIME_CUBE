@@ -27,7 +27,7 @@ public class DirectionalAimedNWay : AimedBulletPattern
             m_angle = (count == 1) ? 0f : -angleRange / 2;
             m_omega = (count == 1) ? 0f : angleRange / (count - 1);
 
-            Vector2 direction = target.position - m_bulletSpawn.position;
+            Vector2 direction = target.position - m_spawnPos.position;
             float atan = Mathf.Atan2(direction.y, direction.x);
             float angle = atan * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -37,7 +37,7 @@ public class DirectionalAimedNWay : AimedBulletPattern
             for (int i = 0; i < count; i++)
             {
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = m_bulletSpawn.position;
+                bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.transform.rotation = rotation;
                 bulletInst.SetActive(true);
 

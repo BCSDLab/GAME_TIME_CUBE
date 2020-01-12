@@ -28,7 +28,7 @@ public class RadialMulti : BulletPattern
             for (int i = 0; i < count; i++)
             {
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = m_bulletSpawn.position;
+                bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.transform.rotation = Quaternion.Euler(Vector3.forward * (m_theta * i - 90f));
                 bulletInst.SetActive(true);
 

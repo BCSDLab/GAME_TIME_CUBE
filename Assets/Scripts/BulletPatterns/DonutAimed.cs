@@ -25,8 +25,8 @@ public class DonutAimed : AimedBulletPattern
         {
             yield return new WaitForSeconds(1f);
             m_targetPos = target.position;
-            m_dx = m_bulletSpawn.position.x - m_targetPos.x;
-            m_dy = m_bulletSpawn.position.y - m_targetPos.y;
+            m_dx = m_spawnPos.position.x - m_targetPos.x;
+            m_dy = m_spawnPos.position.y - m_targetPos.y;
             float atan = Mathf.Atan(m_dy / m_dx);
             float cos = Mathf.Cos(atan);
             float sin = Mathf.Sin(atan);
@@ -36,13 +36,13 @@ public class DonutAimed : AimedBulletPattern
             for (int i = 0; i < count; i++)
             {
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = m_bulletSpawn.position + new Vector3(radius * Mathf.Cos(twoPiPerCount * i), radius * Mathf.Sin(twoPiPerCount * i), 0f);
+                bulletInst.transform.position = m_spawnPos.position + new Vector3(radius * Mathf.Cos(twoPiPerCount * i), radius * Mathf.Sin(twoPiPerCount * i), 0f);
                 bulletInst.transform.rotation = Quaternion.Euler(Vector3.forward * (theta * i - 90f));
                 bulletInst.SetActive(true);
 
                 if (m_dx != 0f)
                 {
-                    if (m_targetPos.x <= m_bulletSpawn.position.x)
+                    if (m_targetPos.x <= m_spawnPos.position.x)
                         bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * cos, -speed * sin);
                     else
                         bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector3(speed * cos, speed * sin);

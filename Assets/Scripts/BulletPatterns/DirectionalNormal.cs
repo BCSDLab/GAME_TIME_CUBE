@@ -18,7 +18,7 @@ public class DirectionalNormal : BulletPattern
             {
                 m_audioSource.Play();
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = m_bulletSpawn.position;
+                bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.SetActive(true);
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, 0f);
 

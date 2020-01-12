@@ -75,7 +75,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 7912c21a8a28e05498dde250c63ff6a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
@@ -153,5 +153,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1604783752282113027, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   speed: 4
-  alpha: 100
-  hp: 30
+  m_alpha: 200
+  m_hp: 70
