@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 1723751478}
   - component: {fileID: 1723751476}
   - component: {fileID: 1723751482}
+  - component: {fileID: 1723751483}
   m_Layer: 0
   m_Name: PatternTester
   m_TagString: PatternTester
@@ -857,7 +858,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
   m_bulletSpawn: {fileID: 0}
   m_startDelay: 0
   count: 3
@@ -975,7 +975,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 360d5d5b69dbe6f4781fb3f96558c8ac, type: 3}
-  audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
   m_bulletSpawn: {fileID: 0}
   m_startDelay: 0
   count: 2
@@ -995,7 +994,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
   m_bulletSpawn: {fileID: 0}
   m_startDelay: 0
   target: {fileID: 1554297179}
@@ -1018,7 +1016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
-  audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
   m_bulletSpawn: {fileID: 0}
   m_startDelay: 0
   speed: 7
@@ -1041,7 +1038,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
   m_bulletSpawn: {fileID: 0}
   m_startDelay: 0
   target: {fileID: 1554297179}
@@ -1062,13 +1058,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 0}
   m_bulletSpawn: {fileID: 0}
   m_startDelay: 0
-  count: 5
+  count: 15
   speed: 2
-  inDelay: 0
-  outDelay: 0.1
+  inDelay: 0.2
+  outDelay: 1
   m_spawnPositions:
   - {x: -3.5, y: -5}
   - {x: -3, y: 5}
@@ -1084,6 +1079,29 @@ MonoBehaviour:
   - {x: 2, y: 5}
   - {x: 2.5, y: -5}
   - {x: 3, y: 5}
+--- !u!114 &1723751483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723751472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076961b2af9e5de46afc6acd17eb3a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
+  count: 2
+  speed: 3
+  inDelay: 0.15
+  outDelay: 5
+  m_x: 9
+  m_top: 5
+  m_bottom: -5
+  m_bulletCount: 20
 --- !u!1 &1785809245
 GameObject:
   m_ObjectHideFlags: 0
