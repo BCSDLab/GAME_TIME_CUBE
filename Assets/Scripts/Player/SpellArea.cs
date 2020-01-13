@@ -69,7 +69,7 @@ public class SpellArea : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            EnemyController enemyController = collision.GetComponent<EnemyController>();
+            Enemy enemyController = collision.GetComponent<Enemy>();
             enemyController.SpellDamage(damage);
             GameManager.instance.AddScore(damage);
         }

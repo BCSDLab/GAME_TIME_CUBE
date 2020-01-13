@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer), typeof(DialogueTrigger))]
-public class BossController : EnemyController
+public class BossController : Enemy
 {
     #region PATHS
     [SerializeField]
@@ -39,8 +39,8 @@ public class BossController : EnemyController
 
     private const int PHASE_COUNT = 6;
     private int m_phase = 0;
-    private int m_maxPhaseHP = 1000; // 각 페이즈 최대 HP
-    private int m_phaseHP = 0;  // 현재 페이즈 HP
+    private int m_maxPhaseHP; // 각 페이즈 최대 HP
+    private int m_phaseHP;  // 현재 페이즈 HP
     private int m_totalHP;  // 총 HP
     private bool m_hasTalked = false;
 
@@ -66,6 +66,7 @@ public class BossController : EnemyController
         m_dialogueTrigger.TriggerDialogue();
 
         // 보스 HP 초기화
+        m_maxPhaseHP = m_hp;
         m_totalHP = m_maxPhaseHP * PHASE_COUNT;
     }
 
@@ -203,7 +204,6 @@ public class BossController : EnemyController
 
         m_collider.enabled = false;
         m_spriteRenderer.enabled = false;
-        //yield return new WaitForSeconds(1f);
 
         DropSubWeaponItem();
         
