@@ -10,7 +10,7 @@ public class PatternTester : MonoBehaviour
     void Start()
     {
         m_testPattern = GetComponent<RadialMulti>();
-        m_testPattern2 = GetComponent<Laser>();
+        m_testPattern2 = GetComponent<VerticalLeft>();
 
         m_testPattern.StartPattern();
         m_testPattern2.StartPattern();

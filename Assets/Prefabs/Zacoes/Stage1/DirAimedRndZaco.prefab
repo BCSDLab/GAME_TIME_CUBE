@@ -251,9 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16979c31dd927fa4ca108f9ce0de2b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   count: 10
   minSpeed: 4
@@ -385,7 +385,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
