@@ -392,6 +392,10 @@ MonoBehaviour:
       type: 3}
     m_poolCount: 100
     m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: f4406a2f56003414fae1496b67105500,
+      type: 3}
+    m_poolCount: 100
+    m_pooledItems: []
 --- !u!4 &366789821
 Transform:
   m_ObjectHideFlags: 0
@@ -1211,7 +1215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  bullet: {fileID: 8760339693924824446, guid: 360d5d5b69dbe6f4781fb3f96558c8ac, type: 3}
+  bullet: {fileID: 8760339693924824446, guid: f4406a2f56003414fae1496b67105500, type: 3}
   count: 2
   speed: 3
   inDelay: 2

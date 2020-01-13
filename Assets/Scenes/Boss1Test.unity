@@ -14334,23 +14334,6 @@ MonoBehaviour:
   initialized: 1
   initialName: New Path 3
   pathVisible: 1
---- !u!114 &1581552407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131298837335977617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c78035e0a4112f44ba97e4526ea35c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spawnPos: {fileID: 0}
-  m_startDelay: 0
-  bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
-  count: 1
-  delay: 0.5
 --- !u!1 &1630448853
 GameObject:
   m_ObjectHideFlags: 0
@@ -18010,10 +17993,9 @@ GameObject:
   - component: {fileID: 2131298837335977629}
   - component: {fileID: 3957755481666302465}
   - component: {fileID: 2131298837335977626}
-  - component: {fileID: 2131298837335977619}
-  - component: {fileID: 2131298837335977627}
-  - component: {fileID: 1581552407}
   - component: {fileID: 2131298837335977621}
+  - component: {fileID: 2131298837335977627}
+  - component: {fileID: 2131298837335977619}
   - component: {fileID: 2131298837335977632}
   - component: {fileID: 2131298837335977618}
   - component: {fileID: 6478244450980810064}
