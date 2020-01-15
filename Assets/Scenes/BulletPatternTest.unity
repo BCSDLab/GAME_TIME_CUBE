@@ -863,8 +863,8 @@ MonoBehaviour:
   count: 3
   speed: 3
   inDelay: 0.2
-  angle: 60
-  omega: 10
+  m_angle: 0
+  m_omega: 10
 --- !u!82 &1723751477
 AudioSource:
   m_ObjectHideFlags: 0
@@ -876,8 +876,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243836163948178342, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 4453f8e54194be743ba3b0fb2d181259, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -981,7 +981,7 @@ MonoBehaviour:
   count: 2
   speed: 3
   inDelay: 2
-  isCountChange: 0
+  m_isCountChange: 0
 --- !u!114 &1723751479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,21 +1069,21 @@ MonoBehaviour:
   speed: 2
   inDelay: 0
   outDelay: 0.1
-  m_bulletSpawnArr:
-  - {fileID: 245570958}
-  - {fileID: 1426296569}
-  - {fileID: 176858412}
-  - {fileID: 112824350}
-  - {fileID: 988016440}
-  - {fileID: 178313434}
-  - {fileID: 2009605940}
-  - {fileID: 1785809246}
-  - {fileID: 650526914}
-  - {fileID: 417622241}
-  - {fileID: 732579307}
-  - {fileID: 1294728287}
-  - {fileID: 914229477}
-  - {fileID: 1085555100}
+  m_spawnPositions:
+  - {x: -3.5, y: -5}
+  - {x: -3, y: 5}
+  - {x: -2.5, y: -5}
+  - {x: -2, y: 5}
+  - {x: -1.5, y: -5}
+  - {x: -1, y: 5}
+  - {x: -0.5, y: -5}
+  - {x: 0, y: 5}
+  - {x: 0.5, y: -5}
+  - {x: 1, y: 5}
+  - {x: 1.5, y: -5}
+  - {x: 2, y: 5}
+  - {x: 2.5, y: -5}
+  - {x: 3, y: 5}
 --- !u!1 &1785809245
 GameObject:
   m_ObjectHideFlags: 0

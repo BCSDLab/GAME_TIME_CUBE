@@ -19,6 +19,7 @@ public class DirectionalAimedRandom : AimedBulletPattern
 
     private void Start()
     {
+        m_audioSource = GetComponent<AudioSource>();
         angleRange *= Mathf.Deg2Rad / 2f;
     }
 
@@ -30,10 +31,10 @@ public class DirectionalAimedRandom : AimedBulletPattern
             Vector2 direction = target.position - m_bulletSpawn.position;
             float atan = Mathf.Atan2(direction.y, direction.x);
 
-            GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
-
             for (int i = 0; i < count; i++)
             {
+                m_audioSource.Play();
+
                 m_angleRange = Random.Range(-angleRange, angleRange);
                 m_speed = Random.Range(minSpeed, maxSpeed);
 

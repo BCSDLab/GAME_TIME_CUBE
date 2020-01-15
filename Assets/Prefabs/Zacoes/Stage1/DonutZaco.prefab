@@ -4769,10 +4769,10 @@ GameObject:
   - component: {fileID: 431137591380629858}
   - component: {fileID: 2208657292544630285}
   - component: {fileID: 1297947435120890667}
-  - component: {fileID: 5875172913077719939}
-  - component: {fileID: 3421259152459687949}
-  - component: {fileID: 5201615914378317357}
   - component: {fileID: 1331919750288802457}
+  - component: {fileID: 3421259152459687949}
+  - component: {fileID: 5875172913077719939}
+  - component: {fileID: 5201615914378317357}
   m_Layer: 0
   m_Name: DonutZaco
   m_TagString: Enemy
@@ -4899,63 +4899,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.455
---- !u!114 &5875172913077719939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
-  startDelay: 0
-  count: 8
-  speed: 6
---- !u!114 &3421259152459687949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32a465fcab05014c834f38b129899c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
-  startDelay: 0
-  target: {fileID: 0}
-  count: 8
-  speed: 5
-  delay: 3
-  radius: 0.5
---- !u!114 &5201615914378317357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03500e2447a40a44ab426548d364c4bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: 
-  speed: 5
-  m_hp: 200
-  isDestroyed: 1
-  m_dropItemList:
-    items:
-    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
-    counts: 01000000
 --- !u!82 &1331919750288802457
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5053,3 +4996,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3421259152459687949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32a465fcab05014c834f38b129899c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
+  target: {fileID: 0}
+  count: 8
+  speed: 5
+  delay: 3
+  radius: 0.5
+--- !u!114 &5875172913077719939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
+  count: 8
+  speed: 5
+--- !u!114 &5201615914378317357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03500e2447a40a44ab426548d364c4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: 
+  speed: 5
+  m_hp: 200
+  m_destroyOnArrival: 1
+  m_dropItemList:
+    items:
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    counts: 01000000

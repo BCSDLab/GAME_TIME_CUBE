@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrackingHomingBullet : Bullet
+public class ExplodingHomingBullet : Bullet
 {
     public GameObject target;
     public float speed = 5f;
-    public float destroyedDist = 5f;
+    [SerializeField]
+    private float m_explodeDistance = 5f;
     [SerializeField]
     private float m_alpha = 200f;
-    [SerializeField]
-    private int m_hp = 70;
+    //[SerializeField]
+    //private int m_hp = 70;
 
     private BulletPattern m_bulletPattern;
     private Rigidbody2D m_rigidbody;
@@ -37,7 +38,7 @@ public class CrackingHomingBullet : Bullet
         m_rigidbody.velocity = -transform.right * speed;
         m_rigidbody.angularVelocity = -m_alpha * crossZ;
 
-        if (Vector2.Distance(transform.position, target.transform.position) < destroyedDist)
+        if (Vector2.Distance(transform.position, target.transform.position) < m_explodeDistance)
         {
             StartCoroutine("BulletDestroy");
         }
@@ -45,20 +46,20 @@ public class CrackingHomingBullet : Bullet
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerBullet"))
-        {
-            m_hp -= collision.GetComponent<PlayerBullet>().damage;
-            PoolManager.instance.PushToPool(collision.gameObject);
-
-            if (m_hp <= 0)
-            {
-                PoolManager.instance.PushToPool(gameObject);
-            }
-        }
-        else if (collision.CompareTag("TimeControlArea"))
+        if (collision.CompareTag("TimeControlArea"))
         {
             speed *= collision.GetComponent<TimeControlArea>().velocityMultiplier;
         }
+        //else if (collision.CompareTag("PlayerBullet"))
+        //{
+        //    m_hp -= collision.GetComponent<PlayerBullet>().damage;
+        //    PoolManager.instance.PushToPool(collision.gameObject);
+
+        //    if (m_hp <= 0)
+        //    {
+        //        PoolManager.instance.PushToPool(gameObject);
+        //    }
+        //}
     }
 
     void OnTriggerExit2D(Collider2D collision)

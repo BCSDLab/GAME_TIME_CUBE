@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public abstract class BulletPattern : MonoBehaviour
 {
     public GameObject bullet;
-    public AudioClip audioclip;
-
-    [Tooltip("미지정 시 해당 오브젝트 위치")]
     [SerializeField]
+    [Tooltip("미지정 시 해당 오브젝트 위치")]
     protected Transform m_bulletSpawn = null;
     [SerializeField]
     protected float m_startDelay;
+
+    protected AudioSource m_audioSource;
+
+    void Start()
+    {
+        m_audioSource = GetComponent<AudioSource>();
+    }
 
     public void StartPattern()
     {

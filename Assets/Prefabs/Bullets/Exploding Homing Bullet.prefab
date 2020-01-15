@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8760339693924824442}
   - component: {fileID: 8760339693924824441}
-  - component: {fileID: 7449139287740821109}
   - component: {fileID: 2344794077409281681}
   - component: {fileID: 8760339693924824440}
   - component: {fileID: 369272306902876927}
   - component: {fileID: 8454583245673594259}
+  - component: {fileID: 7449139287740821109}
   - component: {fileID: 7929180320099664006}
   m_Layer: 0
-  m_Name: Cracking Homing Bullet
+  m_Name: Exploding Homing Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,23 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7449139287740821109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8760339693924824446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8334bcbe7c660e4db823228d9fc3e20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 5
-  destroyedDist: 5
-  m_alpha: 200
-  m_hp: 70
 --- !u!95 &2344794077409281681
 Animator:
   serializedVersion: 3
@@ -255,6 +238,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7449139287740821109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760339693924824446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8334bcbe7c660e4db823228d9fc3e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 5
+  m_explodeDistance: 5
+  m_alpha: 200
 --- !u!114 &7929180320099664006
 MonoBehaviour:
   m_ObjectHideFlags: 0

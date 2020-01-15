@@ -16,7 +16,7 @@ public class DirectionalNormal : BulletPattern
         {
             for (int i = 0; i < count; i++)
             {
-                GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
+                m_audioSource.Play();
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                 bulletInst.transform.position = m_bulletSpawn.position;
                 bulletInst.SetActive(true);

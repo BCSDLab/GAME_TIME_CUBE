@@ -8,28 +8,29 @@ public class Vertical : BulletPattern
     public float speed = 5f;
     public float inDelay = 0.1f;
     public float outDelay = 1f;
-
     [SerializeField]
-    private Transform[] m_bulletSpawnArr;
+    private Vector2[] m_spawnPositions = null;
 
     protected override IEnumerator Fire()
     {
         yield return new WaitForSeconds(m_startDelay);
+
         while (true)
         {
-            foreach (Transform m_bulletSpawnPos in m_bulletSpawnArr)
+            foreach (Vector2 m_bulletSpawnPos in m_spawnPositions)
             {
-                GetComponentInParent<AudioSource>().PlayOneShot(audioclip);
+                m_audioSource.Play();
+
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = m_bulletSpawnPos.position;
+                bulletInst.transform.position = m_bulletSpawnPos;
                 bulletInst.SetActive(true);
-                if (m_bulletSpawnPos.position.y < 0)
+
+                if (m_bulletSpawnPos.y < 0)
                     bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, speed);
                 else
                     bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -speed);
 
-                yield return new WaitForSeconds(inDelay);
-
+                if (inDelay > 0f) yield return new WaitForSeconds(inDelay);
             }
 
             yield return new WaitForSeconds(outDelay);
