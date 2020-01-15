@@ -126,12 +126,14 @@ public class BossController : EnemyController
 
             case 2:
                 m_homing.StopPattern();
+                GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
                 m_directionalAimed.StartPattern();
                 break;
 
             case 3:
                 m_directionalAimed.StopPattern();
+                GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed * 1.2f, "easetype", iTween.EaseType.linear,
                     "looptype", iTween.LoopType.loop, "movetopath", false));
                 m_directionalAimedRandom.StartPattern();
@@ -139,12 +141,14 @@ public class BossController : EnemyController
 
             case 4:
                 m_directionalAimedRandom.StopPattern();
+                GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
                 m_radialMulti.StartPattern();
                 break;
 
             case 5:
                 m_radialMulti.StopPattern();
+                GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[1]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
                     "looptype", iTween.LoopType.loop, "movetopath", false));
                 m_roundGuided.StartPattern();
@@ -152,6 +156,7 @@ public class BossController : EnemyController
 
             case 6:
                 m_roundGuided.StopPattern();
+                GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
                 m_spiralMulti.StartPattern();
                 break;
