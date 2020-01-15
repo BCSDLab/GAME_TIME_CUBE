@@ -16,6 +16,9 @@ public class StageChanger : MonoBehaviour
     [HideInInspector]
     public float savedTotalScore = 0;
 
+    [Header("씬")]
+    public string nextStageName = null;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -36,28 +39,39 @@ public class StageChanger : MonoBehaviour
     private void LoadNextStage()
     {
         PlayerController.instance.moveNextStage = false;
-        string currStageName = SceneManager.GetActiveScene().name;
 
-        //Debug.Log(currStageName);
-
-        if (currStageName.StartsWith("Stage"))
+        SceneManager.LoadScene(nextStageName);
+    }
+    private void SetNextStage(string sceneName = null)
+    {
+        if (sceneName == null)
         {
-            SaveData();
+            string currStageName = SceneManager.GetActiveScene().name;
 
-            int currStage = int.Parse(currStageName.Substring(5));
-            SceneManager.LoadScene("Stage" + ++currStage);
+            //Debug.Log(currStageName);
+
+            if (currStageName.StartsWith("Stage"))
+            {
+                int currStage = int.Parse(currStageName.Substring(5));
+                nextStageName = "Stage" + ++currStage;
+            }
+            else
+            {
+                nextStageName = "Menu";
+            }
         }
         else
         {
-            SceneManager.LoadScene("Menu");
+            nextStageName = sceneName;
         }
     }
 
-    private void SaveData()
+    public void SaveData()
     {
         savedSpellEnergy = GameManager.instance.spellEnergy;
         savedPlayerPower = GameManager.instance.playerPower;
         savedPlayerHP = GameManager.instance.GetPlayerHP();
         savedTotalScore += GameManager.instance.GetScore();
+        SetNextStage();
     }
 }

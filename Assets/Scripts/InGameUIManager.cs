@@ -212,7 +212,9 @@ public class InGameUIManager : MonoBehaviour
 
             paramIdx = 0;
             continueText.text = "CONTINUE >>>";
+
             stageChanger.GetComponent<BoxCollider2D>().enabled = true;
+            stageChanger.GetComponent<StageChanger>().SaveData();
         }
     }
 
