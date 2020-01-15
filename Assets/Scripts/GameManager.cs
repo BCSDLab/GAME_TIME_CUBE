@@ -251,6 +251,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void DestroyAllZacos()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            EnemyController enemyController = enemy.GetComponent<EnemyController>();
+            if (enemyController != null && enemy.name != "Boss")
+            {
+                Destroy(enemy);
+                enemyController.Die();
+            }
+        }
+    }
+
     public void BossDefeated()
     {
         InGameUIManager.instance.DisplayBossHPSlider(display: false);

@@ -8,6 +8,9 @@ public abstract class ZacoController : EnemyController
     [SerializeField]
     protected ItemList m_dropItemList = null;
 
+    [SerializeField]
+    protected bool m_isZacoInvincible = false;
+
     private AudioSource[] m_audioSources;
 
     void Awake()
@@ -19,7 +22,8 @@ public abstract class ZacoController : EnemyController
 
     void OnBecameVisible()
     {
-        m_isInvincible = false;
+        if(!m_isZacoInvincible)
+            m_isInvincible = false;
     }
 
     public override void Damage(int damage)
