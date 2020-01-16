@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         m_rigidbody.velocity = velocity;
     }
 
-    public void MoveOut() // 화면 밖으로 탈출
+    void MoveOut() // 화면 밖으로 탈출
     {
         Vector2 velocity = m_rigidbody.velocity;
         velocity.x = 8f;

@@ -143,6 +143,15 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
+    private void InitClearPanel()
+    {
+        killCountText.text = "0";
+        hitCountText.text = "0";
+        stageScoreText.text = "0";
+        totalScoreText.text = "0";
+        continueText.text = "";
+}
+
     IEnumerator UpdateClearPanel()
     {
         float delta = 0f;
@@ -185,6 +194,7 @@ public class InGameUIManager : MonoBehaviour
                 while (delta < 1f)
                 {
                     delta += 0.1f;
+
                     m_score = Mathf.Lerp(0, (float)paramArr[paramIdx], delta);
                     totalScoreText.text = ((int)m_score).ToString();
 
@@ -202,7 +212,7 @@ public class InGameUIManager : MonoBehaviour
     {
         StopCoroutine("UpdateClearPanel");
 
-        if (paramIdx < 4)
+        if (paramIdx < paramArr.Length)
         {
             StartCoroutine("UpdateClearPanel");
         }
@@ -210,8 +220,8 @@ public class InGameUIManager : MonoBehaviour
         {
             CancelInvoke("CallUpdateClearPanel");
 
-            paramIdx = 0;
             continueText.text = "CONTINUE >>>";
+            paramIdx = 0;
 
             stageChanger.GetComponent<BoxCollider2D>().enabled = true;
             stageChanger.GetComponent<StageChanger>().SaveData();
@@ -294,8 +304,10 @@ public class InGameUIManager : MonoBehaviour
         m_audioSource.clip = scoreSound;
         m_audioSource.loop = false;
 
-        stageClearPanel.SetActive(true);
         scoreText.gameObject.SetActive(false);
+
+        InitClearPanel();
+        stageClearPanel.SetActive(true);
 
         InvokeRepeating("CallUpdateClearPanel", 0, 1.5f);
     }

@@ -6086,7 +6086,6 @@ MonoBehaviour:
   homingBullet: {fileID: 6925999261059133172, guid: 04a0df9c960dcef4a96258924e786953,
     type: 3}
   attackDelay: 0.1
-  moveNextStage: 0
 --- !u!50 &280776652
 Rigidbody2D:
   serializedVersion: 4
@@ -15287,7 +15286,6 @@ MonoBehaviour:
   totalScoreText: {fileID: 66208672703989372}
   continueText: {fileID: 66208671763512981}
   scoreSound: {fileID: 8300000, guid: dde4bfce9edb42847a2942cc8907e31b, type: 3}
-  stageChanger: {fileID: 0}
 --- !u!224 &66208671289413016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15762,7 +15760,7 @@ GameObject:
   - component: {fileID: 66208671763512970}
   - component: {fileID: 66208671763512981}
   m_Layer: 5
-  m_Name: More Text
+  m_Name: Continue Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
