@@ -28,9 +28,10 @@ public class StageChanger : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerController.instance.moveNextStage = true;
             InGameUIManager.instance.stageClearPanel.SetActive(false);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+            GameManager.instance.isLoading = true;
 
             Invoke("LoadNextStage", 2f);
         }
@@ -38,7 +39,7 @@ public class StageChanger : MonoBehaviour
 
     private void LoadNextStage()
     {
-        PlayerController.instance.moveNextStage = false;
+        GameManager.instance.isLoading = false;
 
         SceneManager.LoadScene(nextStageName);
     }

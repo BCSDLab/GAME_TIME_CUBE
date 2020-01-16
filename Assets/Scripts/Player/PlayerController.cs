@@ -28,9 +28,6 @@ public class PlayerController : MonoBehaviour
     private AudioSource[] m_audioSources;
     private Animator m_spriteAnimator;
 
-    [HideInInspector]
-    public bool moveNextStage = false;
-
     #region INPUTS
     private const string AXIS_HORIZONTAL = "Horizontal";
     private const string AXIS_VERTICAL = "Vertical";
@@ -109,7 +106,7 @@ public class PlayerController : MonoBehaviour
         //    return;
         //}
 
-        if (moveNextStage) MoveOut();
+        if (m_gameManager.isLoading) MoveOut();
         else Move();
     }
 
@@ -136,7 +133,7 @@ public class PlayerController : MonoBehaviour
         m_rigidbody.velocity = velocity;
     }
 
-    void MoveOut() // 화면 밖으로 탈출
+    public void MoveOut() // 화면 밖으로 탈출
     {
         Vector2 velocity = m_rigidbody.velocity;
         velocity.x = 8f;

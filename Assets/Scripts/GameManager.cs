@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;  // 일시정지 (P)
     [System.NonSerialized]
     public bool isDialogueOn = false;  // 대화
+    [System.NonSerialized]
+    public bool isLoading = false;  // 스테이지 로딩
 
     private const string AXIS_PAUSE = "Pause"; 
     private bool m_pauseToggled = false;
