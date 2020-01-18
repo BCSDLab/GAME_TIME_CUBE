@@ -20,6 +20,10 @@ public class StageChanger : MonoBehaviour
 
     [Header("씬")]
     public string nextStageName = null;
+    [Header("보조무기")]
+    public GameObject subWeaponItem = null;
+    public GameObject Orbitor = null;
+
 
     private void Awake()
     {

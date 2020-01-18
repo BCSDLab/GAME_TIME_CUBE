@@ -19,7 +19,7 @@ public class SubWeaponItem : Item
         }
     }
 
-    void InitOrbitorPosition()
+    public void InitOrbitorPosition()
     {
         Orbitor[] orbitors = FindObjectsOfType(typeof(Orbitor)) as Orbitor[];
         float dist = 360 / orbitors.Length;

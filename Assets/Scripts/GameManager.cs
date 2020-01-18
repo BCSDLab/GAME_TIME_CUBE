@@ -86,6 +86,15 @@ public class GameManager : MonoBehaviour
         m_playerHP = sc.savedPlayerHP;
 
         subWeaponNum = sc.savedSubWeaponNum;
+        if (subWeaponNum != 0)
+        {
+            Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
+            for (int i = 1; i <= subWeaponNum; i++)
+            {
+                Instantiate(sc.Orbitor, playerTR.position, Quaternion.identity).name = sc.Orbitor.name + "_" + i;
+            }
+            sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
+        }
 
         m_totalScore = sc.savedTotalScore;
     }

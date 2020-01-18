@@ -17497,6 +17497,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 274656497803830181, guid: 674580ce3928ce143beb796dccde811e,
+        type: 3}
+      propertyPath: subWeaponItem
+      value: 
+      objectReference: {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+    - target: {fileID: 274656497803830181, guid: 674580ce3928ce143beb796dccde811e,
+        type: 3}
+      propertyPath: Orbitor
+      value: 
+      objectReference: {fileID: 7789033408323666331, guid: 0f5a079cd9c4a7f44838ee0cbf441064,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674580ce3928ce143beb796dccde811e, type: 3}
 --- !u!224 &370482465060085362
