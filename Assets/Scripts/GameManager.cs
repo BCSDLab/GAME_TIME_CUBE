@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [System.NonSerialized]
     public int playerPower = 0;
     [System.NonSerialized]
+    public int subWeaponNum = 0;
+    [System.NonSerialized]
     public bool isPlayerAttacking = false;
     [System.NonSerialized]
     public bool isPlayerSpelling = false;
@@ -82,6 +84,8 @@ public class GameManager : MonoBehaviour
         spellEnergy = sc.savedSpellEnergy;
         playerPower = sc.savedPlayerPower;
         m_playerHP = sc.savedPlayerHP;
+
+        subWeaponNum = sc.savedSubWeaponNum;
 
         m_totalScore = sc.savedTotalScore;
     }

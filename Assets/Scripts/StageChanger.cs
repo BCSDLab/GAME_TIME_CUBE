@@ -15,6 +15,8 @@ public class StageChanger : MonoBehaviour
     public int savedPlayerHP = 5;
     [HideInInspector]
     public float savedTotalScore = 0;
+    [HideInInspector]
+    public int savedSubWeaponNum = 0;
 
     [Header("씬")]
     public string nextStageName = null;
@@ -72,7 +74,11 @@ public class StageChanger : MonoBehaviour
         savedSpellEnergy = GameManager.instance.spellEnergy;
         savedPlayerPower = GameManager.instance.playerPower;
         savedPlayerHP = GameManager.instance.GetPlayerHP();
+
+        savedSubWeaponNum = GameManager.instance.subWeaponNum;
+
         savedTotalScore += GameManager.instance.GetScore();
+
         SetNextStage();
     }
 }
