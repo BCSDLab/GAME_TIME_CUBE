@@ -105,7 +105,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -4911,9 +4911,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spawnPos: {fileID: 0}
+  m_startDelay: 0
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
-  startDelay: 0
   count: 8
   speed: 6
 --- !u!114 &3421259152459687949
@@ -4928,9 +4928,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32a465fcab05014c834f38b129899c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spawnPos: {fileID: 0}
+  m_startDelay: 0
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
-  startDelay: 3
   target: {fileID: 0}
   count: 8
   speed: 5
@@ -4951,7 +4951,10 @@ MonoBehaviour:
   pathName: 
   speed: 5
   m_hp: 200
-  isDestroyed: 1
+  m_destroyOnArrival: 1
+  m_dropItemList:
+    items: []
+    counts: 
 --- !u!82 &1331919750288802457
 AudioSource:
   m_ObjectHideFlags: 0

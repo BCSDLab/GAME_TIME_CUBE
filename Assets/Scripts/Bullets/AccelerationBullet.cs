@@ -24,7 +24,6 @@ public class AccelerationBullet : Bullet
 
     void FixedUpdate()
     {
-        Debug.Log(m_rigidbody.velocity.magnitude);
         if (m_useMaxSpeed && m_rigidbody.velocity.magnitude >= m_maxSpeed) return;
         if (m_useMinSpeed && m_rigidbody.velocity.magnitude <= m_minSpeed) return;
         Vector2 newVelocity = m_rigidbody.velocity * (m_accelRate * Time.deltaTime);

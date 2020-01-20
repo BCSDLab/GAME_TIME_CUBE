@@ -283,7 +283,7 @@ public class InGameUIManager : MonoBehaviour
     {
         m_isFilling = true;
 
-        int fill = m_bossHP / 200;
+        int fill = m_bossHP / 100;
         while (bossHPSlider.value < m_bossHP)
         {
             bossHPSlider.value += fill;

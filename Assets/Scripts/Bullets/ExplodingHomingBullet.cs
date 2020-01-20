@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ExplodingHomingBullet : Bullet
 {
-    public GameObject target;
+    public GameObject target = null;
     public float speed = 5f;
     [SerializeField]
-    private float m_explodeDistance = 5f;
+    private float m_explodeDistance = 3f;
     [SerializeField]
     private float m_alpha = 200f;
     //[SerializeField]
@@ -40,7 +40,7 @@ public class ExplodingHomingBullet : Bullet
 
         if (Vector2.Distance(transform.position, target.transform.position) < m_explodeDistance)
         {
-            StartCoroutine("BulletDestroy");
+            StartCoroutine("Explode");
         }
     }
 
@@ -70,10 +70,10 @@ public class ExplodingHomingBullet : Bullet
         }
     }
 
-    IEnumerator BulletDestroy()
+    IEnumerator Explode()
     {
         m_bulletPattern.StartPattern();
         yield return new WaitForSeconds(0.01f);
-        PoolManager.instance.PushToPool(this.gameObject);
+        PoolManager.instance.PushToPool(gameObject);
     }
 }

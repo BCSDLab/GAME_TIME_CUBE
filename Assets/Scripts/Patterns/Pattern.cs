@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public abstract class BulletPattern : MonoBehaviour
+public abstract class Pattern : MonoBehaviour
 {
-    public GameObject bullet;
     [SerializeField]
     [Tooltip("미지정 시 해당 오브젝트 위치")]
-    protected Transform m_bulletSpawn = null;
+    protected Transform m_spawnPos = null;
     [SerializeField]
     protected float m_startDelay;
 
@@ -21,19 +19,18 @@ public abstract class BulletPattern : MonoBehaviour
 
     public void StartPattern()
     {
-        if (m_bulletSpawn == null)
+        if (m_spawnPos == null)
         {
-            m_bulletSpawn = transform;
+            m_spawnPos = transform;
         }
 
         StartCoroutine("Fire");
     }
 
-    public void StopPattern()
+    public virtual void StopPattern()
     {
         StopCoroutine("Fire");
     }
 
     protected abstract IEnumerator Fire();
-
 }

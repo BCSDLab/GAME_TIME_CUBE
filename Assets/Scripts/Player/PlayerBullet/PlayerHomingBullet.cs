@@ -48,7 +48,7 @@ public class PlayerHomingBullet : PlayerBullet
     {
         if (collision.CompareTag("Enemy"))
         {
-            EnemyController enemyController = collision.GetComponent<EnemyController>();
+            Enemy enemyController = collision.GetComponent<Enemy>();
             if (!enemyController.IsInvincible())
             {
                 enemyController.Damage(damage);

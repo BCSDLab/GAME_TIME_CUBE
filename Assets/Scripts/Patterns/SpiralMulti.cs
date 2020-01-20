@@ -31,7 +31,7 @@ public class SpiralMulti : BulletPattern
             for (int i = 0; i < count; i++)
             {
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = m_bulletSpawn.position;
+                bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.SetActive(true);
 
                 float a = 2f * Mathf.PI * i / count;

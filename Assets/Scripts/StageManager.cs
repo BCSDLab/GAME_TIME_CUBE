@@ -70,7 +70,7 @@ public class StageManager : MonoBehaviour
             GameObject mobInst = Instantiate(mobInfo.mob);
 
             if (mobInfo.pathName.Length > 0)
-                mobInst.GetComponent<EnemyController>().pathName = mobInfo.pathName;
+                mobInst.GetComponent<Enemy>().pathName = mobInfo.pathName;
 
             yield return new WaitForSeconds(mobInfo.repeatDelay);
         }

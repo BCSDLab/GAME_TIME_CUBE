@@ -12,7 +12,7 @@ public class PlayerBullet : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            EnemyController enemyController = collision.GetComponent<EnemyController>();
+            Enemy enemyController = collision.GetComponent<Enemy>();
             if (!enemyController.IsInvincible())
             {
                 enemyController.Damage(damage);
