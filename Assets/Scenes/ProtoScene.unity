@@ -5944,7 +5944,7 @@ GameObject:
   - component: {fileID: 280776650}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8309,7 +8309,7 @@ MonoBehaviour:
     engageTime: 23
     repeatCount: 3
     repeatDelay: 2
-  m_bossEngageTime: 30
+  m_bossEngageTime: 1
   m_boss: {fileID: 2131298837335977617}
   m_bossTracker: {fileID: 4125893928747804409}
 --- !u!4 &1189885912 stripped
@@ -14346,9 +14346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c62600e8d41e7d458c248d4a3e35156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 10
   speed: 5
   inDelay: 0.2
@@ -14365,9 +14365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c78035e0a4112f44ba97e4526ea35c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
   count: 1
   delay: 0.5
 --- !u!1 &1630448853
@@ -18056,9 +18056,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e26b5d1969335f488e81eddb5ff7b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
   count: 5
   speed: 5
@@ -18076,9 +18076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bbd56e350c66a46b3d8b887dda24f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 5
   speed: 6
   inDelay: 0.1
@@ -18111,9 +18111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ac817435f31e4799c3f256f655386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 5
   speed: 5
   inDelay: 0.1
@@ -18152,7 +18152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 100
+  m_hp: 1000
   m_destroyOnArrival: 0
   m_enterPos: {fileID: 2079523269}
   m_pathNames:
@@ -18265,9 +18265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16979c31dd927fa4ca108f9ce0de2b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
   count: 10
   minSpeed: 4
@@ -18287,9 +18287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32a465fcab05014c834f38b129899c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   count: 10
   speed: 5
@@ -18306,7 +18306,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243836163948178342, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -19126,7 +19126,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -24161,9 +24161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c62600e8d41e7d458c248d4a3e35156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 10
   speed: 6
   inDelay: 0.2
@@ -24514,7 +24514,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0

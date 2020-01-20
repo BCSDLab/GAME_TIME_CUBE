@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 8760339693924824441}
   - component: {fileID: 2344794077409281681}
   - component: {fileID: 8760339693924824440}
-  - component: {fileID: 369272306902876927}
+  - component: {fileID: 3678523195342357770}
   - component: {fileID: 7920666757558760578}
   - component: {fileID: 4277351289230969200}
   - component: {fileID: 8454583245673594259}
   m_Layer: 0
-  m_Name: Cracking Bullet
+  m_Name: N-Way Cracking Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 1879705621
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0f188040e62ce8d408e67f8ede0da8bf, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 566466c3883597c4bbcee1bbc91a6e0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,8 +125,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &369272306902876927
-CircleCollider2D:
+--- !u!60 &3678523195342357770
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,8 +139,33 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.18
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.05, y: 1.05}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.18, y: 0.39}
+      - {x: 0, y: 0.3}
+      - {x: 0.18, y: 0.39}
+      - {x: 0.18, y: 0.18}
+      - {x: 0.39, y: 0.18}
+      - {x: 0.3, y: 0}
+      - {x: 0.39, y: -0.18}
+      - {x: 0.18, y: -0.18}
+      - {x: 0.18, y: -0.39}
+      - {x: 0, y: -0.3}
+      - {x: -0.18, y: -0.39}
+      - {x: -0.18, y: -0.18}
+      - {x: -0.39, y: -0.18}
+      - {x: -0.3, y: 0}
+      - {x: -0.39, y: 0.18}
+      - {x: -0.18, y: 0.18}
 --- !u!114 &7920666757558760578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,12 +179,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 0}
-  startDelay: 0
+  m_bulletSpawn: {fileID: 0}
+  m_startDelay: 0
   target: {fileID: 0}
   count: 4
-  Speed: 4
-  outDelay: 0.8
+  speed: 3
+  delay: 0.5
   angleRange: 0.3
 --- !u!114 &4277351289230969200
 MonoBehaviour:
@@ -173,8 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c769971709509b74fbbbe33c6d45faa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  m_endTime: 2
+  m_crackTime: 3
 --- !u!82 &8454583245673594259
 AudioSource:
   m_ObjectHideFlags: 0

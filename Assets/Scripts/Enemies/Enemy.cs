@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
-public abstract class EnemyController : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     [Tooltip("(필요 시) 이동 경로")]
     public string pathName = "";

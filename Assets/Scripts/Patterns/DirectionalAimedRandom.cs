@@ -28,7 +28,7 @@ public class DirectionalAimedRandom : AimedBulletPattern
         yield return new WaitForSeconds(m_startDelay);
         while (true)
         {
-            Vector2 direction = target.position - m_bulletSpawn.position;
+            Vector2 direction = target.position - m_spawnPos.position;
             float atan = Mathf.Atan2(direction.y, direction.x);
 
             for (int i = 0; i < count; i++)
@@ -39,7 +39,7 @@ public class DirectionalAimedRandom : AimedBulletPattern
                 m_speed = Random.Range(minSpeed, maxSpeed);
 
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                bulletInst.transform.position = m_bulletSpawn.position;
+                bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.SetActive(true);
 
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(m_speed * Mathf.Cos(atan + m_angleRange), m_speed * Mathf.Sin(atan + m_angleRange));

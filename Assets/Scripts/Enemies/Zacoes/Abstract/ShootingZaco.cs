@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public abstract class ShootingZaco : ZacoController
+public abstract class ShootingZaco : Zaco
 {
     protected BulletPattern m_bulletPattern = null;
 

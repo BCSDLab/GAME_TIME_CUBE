@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(AudioSource))]
-public abstract class ZacoController : EnemyController
+public abstract class Zaco : Enemy
 {
     [SerializeField]
     protected ItemList m_dropItemList = null;

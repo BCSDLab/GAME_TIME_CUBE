@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8760339693924824442}
   - component: {fileID: 8760339693924824441}
-  - component: {fileID: 2344794077409281681}
   - component: {fileID: 8760339693924824440}
-  - component: {fileID: 369272306902876927}
+  - component: {fileID: 4061075031457592716}
   - component: {fileID: 8454583245673594259}
   - component: {fileID: 7449139287740821109}
   - component: {fileID: 7929180320099664006}
@@ -74,9 +73,9 @@ SpriteRenderer:
   m_SortingLayerID: 1879705621
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0f188040e62ce8d408e67f8ede0da8bf, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 9d90fdf5cfe6b2241b45e8505bcb01ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}
@@ -85,25 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2344794077409281681
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8760339693924824446}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f9e57fe43306daa48b34505c3de1b066, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &8760339693924824440
 Rigidbody2D:
   serializedVersion: 4
@@ -125,8 +105,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &369272306902876927
-CircleCollider2D:
+--- !u!60 &4061075031457592716
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,8 +119,23 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.18
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.91, y: 0.42}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.10443717, y: 0.14005727}
+      - {x: -0.32036507, y: 0.14268245}
+      - {x: -0.31518698, y: -0.14009343}
+      - {x: 0.10221064, y: -0.13632254}
+      - {x: 0.3177758, y: -0.069286995}
+      - {x: 0.3151089, y: 0.06668485}
 --- !u!82 &8454583245673594259
 AudioSource:
   m_ObjectHideFlags: 0
@@ -252,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 5
-  m_explodeDistance: 5
+  m_explodeDistance: 3
   m_alpha: 200
 --- !u!114 &7929180320099664006
 MonoBehaviour:
@@ -267,10 +262,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
-  audioclip: {fileID: 0}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  count: 20
-  speed: 2
+  count: 10
+  speed: 1
   inDelay: 0.2
-  isCountChange: 0
+  m_isCountChange: 0
