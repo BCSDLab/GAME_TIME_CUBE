@@ -43,13 +43,7 @@ public class StageManager : MonoBehaviour
 
     void Update()
     {
-        if (m_hasBossSpawned)
-        {
-            //Debug.Log(m_bossLimitTime);
-            //m_bossLimitTime -= Time.deltaTime;
-            //InGameUIManager.instance.bossTimer.text = Mathf.Round(m_bossLimitTime).ToString();
-            return;
-        }
+        if (m_hasBossSpawned) return;
 
         if (Time.timeSinceLevelLoad >= m_bossEngageTime)
         {

@@ -8139,7 +8139,7 @@ MonoBehaviour:
   m_bossEngageTime: 30
   m_boss: {fileID: 2131298837335977617}
   m_bossTracker: {fileID: 4125893928747804409}
-  m_bossLimitTime: 20
+  m_bossLimitTime: 60
 --- !u!4 &1189885912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1796773464430945968, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2,

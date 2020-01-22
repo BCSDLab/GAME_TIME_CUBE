@@ -144,6 +144,7 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
+    #region Clear Panel
     private void InitClearPanel()
     {
         killCountText.text = "0";
@@ -228,6 +229,7 @@ public class InGameUIManager : MonoBehaviour
             stageChanger.GetComponent<StageChanger>().SaveData();
         }
     }
+    #endregion
 
     #region BOSS
     public void DisplayBossHPSlider(bool display = true, int hp = 0)
@@ -287,35 +289,7 @@ public class InGameUIManager : MonoBehaviour
     }
     #endregion
 
-    public void PauseGame(bool pause)
-    {
-        pausePanel.SetActive(pause);
-    }
-
-    public void GameOver()
-    {
-        gameOverPanel.SetActive(true);
-    }
-
-    public void ClearStage(int killCount, int hitCount, float stageScore, float totalScore)
-    {
-        //StopCoroutine("UpdateBossTimer");
-        bossTimerText.gameObject.SetActive(false);
-
-        paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
-
-        m_audioSource = gameObject.AddComponent<AudioSource>();
-        m_audioSource.clip = scoreSound;
-        m_audioSource.loop = false;
-
-        scoreText.gameObject.SetActive(false);
-
-        InitClearPanel();
-        stageClearPanel.SetActive(true);
-
-        InvokeRepeating("CallUpdateClearPanel", 0, 1.5f);
-    }
-
+    #region BossTimer
     public void InitBossTimer(int limitTime = 60)
     {
         bossTimerText.text = limitTime.ToString();
@@ -343,5 +317,34 @@ public class InGameUIManager : MonoBehaviour
         {
             GameManager.instance.GameOver();
         }
+    }
+    #endregion
+
+    public void PauseGame(bool pause)
+    {
+        pausePanel.SetActive(pause);
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+    }
+
+    public void ClearStage(int killCount, int hitCount, float stageScore, float totalScore)
+    {
+        bossTimerText.gameObject.SetActive(false);
+
+        paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
+
+        m_audioSource = gameObject.AddComponent<AudioSource>();
+        m_audioSource.clip = scoreSound;
+        m_audioSource.loop = false;
+
+        scoreText.gameObject.SetActive(false);
+
+        InitClearPanel();
+        stageClearPanel.SetActive(true);
+
+        InvokeRepeating("CallUpdateClearPanel", 0, 1.5f);
     }
 }
