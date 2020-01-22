@@ -4911,9 +4911,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 8
   speed: 6
 --- !u!114 &3298016160526166707
@@ -4928,13 +4928,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e26b5d1969335f488e81eddb5ff7b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
   target: {fileID: 0}
   count: 5
   speed: 5
-  inDelay: 0.3
+  inDelay: 0.1
   outDelay: 1
 --- !u!114 &172328664871883220
 MonoBehaviour:

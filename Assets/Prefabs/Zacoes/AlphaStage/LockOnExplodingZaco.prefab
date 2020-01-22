@@ -4769,12 +4769,12 @@ GameObject:
   - component: {fileID: 6191031396347386040}
   - component: {fileID: 692023376264072599}
   - component: {fileID: 7138837934209093429}
-  - component: {fileID: 5885918950290949662}
   - component: {fileID: 8659519982399665405}
   - component: {fileID: 1919022456}
   - component: {fileID: 82810509545981166}
+  - component: {fileID: 5341599107489449912}
   m_Layer: 0
-  m_Name: HomingZaco_Left
+  m_Name: LockOnExplodingZaco
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4788,7 +4788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466608742450977111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 0, z: 0}
+  m_LocalPosition: {x: 12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3635475212163183575}
@@ -4899,23 +4899,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
---- !u!114 &5885918950290949662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7466608742450977111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spawnPos: {fileID: 0}
-  m_startDelay: 0
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  count: 8
-  speed: 6
 --- !u!114 &8659519982399665405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4930,7 +4913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
+  bullet: {fileID: 8760339693924824446, guid: f4406a2f56003414fae1496b67105500, type: 3}
   count: 1
   delay: 3
 --- !u!114 &1919022456
@@ -5050,3 +5033,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5341599107489449912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466608742450977111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spawnPos: {fileID: 0}
+  m_startDelay: 0
+  bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
+  count: 10
+  speed: 2

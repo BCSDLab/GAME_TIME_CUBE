@@ -5915,7 +5915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Rigth1
+  pathName: Right1
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: 10, y: 3, z: 0}
@@ -8350,7 +8350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Rigth2
+  pathName: Right2
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: 10, y: 0, z: 0}
@@ -8867,179 +8867,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mobInfoes:
-  - mob: {fileID: 7473877153406667978, guid: 53fcb0b08a4f26447b06165d5d68506d, type: 3}
-    pathName: B1
-    engageTime: 2
-    repeatCount: 3
-    repeatDelay: 2
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 53fcb0b08a4f26447b06165d5d68506d, type: 3}
-    pathName: B2
-    engageTime: 3
-    repeatCount: 3
-    repeatDelay: 2
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 9264918247df4214fbd49810c9409d62, type: 3}
-    pathName: A1
-    engageTime: 9
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 9264918247df4214fbd49810c9409d62, type: 3}
-    pathName: A2
-    engageTime: 9
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: a09e9985551458a4ba752e94a1b1bf0f, type: 3}
-    pathName: B3
-    engageTime: 19
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: a09e9985551458a4ba752e94a1b1bf0f, type: 3}
-    pathName: B4
-    engageTime: 20
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: fd9d32c6e18fd0a43997c47936c3686d, type: 3}
-    pathName: B1
-    engageTime: 29
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: fd9d32c6e18fd0a43997c47936c3686d, type: 3}
-    pathName: B2
-    engageTime: 30
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: e45f3773a30c1e443a44021c35b8dc2d, type: 3}
     pathName: Right1
-    engageTime: 39
+    engageTime: 1
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: e45f3773a30c1e443a44021c35b8dc2d, type: 3}
     pathName: Right3
-    engageTime: 39
+    engageTime: 1
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: e8ae1f05ddc14144d8a33ce5b3746f5c, type: 3}
+    pathName: Center
+    engageTime: 1
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7466608742450977111, guid: 2a72c144a280e5b4185030f895294b1c, type: 3}
+    pathName: Sky
+    engageTime: 14
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: 2a72c144a280e5b4185030f895294b1c, type: 3}
+    pathName: Ground
+    engageTime: 14
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
+    pathName: Right2
+    engageTime: 23
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
+    pathName: Right1
+    engageTime: 24
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
+    pathName: Right3
+    engageTime: 24
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
+    pathName: Down
+    engageTime: 28
+    repeatCount: 4
+    repeatDelay: 2
     engagePhase: 0
   - mob: {fileID: 0}
     pathName: 
@@ -9332,7 +9212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: Rigth3
+  pathName: Right3
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: 10, y: -3, z: 0}
@@ -15170,9 +15050,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c62600e8d41e7d458c248d4a3e35156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 10
   speed: 5
   inDelay: 0.2
@@ -15189,9 +15069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c78035e0a4112f44ba97e4526ea35c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
   count: 1
   delay: 0.5
 --- !u!1 &1630448853
@@ -18638,9 +18518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e26b5d1969335f488e81eddb5ff7b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
   count: 5
   speed: 5
@@ -18658,9 +18538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bbd56e350c66a46b3d8b887dda24f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 5
   speed: 6
   inDelay: 0.1
@@ -18693,9 +18573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ac817435f31e4799c3f256f655386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 5
   speed: 5
   inDelay: 0.1
@@ -18848,9 +18728,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16979c31dd927fa4ca108f9ce0de2b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
   count: 10
   minSpeed: 4
@@ -18870,9 +18750,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32a465fcab05014c834f38b129899c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   count: 10
   speed: 5
@@ -19213,6 +19093,17 @@ MonoBehaviour:
     m_poolCount: 50
     m_pooledItems: []
   - prefab: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: f4406a2f56003414fae1496b67105500,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
+    m_poolCount: 100
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: e6ba91f4daaf30d4ca075823bfdb7cc8,
       type: 3}
     m_poolCount: 50
     m_pooledItems: []
@@ -24744,9 +24635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c62600e8d41e7d458c248d4a3e35156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 10
   speed: 6
   inDelay: 0.2

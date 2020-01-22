@@ -178,14 +178,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2915d855cb8593347bf57e247bb34766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  m_bulletSpawn: {fileID: 0}
+  m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
-  count: 4
+  count: 3
   speed: 3
   delay: 0.5
-  angleRange: 0.3
+  angleRange: 40
 --- !u!114 &4277351289230969200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c769971709509b74fbbbe33c6d45faa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_crackTime: 3
+  m_crackTime: 2
 --- !u!82 &8454583245673594259
 AudioSource:
   m_ObjectHideFlags: 0

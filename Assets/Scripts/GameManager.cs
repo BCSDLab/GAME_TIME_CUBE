@@ -257,7 +257,7 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            EnemyController enemyController = enemy.GetComponent<EnemyController>();
+            Enemy enemyController = enemy.GetComponent<Enemy>();
             if (enemyController != null && enemy.name != "Boss")
             {
                 Destroy(enemy);
