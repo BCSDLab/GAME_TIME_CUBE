@@ -81,6 +81,8 @@ public class BossController : EnemyController
 
                 BGMManager.instance.Play(1);
                 StartPhase();
+
+                InGameUIManager.instance.EnableBossTimer();
             }
         }
     }
@@ -187,6 +189,7 @@ public class BossController : EnemyController
 
         StopAllPatterns();
         GameManager.instance.BossDefeated();
+        InGameUIManager.instance.DisableBossTimer();
 
         StartCoroutine("Blow");
     }

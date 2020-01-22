@@ -18,12 +18,14 @@ public class StageManager : MonoBehaviour
     [SerializeField]
     private GameObject m_bossTracker = null;
 
+    [SerializeField]
+    [Header("보스 제한 시간")]
+    private int m_bossLimitTime = 0; // 보스 제한 시간
 
     private bool m_isSpawning = true;
     private int m_indexToSpawn = 0;
     private bool m_hasBossSpawned = false;
 
-    private int m_bossLimitTime = 20; // 보스 제한 시간
 
     void Awake()
     {

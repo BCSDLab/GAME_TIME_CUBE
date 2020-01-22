@@ -299,7 +299,7 @@ public class InGameUIManager : MonoBehaviour
 
     public void ClearStage(int killCount, int hitCount, float stageScore, float totalScore)
     {
-        StopCoroutine("UpdateBossTimer");
+        //StopCoroutine("UpdateBossTimer");
         bossTimerText.gameObject.SetActive(false);
 
         paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
@@ -320,8 +320,14 @@ public class InGameUIManager : MonoBehaviour
     {
         bossTimerText.text = limitTime.ToString();
         bossTimerText.gameObject.SetActive(true);
-
+    }
+    public void EnableBossTimer()
+    {
         StartCoroutine("UpdateBossTimer");
+    }
+    public void DisableBossTimer()
+    {
+        StopCoroutine("UpdateBossTimer");
     }
     IEnumerator UpdateBossTimer()
     {
