@@ -14,7 +14,7 @@ public class SubWeaponItem : Item
 
         if (subWeapon.name == "Orbitor")
         {
-            Debug.Log("Found!");
+            //Debug.Log("Found!");
             InitOrbitorPosition();
         }
     }

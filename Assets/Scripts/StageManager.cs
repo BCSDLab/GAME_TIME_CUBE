@@ -23,6 +23,8 @@ public class StageManager : MonoBehaviour
     private int m_indexToSpawn = 0;
     private bool m_hasBossSpawned = false;
 
+    private int m_bossLimitTime = 20; // 보스 제한 시간
+
     void Awake()
     {
         if (instance == null) instance = this;
@@ -39,7 +41,13 @@ public class StageManager : MonoBehaviour
 
     void Update()
     {
-        if (m_hasBossSpawned) return;
+        if (m_hasBossSpawned)
+        {
+            //Debug.Log(m_bossLimitTime);
+            //m_bossLimitTime -= Time.deltaTime;
+            //InGameUIManager.instance.bossTimer.text = Mathf.Round(m_bossLimitTime).ToString();
+            return;
+        }
 
         if (Time.timeSinceLevelLoad >= m_bossEngageTime)
         {
@@ -87,6 +95,8 @@ public class StageManager : MonoBehaviour
         m_bossTracker.SetActive(true);
 
         m_hasBossSpawned = true;
+
+        InGameUIManager.instance.InitBossTimer(m_bossLimitTime);
     }
 
     public void StopSpawning()

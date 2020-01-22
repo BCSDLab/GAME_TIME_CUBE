@@ -19,6 +19,7 @@ public class InGameUIManager : MonoBehaviour
     public Transform bossPhaseSlots;  // 빈 오브젝트
     public GameObject bossPhaseSlot;  // 프리팹
     public float phaseSlotDistance = 40f;
+    public Text bossTimerText;  // 보스전 타이머
     [Header("패널")]
     public GameObject pausePanel;
     public GameObject gameOverPanel;
@@ -298,6 +299,9 @@ public class InGameUIManager : MonoBehaviour
 
     public void ClearStage(int killCount, int hitCount, float stageScore, float totalScore)
     {
+        StopCoroutine("UpdateBossTimer");
+        bossTimerText.gameObject.SetActive(false);
+
         paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
 
         m_audioSource = gameObject.AddComponent<AudioSource>();
@@ -310,5 +314,28 @@ public class InGameUIManager : MonoBehaviour
         stageClearPanel.SetActive(true);
 
         InvokeRepeating("CallUpdateClearPanel", 0, 1.5f);
+    }
+
+    public void InitBossTimer(int limitTime = 60)
+    {
+        bossTimerText.text = limitTime.ToString();
+        bossTimerText.gameObject.SetActive(true);
+
+        StartCoroutine("UpdateBossTimer");
+    }
+    IEnumerator UpdateBossTimer()
+    {
+        yield return new WaitForSeconds(1f);
+
+        int limitTime = int.Parse(bossTimerText.text);
+        if (limitTime > 0)
+        {
+            bossTimerText.text = (limitTime - 1).ToString();
+            StartCoroutine("UpdateBossTimer");
+        }
+        else
+        {
+            GameManager.instance.GameOver();
+        }
     }
 }

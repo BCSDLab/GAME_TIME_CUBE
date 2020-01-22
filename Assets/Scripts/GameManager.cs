@@ -254,7 +254,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(gameObject.scene.name);
     }
 
-    void GameOver()
+    public void GameOver()
     {
         Time.timeScale = 0f;
         InGameUIManager.instance.GameOver();
