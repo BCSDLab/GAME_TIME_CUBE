@@ -8867,59 +8867,89 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mobInfoes:
-  - mob: {fileID: 7473877153406667978, guid: e45f3773a30c1e443a44021c35b8dc2d, type: 3}
-    pathName: Right1
-    engageTime: 1
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: e45f3773a30c1e443a44021c35b8dc2d, type: 3}
-    pathName: Right3
-    engageTime: 1
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: e8ae1f05ddc14144d8a33ce5b3746f5c, type: 3}
-    pathName: Center
-    engageTime: 1
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: 2a72c144a280e5b4185030f895294b1c, type: 3}
-    pathName: Sky
-    engageTime: 14
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: 2a72c144a280e5b4185030f895294b1c, type: 3}
-    pathName: Ground
-    engageTime: 14
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
-    pathName: Right2
-    engageTime: 23
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
-    pathName: Right1
-    engageTime: 24
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
-    pathName: Right3
-    engageTime: 24
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
   - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
     pathName: Down
-    engageTime: 28
+    engageTime: 1
     repeatCount: 4
     repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: b204af0cd1f27ea468cdf0a1d78f095e, type: 3}
+    pathName: Right2
+    engageTime: 10
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 60213ed9576452e499aacb93d220facb, type: 3}
+    pathName: Right1
+    engageTime: 11
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 60213ed9576452e499aacb93d220facb, type: 3}
+    pathName: Right3
+    engageTime: 11
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 8bf0f92d8d9cdff4c89aad17b6a1b6af, type: 3}
+    pathName: Center
+    engageTime: 17
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: bf825506467e18e488999d29e3ee288a, type: 3}
+    pathName: Sky
+    engageTime: 23
+    repeatCount: 4
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: bf825506467e18e488999d29e3ee288a, type: 3}
+    pathName: Ground
+    engageTime: 23
+    repeatCount: 4
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
     engagePhase: 0
   - mob: {fileID: 0}
     pathName: 
@@ -19104,6 +19134,10 @@ MonoBehaviour:
     m_poolCount: 100
     m_pooledItems: []
   - prefab: {fileID: 8760339693924824446, guid: e6ba91f4daaf30d4ca075823bfdb7cc8,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f,
       type: 3}
     m_poolCount: 50
     m_pooledItems: []

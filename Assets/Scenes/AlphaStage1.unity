@@ -8927,7 +8927,85 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  m_bossEngageTime: 400
+  - mob: {fileID: 7473877153406667978, guid: e8ae1f05ddc14144d8a33ce5b3746f5c, type: 3}
+    pathName: Center
+    engageTime: 37
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: 2a72c144a280e5b4185030f895294b1c, type: 3}
+    pathName: Sky
+    engageTime: 50
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: 2a72c144a280e5b4185030f895294b1c, type: 3}
+    pathName: Ground
+    engageTime: 50
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
+    pathName: Right2
+    engageTime: 59
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
+    pathName: Right1
+    engageTime: 60
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
+    pathName: Right3
+    engageTime: 60
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
+    pathName: Down
+    engageTime: 66
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: b204af0cd1f27ea468cdf0a1d78f095e, type: 3}
+    pathName: Right2
+    engageTime: 75
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 60213ed9576452e499aacb93d220facb, type: 3}
+    pathName: Right1
+    engageTime: 76
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 60213ed9576452e499aacb93d220facb, type: 3}
+    pathName: Right3
+    engageTime: 76
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 8bf0f92d8d9cdff4c89aad17b6a1b6af, type: 3}
+    pathName: Center
+    engageTime: 83
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: bf825506467e18e488999d29e3ee288a, type: 3}
+    pathName: Sky
+    engageTime: 90
+    repeatCount: 4
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: bf825506467e18e488999d29e3ee288a, type: 3}
+    pathName: Ground
+    engageTime: 90
+    repeatCount: 4
+    repeatDelay: 3
+    engagePhase: 0
+  m_bossEngageTime: 110
   m_boss: {fileID: 2131298837335977617}
   m_bossTracker: {fileID: 4125893928747804409}
 --- !u!4 &1189885912 stripped
@@ -19093,6 +19171,21 @@ MonoBehaviour:
     m_poolCount: 50
     m_pooledItems: []
   - prefab: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: f4406a2f56003414fae1496b67105500,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
+    m_poolCount: 100
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: e6ba91f4daaf30d4ca075823bfdb7cc8,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f,
       type: 3}
     m_poolCount: 50
     m_pooledItems: []
