@@ -65,6 +65,7 @@ public class StageChanger : MonoBehaviour
             else
             {
                 nextStageName = "Menu";
+                ResetStat();
             }
         }
         else
@@ -84,5 +85,14 @@ public class StageChanger : MonoBehaviour
         savedTotalScore += GameManager.instance.GetScore();
 
         SetNextStage();
+    }
+
+    public void ResetStat()
+    {
+        savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+        savedPlayerPower = 0;
+        savedPlayerHP = 5;
+        savedTotalScore = 0;
+        savedSubWeaponNum = 0;
     }
 }
