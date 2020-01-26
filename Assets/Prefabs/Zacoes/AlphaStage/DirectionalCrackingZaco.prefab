@@ -5012,8 +5012,10 @@ MonoBehaviour:
   m_hp: 100
   m_destroyOnArrival: 1
   m_dropItemList:
-    items: []
-    counts: 
+    items:
+    - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
+    - {fileID: 7511906672979144939, guid: 91743ae1d69fa034ba7d71c9b013165e, type: 3}
+    counts: 0500000001000000
   m_isZacoInvincible: 0
 --- !u!114 &2041454521314653672
 MonoBehaviour:

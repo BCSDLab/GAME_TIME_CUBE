@@ -5013,7 +5013,7 @@ MonoBehaviour:
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
   count: 6
-  speed: 5
+  speed: 4
   delay: 2
   radius: 0.5
 --- !u!114 &5875172913077719939
@@ -5046,11 +5046,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 
-  speed: 5
+  speed: 3
   m_hp: 150
   m_destroyOnArrival: 1
   m_dropItemList:
     items:
     - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
-    counts: 01000000
+    counts: 04000000
   m_isZacoInvincible: 0

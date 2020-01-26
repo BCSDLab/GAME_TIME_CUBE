@@ -255,8 +255,8 @@ MonoBehaviour:
   m_startDelay: 0
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
-  count: 7
-  minSpeed: 4
+  count: 5
+  minSpeed: 3
   maxSpeed: 5
   inDelay: 0.05
   outDelay: 0.8
@@ -274,12 +274,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 
-  speed: 5
+  speed: 4
   m_hp: 200
   m_destroyOnArrival: 1
   m_dropItemList:
-    items: []
-    counts: 
+    items:
+    - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
+    - {fileID: 8453631172040760662, guid: fb181b3a27f6a0f45b5478b8dc4cde0a, type: 3}
+    counts: 0500000001000000
   m_isZacoInvincible: 0
 --- !u!1 &6923694916376720830
 GameObject:

@@ -4929,12 +4929,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 
-  speed: 5
+  speed: 4
   m_hp: 170
   m_destroyOnArrival: 1
   m_dropItemList:
-    items: []
-    counts: 
+    items:
+    - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    counts: 0600000003000000
   m_isZacoInvincible: 0
 --- !u!82 &82810509545981166
 AudioSource:

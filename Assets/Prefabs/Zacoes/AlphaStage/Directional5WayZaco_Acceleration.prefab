@@ -5012,7 +5012,7 @@ MonoBehaviour:
   bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   target: {fileID: 0}
   count: 5
-  speed: 3
+  speed: 2
   delay: 1
   angleRange: 60
 --- !u!114 &2128469474297340662
@@ -5032,6 +5032,9 @@ MonoBehaviour:
   m_hp: 500
   m_destroyOnArrival: 0
   m_dropItemList:
-    items: []
-    counts: 
+    items:
+    - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    - {fileID: 1796773464430945974, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2, type: 3}
+    counts: 020000000400000001000000
   m_isZacoInvincible: 0

@@ -4914,8 +4914,8 @@ MonoBehaviour:
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  count: 18
-  speed: 6
+  count: 20
+  speed: 4
 --- !u!114 &3421259152459687949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4933,7 +4933,7 @@ MonoBehaviour:
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
   count: 20
-  speed: 6
+  speed: 4
   delay: 0.5
   radius: 1.3
 --- !u!114 &5201615914378317357
@@ -4949,12 +4949,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 
-  speed: 8
+  speed: 5
   m_hp: 1400
   m_destroyOnArrival: 0
   m_dropItemList:
-    items: []
-    counts: 
+    items:
+    - {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e, type: 3}
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    - {fileID: 1796773464430945974, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2, type: 3}
+    counts: 010000000300000001000000
   m_isZacoInvincible: 0
 --- !u!82 &1331919750288802457
 AudioSource:

@@ -5029,9 +5029,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 300
+  m_hp: 500
   m_destroyOnArrival: 0
   m_dropItemList:
-    items: []
-    counts: 
+    items:
+    - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
+    - {fileID: 8453631172040760662, guid: fb181b3a27f6a0f45b5478b8dc4cde0a, type: 3}
+    counts: 0600000002000000
   m_isZacoInvincible: 0
