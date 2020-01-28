@@ -19,13 +19,17 @@ public class BossAlphaController : Enemy
     #endregion
 
     #region PATTERNS
+    //Phase1
+    private Homing m_homing;
+    private DonutAimed m_donutAimed;
+    //Phase2
+    private SpiralMulti m_spiralMulti;
     private DirectionalNormal m_directionalNormal;
+
     private DirectionalAimed m_directionalAimed;
     private DirectionalAimedRandom m_directionalAimedRandom;
     private RadialMulti m_radialMulti;
     private DonutAimed m_roundGuided;
-    private SpiralMulti m_spiralMulti;
-    private Homing m_homing;
     #endregion
 
     [SerializeField]
@@ -59,13 +63,16 @@ public class BossAlphaController : Enemy
         m_dialogueTrigger = GetComponent<DialogueTrigger>();
 
         // 패턴
+        // Phase1
+        m_homing = GetComponent<Homing>();
+        m_donutAimed = GetComponent<DonutAimed>();
+
         m_directionalAimed = GetComponent<DirectionalAimed>();
         m_directionalAimedRandom = GetComponent<DirectionalAimedRandom>();
         m_directionalNormal = GetComponent<DirectionalNormal>();
         m_radialMulti = GetComponent<RadialMulti>();
         m_roundGuided = GetComponent<DonutAimed>();
         m_spiralMulti = GetComponent<SpiralMulti>();
-        m_homing = GetComponent<Homing>();
 
         // 진입
         m_isInvincible = true;
@@ -123,13 +130,16 @@ public class BossAlphaController : Enemy
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
                     "looptype", iTween.LoopType.loop, "movetopath", false));
                 m_homing.StartPattern();
+                m_donutAimed.StartPattern();
                 break;
 
             case 2:
                 m_homing.StopPattern();
+                m_donutAimed.StopPattern();
                 GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-                m_directionalAimed.StartPattern();
+                m_spiralMulti.StartPattern();
+                m_directionalNormal.StartPattern();
                 break;
 
             case 3:
@@ -269,6 +279,7 @@ public class BossAlphaController : Enemy
         m_roundGuided.StopPattern();
         m_spiralMulti.StopPattern();
         m_homing.StopPattern();
+        m_donutAimed.StopPattern();
     }
 
     void DropSubWeaponItem()
