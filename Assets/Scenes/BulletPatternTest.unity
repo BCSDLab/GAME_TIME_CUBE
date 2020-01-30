@@ -363,6 +363,10 @@ MonoBehaviour:
       type: 3}
     m_poolCount: 100
     m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: e6ba91f4daaf30d4ca075823bfdb7cc8,
+      type: 3}
+    m_poolCount: 100
+    m_pooledItems: []
 --- !u!4 &366789821
 Transform:
   m_ObjectHideFlags: 0
@@ -861,9 +865,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ac817435f31e4799c3f256f655386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 3
   speed: 3
   inDelay: 0.2
@@ -978,9 +982,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c62600e8d41e7d458c248d4a3e35156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 360d5d5b69dbe6f4781fb3f96558c8ac, type: 3}
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 360d5d5b69dbe6f4781fb3f96558c8ac, type: 3}
   count: 2
   speed: 3
   inDelay: 2
@@ -997,9 +1001,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16979c31dd927fa4ca108f9ce0de2b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 1554297179}
   count: 10
   minSpeed: 3
@@ -1019,9 +1023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ead040f22bb02449f7d44d50f27a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   speed: 2
   angle1: 0
   angle2: 180
@@ -1041,11 +1045,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2915d855cb8593347bf57e247bb34766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: e6ba91f4daaf30d4ca075823bfdb7cc8, type: 3}
   target: {fileID: 1554297179}
-  count: 10
+  count: 7
   speed: 3
   delay: 0.5
   angleRange: 60
@@ -1061,9 +1065,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f94328ddaace54191e6b6309e84a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 15
   speed: 2
   inDelay: 0.2
@@ -1095,9 +1099,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076961b2af9e5de46afc6acd17eb3a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 2
   speed: 3
   inDelay: 0.15

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer), typeof(DialogueTrigger))]
-public class BossController : Enemy
+public class BossAlphaController : Enemy
 {
     #region PATHS
     [SerializeField]
@@ -19,13 +19,23 @@ public class BossController : Enemy
     #endregion
 
     #region PATTERNS
-    private DirectionalNormal m_directionalNormal;
-    private DirectionalAimed m_directionalAimed;
-    private DirectionalAimedRandom m_directionalAimedRandom;
-    private RadialMulti m_radialMulti;
-    private DonutAimed m_roundGuided;
-    private SpiralMulti m_spiralMulti;
+    //Phase1
     private Homing m_homing;
+    private DonutAimed m_donutAimed;
+    //Phase2
+    private SpiralMulti m_spiralMulti;
+    private DirectionalNormal m_directionalNormal;
+    //Phase3
+    private Homing1 m_homing1;
+    private RadialMulti m_radialMulti;
+    //Phase4
+    private PosToPos m_posToPos;
+    private DirectionalAimedNWay m_directionalAimedNWay;
+    //Phase5
+    private VerticalLeft m_verticalLeft;
+    private DirectionalAimedRandom m_directionalAimedRandom;
+    //Phase6
+    private BiDirectional m_biDirectional;
     #endregion
 
     [SerializeField]
@@ -50,7 +60,7 @@ public class BossController : Enemy
 
     // 보스 소환수 소환
     private bool m_isSpawning = true;
-    private int m_indexToSpawn = 0; 
+    private int m_indexToSpawn = 0;
     private float m_zacoSpawnTime = 0f;
 
     protected override void Start()
@@ -59,13 +69,23 @@ public class BossController : Enemy
         m_dialogueTrigger = GetComponent<DialogueTrigger>();
 
         // 패턴
-        m_directionalAimed = GetComponent<DirectionalAimed>();
-        m_directionalAimedRandom = GetComponent<DirectionalAimedRandom>();
-        m_directionalNormal = GetComponent<DirectionalNormal>();
-        m_radialMulti = GetComponent<RadialMulti>();
-        m_roundGuided = GetComponent<DonutAimed>();
-        m_spiralMulti = GetComponent<SpiralMulti>();
+        // Phase1
         m_homing = GetComponent<Homing>();
+        m_donutAimed = GetComponent<DonutAimed>();
+        // Phase2
+        m_spiralMulti = GetComponent<SpiralMulti>();
+        m_directionalNormal = GetComponent<DirectionalNormal>();
+        // Phase3
+        m_homing1 = GetComponent<Homing1>();
+        m_radialMulti = GetComponent<RadialMulti>();
+        // Phase4
+        m_posToPos = GetComponent<PosToPos>();
+        m_directionalAimedNWay = GetComponent<DirectionalAimedNWay>();
+        // Phase5
+        m_verticalLeft = GetComponent<VerticalLeft>();
+        m_directionalAimedRandom = GetComponent<DirectionalAimedRandom>();
+        // Phase6
+        m_biDirectional = GetComponent<BiDirectional>();
 
         // 진입
         m_isInvincible = true;
@@ -114,6 +134,7 @@ public class BossController : Enemy
         m_phaseHP += m_maxPhaseHP;
         m_zacoSpawnTime = 0f;
         InGameUIManager.instance.DisplayBossHPSlider(hp: m_phaseHP);
+        GameManager.instance.DestroyAllBullets();
 
         Debug.Log("보스 페이즈 전환: m_phase = " + m_phase.ToString() + " HP = " + m_totalHP.ToString());
 
@@ -123,43 +144,53 @@ public class BossController : Enemy
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
                     "looptype", iTween.LoopType.loop, "movetopath", false));
                 m_homing.StartPattern();
+                m_donutAimed.StartPattern();
                 break;
 
             case 2:
                 m_homing.StopPattern();
-                GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-                m_directionalAimed.StartPattern();
-                break;
-
-            case 3:
-                m_directionalAimed.StopPattern();
-                GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed * 1.2f, "easetype", iTween.EaseType.linear,
-                    "looptype", iTween.LoopType.loop, "movetopath", false));
-                m_directionalAimedRandom.StartPattern();
-                break;
-
-            case 4:
-                m_directionalAimedRandom.StopPattern();
-                GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-                m_radialMulti.StartPattern();
-                break;
-
-            case 5:
-                m_radialMulti.StopPattern();
-                GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[1]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
-                    "looptype", iTween.LoopType.loop, "movetopath", false));
-                m_roundGuided.StartPattern();
-                break;
-
-            case 6:
-                m_roundGuided.StopPattern();
+                m_donutAimed.StopPattern();
                 GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
                 m_spiralMulti.StartPattern();
+                m_directionalNormal.StartPattern();
+                break;
+
+            case 3:
+                m_spiralMulti.StopPattern();
+                m_directionalNormal.StopPattern();
+                GameManager.instance.DestroyAllZacos();
+                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed * 1.2f, "easetype", iTween.EaseType.linear,
+                    "looptype", iTween.LoopType.loop, "movetopath", false));
+                m_homing1.StartPattern();
+                m_radialMulti.StartPattern();
+                break;
+
+            case 4:
+                m_homing1.StopPattern();
+                m_radialMulti.StopPattern();
+                GameManager.instance.DestroyAllZacos();
+                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+                m_posToPos.StartPattern();
+                m_directionalAimedNWay.StartPattern();
+                break;
+
+            case 5:
+                m_posToPos.StopPattern();
+                m_directionalAimedNWay.StopPattern();
+                GameManager.instance.DestroyAllZacos();
+                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[1]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
+                    "looptype", iTween.LoopType.loop, "movetopath", false));
+                m_verticalLeft.StartPattern();
+                m_directionalAimedRandom.StartPattern();
+                break;
+
+            case 6:
+                m_verticalLeft.StopPattern();
+                m_directionalAimedRandom.StopPattern();
+                GameManager.instance.DestroyAllZacos();
+                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+                m_biDirectional.StartPattern();
                 break;
 
             default:
@@ -252,7 +283,7 @@ public class BossController : Enemy
         m_spriteRenderer.enabled = false;
 
         DropSubWeaponItem();
-        
+
         yield return new WaitForSeconds(3f);
 
         GameManager.instance.StageClear();
@@ -262,13 +293,17 @@ public class BossController : Enemy
 
     void StopAllPatterns()
     {
-        m_directionalAimed.StopPattern();
-        m_directionalAimedRandom.StopPattern();
-        m_directionalNormal.StopPattern();
-        m_radialMulti.StopPattern();
-        m_roundGuided.StopPattern();
-        m_spiralMulti.StopPattern();
-        m_homing.StopPattern();
+        m_homing.StartPattern();
+        m_donutAimed.StartPattern();
+        m_spiralMulti.StartPattern();
+        m_directionalNormal.StartPattern();
+        m_homing1.StartPattern();
+        m_radialMulti.StartPattern();
+        m_posToPos.StartPattern();
+        m_directionalAimedNWay.StartPattern();
+        m_verticalLeft.StartPattern();
+        m_directionalAimedRandom.StartPattern();
+        m_biDirectional.StartPattern();
     }
 
     void DropSubWeaponItem()

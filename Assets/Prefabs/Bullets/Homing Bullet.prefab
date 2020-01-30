@@ -154,4 +154,4 @@ MonoBehaviour:
   target: {fileID: 1604783752282113027, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   speed: 4
   m_alpha: 200
-  m_hp: 70
+  m_hp: 60
