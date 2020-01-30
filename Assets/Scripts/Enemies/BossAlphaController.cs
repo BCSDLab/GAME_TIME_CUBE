@@ -31,10 +31,11 @@ public class BossAlphaController : Enemy
     //Phase4
     private PosToPos m_posToPos;
     private DirectionalAimedNWay m_directionalAimedNWay;
-
-    private DirectionalAimed m_directionalAimed;
+    //Phase5
+    private VerticalLeft m_verticalLeft;
     private DirectionalAimedRandom m_directionalAimedRandom;
-    private DonutAimed m_roundGuided;
+    //Phase6
+    private BiDirectional m_biDirectional;
     #endregion
 
     [SerializeField]
@@ -80,10 +81,11 @@ public class BossAlphaController : Enemy
         // Phase4
         m_posToPos = GetComponent<PosToPos>();
         m_directionalAimedNWay = GetComponent<DirectionalAimedNWay>();
-
-        m_directionalAimed = GetComponent<DirectionalAimed>();
+        // Phase5
+        m_verticalLeft = GetComponent<VerticalLeft>();
         m_directionalAimedRandom = GetComponent<DirectionalAimedRandom>();
-        m_roundGuided = GetComponent<DonutAimed>();
+        // Phase6
+        m_biDirectional = GetComponent<BiDirectional>();
 
         // 진입
         m_isInvincible = true;
@@ -132,6 +134,7 @@ public class BossAlphaController : Enemy
         m_phaseHP += m_maxPhaseHP;
         m_zacoSpawnTime = 0f;
         InGameUIManager.instance.DisplayBossHPSlider(hp: m_phaseHP);
+        GameManager.instance.DestroyAllBullets();
 
         Debug.Log("보스 페이즈 전환: m_phase = " + m_phase.ToString() + " HP = " + m_totalHP.ToString());
 
@@ -173,18 +176,21 @@ public class BossAlphaController : Enemy
                 break;
 
             case 5:
-                m_radialMulti.StopPattern();
+                m_posToPos.StopPattern();
+                m_directionalAimedNWay.StopPattern();
                 GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[1]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
                     "looptype", iTween.LoopType.loop, "movetopath", false));
-                m_roundGuided.StartPattern();
+                m_verticalLeft.StartPattern();
+                m_directionalAimedRandom.StartPattern();
                 break;
 
             case 6:
-                m_roundGuided.StopPattern();
+                m_verticalLeft.StopPattern();
+                m_directionalAimedRandom.StopPattern();
                 GameManager.instance.DestroyAllZacos();
                 iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-                m_spiralMulti.StartPattern();
+                m_biDirectional.StartPattern();
                 break;
 
             default:
@@ -287,14 +293,17 @@ public class BossAlphaController : Enemy
 
     void StopAllPatterns()
     {
-        m_directionalAimed.StopPattern();
-        m_directionalAimedRandom.StopPattern();
-        m_directionalNormal.StopPattern();
-        m_radialMulti.StopPattern();
-        m_roundGuided.StopPattern();
-        m_spiralMulti.StopPattern();
-        m_homing.StopPattern();
-        m_donutAimed.StopPattern();
+        m_homing.StartPattern();
+        m_donutAimed.StartPattern();
+        m_spiralMulti.StartPattern();
+        m_directionalNormal.StartPattern();
+        m_homing1.StartPattern();
+        m_radialMulti.StartPattern();
+        m_posToPos.StartPattern();
+        m_directionalAimedNWay.StartPattern();
+        m_verticalLeft.StartPattern();
+        m_directionalAimedRandom.StartPattern();
+        m_biDirectional.StartPattern();
     }
 
     void DropSubWeaponItem()
