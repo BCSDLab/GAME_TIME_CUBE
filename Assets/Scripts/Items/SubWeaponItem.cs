@@ -9,6 +9,23 @@ public class SubWeaponItem : Item
 
     protected override void PickUp()
     {
-        Instantiate(subWeapon, transform.position, Quaternion.identity);
+        GameManager.instance.subWeaponNum++;
+        Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.subWeaponNum;
+
+        if (subWeapon.name == "Orbitor")
+        {
+            InitOrbitorPosition();
+        }
+    }
+
+    public void InitOrbitorPosition()
+    {
+        Orbitor[] orbitors = FindObjectsOfType(typeof(Orbitor)) as Orbitor[];
+        float dist = 360 / orbitors.Length;
+
+        for(int i = 0; i < orbitors.Length; i++)
+        {
+            orbitors[i].m_alpha = dist * i;
+        }
     }
 }

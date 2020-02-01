@@ -6084,6 +6084,7 @@ MonoBehaviour:
   homingBullet: {fileID: 6925999261059133172, guid: 04a0df9c960dcef4a96258924e786953,
     type: 3}
   attackDelay: 0.1
+  moveNextStage: 0
 --- !u!50 &280776652
 Rigidbody2D:
   serializedVersion: 4
@@ -15756,6 +15757,9 @@ MonoBehaviour:
   hitCountText: {fileID: 66208672191215190}
   stageScoreText: {fileID: 66208672319704732}
   totalScoreText: {fileID: 66208672703989372}
+  continueText: {fileID: 0}
+  scoreSound: {fileID: 0}
+  moveNextZone: {fileID: 0}
 --- !u!224 &66208671289413016
 RectTransform:
   m_ObjectHideFlags: 0

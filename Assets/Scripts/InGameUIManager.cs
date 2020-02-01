@@ -10,51 +10,51 @@ public class InGameUIManager : MonoBehaviour
     #region SERIALIZED_FIELDS
     [Header("플레이어")]
     [SerializeField]
-    private Transform playerHPSlots = null;
+    private Transform m_playerHPSlots = null;
     [SerializeField]
-    private Slider timeCubeSlider = null;
+    private Slider m_timeCubeSlider = null;
     [SerializeField]
-    private Slider spellSlider1 = null;
+    private Slider m_spellSlider1 = null;
     [SerializeField]
-    private Slider spellSlider2 = null;
+    private Slider m_spellSlider2 = null;
     [SerializeField]
-    private Slider powerSlider = null;
+    private Slider m_powerSlider = null;
     [SerializeField]
-    private Text powerText = null;
+    private Text m_powerText = null;
     [SerializeField]
-    private Transform powerIcons = null;
+    private Transform m_powerIcons = null;
     [SerializeField]
-    private Text scoreText = null;
+    private Text m_scoreText = null;
     [Header("보스")]
     [SerializeField]
-    private Slider bossHPSlider = null;
+    private Slider m_bossHPSlider = null;
     [SerializeField]
-    private Transform bossPhaseSlots = null;  // 빈 오브젝트
+    private Transform m_bossPhaseSlots = null;  // 빈 오브젝트
     [SerializeField]
-    private GameObject bossPhaseSlot = null;  // 프리팹
+    private GameObject m_bossPhaseSlot = null;  // 프리팹
     [SerializeField]
-    private float phaseSlotDistance = 40f;
+    private float m_phaseSlotDistance = 40f;
+    [SerializeField]
+    private Text m_bossTimerText = null;
     [Header("패널")]
     [SerializeField]
-    private GameObject pausePanel = null;
+    private GameObject m_pausePanel = null;
     [SerializeField]
-    private GameObject gameOverPanel = null;
+    private GameObject m_gameOverPanel = null;
     [SerializeField]
-    private GameObject stageClearPanel = null;
+    private GameObject m_stageClearPanel = null;
     [SerializeField]
-    private Text killCountText = null;
+    private Text m_killCountText = null;
     [SerializeField]
-    private Text hitCountText = null;
+    private Text m_hitCountText = null;
     [SerializeField]
-    private Text stageScoreText = null;
+    private Text m_stageScoreText = null;
     [SerializeField]
-    private Text totalScoreText = null;
+    private Text m_totalScoreText = null;
     [SerializeField]
-    private AudioClip scoreSound = null;
+    private AudioClip m_scoreSound = null;
     [SerializeField]
-    private Text continueText = null;
-    [SerializeField]
-    private GameObject moveNextZone = null;
+    private Text m_continueText = null;
     #endregion
 
     private AudioSource m_audioSource;
@@ -86,35 +86,35 @@ public class InGameUIManager : MonoBehaviour
 
     void OnEnable()
     {
-        timeCubeSliderFill = timeCubeSlider.fillRect.gameObject.GetComponent<Image>();
-        spellSliderFill1 = spellSlider1.fillRect.gameObject.GetComponent<Image>();
-        spellSliderFill2 = spellSlider2.fillRect.gameObject.GetComponent<Image>();
+        timeCubeSliderFill = m_timeCubeSlider.fillRect.gameObject.GetComponent<Image>();
+        spellSliderFill1 = m_spellSlider1.fillRect.gameObject.GetComponent<Image>();
+        spellSliderFill2 = m_spellSlider2.fillRect.gameObject.GetComponent<Image>();
 
-        timeCubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
-        spellSlider1.maxValue = GameManager.SPELL_ENERGY_USAGE;
-        spellSlider2.maxValue = GameManager.SPELL_ENERGY_MAX - GameManager.SPELL_ENERGY_USAGE;
-        powerSlider.maxValue = GameManager.PLAYER_POWER_MAX;
+        m_timeCubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
+        m_spellSlider1.maxValue = GameManager.SPELL_ENERGY_USAGE;
+        m_spellSlider2.maxValue = GameManager.SPELL_ENERGY_MAX - GameManager.SPELL_ENERGY_USAGE;
+        m_powerSlider.maxValue = GameManager.PLAYER_POWER_MAX;
 
-        bossHPSlider.gameObject.SetActive(false);
-        pausePanel.SetActive(false);
-        gameOverPanel.SetActive(false);
-        stageClearPanel.SetActive(false);
+        m_bossHPSlider.gameObject.SetActive(false);
+        m_pausePanel.SetActive(false);
+        m_gameOverPanel.SetActive(false);
+        m_stageClearPanel.SetActive(false);
     }
 
     public void DamagePlayer(int playerHP)
     {
-        playerHPSlots.GetChild(playerHP).gameObject.SetActive(false);
+        m_playerHPSlots.GetChild(playerHP).gameObject.SetActive(false);
     }
 
     public void HealPlayer(int playerHP)
     {
-        playerHPSlots.GetChild(playerHP-1).gameObject.SetActive(true);
+        m_playerHPSlots.GetChild(playerHP-1).gameObject.SetActive(true);
     }
 
     public void UpdateTimeCubeSlider(int cubeEnergy)
     {
-        timeCubeSliderFill.color = (cubeEnergy < timeCubeSlider.value) ? CUBE_USE_COLOR : CUBE_HEAL_COLOR;
-        timeCubeSlider.value = cubeEnergy;
+        timeCubeSliderFill.color = (cubeEnergy < m_timeCubeSlider.value) ? CUBE_USE_COLOR : CUBE_HEAL_COLOR;
+        m_timeCubeSlider.value = cubeEnergy;
     }
 
     public void ResetTimeCubeSliderColor()
@@ -128,15 +128,15 @@ public class InGameUIManager : MonoBehaviour
 
         if (remainder >= 0)
         {
-            spellSlider1.value = GameManager.SPELL_ENERGY_USAGE;
-            spellSlider2.value = remainder;
+            m_spellSlider1.value = GameManager.SPELL_ENERGY_USAGE;
+            m_spellSlider2.value = remainder;
             spellSliderFill1.color = SPELL_CHARGED_COLOR;
             spellSliderFill2.color = (remainder >= GameManager.SPELL_ENERGY_USAGE) ? SPELL_CHARGED_COLOR : SPELL_NOT_CHARGED_COLOR;
         }
         else
         {
-            spellSlider1.value = spellEnergy;
-            spellSlider2.value = 0f;
+            m_spellSlider1.value = spellEnergy;
+            m_spellSlider2.value = 0f;
             spellSliderFill1.color = SPELL_NOT_CHARGED_COLOR;
             spellSliderFill2.color = SPELL_NOT_CHARGED_COLOR;
         }
@@ -144,12 +144,12 @@ public class InGameUIManager : MonoBehaviour
 
     public void UpdatePower(int power)
     {
-        powerSlider.value = power;
+        m_powerSlider.value = power;
         StopCoroutine("CountUpToPower");
         StartCoroutine("CountUpToPower", power);
-        powerIcons.GetChild(0).gameObject.SetActive(power >= 1000);
-        powerIcons.GetChild(1).gameObject.SetActive(power >= 2000);
-        powerIcons.GetChild(2).gameObject.SetActive(power >= 3000);
+        m_powerIcons.GetChild(0).gameObject.SetActive(power >= 1000);
+        m_powerIcons.GetChild(1).gameObject.SetActive(power >= 2000);
+        m_powerIcons.GetChild(2).gameObject.SetActive(power >= 3000);
     }
 
     IEnumerator CountUpToPower(int targetPower)
@@ -160,7 +160,7 @@ public class InGameUIManager : MonoBehaviour
         {
             delta += 0.1f;
             m_power = (int)Mathf.Lerp(origPower, targetPower, delta);
-            powerText.text = m_power.ToString();
+            m_powerText.text = m_power.ToString();
             yield return new WaitForSeconds(UPDATE_DELAY);
         }
     }
@@ -179,10 +179,20 @@ public class InGameUIManager : MonoBehaviour
         {
             delta += 0.1f;
             m_score = Mathf.Lerp(origScore, targetScore, delta);
-            scoreText.text = ((int)m_score).ToString();
+            m_scoreText.text = ((int)m_score).ToString();
             yield return new WaitForSeconds(UPDATE_DELAY);
         }
     }
+
+    #region Clear Panel
+    private void InitClearPanel()
+    {
+        m_killCountText.text = "0";
+        m_hitCountText.text = "0";
+        m_stageScoreText.text = "0";
+        m_totalScoreText.text = "0";
+        m_continueText.text = "";
+}
 
     IEnumerator UpdateClearPanel()
     {
@@ -195,7 +205,7 @@ public class InGameUIManager : MonoBehaviour
                     delta += 0.1f;
 
                     m_score = Mathf.Lerp(0, (int)paramArr[paramIdx], delta);
-                    killCountText.text = ((int)m_score).ToString();
+                    m_killCountText.text = ((int)m_score).ToString();
 
                     yield return new WaitForSeconds(UPDATE_DELAY);
                 }
@@ -206,7 +216,7 @@ public class InGameUIManager : MonoBehaviour
                     delta += 0.1f;
 
                     m_score = Mathf.Lerp(0, (int)paramArr[paramIdx], delta);
-                    hitCountText.text = ((int)m_score).ToString();
+                    m_hitCountText.text = ((int)m_score).ToString();
 
                     yield return new WaitForSeconds(UPDATE_DELAY);
                 }
@@ -217,7 +227,7 @@ public class InGameUIManager : MonoBehaviour
                     delta += 0.1f;
 
                     m_score = Mathf.Lerp(0, (float)paramArr[paramIdx], delta);
-                    stageScoreText.text = ((int)m_score).ToString();
+                    m_stageScoreText.text = ((int)m_score).ToString();
 
                     yield return new WaitForSeconds(UPDATE_DELAY);
                 }
@@ -226,8 +236,9 @@ public class InGameUIManager : MonoBehaviour
                 while (delta < 1f)
                 {
                     delta += 0.1f;
+
                     m_score = Mathf.Lerp(0, (float)paramArr[paramIdx], delta);
-                    totalScoreText.text = ((int)m_score).ToString();
+                    m_totalScoreText.text = ((int)m_score).ToString();
 
                     yield return new WaitForSeconds(UPDATE_DELAY);
                 }
@@ -235,38 +246,48 @@ public class InGameUIManager : MonoBehaviour
             default:
                 break;
         }
+
         paramIdx++;
         m_audioSource.Play();
     }
     public void CallUpdateClearPanel()
     {
         StopCoroutine("UpdateClearPanel");
-        if (paramIdx < 4)
+
+        if (paramIdx < paramArr.Length)
         {
             StartCoroutine("UpdateClearPanel");
         }
         else
         {
             CancelInvoke("CallUpdateClearPanel");
+
+            m_continueText.text = "CONTINUE >>>";
             paramIdx = 0;
-            continueText.text = "CONTINUE >>>";
-            moveNextZone.SetActive(true);
+
+            StageChanger.instance.GetComponent<BoxCollider2D>().enabled = true;
+            StageChanger.instance.SaveData();
         }
     }
+    public void DisactiveClearPanel()
+    {
+        m_stageClearPanel.SetActive(false);
+    }
+    #endregion
 
     #region BOSS
     public void DisplayBossHPSlider(bool display = true, int hp = 0)
     {
         if (!display)
         {
-            bossHPSlider.gameObject.SetActive(false);
+            m_bossHPSlider.gameObject.SetActive(false);
             return;
         }
 
         m_bossHP = hp;
-        bossHPSlider.maxValue = hp;
-        bossHPSlider.value = 0f;
-        bossHPSlider.gameObject.SetActive(true);
+        m_bossHPSlider.maxValue = hp;
+        m_bossHPSlider.value = 0f;
+        m_bossHPSlider.gameObject.SetActive(true);
         StartCoroutine("FillBossHPSlider");
     }
 
@@ -274,7 +295,7 @@ public class InGameUIManager : MonoBehaviour
     {
         if (!m_isFilling)
         {
-            bossHPSlider.value = hp;
+            m_bossHPSlider.value = hp;
         }
         m_bossHP = hp;
     }
@@ -284,14 +305,14 @@ public class InGameUIManager : MonoBehaviour
         m_isFilling = true;
 
         int fill = m_bossHP / 100;
-        while (bossHPSlider.value < m_bossHP)
+        while (m_bossHPSlider.value < m_bossHP)
         {
-            bossHPSlider.value += fill;
+            m_bossHPSlider.value += fill;
             yield return new WaitForSeconds(0.01f);
         }
 
         m_isFilling = false;
-        bossHPSlider.value = m_bossHP;
+        m_bossHPSlider.value = m_bossHP;
     }
 
     public void InitializeBossPhaseSlots(int phaseCount)
@@ -299,39 +320,74 @@ public class InGameUIManager : MonoBehaviour
         m_bossPhaseCount = phaseCount;
         for (int i = 0; i < phaseCount; i++)
         {
-            GameObject slot = Instantiate(bossPhaseSlot, bossPhaseSlots);
+            GameObject slot = Instantiate(m_bossPhaseSlot, m_bossPhaseSlots);
             Vector3 newPosition = slot.transform.position;
-            newPosition.x += phaseSlotDistance * i;
+            newPosition.x += m_phaseSlotDistance * i;
             slot.transform.position = newPosition;
         }
     }
 
     public void UpdateBossPhase(int phase)
     {
-        bossPhaseSlots.GetChild(m_bossPhaseCount - phase).gameObject.SetActive(false);
+        m_bossPhaseSlots.GetChild(m_bossPhaseCount - phase).gameObject.SetActive(false);
+    }
+    #endregion
+
+    #region BossTimer
+    public void InitBossTimer(int limitTime = 60)
+    {
+        m_bossTimerText.text = limitTime.ToString();
+        m_bossTimerText.gameObject.SetActive(true);
+    }
+    public void EnableBossTimer()
+    {
+        StartCoroutine("UpdateBossTimer");
+    }
+    public void DisableBossTimer()
+    {
+        StopCoroutine("UpdateBossTimer");
+    }
+    IEnumerator UpdateBossTimer()
+    {
+        yield return new WaitForSeconds(1f);
+
+        int limitTime = int.Parse(m_bossTimerText.text);
+        if (limitTime > 0)
+        {
+            m_bossTimerText.text = (limitTime - 1).ToString();
+            StartCoroutine("UpdateBossTimer");
+        }
+        else
+        {
+            GameManager.instance.GameOver();
+        }
     }
     #endregion
 
     public void PauseGame(bool pause)
     {
-        pausePanel.SetActive(pause);
+        m_pausePanel.SetActive(pause);
     }
 
     public void GameOver()
     {
-        gameOverPanel.SetActive(true);
+        m_gameOverPanel.SetActive(true);
     }
 
     public void ClearStage(int killCount, int hitCount, float stageScore, float totalScore)
     {
+        m_bossTimerText.gameObject.SetActive(false);
+
         paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
 
         m_audioSource = gameObject.AddComponent<AudioSource>();
-        m_audioSource.clip = scoreSound;
+        m_audioSource.clip = m_scoreSound;
         m_audioSource.loop = false;
 
-        stageClearPanel.SetActive(true);
-        scoreText.gameObject.SetActive(false);
+        m_scoreText.gameObject.SetActive(false);
+
+        InitClearPanel();
+        m_stageClearPanel.SetActive(true);
 
         InvokeRepeating("CallUpdateClearPanel", 0, 1.5f);
     }

@@ -18,10 +18,14 @@ public class StageManager : MonoBehaviour
     [SerializeField]
     private GameObject m_bossTracker = null;
 
+    [SerializeField]
+    private int m_bossLimitTime = 600;  // 보스 제한 시간
+    public string nextSceneName;  // 다음 스테이지 씬 이름
 
     private bool m_isSpawning = true;
     private int m_indexToSpawn = 0;
     private bool m_hasBossSpawned = false;
+
 
     void Awake()
     {
@@ -87,6 +91,8 @@ public class StageManager : MonoBehaviour
         m_bossTracker.SetActive(true);
 
         m_hasBossSpawned = true;
+
+        InGameUIManager.instance.InitBossTimer(m_bossLimitTime);
     }
 
     public void StopSpawning()

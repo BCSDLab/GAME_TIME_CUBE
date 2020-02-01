@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc771f95c468814dbd555412a92216b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 10
   damage: 10
   speed: 20
   spellCharge: 5

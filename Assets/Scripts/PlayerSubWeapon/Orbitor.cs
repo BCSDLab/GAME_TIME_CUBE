@@ -14,7 +14,7 @@ public class Orbitor : PlayerSubWeapon
     [SerializeField][Tooltip("부드럽게 이동하는 정도")]
     private float m_smoothTime = 0.2f;
 
-    private float m_alpha = 0f;  // 현재 각도
+    public float m_alpha = 0f;  // 현재 각도
     private Vector2 m_velocity = Vector2.zero;
     private float m_baseOmega;
     private float m_baseSmoothTime;
@@ -32,6 +32,8 @@ public class Orbitor : PlayerSubWeapon
 
         m_alpha += m_omega;
         if (m_alpha > 360000f) { m_alpha %= 360f; }
+
+        //Debug.Log(m_alpha % 360);
     }
 
     public override void MultiplySpeed(float velocityMultiplier)

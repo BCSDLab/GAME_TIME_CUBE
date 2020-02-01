@@ -111,6 +111,8 @@ public class BossAlphaController : Enemy
 
                 BGMManager.instance.Play(1);
                 StartPhase();
+
+                InGameUIManager.instance.EnableBossTimer();
             }
         }
 
@@ -293,17 +295,17 @@ public class BossAlphaController : Enemy
 
     void StopAllPatterns()
     {
-        m_homing.StartPattern();
-        m_donutAimed.StartPattern();
-        m_spiralMulti.StartPattern();
-        m_directionalNormal.StartPattern();
-        m_homing1.StartPattern();
-        m_radialMulti.StartPattern();
-        m_posToPos.StartPattern();
-        m_directionalAimedNWay.StartPattern();
-        m_verticalLeft.StartPattern();
-        m_directionalAimedRandom.StartPattern();
-        m_biDirectional.StartPattern();
+        m_homing.StopPattern();
+        m_donutAimed.StopPattern();
+        m_spiralMulti.StopPattern();
+        m_directionalNormal.StopPattern();
+        m_homing1.StopPattern();
+        m_radialMulti.StopPattern();
+        m_posToPos.StopPattern();
+        m_directionalAimedNWay.StopPattern();
+        m_verticalLeft.StopPattern();
+        m_directionalAimedRandom.StopPattern();
+        m_biDirectional.StopPattern();
     }
 
     void DropSubWeaponItem()

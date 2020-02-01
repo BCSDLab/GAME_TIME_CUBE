@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    public int damage = 15;
+    public int baseDamage = 15;
+    [HideInInspector]
+    public int damage;
     public float speed = 20f;
     public int spellCharge = 10;
+
+    void Awake()
+    {
+        damage = baseDamage;
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {

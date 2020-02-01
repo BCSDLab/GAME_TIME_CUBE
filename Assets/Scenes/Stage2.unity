@@ -6084,6 +6084,7 @@ MonoBehaviour:
   homingBullet: {fileID: 6925999261059133172, guid: 04a0df9c960dcef4a96258924e786953,
     type: 3}
   attackDelay: 0.1
+  moveNextStage: 0
 --- !u!50 &280776652
 Rigidbody2D:
   serializedVersion: 4
@@ -14256,6 +14257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 10
   speed: 5
   delay: 0.5
@@ -14273,6 +14275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 6527906457772606533, guid: ec8f2df96a8536f418960e0b02ffaf2b, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 1
   delay: 0.5
 --- !u!1 &1630448853
@@ -15646,6 +15649,9 @@ MonoBehaviour:
   hitCountText: {fileID: 66208672191215190}
   stageScoreText: {fileID: 66208672319704732}
   totalScoreText: {fileID: 66208672703989372}
+  continueText: {fileID: 66208671763512981}
+  scoreSound: {fileID: 8300000, guid: dde4bfce9edb42847a2942cc8907e31b, type: 3}
+  moveNextZone: {fileID: 0}
 --- !u!224 &66208671289413016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17954,6 +17960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   target: {fileID: 0}
   count: 5
   speed: 5
@@ -17973,6 +17980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 5
   speed: 6
   inDelay: 0.1
@@ -18007,6 +18015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 5
   speed: 5
   delay: 0.1
@@ -18160,6 +18169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   target: {fileID: 0}
   count: 10
   minSpeed: 4
@@ -18181,6 +18191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   count: 10
   speed: 5
@@ -24054,6 +24065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   audioclip: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  startDelay: 0
   count: 10
   speed: 6
   delay: 0.5

@@ -91,6 +91,8 @@ public class BossController : Enemy
 
                 BGMManager.instance.Play(1);
                 StartPhase();
+
+                InGameUIManager.instance.EnableBossTimer();
             }
         }
 

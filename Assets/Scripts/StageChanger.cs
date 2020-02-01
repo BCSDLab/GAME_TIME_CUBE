@@ -5,30 +5,65 @@ using UnityEngine.SceneManagement;
 
 public class StageChanger : MonoBehaviour
 {
+    public static StageChanger instance = null;
+
+    [HideInInspector]
+    public int savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+    [HideInInspector]
+    public int savedPlayerPower = 0;
+    [HideInInspector]
+    public int savedPlayerHP = 5;
+    [HideInInspector]
+    public float savedTotalScore = 0;
+    [HideInInspector]
+    public int savedSubWeaponNum = 0;
+
+    [Header("보조무기")]
+    public GameObject subWeaponItem = null;
+    public GameObject Orbitor = null;
+
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerController.instance.moveNextStage = true;
+            InGameUIManager.instance.DisactiveClearPanel();
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+            GameManager.instance.isLoading = true;
             Invoke("LoadNextStage", 2f);
         }
     }
 
     private void LoadNextStage()
     {
-        PlayerController.instance.moveNextStage = false;
-        string currStageName = SceneManager.GetActiveScene().name;
+        GameManager.instance.isLoading = false;
+        SceneManager.LoadScene(StageManager.instance.nextSceneName);
+    }
 
-        //Debug.Log(currStageName);
+    public void SaveData()
+    {
+        savedSpellEnergy = GameManager.instance.spellEnergy;
+        savedPlayerPower = GameManager.instance.playerPower;
+        savedPlayerHP = GameManager.instance.GetPlayerHP();
+        savedSubWeaponNum = GameManager.instance.subWeaponNum;
+        savedTotalScore += GameManager.instance.GetScore();
+    }
 
-        if (currStageName.StartsWith("Stage"))
-        {
-            int currStage = int.Parse(currStageName.Substring(5));
-            SceneManager.LoadScene("Stage" + ++currStage);
-        }
-        else
-        {
-            SceneManager.LoadScene("Menu");
-        }
+    public void ResetStat()
+    {
+        savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+        savedPlayerPower = 0;
+        savedPlayerHP = 5;
+        savedTotalScore = 0;
+        savedSubWeaponNum = 0;
     }
 }
