@@ -167,6 +167,11 @@ public class GameManager : MonoBehaviour
         m_score = 0;
         InGameUIManager.instance.UpdateScoreText(m_score);
     }
+
+    public void AddKillCount()
+    {
+        m_killCount++;
+    }
     #endregion
 
     #region PLAYER HP
@@ -269,7 +274,7 @@ public class GameManager : MonoBehaviour
     public void BossDefeated()
     {
         InGameUIManager.instance.DisplayBossHPSlider(display: false);
-        m_killCount++;
+        AddKillCount();
         DestroyAllBullets();
         isPlayerAttacking = false;
     }

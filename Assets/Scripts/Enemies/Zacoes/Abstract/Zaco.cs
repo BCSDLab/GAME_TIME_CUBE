@@ -61,6 +61,7 @@ public abstract class Zaco : Enemy
             Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
         }
 
+        GameManager.instance.AddKillCount();
         Destroy(gameObject);
     }
 }
