@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour
         bulletInst.transform.position = transform.position + Vector3.right * offX + Vector3.up * offY;
         bulletInst.transform.rotation = rotation;
         if (damageMultiplier != -1)
-            bulletInst.GetComponent<PlayerBullet>().damage = (int)(bulletInst.GetComponent<PlayerBullet>().damage * damageMultiplier);
+            bulletInst.GetComponent<PlayerBullet>().damage = (int)(bulletInst.GetComponent<PlayerBullet>().baseDamage * damageMultiplier);
         bulletInst.SetActive(true);
 
         bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(atan), speed * Mathf.Sin(atan));
@@ -240,7 +240,7 @@ public class PlayerController : MonoBehaviour
         GameObject bulletInst = PoolManager.instance.PopFromPool(homingBullet.name);
         bulletInst.transform.position = transform.position;
         if (damageMultiplier != -1)
-            bulletInst.GetComponent<PlayerBullet>().damage = (int)(bulletInst.GetComponent<PlayerBullet>().damage * damageMultiplier);
+            bulletInst.GetComponent<PlayerBullet>().damage = (int)(bulletInst.GetComponent<PlayerBullet>().baseDamage * damageMultiplier);
         bulletInst.SetActive(true);
 
         m_audioSources[2].Play();
