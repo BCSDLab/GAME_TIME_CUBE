@@ -27,7 +27,7 @@ public class PoolManager : MonoBehaviour
         Pool pool = FindPool(item.name);
         if (pool == null)
         {
-            Debug.Log("풀링하려는 오브젝트가 풀링 리스트에 없습니다!");
+            Debug.Log("풀링하려는 오브젝트 " + item.name + "(이)가 풀링 리스트에 없습니다!");
             return false;
         }
 
