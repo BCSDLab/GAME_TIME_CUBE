@@ -9941,7 +9941,7 @@ MonoBehaviour:
     repeatCount: 4
     repeatDelay: 3
     engagePhase: 0
-  m_bossEngageTime: 1
+  m_bossEngageTime: 110
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   m_bossLimitTime: 300
@@ -29544,7 +29544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -520, y: -30}
+  m_AnchoredPosition: {x: -519.89954, y: -30}
   m_SizeDelta: {x: 300, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1263577489177241833
