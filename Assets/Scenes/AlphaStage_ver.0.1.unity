@@ -7448,10 +7448,10 @@ MonoBehaviour:
   m_startDelay: 0
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
-  count: 4
+  count: 7
   speed: 3
   delay: 2
-  angleRange: 20
+  angleRange: 30
 --- !u!114 &513728059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7496,9 +7496,9 @@ MonoBehaviour:
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  count: 30
+  count: 77
   speed: 3
-  inDelay: 2
+  inDelay: 1.2
   m_isCountChange: 1
 --- !u!114 &513728061
 MonoBehaviour:
@@ -7755,7 +7755,7 @@ MonoBehaviour:
   - Boss 1
   - BossExit
   m_moveTime: 2
-  m_moveSpeed: 4
+  m_moveSpeed: 2
   m_bossTracker: {fileID: 4125893928747804409}
   m_subWeaponItem: {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e,
     type: 3}
