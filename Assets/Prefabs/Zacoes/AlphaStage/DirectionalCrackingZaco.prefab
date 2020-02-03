@@ -5008,8 +5008,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 
-  speed: 5
-  m_hp: 100
+  speed: 4
+  m_hp: 500
   m_destroyOnArrival: 1
   m_dropItemList:
     items:

@@ -5077,7 +5077,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
 --- !u!82 &92154770
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5608,7 +5608,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &190491674
 GameObject:
@@ -6630,7 +6630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &316603151
 Transform:
   m_ObjectHideFlags: 0
@@ -6651,7 +6651,7 @@ Transform:
   - {fileID: 2008734643}
   - {fileID: 1510409529}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &320759825
 GameObject:
@@ -7425,9 +7425,9 @@ MonoBehaviour:
   m_startDelay: 0
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 1
-  speed: 2
+  speed: 4
   inDelay: 0.15
-  outDelay: 10
+  outDelay: 4
   m_x: 9
   m_top: 5
   m_bottom: -5
@@ -7727,8 +7727,6 @@ MonoBehaviour:
     - "\uC9DC\uC7A5\uBA74 \uC2DC\uD0A4\uC2E0 \uBD84?"
     - "\uB9D0\uB85C \uD574\uC11C\uB294 \uC548\uB418\uACA0\uAD6C\uB9CC?"
     spriteNs: 00000000000000000100000001000000
-    defaultL: 0
-    defaultR: 0
     imagesL:
     - {fileID: 21300000, guid: 2ad03fe501a388a4c88f2dce094ed592, type: 3}
     - {fileID: 21300000, guid: 83addb0bfd9d1b948ad0e20c9e211b3c, type: 3}
@@ -7749,7 +7747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 1000
+  m_hp: 5000
   m_destroyOnArrival: 0
   m_enterPos: {fileID: 911354489}
   m_pathNames:
@@ -8931,7 +8929,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837894285}
   m_Layer: 0
-  m_Name: BulletSpawnPos
+  m_Name: Bullet Spawn Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8951,7 +8949,7 @@ Transform:
   - {fileID: 1694467899}
   - {fileID: 1527668812}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &877659140
 GameObject:
@@ -9806,14 +9804,14 @@ MonoBehaviour:
   - mob: {fileID: 7473877153406667978, guid: 53fcb0b08a4f26447b06165d5d68506d, type: 3}
     pathName: B1
     engageTime: 2
-    repeatCount: 3
-    repeatDelay: 2
+    repeatCount: 6
+    repeatDelay: 1
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: 53fcb0b08a4f26447b06165d5d68506d, type: 3}
     pathName: B2
     engageTime: 3
-    repeatCount: 3
-    repeatDelay: 2
+    repeatCount: 6
+    repeatDelay: 1
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: 9264918247df4214fbd49810c9409d62, type: 3}
     pathName: A1
@@ -9831,41 +9829,41 @@ MonoBehaviour:
     pathName: B3
     engageTime: 19
     repeatCount: 2
-    repeatDelay: 4
+    repeatDelay: 3
     engagePhase: 0
   - mob: {fileID: 7466608742450977111, guid: a09e9985551458a4ba752e94a1b1bf0f, type: 3}
     pathName: B4
     engageTime: 20
     repeatCount: 2
-    repeatDelay: 4
+    repeatDelay: 3
     engagePhase: 0
   - mob: {fileID: 7466608742450977111, guid: fd9d32c6e18fd0a43997c47936c3686d, type: 3}
     pathName: B1
     engageTime: 28
     repeatCount: 2
-    repeatDelay: 4
+    repeatDelay: 3
     engagePhase: 0
   - mob: {fileID: 7466608742450977111, guid: fd9d32c6e18fd0a43997c47936c3686d, type: 3}
     pathName: B2
     engageTime: 29
     repeatCount: 2
-    repeatDelay: 4
+    repeatDelay: 3
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: e45f3773a30c1e443a44021c35b8dc2d, type: 3}
     pathName: Right1
-    engageTime: 37
+    engageTime: 40
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: e45f3773a30c1e443a44021c35b8dc2d, type: 3}
     pathName: Right3
-    engageTime: 37
+    engageTime: 40
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: e8ae1f05ddc14144d8a33ce5b3746f5c, type: 3}
     pathName: Center
-    engageTime: 37
+    engageTime: 40
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
@@ -9941,7 +9939,7 @@ MonoBehaviour:
     repeatCount: 4
     repeatDelay: 3
     engagePhase: 0
-  m_bossEngageTime: 1
+  m_bossEngageTime: 110
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   m_bossLimitTime: 300
@@ -20874,8 +20872,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d21e01c8bb7074ba088e0eb8476203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocityMultiplier: 0.2
-  m_sizeAdderBase: 3
+  velocityMultiplier: 0.1
+  m_sizeAdderBase: 1
   m_sizeAdderMultiplier: 0.95
 --- !u!58 &1485656343
 CircleCollider2D:
@@ -26257,7 +26255,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1653020222
 PrefabInstance:
@@ -27477,7 +27475,7 @@ Transform:
   m_Children:
   - {fileID: 66208672267123122}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66208671284566068
 GameObject:
@@ -30047,7 +30045,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &2751401160953615817
 RectTransform:
@@ -30557,7 +30555,7 @@ Transform:
   m_Children:
   - {fileID: 4248338703142506794}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4248338703276155682
 MonoBehaviour:

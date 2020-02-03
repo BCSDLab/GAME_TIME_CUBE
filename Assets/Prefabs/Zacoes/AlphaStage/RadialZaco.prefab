@@ -5028,7 +5028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 10
-  m_hp: 1400
+  m_hp: 1000
   m_destroyOnArrival: 0
   m_dropItemList:
     items:
