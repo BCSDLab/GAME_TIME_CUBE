@@ -9,8 +9,8 @@ public class SubWeaponItem : Item
 
     protected override void PickUp()
     {
-        GameManager.instance.subWeaponNum++;
-        Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.subWeaponNum;
+        GameManager.instance.orbitorCount++;
+        Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
 
         if (subWeapon.name == "Orbitor")
         {
