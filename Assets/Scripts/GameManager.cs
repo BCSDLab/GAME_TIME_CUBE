@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
             Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
             for (int i = 1; i <= orbitorCount; i++)
             {
-                Instantiate(sc.Orbitor, playerTR.position, Quaternion.identity).name = sc.Orbitor.name + "_" + i;
+                Instantiate(sc.orbitor, playerTR.position, Quaternion.identity).name = sc.orbitor.name + "_" + i;
             }
             sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
         }
@@ -246,12 +246,14 @@ public class GameManager : MonoBehaviour
 
     public void ToTitle()
     {
+        StageChanger.instance.ResetStat();
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
     public void ResetGame()
     {
+        StageChanger.instance.ResetStat();
         Time.timeScale = 1f;
         SceneManager.LoadScene(gameObject.scene.name);
     }

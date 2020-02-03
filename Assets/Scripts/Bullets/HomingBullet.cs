@@ -43,7 +43,6 @@ public class HomingBullet : Bullet
         if (collision.CompareTag("PlayerBullet"))
         {
             m_hp -= collision.GetComponent<PlayerBullet>().damage;
-            m_audioSource.Play();
             
             PoolManager.instance.PushToPool(collision.gameObject);
 

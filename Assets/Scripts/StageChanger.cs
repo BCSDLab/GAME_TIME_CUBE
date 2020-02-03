@@ -13,9 +13,9 @@ public class StageChanger : MonoBehaviour
     private float m_savedTotalScore = 0;
     private int m_savedOrbitorCount = 0;
 
-    [Header("보조무기")]
+    [Header("보조무기 프리팹")]
     public GameObject subWeaponItem = null;
-    public GameObject Orbitor = null;
+    public GameObject orbitor = null;
 
     void Awake()
     {
@@ -40,7 +40,10 @@ public class StageChanger : MonoBehaviour
     void LoadNextStage()
     {
         GameManager.instance.isLoading = false;
-        SceneManager.LoadScene(StageManager.instance.nextSceneName);
+
+        string nextSceneName = StageManager.instance.nextSceneName;
+        if (nextSceneName == "_Title") ResetStat();
+        SceneManager.LoadScene(nextSceneName);
     }
 
     public void SaveData()
