@@ -38,7 +38,7 @@ public class DirectionalAimedNWay : AimedBulletPattern
             {
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                 bulletInst.transform.position = m_spawnPos.position;
-                bulletInst.transform.rotation = rotation;
+                bulletInst.transform.rotation = Quaternion.AngleAxis(angle + (m_angle * Mathf.Rad2Deg), Vector3.forward);
                 bulletInst.SetActive(true);
 
                 float cos = Mathf.Cos(atan + m_angle);
