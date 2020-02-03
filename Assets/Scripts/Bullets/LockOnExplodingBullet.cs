@@ -21,6 +21,7 @@ public class LockOnExplodingBullet : Bullet
     private Rigidbody2D m_rigidbody;
     private bool m_isLocked = false;
     private Vector3 m_lockedPos;
+    private GameObject m_lockOnMarkInst = null;
     private bool m_isExploding = false;
 
     void Awake()
@@ -68,7 +69,7 @@ public class LockOnExplodingBullet : Bullet
     {
         m_isLocked = true;
         m_lockedPos = target.transform.position;
-        m_lockOnMark = Instantiate(m_lockOnMark, m_lockedPos, Quaternion.identity);
+        m_lockOnMarkInst = Instantiate(m_lockOnMark, m_lockedPos, Quaternion.identity);
         StartCoroutine("PlayLockOnSFX");
     }
 
@@ -99,9 +100,14 @@ public class LockOnExplodingBullet : Bullet
 
     IEnumerator Explode()
     {
-        Destroy(m_lockOnMark);
+        Destroy(m_lockOnMarkInst);
         m_bulletPattern.StartPattern();
         yield return new WaitForSeconds(0.01f);
         PoolManager.instance.PushToPool(gameObject);
+    }
+
+    void OnDisable()
+    {
+        Destroy(m_lockOnMarkInst);
     }
 }
