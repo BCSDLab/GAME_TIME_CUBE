@@ -340,6 +340,7 @@ public class InGameUIManager : MonoBehaviour
     public void InitBossTimer(int limitTime = 60)
     {
         m_bossTimer.SetActive(true);
+        m_bossTimer.GetComponent<Image>().fillAmount = 1;
         m_bossLimitTime = limitTime;
         m_bossTimerText.text = limitTime.ToString();
         m_bossTimerText.gameObject.SetActive(true);
