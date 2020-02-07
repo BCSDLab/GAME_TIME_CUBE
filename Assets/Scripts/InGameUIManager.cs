@@ -35,6 +35,8 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private float m_phaseSlotDistance = 40f;
     [SerializeField]
+    private GameObject m_bossTimer = null;
+    [SerializeField]
     private Text m_bossTimerText = null;
     [Header("패널")]
     [SerializeField]
@@ -70,6 +72,7 @@ public class InGameUIManager : MonoBehaviour
     private int m_bossHP = 0;
     private bool m_isFilling = false;
     private int m_bossPhaseCount = 0;
+    private int m_bossLimitTime = 0;
 
     // SliderFill colors
     private readonly Color CUBE_BASE_COLOR = new Color32(100, 150, 250, 200);
@@ -336,6 +339,8 @@ public class InGameUIManager : MonoBehaviour
     #region BossTimer
     public void InitBossTimer(int limitTime = 60)
     {
+        m_bossTimer.SetActive(true);
+        m_bossLimitTime = limitTime;
         m_bossTimerText.text = limitTime.ToString();
         m_bossTimerText.gameObject.SetActive(true);
     }
@@ -354,6 +359,7 @@ public class InGameUIManager : MonoBehaviour
         int limitTime = int.Parse(m_bossTimerText.text);
         if (limitTime > 0)
         {
+            m_bossTimer.GetComponent<Image>().fillAmount = (float)limitTime / m_bossLimitTime;
             m_bossTimerText.text = (limitTime - 1).ToString();
             StartCoroutine("UpdateBossTimer");
         }
@@ -376,6 +382,7 @@ public class InGameUIManager : MonoBehaviour
 
     public void ClearStage(int killCount, int hitCount, float stageScore, float totalScore)
     {
+        m_bossTimer.SetActive(false);
         m_bossTimerText.gameObject.SetActive(false);
 
         paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
