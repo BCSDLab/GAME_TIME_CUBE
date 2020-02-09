@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_accelRate: 1.2
   m_useMaxSpeed: 1
-  m_maxSpeed: 15
+  m_maxSpeed: 10
   m_useMinSpeed: 1
   m_minSpeed: 1
 --- !u!60 &4373179237538321813

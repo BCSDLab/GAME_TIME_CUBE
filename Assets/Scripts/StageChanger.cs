@@ -7,23 +7,17 @@ public class StageChanger : MonoBehaviour
 {
     public static StageChanger instance = null;
 
-    [HideInInspector]
-    public int savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
-    [HideInInspector]
-    public int savedPlayerPower = 0;
-    [HideInInspector]
-    public int savedPlayerHP = 5;
-    [HideInInspector]
-    public float savedTotalScore = 0;
-    [HideInInspector]
-    public int savedSubWeaponNum = 0;
+    private int m_savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+    private int m_savedPlayerPower = 0;
+    private int m_savedPlayerHP = GameManager.PLAYER_HP_INIT;
+    private float m_savedTotalScore = 0;
+    private int m_savedOrbitorCount = 0;
 
-    [Header("보조무기")]
+    [Header("보조무기 프리팹")]
     public GameObject subWeaponItem = null;
-    public GameObject Orbitor = null;
+    public GameObject orbitor = null;
 
-
-    private void Awake()
+    void Awake()
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
@@ -31,7 +25,7 @@ public class StageChanger : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -43,27 +37,39 @@ public class StageChanger : MonoBehaviour
         }
     }
 
-    private void LoadNextStage()
+    void LoadNextStage()
     {
         GameManager.instance.isLoading = false;
-        SceneManager.LoadScene(StageManager.instance.nextSceneName);
+
+        string nextSceneName = StageManager.instance.nextSceneName;
+        if (nextSceneName == "_Title") ResetStat();
+        SceneManager.LoadScene(nextSceneName);
     }
 
     public void SaveData()
     {
-        savedSpellEnergy = GameManager.instance.spellEnergy;
-        savedPlayerPower = GameManager.instance.playerPower;
-        savedPlayerHP = GameManager.instance.GetPlayerHP();
-        savedSubWeaponNum = GameManager.instance.subWeaponNum;
-        savedTotalScore += GameManager.instance.GetScore();
+        m_savedSpellEnergy = GameManager.instance.spellEnergy;
+        m_savedPlayerPower = GameManager.instance.playerPower;
+        m_savedPlayerHP = GameManager.instance.GetPlayerHP();
+        m_savedOrbitorCount = GameManager.instance.orbitorCount;
+        m_savedTotalScore += GameManager.instance.GetScore();
+    }
+
+    public void LoadData()
+    {
+        GameManager.instance.spellEnergy = m_savedSpellEnergy;
+        GameManager.instance.playerPower = m_savedPlayerPower;
+        GameManager.instance.playerHP = m_savedPlayerHP;
+        GameManager.instance.orbitorCount = m_savedOrbitorCount;
+        GameManager.instance.totalScore = m_savedTotalScore;
     }
 
     public void ResetStat()
     {
-        savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
-        savedPlayerPower = 0;
-        savedPlayerHP = 5;
-        savedTotalScore = 0;
-        savedSubWeaponNum = 0;
+        m_savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+        m_savedPlayerPower = 0;
+        m_savedPlayerHP = GameManager.PLAYER_HP_INIT;
+        m_savedTotalScore = 0;
+        m_savedOrbitorCount = 0;
     }
 }

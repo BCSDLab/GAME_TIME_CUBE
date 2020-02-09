@@ -12,38 +12,42 @@ public class GameManager : MonoBehaviour
     public const int SPELL_ENERGY_MAX = 10000;
     public const int SPELL_ENERGY_USAGE = 5000;
     public const int PLAYER_POWER_MAX = 4000;
+    public const int PLAYER_HP_INIT = 3;
+    private const int PLAYER_HP_MAX = 5;
     private const int CUBE_ENERGY_USAGE = 20;
     private const int CUBE_ENERGY_RECOVER = 100;
-    private const int PLAYER_HP_MAX = 5;
+    private const string AXIS_PAUSE = "Pause";
     #endregion
 
+    #region NONSERIALIZED
     [System.NonSerialized]
     public int cubeEnergy = CUBE_ENERGY_MAX;
     [System.NonSerialized]
     public int spellEnergy = SPELL_ENERGY_MAX;
     [System.NonSerialized]
+    public int playerHP = PLAYER_HP_INIT;
+    [System.NonSerialized]
     public int playerPower = 0;
     [System.NonSerialized]
-    public int subWeaponNum = 0;
+    public int orbitorCount = 0;
+    [System.NonSerialized]
+    public float totalScore = 0;
     [System.NonSerialized]
     public bool isPlayerAttacking = false;
     [System.NonSerialized]
     public bool isPlayerSpelling = false;
     [System.NonSerialized]
-    public bool isBossEnd = false;  // 보스 시작/끝 판별
+    public bool isBossDefeated = false;
     [System.NonSerialized]
     public bool isPaused = false;  // 일시정지 (P)
     [System.NonSerialized]
     public bool isDialogueOn = false;  // 대화
     [System.NonSerialized]
     public bool isLoading = false;  // 스테이지 로딩
+    #endregion
 
-    private const string AXIS_PAUSE = "Pause"; 
     private bool m_pauseToggled = false;
-    
     private float m_score = 0;
-    private float m_totalScore = 0;
-    private int m_playerHP = PLAYER_HP_MAX;
     private int m_killCount = 0;
     private int m_hitCount = 0;
 
@@ -79,24 +83,17 @@ public class GameManager : MonoBehaviour
     void InitializeStat()
     {
         StageChanger sc = StageChanger.instance;
-        //if (sc) Debug.Log("Stat Initialized!");
+        sc.LoadData();
 
-        spellEnergy = sc.savedSpellEnergy;
-        playerPower = sc.savedPlayerPower;
-        m_playerHP = sc.savedPlayerHP;
-
-        subWeaponNum = sc.savedSubWeaponNum;
-        if (subWeaponNum != 0)
+        if (orbitorCount != 0)
         {
             Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
-            for (int i = 1; i <= subWeaponNum; i++)
+            for (int i = 1; i <= orbitorCount; i++)
             {
-                Instantiate(sc.Orbitor, playerTR.position, Quaternion.identity).name = sc.Orbitor.name + "_" + i;
+                Instantiate(sc.orbitor, playerTR.position, Quaternion.identity).name = sc.orbitor.name + "_" + i;
             }
             sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
         }
-
-        m_totalScore = sc.savedTotalScore;
     }
 
     void InitializeUI()
@@ -105,7 +102,7 @@ public class GameManager : MonoBehaviour
         InGameUIManager.instance.UpdateSpellSlider(spellEnergy);
         InGameUIManager.instance.UpdatePower(playerPower);
         InGameUIManager.instance.UpdateScoreText(m_score);
-        for(int hpSlot = PLAYER_HP_MAX; hpSlot > m_playerHP; hpSlot--)
+        for(int hpSlot = PLAYER_HP_MAX; hpSlot > playerHP; hpSlot--)
         {
             InGameUIManager.instance.DamagePlayer(hpSlot - 1);
         }
@@ -211,14 +208,14 @@ public class GameManager : MonoBehaviour
     public void DamagePlayer()
     {
         m_hitCount++;
-        m_playerHP--;
-        InGameUIManager.instance.DamagePlayer(m_playerHP);
+        playerHP--;
+        InGameUIManager.instance.DamagePlayer(playerHP);
 
         // 파워 드롭
         playerPower /= 2;  // 50%
         InGameUIManager.instance.UpdatePower(playerPower);
 
-        if (m_playerHP == 0)
+        if (playerHP == 0)
         {
             Invoke("GameOver", 1f);
         }
@@ -226,16 +223,16 @@ public class GameManager : MonoBehaviour
 
     public void LifeUp(int scoreWhenMaxLife = 0)
     {
-        if (m_playerHP == PLAYER_HP_MAX)
+        if (playerHP == PLAYER_HP_MAX)
         {
             AddScore(scoreWhenMaxLife);
             return;
         }
-        m_playerHP++;
-        InGameUIManager.instance.HealPlayer(m_playerHP);
+        playerHP++;
+        InGameUIManager.instance.HealPlayer(playerHP);
     }
 
-    public int GetPlayerHP() { return m_playerHP; }
+    public int GetPlayerHP() { return playerHP; }
     #endregion
 
     #region GAME FLOW
@@ -249,12 +246,14 @@ public class GameManager : MonoBehaviour
 
     public void ToTitle()
     {
+        StageChanger.instance.ResetStat();
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
     public void ResetGame()
     {
+        StageChanger.instance.ResetStat();
         Time.timeScale = 1f;
         SceneManager.LoadScene(gameObject.scene.name);
     }
@@ -313,10 +312,11 @@ public class GameManager : MonoBehaviour
         isPlayerAttacking = false;
         InGameUIManager.instance.DisplayBossHPSlider(display: false);
         InGameUIManager.instance.DisableBossTimer();
+        isBossDefeated = true;
     }
 
     public void StageClear()
     {
-        InGameUIManager.instance.ClearStage(m_killCount, m_hitCount, m_score, m_score + m_totalScore);
+        InGameUIManager.instance.ClearStage(m_killCount, m_hitCount, m_score, m_score + totalScore);
     }
 }

@@ -70,6 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3e767ae434bbe4498b15688ca81f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellEnergy: 10000
-  playerPower: 0
-  playerHP: 5
+  subWeaponItem: {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e,
+    type: 3}
+  Orbitor: {fileID: 7789033408323666331, guid: 0f5a079cd9c4a7f44838ee0cbf441064, type: 3}

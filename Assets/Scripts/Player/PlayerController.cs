@@ -170,8 +170,6 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        // TODO: 파워에 따른 패턴 구현 (0~3단계)
-
         if (GameManager.instance.playerPower < 1000)
         {
             ShootDirectional();

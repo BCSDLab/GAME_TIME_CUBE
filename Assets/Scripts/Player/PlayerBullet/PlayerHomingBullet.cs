@@ -29,7 +29,7 @@ public class PlayerHomingBullet : PlayerBullet
             return;
         }
 
-        if (GameManager.instance.isBossEnd)
+        if (GameManager.instance.isBossDefeated)
         {
             m_rigidbody.velocity = transform.right * speed;
             m_rigidbody.angularVelocity = 0f;
