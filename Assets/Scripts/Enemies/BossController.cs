@@ -120,6 +120,10 @@ public class BossController : Enemy
         InGameUIManager.instance.EnableBossTimer();
         InGameUIManager.instance.DisplayBossHPSlider(hp: m_phaseHP);
         InGameUIManager.instance.InitBossTimer(20); // switch 안으로 옮길 경우 페이즈 당 시간 다르게 설정
+        if(m_phase == PHASE_COUNT)
+        {
+            InGameUIManager.instance.ChangeBossTimerColor(Color.red);
+        }
 
         Debug.Log("보스 페이즈 전환: m_phase = " + m_phase.ToString() + " HP = " + m_totalHP.ToString());
 
