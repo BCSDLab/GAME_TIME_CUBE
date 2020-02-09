@@ -177,7 +177,7 @@ public class BossController : Enemy
     {
         if(m_phase < PHASE_COUNT)
         {
-            StartPhase();
+            Damage(m_phaseHP);
         }
         else
         {
