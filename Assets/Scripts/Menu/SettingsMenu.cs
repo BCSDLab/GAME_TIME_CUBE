@@ -55,10 +55,10 @@ public class SettingsMenu : MonoBehaviour
             string option = resolutions[i].width + " × " + resolutions[i].height + " (" + resolutions[i].refreshRate + "Hz)";
             options.Add(option);
 
-            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-            {
+            if (resolutions[i].width == Screen.width &&
+                resolutions[i].height == Screen.height &&
+                resolutions[i].refreshRate == Screen.currentResolution.refreshRate)
                 currentResolutionIndex = i;
-            }
         }
 
         resolutionDropdown.ClearOptions();
