@@ -366,7 +366,10 @@ public class InGameUIManager : MonoBehaviour
         }
         else
         {
-            GameManager.instance.GameOver();
+            // GameManager.instance.GameOver();
+            GameObject boss = GameObject.Find("Boss");
+            Debug.Log("Find Boss!");
+            boss.GetComponent<BossController>().SkipPhase();
         }
     }
     #endregion
