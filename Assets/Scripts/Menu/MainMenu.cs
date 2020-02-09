@@ -18,13 +18,11 @@ public class MainMenu : MonoBehaviour
     private GameObject cursor = null;
     [SerializeField]
     private Transform buttons = null;
-    private Vector3 cursorPos;
     private int cursorIdx;
     private bool hasMovedCursor;
 
     void Awake()
     {
-        cursorPos = cursor.transform.position;
         cursorIdx = 0;
         hasMovedCursor = false;
     }
@@ -53,6 +51,7 @@ public class MainMenu : MonoBehaviour
         {
             cursorIdx += (vertical > AXIS_MIN) ? -1 : 1;
             cursorIdx = (cursorIdx < 0) ? BUTTON_N - 1 : (cursorIdx >= BUTTON_N) ? 0 : cursorIdx;
+            Vector3 cursorPos = cursor.transform.position;
             cursorPos.y = buttons.GetChild(cursorIdx).position.y;
             cursor.transform.position = cursorPos;
 
