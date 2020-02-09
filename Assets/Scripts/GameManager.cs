@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         float pause = Input.GetAxisRaw(AXIS_PAUSE);  // timeScale 영향 없음
 
-        if (!m_pauseToggled && pause > 0.1f)
+        if (pause > 0.1f && !m_pauseToggled && playerHP > 0)
         {
             m_pauseToggled = true;
 
@@ -223,6 +223,12 @@ public class GameManager : MonoBehaviour
 
     public void LifeUp(int scoreWhenMaxLife = 0)
     {
+        if (playerHP == 0) {
+            // TODO: 플레이어 라이프 0 상태에서 라이프 아이템 획득 시
+            Debug.Log("플레이어 라이프 0 상태에서 라이프 아이템 획득");
+            return;
+        }
+
         if (playerHP == PLAYER_HP_MAX)
         {
             AddScore(scoreWhenMaxLife);
