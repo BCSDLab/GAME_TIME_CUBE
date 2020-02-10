@@ -27,6 +27,8 @@ public class InGameUIManager : MonoBehaviour
     private Text m_scoreText = null;
     [SerializeField]
     private Slider m_dynCubeSlider = null;
+    [SerializeField]
+    private Slider m_dynSpellSlider= null;
     [Header("보스")]
     [SerializeField]
     private Slider m_bossHPSlider = null;
@@ -95,11 +97,12 @@ public class InGameUIManager : MonoBehaviour
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         m_cubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
-        m_dynCubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
-        m_dynCubeSlider.gameObject.SetActive(false);
         m_spellSlider1.maxValue = GameManager.SPELL_ENERGY_USAGE;
         m_spellSlider2.maxValue = GameManager.SPELL_ENERGY_MAX - GameManager.SPELL_ENERGY_USAGE;
         m_powerSlider.maxValue = GameManager.PLAYER_POWER_MAX;
+        m_dynCubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
+        m_dynCubeSlider.gameObject.SetActive(false);
+        m_dynSpellSlider.gameObject.SetActive(false);
 
         m_bossHPSlider.gameObject.SetActive(false);
         m_pausePanel.SetActive(false);
@@ -145,6 +148,30 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
+    public void InitDynSpellSlider(float maxValue)
+    {
+        m_dynSpellSlider.maxValue = maxValue;
+    }
+    public void EnableDynSpellSlider(bool enable = true)
+    {
+        if (!m_dynSpellSlider) return;
+
+        m_dynSpellSlider.gameObject.SetActive(enable);
+        if (enable)
+        {
+            m_dynSpellSlider.value = m_dynSpellSlider.maxValue;
+            Camera camera = Camera.main;
+            Vector3 screenPoint = camera.WorldToScreenPoint(m_playerTransform.position);
+            m_dynSpellSlider.transform.position = screenPoint + Vector3.up * 60;
+        }
+    }
+    public void UpdateDynSpellSlider(float value)
+    {
+        m_dynSpellSlider.value -= value;
+        Camera camera = Camera.main;
+        Vector3 screenPoint = camera.WorldToScreenPoint(m_playerTransform.position);
+        m_dynSpellSlider.transform.position = screenPoint + Vector3.up * 60;
+    }
 
     public void UpdateSpellSlider(int spellEnergy)
     {

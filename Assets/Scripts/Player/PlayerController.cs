@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
             m_isTimeControlEnabled = false;
             m_isTimeControlShrinking = false;
             InGameUIManager.instance.EnableDynCubeSlider(false);
+            InGameUIManager.instance.EnableDynSpellSlider(false);
 
             return;
         }
