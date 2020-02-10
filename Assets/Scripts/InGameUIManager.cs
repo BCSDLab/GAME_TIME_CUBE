@@ -81,7 +81,7 @@ public class InGameUIManager : MonoBehaviour
     private readonly Color CUBE_HEAL_COLOR = new Color32(100, 200, 200, 200);  // when cubeEnergy is regenerating
     private readonly Color CUBE_USE_COLOR = new Color32(200, 150, 250, 200);  // when cubeEnergy is being consumed
     private readonly Color SPELL_CHARGED_COLOR = new Color32(250, 100, 250, 200);
-    private readonly Color SPELL_NOT_CHARGED_COLOR = new Color32(250, 100, 250, 150);
+    private readonly Color SPELL_NOT_CHARGED_COLOR = new Color32(200, 100, 200, 150);
 
     void Awake()
     {
