@@ -6056,6 +6056,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power Up Item
       objectReference: {fileID: 0}
+    - target: {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1796773464430945968, guid: d02bef780c7d53d4783693fcbc50bc0b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7747,7 +7752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 5000
+  m_hp: 500
   m_destroyOnArrival: 0
   m_enterPos: {fileID: 911354489}
   m_pathNames:
@@ -7772,10 +7777,6 @@ MonoBehaviour:
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
     - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
     counts: 0a00000005000000
-  - items:
-    - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
-    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
-    counts: 0a0000000a000000
   - items:
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
     - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
@@ -9939,7 +9940,7 @@ MonoBehaviour:
     repeatCount: 4
     repeatDelay: 3
     engagePhase: 0
-  m_bossEngageTime: 110
+  m_bossEngageTime: 1
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   m_bossLimitTime: 300
@@ -29706,6 +29707,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score Item Gamma
       objectReference: {fileID: 0}
+    - target: {fileID: 8453631172040760662, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8453631172040760656, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30256,6 +30262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Life Up Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7577444241290646184, guid: 2fbe291f5003d9a4f9e129d5f609ec0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7577444241290646187, guid: 2fbe291f5003d9a4f9e129d5f609ec0a,
         type: 3}
@@ -30868,6 +30879,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Charge Item
       objectReference: {fileID: 0}
+    - target: {fileID: 6944185424850292006, guid: b6976bce5d893914885974b11f86574f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6944185424850292008, guid: b6976bce5d893914885974b11f86574f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30935,6 +30951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Score Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7266687512420095472, guid: 25b1505320c0e9d418d54ba42ada10e5,
         type: 3}
@@ -31004,6 +31025,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power Item Gamma
       objectReference: {fileID: 0}
+    - target: {fileID: 1796773464430945974, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1796773464430945968, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31057,6 +31083,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cube Charge Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 7511906672979144939, guid: 91743ae1d69fa034ba7d71c9b013165e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7511906672979144949, guid: 91743ae1d69fa034ba7d71c9b013165e,
         type: 3}
