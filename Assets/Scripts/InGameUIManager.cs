@@ -12,7 +12,7 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private Transform m_playerHPSlots = null;
     [SerializeField]
-    private Slider m_timeCubeSlider = null;
+    private Slider m_cubeSlider = null;
     [SerializeField]
     private Slider m_spellSlider1 = null;
     [SerializeField]
@@ -25,6 +25,10 @@ public class InGameUIManager : MonoBehaviour
     private Transform m_powerIcons = null;
     [SerializeField]
     private Text m_scoreText = null;
+    [SerializeField]
+    private Slider m_dynCubeSlider = null;
+    [SerializeField]
+    private Slider m_dynSpellSlider= null;
     [Header("보스")]
     [SerializeField]
     private Slider m_bossHPSlider = null;
@@ -61,9 +65,10 @@ public class InGameUIManager : MonoBehaviour
     private object[] paramArr; // killCount, hitCount, stageScore, totalScore
     private int paramIdx;
     private const float UPDATE_DELAY = 0.05f;
-    private Image timeCubeSliderFill;
-    private Image spellSliderFill1;
-    private Image spellSliderFill2;
+    private Image m_cubeSliderFill;
+    private Image m_spellSliderFill1;
+    private Image m_spellSliderFill2;
+    private Transform m_playerTransform;
 
     private int m_power = 0;
     private float m_score = 0f;
@@ -76,7 +81,7 @@ public class InGameUIManager : MonoBehaviour
     private readonly Color CUBE_HEAL_COLOR = new Color32(100, 200, 200, 200);  // when cubeEnergy is regenerating
     private readonly Color CUBE_USE_COLOR = new Color32(200, 150, 250, 200);  // when cubeEnergy is being consumed
     private readonly Color SPELL_CHARGED_COLOR = new Color32(250, 100, 250, 200);
-    private readonly Color SPELL_NOT_CHARGED_COLOR = new Color32(250, 100, 250, 150);
+    private readonly Color SPELL_NOT_CHARGED_COLOR = new Color32(200, 100, 200, 150);
 
     void Awake()
     {
@@ -86,14 +91,18 @@ public class InGameUIManager : MonoBehaviour
 
     void OnEnable()
     {
-        timeCubeSliderFill = m_timeCubeSlider.fillRect.gameObject.GetComponent<Image>();
-        spellSliderFill1 = m_spellSlider1.fillRect.gameObject.GetComponent<Image>();
-        spellSliderFill2 = m_spellSlider2.fillRect.gameObject.GetComponent<Image>();
+        m_cubeSliderFill = m_cubeSlider.fillRect.gameObject.GetComponent<Image>();
+        m_spellSliderFill1 = m_spellSlider1.fillRect.gameObject.GetComponent<Image>();
+        m_spellSliderFill2 = m_spellSlider2.fillRect.gameObject.GetComponent<Image>();
+        m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        m_timeCubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
+        m_cubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
         m_spellSlider1.maxValue = GameManager.SPELL_ENERGY_USAGE;
         m_spellSlider2.maxValue = GameManager.SPELL_ENERGY_MAX - GameManager.SPELL_ENERGY_USAGE;
         m_powerSlider.maxValue = GameManager.PLAYER_POWER_MAX;
+        m_dynCubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
+        m_dynCubeSlider.gameObject.SetActive(false);
+        m_dynSpellSlider.gameObject.SetActive(false);
 
         m_bossHPSlider.gameObject.SetActive(false);
         m_pausePanel.SetActive(false);
@@ -111,15 +120,57 @@ public class InGameUIManager : MonoBehaviour
         m_playerHPSlots.GetChild(playerHP-1).gameObject.SetActive(true);
     }
 
-    public void UpdateTimeCubeSlider(int cubeEnergy)
+
+    public void UpdateCubeSlider(int cubeEnergy)
     {
-        timeCubeSliderFill.color = (cubeEnergy < m_timeCubeSlider.value) ? CUBE_USE_COLOR : CUBE_HEAL_COLOR;
-        m_timeCubeSlider.value = cubeEnergy;
+        m_cubeSliderFill.color = (cubeEnergy < m_cubeSlider.value) ? CUBE_USE_COLOR : CUBE_HEAL_COLOR;
+        m_cubeSlider.value = cubeEnergy;
+        m_dynCubeSlider.value = cubeEnergy;
+
+        Camera camera = Camera.main;
+        Vector3 screenPoint = camera.WorldToScreenPoint(m_playerTransform.position);
+        m_dynCubeSlider.transform.position = screenPoint + Vector3.up * 50;
     }
 
-    public void ResetTimeCubeSliderColor()
+    public void ResetCubeSliderColor()
     {
-        timeCubeSliderFill.color = CUBE_BASE_COLOR;
+        m_cubeSliderFill.color = CUBE_BASE_COLOR;
+    }
+
+    public void EnableDynCubeSlider(bool enable = true)
+    {
+        m_dynCubeSlider.gameObject.SetActive(enable);
+        if (enable)
+        {
+            Camera camera = Camera.main;
+            Vector3 screenPoint = camera.WorldToScreenPoint(m_playerTransform.position);
+            m_dynCubeSlider.transform.position = screenPoint + Vector3.up * 50;
+        }
+    }
+
+    public void InitDynSpellSlider(float maxValue)
+    {
+        m_dynSpellSlider.maxValue = maxValue;
+    }
+    public void EnableDynSpellSlider(bool enable = true)
+    {
+        if (!m_dynSpellSlider) return;
+
+        m_dynSpellSlider.gameObject.SetActive(enable);
+        if (enable)
+        {
+            m_dynSpellSlider.value = m_dynSpellSlider.maxValue;
+            Camera camera = Camera.main;
+            Vector3 screenPoint = camera.WorldToScreenPoint(m_playerTransform.position);
+            m_dynSpellSlider.transform.position = screenPoint + Vector3.up * 60;
+        }
+    }
+    public void UpdateDynSpellSlider(float value)
+    {
+        m_dynSpellSlider.value -= value;
+        Camera camera = Camera.main;
+        Vector3 screenPoint = camera.WorldToScreenPoint(m_playerTransform.position);
+        m_dynSpellSlider.transform.position = screenPoint + Vector3.up * 60;
     }
 
     public void UpdateSpellSlider(int spellEnergy)
@@ -130,15 +181,15 @@ public class InGameUIManager : MonoBehaviour
         {
             m_spellSlider1.value = GameManager.SPELL_ENERGY_USAGE;
             m_spellSlider2.value = remainder;
-            spellSliderFill1.color = SPELL_CHARGED_COLOR;
-            spellSliderFill2.color = (remainder >= GameManager.SPELL_ENERGY_USAGE) ? SPELL_CHARGED_COLOR : SPELL_NOT_CHARGED_COLOR;
+            m_spellSliderFill1.color = SPELL_CHARGED_COLOR;
+            m_spellSliderFill2.color = (remainder >= GameManager.SPELL_ENERGY_USAGE) ? SPELL_CHARGED_COLOR : SPELL_NOT_CHARGED_COLOR;
         }
         else
         {
             m_spellSlider1.value = spellEnergy;
             m_spellSlider2.value = 0f;
-            spellSliderFill1.color = SPELL_NOT_CHARGED_COLOR;
-            spellSliderFill2.color = SPELL_NOT_CHARGED_COLOR;
+            m_spellSliderFill1.color = SPELL_NOT_CHARGED_COLOR;
+            m_spellSliderFill2.color = SPELL_NOT_CHARGED_COLOR;
         }
     }
 

@@ -24,16 +24,20 @@ public class SpellArea : MonoBehaviour
     {
         m_playerController = GetComponentInParent<PlayerController>();
         m_originalScale = transform.localScale;
+
+        InGameUIManager.instance.InitDynSpellSlider(time);
     }
 
     void OnEnable()
     {
+        InGameUIManager.instance.EnableDynSpellSlider(true);
         m_sizeAdder = m_sizeAdderBase;
         StartCoroutine("Spell");
     }
 
     void OnDisable()
     {
+        InGameUIManager.instance.EnableDynSpellSlider(false);
         StopAllCoroutines();
         transform.localScale = m_originalScale;
     }
@@ -50,6 +54,8 @@ public class SpellArea : MonoBehaviour
             yield return new WaitForSeconds(ATTACK_DELAY);
             transform.localScale += new Vector3(m_sizeAdder, m_sizeAdder, 0f);
             m_sizeAdder *= m_sizeAdderMultiplier;
+
+            InGameUIManager.instance.UpdateDynSpellSlider(ATTACK_DELAY);
         }
 
         // 스펠 끝을 알리고 스스로 비활성화

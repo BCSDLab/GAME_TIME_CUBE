@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     void InitializeUI()
     {
-        InGameUIManager.instance.UpdateTimeCubeSlider(cubeEnergy);
+        InGameUIManager.instance.UpdateCubeSlider(cubeEnergy);
         InGameUIManager.instance.UpdateSpellSlider(spellEnergy);
         InGameUIManager.instance.UpdatePower(playerPower);
         InGameUIManager.instance.UpdateScoreText(m_score);
@@ -113,14 +113,14 @@ public class GameManager : MonoBehaviour
     {
         cubeEnergy -= amount;
         cubeEnergy = (cubeEnergy < 0) ? 0 : cubeEnergy;
-        InGameUIManager.instance.UpdateTimeCubeSlider(cubeEnergy);
+        InGameUIManager.instance.UpdateCubeSlider(cubeEnergy);
     }
 
     public void AddCubeEnergy(int amount)
     {
         cubeEnergy += amount;
         cubeEnergy = (cubeEnergy > CUBE_ENERGY_MAX) ? CUBE_ENERGY_MAX : cubeEnergy;
-        InGameUIManager.instance.UpdateTimeCubeSlider(cubeEnergy);
+        InGameUIManager.instance.UpdateCubeSlider(cubeEnergy);
     }
 
     public void RecoverCube(bool recover = true)
@@ -137,12 +137,12 @@ public class GameManager : MonoBehaviour
         {
             cubeEnergy += CUBE_ENERGY_RECOVER;
             cubeEnergy = (cubeEnergy > CUBE_ENERGY_MAX) ? CUBE_ENERGY_MAX : cubeEnergy;
-            InGameUIManager.instance.UpdateTimeCubeSlider(cubeEnergy);
+            InGameUIManager.instance.UpdateCubeSlider(cubeEnergy);
 
             yield return new WaitForSeconds(0.3f);
         }
 
-        InGameUIManager.instance.ResetTimeCubeSliderColor();
+        InGameUIManager.instance.ResetCubeSliderColor();
     }
 
     public void StopRecoverCube()
