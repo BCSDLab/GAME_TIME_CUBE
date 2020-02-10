@@ -45,7 +45,7 @@ public class HomingBullet : Bullet
             m_hp -= collision.GetComponent<PlayerBullet>().damage;
             
             PoolManager.instance.PushToPool(collision.gameObject);
-
+            Blow();
             if (m_hp <= 0)
             {
                 PoolManager.instance.PushToPool(gameObject);
@@ -62,6 +62,17 @@ public class HomingBullet : Bullet
         if (collision.CompareTag("TimeControlArea"))
         {
             speed *= collision.GetComponent<TimeControlArea>().reverseMultiplier;
+        }
+    }
+
+    protected void Blow()
+    {
+        ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem particleSystem in particleSystems)
+        {
+            GameObject particleInst = Instantiate(particleSystem.gameObject, transform.position, Quaternion.identity, null);
+            particleInst.GetComponent<ParticleSystem>().Play();
+            Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
         }
     }
 }
