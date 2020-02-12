@@ -357,11 +357,11 @@ public class InGameUIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        int limitTime = int.Parse(m_bossTimerText.text);
+        int limitTime = int.Parse(m_bossTimerText.text) - 1;
         if (limitTime > 0)
         {
             m_bossTimer.GetComponent<Image>().fillAmount = (float)limitTime / m_bossLimitTime;
-            m_bossTimerText.text = (limitTime - 1).ToString();
+            m_bossTimerText.text = limitTime.ToString();
             StartCoroutine("UpdateBossTimer");
         }
         else
