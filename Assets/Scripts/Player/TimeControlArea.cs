@@ -34,7 +34,7 @@ public class TimeControlArea : MonoBehaviour
         if (GameManager.instance)
         {
             GameManager.instance.StopCoroutine("RecoverCubeEnergy");
-            InGameUIManager.instance.ResetTimeCubeSliderColor();
+            InGameUIManager.instance.ResetCubeSliderColor();
         }
     }
 

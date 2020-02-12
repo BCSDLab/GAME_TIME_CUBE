@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour
             m_timeControlArea.SetActive(false);
             m_isTimeControlEnabled = false;
             m_isTimeControlShrinking = false;
+            InGameUIManager.instance.EnableDynCubeSlider(false);
+            InGameUIManager.instance.EnableDynSpellSlider(false);
 
             return;
         }
@@ -170,8 +172,6 @@ public class PlayerController : MonoBehaviour
 
     void Shoot()
     {
-        // TODO: 파워에 따른 패턴 구현 (0~3단계)
-
         if (GameManager.instance.playerPower < 1000)
         {
             ShootDirectional();
@@ -297,8 +297,9 @@ public class PlayerController : MonoBehaviour
         {
             if (!m_isTimeControlEnabled && !m_isTimeControlShrinking)
             {
-                m_timeControlArea.SetActive(true);
                 m_isTimeControlEnabled = true;
+                InGameUIManager.instance.EnableDynCubeSlider(true);
+                m_timeControlArea.SetActive(true);
             }
         }
         else
@@ -306,10 +307,12 @@ public class PlayerController : MonoBehaviour
             if (m_isTimeControlEnabled)
             {
                 m_isTimeControlEnabled = false;
+                InGameUIManager.instance.EnableDynCubeSlider(false);
+
                 if (!m_isTimeControlShrinking)
                 {
-                    m_timeControlArea.GetComponent<TimeControlArea>().Disable();
                     m_isTimeControlShrinking = true;
+                    m_timeControlArea.GetComponent<TimeControlArea>().Disable();
                 }
             }
         }
@@ -324,7 +327,7 @@ public class PlayerController : MonoBehaviour
     {
         m_isTimeControlShrinking = false;
         GameManager.instance.RecoverCube();
-        InGameUIManager.instance.ResetTimeCubeSliderColor();
+        InGameUIManager.instance.ResetCubeSliderColor();
     }
     #endregion
 }

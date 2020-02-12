@@ -14,9 +14,7 @@ public class Dialogue
     public string[] sentences;
     public int[] spriteNs;
 
-    [Header("◆ 기본 스프라이트 번호 (화면에 처음 나올 때)")]
-    public int defaultL = 0;
-    public int defaultR = 0;
+    [Header("※ 화면에 처음 나올 때 스프라이트는 0번입니다.")]
     [Header("◆ 왼쪽 스프라이트")]
     public Sprite[] imagesL;
     [Header("◆ 오른쪽 스프라이트")]

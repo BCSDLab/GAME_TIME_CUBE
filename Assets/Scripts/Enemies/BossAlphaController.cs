@@ -18,6 +18,17 @@ public class BossAlphaController : Enemy
     private float m_moveSpeed = 4f;
     #endregion
 
+    [SerializeField]
+    private GameObject m_bossTracker = null;
+    [SerializeField]
+    private GameObject m_subWeaponItem = null;
+    [SerializeField]
+    private ItemList[] m_dropItemLists = null;
+
+    [SerializeField]
+    [Header("자코 배치")]
+    private MobInfo[] m_mobInfoes = null;
+
     #region PATTERNS
     //Phase1
     private Homing m_homing;
@@ -38,18 +49,11 @@ public class BossAlphaController : Enemy
     private BiDirectional m_biDirectional;
     #endregion
 
-    [SerializeField]
-    private GameObject m_bossTracker = null;
-    [SerializeField]
-    private GameObject m_subWeaponItem = null;
-    [SerializeField]
-    private ItemList[] m_dropItemLists = null;
-
-    [SerializeField]
-    [Header("자코 배치")]
-    private MobInfo[] m_mobInfoes = null;
-
     private DialogueTrigger m_dialogueTrigger;
+    private ParticleSystem m_inParticle;
+    private ParticleSystem m_outParticle;
+    private AudioSource m_inParticleAudio;
+    private AudioSource m_outParticleAudio;
 
     private const int PHASE_COUNT = 6;
     private int m_phase = 0;
@@ -63,10 +67,14 @@ public class BossAlphaController : Enemy
     private int m_indexToSpawn = 0;
     private float m_zacoSpawnTime = 0f;
 
-    protected override void Start()
+    void Awake()
     {
-        base.Start();
         m_dialogueTrigger = GetComponent<DialogueTrigger>();
+        ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
+        m_inParticle = transform.GetChild(0).GetComponent<ParticleSystem>();
+        m_outParticle = transform.GetChild(1).GetComponent<ParticleSystem>();
+        m_inParticleAudio = transform.GetChild(0).GetComponent<AudioSource>();
+        m_outParticleAudio = transform.GetChild(1).GetComponent<AudioSource>();
 
         // 패턴
         // Phase1
@@ -86,6 +94,11 @@ public class BossAlphaController : Enemy
         m_directionalAimedRandom = GetComponent<DirectionalAimedRandom>();
         // Phase6
         m_biDirectional = GetComponent<BiDirectional>();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
 
         // 진입
         m_isInvincible = true;
@@ -226,8 +239,7 @@ public class BossAlphaController : Enemy
 
     public override void Damage(int damage)
     {
-        if (m_isInvincible)
-            return;
+        if (m_isInvincible) return;
 
         m_phaseHP -= damage;
         m_totalHP -= damage;
@@ -246,9 +258,8 @@ public class BossAlphaController : Enemy
 
             // 페이즈 전환
 
-            ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
-            particleSystem.Play();
-
+            m_inParticle.Play();
+            m_inParticleAudio.Play();
             DropItems(m_dropItemLists[m_phase - 1]);  // 아이템 드롭
 
             StartPhase();
@@ -263,33 +274,28 @@ public class BossAlphaController : Enemy
     public override void Die()
     {
         m_isInvincible = true;
-        GameManager.instance.isBossEnd = true;
-
         StopAllPatterns();
         GameManager.instance.BossDefeated();
-
         StartCoroutine("Blow");
     }
 
     private IEnumerator Blow()
     {
-        // 이펙트
-        ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
-        foreach (ParticleSystem particleSystem in particleSystems)
-        {
-            particleSystem.Play();
-        }
-        yield return new WaitForSeconds(particleSystems[0].main.duration);
+        m_inParticle.Play();
+        m_inParticleAudio.Play();
+        m_outParticle.Play();
+        yield return new WaitForSeconds(m_inParticle.main.duration);
 
         m_collider.enabled = false;
         m_spriteRenderer.enabled = false;
+        m_bossTracker.SetActive(false);
+        yield return new WaitForSeconds(0.4f);
 
         DropSubWeaponItem();
-
+        m_outParticleAudio.Play();
         yield return new WaitForSeconds(3f);
 
         GameManager.instance.StageClear();
-        m_bossTracker.SetActive(false);
         Destroy(gameObject);
     }
 

@@ -35,25 +35,21 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+
+        dialoguePanel.SetActive(false);
     }
 
     private void Start()
     {
         m_audioSource = GetComponent<AudioSource>();
-
-        dialoguePanel.SetActive(false);
     }
 
     private void Update()
     {
-        if (GameManager.instance.isPaused)
-            return;
-        if (!isTalking)
-            return;
+        if (GameManager.instance.isPaused) return;
+        if (!isTalking) return;
 
         float talk = Input.GetAxis(AXIS_TALK);
         if (!m_hasTalked && talk > 0.1f)
@@ -92,8 +88,8 @@ public class DialogueManager : MonoBehaviour
         GameManager.instance.isPlayerSpelling = false;
         GameManager.instance.RecoverCube(false);
 
-        standingImageL.sprite = dialogue.imagesL[dialogue.defaultL];
-        standingImageR.sprite = dialogue.imagesL[dialogue.defaultR];
+        standingImageL.sprite = dialogue.imagesL[0];
+        standingImageR.sprite = dialogue.imagesR[0];
         dialoguePanel.SetActive(true);
         panelAnimator.gameObject.SetActive(true);
         standingAnimator1.gameObject.SetActive(true);

@@ -25,10 +25,22 @@ public class PlayerBullet : MonoBehaviour
                 enemyController.Damage(damage);
                 GameManager.instance.AddSpellEnergy(spellCharge);
                 GameManager.instance.AddScore(damage);
+                Blow();
             }
 
             PoolManager.instance.PushToPool(gameObject);
             //Destroy(this.gameObject);  // 풀링 성능 테스트용
+        }
+    }
+
+    protected void Blow()
+    {
+        ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem particleSystem in particleSystems)
+        {
+            GameObject particleInst = Instantiate(particleSystem.gameObject, transform.position, Quaternion.identity, null);
+            particleInst.GetComponent<ParticleSystem>().Play();
+            Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
         }
     }
 }

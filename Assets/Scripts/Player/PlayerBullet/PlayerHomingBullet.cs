@@ -29,7 +29,7 @@ public class PlayerHomingBullet : PlayerBullet
             return;
         }
 
-        if (GameManager.instance.isBossEnd)
+        if (GameManager.instance.isBossDefeated)
         {
             m_rigidbody.velocity = transform.right * speed;
             m_rigidbody.angularVelocity = 0f;
@@ -43,7 +43,7 @@ public class PlayerHomingBullet : PlayerBullet
         m_rigidbody.velocity = transform.right * speed;
         m_rigidbody.angularVelocity = alpha * crossZ;
     }
-
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
@@ -54,13 +54,14 @@ public class PlayerHomingBullet : PlayerBullet
                 enemyController.Damage(damage);
                 GameManager.instance.AddSpellEnergy(spellCharge);
                 GameManager.instance.AddScore(damage);
+                Blow();
             }
 
             PoolManager.instance.PushToPool(gameObject);
             //Destroy(this.gameObject);  // 풀링 성능 테스트용
         }
     }
-
+    
     Transform ChooseTarget()
     {
         Transform target = null;

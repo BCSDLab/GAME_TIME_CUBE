@@ -26,7 +26,7 @@ public class PosToPos : BulletPattern
                 float sin = Mathf.Sin(atan);
                 float angle = atan * Mathf.Rad2Deg;
 
-                m_audioSource.Play();
+                //m_audioSource.Play();
 
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                 bulletInst.transform.position = m_spawnPositions[i].position;

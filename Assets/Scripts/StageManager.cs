@@ -33,7 +33,7 @@ public class StageManager : MonoBehaviour
 
     void Start()
     {
-        GameManager.instance.isBossEnd = false;
+        GameManager.instance.isBossDefeated = false;
         m_mobInfoes = m_mobInfoes.OrderBy(x => x.engageTime).ToArray();
 
         BGMManager.instance.Play(0);
