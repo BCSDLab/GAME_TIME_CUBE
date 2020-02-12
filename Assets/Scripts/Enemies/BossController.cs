@@ -91,8 +91,6 @@ public class BossController : Enemy
 
                 BGMManager.instance.Play(1);
                 StartPhase();
-
-                InGameUIManager.instance.EnableBossTimer();
             }
         }
 
@@ -115,7 +113,15 @@ public class BossController : Enemy
         m_phase++;
         m_phaseHP += m_maxPhaseHP;
         m_zacoSpawnTime = 0f;
+
+        InGameUIManager.instance.DisableBossTimer();
+        InGameUIManager.instance.EnableBossTimer();
         InGameUIManager.instance.DisplayBossHPSlider(hp: m_phaseHP);
+        InGameUIManager.instance.InitBossTimer(20); // switch 안으로 옮길 경우 페이즈 당 시간 다르게 설정 가능
+        if(m_phase == PHASE_COUNT)
+        {
+            InGameUIManager.instance.ChangeBossTimerColor(Color.red);
+        }
 
         Debug.Log("보스 페이즈 전환: m_phase = " + m_phase.ToString() + " HP = " + m_totalHP.ToString());
 
@@ -166,6 +172,18 @@ public class BossController : Enemy
 
             default:
                 throw new System.ArgumentOutOfRangeException("보스 페이즈 초과 : m_phase = " + m_phase.ToString());
+        }
+    }
+
+    public void SkipPhase()
+    {
+        if(m_phase < PHASE_COUNT)
+        {
+            Damage(m_phaseHP);
+        }
+        else
+        {
+            GameManager.instance.GameOver();
         }
     }
 
