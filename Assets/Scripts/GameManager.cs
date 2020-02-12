@@ -277,6 +277,11 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject bullet in bullets)
         {
+            ParticleSystem particleSystem = bullet.GetComponentInChildren<ParticleSystem>();
+            GameObject particleInst = Instantiate(particleSystem.gameObject, bullet.transform.position, Quaternion.identity, null);
+            particleInst.GetComponent<ParticleSystem>().Play();
+            Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
+
             PoolManager.instance.PushToPool(bullet);
         }
     }

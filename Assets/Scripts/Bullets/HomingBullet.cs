@@ -64,15 +64,4 @@ public class HomingBullet : Bullet
             speed *= collision.GetComponent<TimeControlArea>().reverseMultiplier;
         }
     }
-
-    protected void Blow()
-    {
-        ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
-        foreach (ParticleSystem particleSystem in particleSystems)
-        {
-            GameObject particleInst = Instantiate(particleSystem.gameObject, transform.position, Quaternion.identity, null);
-            particleInst.GetComponent<ParticleSystem>().Play();
-            Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
-        }
-    }
 }
