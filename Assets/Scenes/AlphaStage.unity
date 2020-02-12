@@ -10326,7 +10326,6 @@ MonoBehaviour:
   m_bossEngageTime: 110
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
-  m_bossLimitTime: 300
   nextSceneName: _Title
 --- !u!1 &1177583891
 GameObject:
@@ -28068,6 +28067,7 @@ MonoBehaviour:
   m_bossPhaseSlot: {fileID: 26822967006917242, guid: 0c75296b83b11b549adf7a4fc569e612,
     type: 3}
   m_phaseSlotDistance: 40
+  m_bossTimer: {fileID: 0}
   m_bossTimerText: {fileID: 1797095479}
   m_pausePanel: {fileID: 66208672929507683}
   m_gameOverPanel: {fileID: 66208671515817133}
