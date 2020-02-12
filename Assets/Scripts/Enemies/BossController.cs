@@ -91,8 +91,6 @@ public class BossController : Enemy
 
                 BGMManager.instance.Play(1);
                 StartPhase();
-
-                //InGameUIManager.instance.EnableBossTimer();
             }
         }
 
@@ -119,7 +117,7 @@ public class BossController : Enemy
         InGameUIManager.instance.DisableBossTimer();
         InGameUIManager.instance.EnableBossTimer();
         InGameUIManager.instance.DisplayBossHPSlider(hp: m_phaseHP);
-        InGameUIManager.instance.InitBossTimer(20); // switch 안으로 옮길 경우 페이즈 당 시간 다르게 설정
+        InGameUIManager.instance.InitBossTimer(20); // switch 안으로 옮길 경우 페이즈 당 시간 다르게 설정 가능
         if(m_phase == PHASE_COUNT)
         {
             InGameUIManager.instance.ChangeBossTimerColor(Color.red);
