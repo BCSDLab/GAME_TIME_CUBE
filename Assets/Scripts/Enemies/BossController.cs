@@ -250,7 +250,7 @@ public class BossController : Enemy
     public override void Die()
     {
         m_isInvincible = true;
-        GameManager.instance.isBossEnd = true;
+        GameManager.instance.isBossDefeated = true;
 
         StopAllPatterns();
         GameManager.instance.BossDefeated();
