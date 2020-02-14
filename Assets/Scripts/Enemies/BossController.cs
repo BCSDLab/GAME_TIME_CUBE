@@ -114,10 +114,6 @@ public class BossController : Enemy
         m_phaseHP += m_maxPhaseHP;
         m_zacoSpawnTime = 0f;
 
-        //InGameUIManager.instance.DisableBossTimer();
-        //InGameUIManager.instance.EnableBossTimer();
-        //InGameUIManager.instance.DisplayBossHPSlider(hp: m_phaseHP);
-        //InGameUIManager.instance.InitBossTimer(20);
         InGameUIManager.instance.InitUIStartPhase(phaseHP: m_phaseHP, phaseTime: 20); // switch 안으로 옮길 경우 페이즈 당 시간 다르게 설정 가능
         if (!CanSkipPhase())
         {
