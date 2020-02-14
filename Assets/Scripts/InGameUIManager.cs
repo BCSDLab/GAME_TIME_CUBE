@@ -385,6 +385,14 @@ public class InGameUIManager : MonoBehaviour
     {
         m_bossPhaseSlots.GetChild(m_bossPhaseCount - phase).gameObject.SetActive(false);
     }
+
+    public void InitUIStartPhase(int phaseHP, int phaseTime = 20)
+    {
+        DisableBossTimer();
+        EnableBossTimer();
+        DisplayBossHPSlider(hp: phaseHP);
+        InitBossTimer(phaseTime);
+    }
     #endregion
 
     #region BossTimer
@@ -417,9 +425,10 @@ public class InGameUIManager : MonoBehaviour
         }
         else
         {
-            GameObject boss = GameObject.Find("Boss");
+            //GameObject boss = GameObject.Find("Boss");
 
-            boss.GetComponent<BossController>().SkipPhase();
+            //boss.GetComponent<BossController>().SkipPhase();
+            GameManager.instance.TimeOver();
         }
     }
 
