@@ -174,7 +174,17 @@ public class BossController : Enemy
 
     public void SkipPhase()
     {
-        Damage(m_phaseHP);
+        m_totalHP -= m_phaseHP;
+        m_phaseHP = 0;
+
+        InGameUIManager.instance.UpdateBossHPSlider(m_phaseHP);
+        InGameUIManager.instance.UpdateBossPhase(m_phase);
+
+        // 파티클
+        //ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+        //particleSystem.Play();
+
+        StartPhase();
     }
     public bool CanSkipPhase()
     {
