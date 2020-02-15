@@ -27,7 +27,7 @@ public class DirectionalNormal : BulletPattern
             {
                 for (int j = 0; j < spawnPosArr.Length; j++)
                 {
-                    m_audioSource.Play();
+                    m_audioSource.PlayOneShot(m_ShotSFX);
                     GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                     bulletInst.transform.position = spawnPosArr[j].position;
                     bulletInst.transform.rotation = rotation;

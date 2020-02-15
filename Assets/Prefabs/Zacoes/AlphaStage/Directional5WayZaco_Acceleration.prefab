@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 1
+  m_ShotSFX: {fileID: 8300000, guid: 08225c110d0c0e544bb7ad9692e634c4, type: 3}
   bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   target: {fileID: 0}
   count: 5

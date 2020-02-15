@@ -12,7 +12,7 @@ public class Homing1 : BulletPattern
         yield return new WaitForSeconds(m_startDelay);
         while (true)
         {
-            m_audioSource.Play();
+            m_audioSource.PlayOneShot(m_ShotSFX);
 
             for (int i = 0; i < count; i++)
             {

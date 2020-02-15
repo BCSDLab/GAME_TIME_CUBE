@@ -10,6 +10,7 @@ public class Cross : BulletPattern
     protected override IEnumerator Fire()
     {
         float theta = 360f / count;
+        m_audioSource.PlayOneShot(m_ShotSFX);
 
         for (int i = 0; i < count; i++)
         {

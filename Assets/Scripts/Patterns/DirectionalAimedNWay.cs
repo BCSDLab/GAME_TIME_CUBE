@@ -32,7 +32,7 @@ public class DirectionalAimedNWay : AimedBulletPattern
             float angle = atan * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            m_audioSource.Play();
+            m_audioSource.PlayOneShot(m_ShotSFX);
 
             for (int i = 0; i < count; i++)
             {

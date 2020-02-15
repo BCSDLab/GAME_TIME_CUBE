@@ -9,12 +9,14 @@ public abstract class Pattern : MonoBehaviour
     protected Transform m_spawnPos = null;
     [SerializeField]
     protected float m_startDelay;
+    [SerializeField]
+    protected AudioClip m_ShotSFX;
 
     protected AudioSource m_audioSource;
 
     void Start()
     {
-        m_audioSource = GetComponent<AudioSource>();
+        m_audioSource = GetComponentInParent<AudioSource>();
     }
 
     public void StartPattern()

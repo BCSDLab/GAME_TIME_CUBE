@@ -19,7 +19,7 @@ public class Vertical : BulletPattern
         {
             for (int i = 0; i < count; i++)
             {
-                m_audioSource.Play();
+                m_audioSource.PlayOneShot(m_ShotSFX);
 
                 foreach (Vector2 m_bulletSpawnPos in m_spawnPositions)
                 {

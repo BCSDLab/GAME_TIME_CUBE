@@ -26,7 +26,7 @@ public class DirectionalAimed : AimedBulletPattern
 
             for (int i = 0; i < count; i++)
             {
-                m_audioSource.Play();
+                m_audioSource.PlayOneShot(m_ShotSFX);
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                 bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.transform.rotation = rotation;
