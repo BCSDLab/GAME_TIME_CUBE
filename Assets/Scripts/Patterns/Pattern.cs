@@ -11,6 +11,8 @@ public abstract class Pattern : MonoBehaviour
     protected float m_startDelay;
     [SerializeField]
     protected AudioClip m_ShotSFX;
+    [SerializeField]
+    protected float m_ShotSFXVolum = 0.5f;
 
     protected AudioSource m_audioSource;
 

@@ -5013,7 +5013,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  m_ShotSFX: {fileID: 8300000, guid: 08225c110d0c0e544bb7ad9692e634c4, type: 3}
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
   count: 6
@@ -5035,6 +5036,7 @@ MonoBehaviour:
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
   m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 4
   speed: 5

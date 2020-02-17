@@ -26,7 +26,7 @@ public class BiDirectional : BulletPattern
         yield return new WaitForSeconds(m_startDelay);
         while (true)
         {
-            m_audioSource.PlayOneShot(m_ShotSFX);
+            m_audioSource.PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
 
             for (int i = 0; i < spiral; i++)
             {

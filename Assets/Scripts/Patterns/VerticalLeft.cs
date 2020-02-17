@@ -33,7 +33,7 @@ public class VerticalLeft : BulletPattern
         {
             for (int i = 0; i < count; i++)
             {
-                m_audioSource.PlayOneShot(m_ShotSFX);
+                m_audioSource.PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
 
                 for (int j = 0; j <= m_bulletCount; j++)
                 {
