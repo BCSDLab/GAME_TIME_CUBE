@@ -31,7 +31,7 @@ public class DonutAimed : AimedBulletPattern
             float cos = Mathf.Cos(atan);
             float sin = Mathf.Sin(atan);
 
-            m_audioSource.Play();
+            m_audioSource.PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
 
             for (int i = 0; i < count; i++)
             {

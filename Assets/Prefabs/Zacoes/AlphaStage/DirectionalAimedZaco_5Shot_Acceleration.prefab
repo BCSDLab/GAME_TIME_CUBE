@@ -4916,6 +4916,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   count: 8
   speed: 6
@@ -4933,6 +4935,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 8300000, guid: de15865f585a9f64b9d81c8b6b844059, type: 3}
+  m_ShotSFXVolum: 0.7
   bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   target: {fileID: 0}
   count: 5
@@ -4973,9 +4977,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243836163948178342, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8b48e2f610b18b94ebb361db788748be, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 00fa2315b730eb64db55d00ce9296cc0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

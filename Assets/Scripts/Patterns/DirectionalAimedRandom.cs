@@ -33,7 +33,7 @@ public class DirectionalAimedRandom : AimedBulletPattern
 
             for (int i = 0; i < count; i++)
             {
-                m_audioSource.Play();
+                m_audioSource.PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
 
                 m_angleRange = Random.Range(-angleRange, angleRange);
                 m_speed = Random.Range(minSpeed, maxSpeed);

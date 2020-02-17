@@ -153,9 +153,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243836163948178342, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8b48e2f610b18b94ebb361db788748be, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 00fa2315b730eb64db55d00ce9296cc0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -253,6 +253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 1604783752282113031, guid: d92c1e6dd4f22e84bb501ac04c285a53, type: 3}
   count: 5
@@ -282,7 +284,7 @@ MonoBehaviour:
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
     - {fileID: 8453631172040760662, guid: fb181b3a27f6a0f45b5478b8dc4cde0a, type: 3}
     counts: 0500000001000000
-  m_isZacoInvincible: 0
+  m_isZacoInvincible: 1
 --- !u!1 &6923694916376720830
 GameObject:
   m_ObjectHideFlags: 0
