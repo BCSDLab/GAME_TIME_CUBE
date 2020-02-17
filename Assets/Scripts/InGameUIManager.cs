@@ -77,7 +77,7 @@ public class InGameUIManager : MonoBehaviour
     private int m_bossHP = 0;
     private bool m_isFilling = false;
     private int m_bossPhaseCount = 0;
-    private int m_bossLimitTime = 0;
+    private float m_bossTimeLimit = 0;
 
     // SliderFill colors
     private readonly Color CUBE_BASE_COLOR = new Color32(100, 150, 250, 200);
@@ -330,6 +330,12 @@ public class InGameUIManager : MonoBehaviour
     #endregion
 
     #region BOSS
+    public void InitStartPhase(int phaseHP, float phaseTimeLimit)
+    {
+        DisplayBossHPSlider(hp: phaseHP);
+        InitBossTimer(phaseTimeLimit);
+    }
+
     public void DisplayBossHPSlider(bool display = true, int hp = 0)
     {
         if (!display)
@@ -386,52 +392,29 @@ public class InGameUIManager : MonoBehaviour
         m_bossPhaseSlots.GetChild(m_bossPhaseCount - phase).gameObject.SetActive(false);
     }
 
-    public void InitUIStartPhase(int phaseHP, int phaseTime = 20)
+    public void InitBossTimer(float timeLimit)
     {
-        DisableBossTimer();
-        EnableBossTimer();
-        DisplayBossHPSlider(hp: phaseHP);
-        InitBossTimer(phaseTime);
-    }
-    #endregion
-
-    #region BossTimer
-    public void InitBossTimer(int limitTime = 60)
-    {
-        m_bossTimer.SetActive(true);
+        m_bossTimeLimit = timeLimit;
         m_bossTimer.GetComponent<Image>().fillAmount = 1;
-        m_bossLimitTime = limitTime;
-        m_bossTimerText.text = limitTime.ToString();
+        m_bossTimer.SetActive(true);
+        m_bossTimerText.text = timeLimit.ToString();
         m_bossTimerText.gameObject.SetActive(true);
     }
-    public void EnableBossTimer()
-    {
-        StartCoroutine("UpdateBossTimer");
-    }
-    public void DisableBossTimer()
-    {
-        StopCoroutine("UpdateBossTimer");
-    }
-    IEnumerator UpdateBossTimer()
-    {
-        yield return new WaitForSeconds(1f);
 
-        int limitTime = int.Parse(m_bossTimerText.text) - 1;
-        if (limitTime > 0)
-        {
-            m_bossTimer.GetComponent<Image>().fillAmount = (float)limitTime / m_bossLimitTime;
-            m_bossTimerText.text = limitTime.ToString();
-            StartCoroutine("UpdateBossTimer");
-        }
-        else
-        {
-            GameManager.instance.TimeOver();
-        }
+    public void UpdateBossTimer(float timeLeft)
+    {
+        m_bossTimer.GetComponent<Image>().fillAmount = timeLeft / m_bossTimeLimit;
+        m_bossTimerText.text = timeLeft.ToString();
     }
 
     public void ChangeBossTimerColor(Color color)
     {
         m_bossTimer.GetComponent<Image>().color = color;
+    }
+
+    public void DisableBossTimer()
+    {
+        m_bossTimer.SetActive(false);
     }
     #endregion
 

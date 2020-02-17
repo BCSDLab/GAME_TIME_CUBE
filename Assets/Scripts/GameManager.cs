@@ -269,11 +269,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         InGameUIManager.instance.GameOver();
     }
-
-    public void TimeOver()
-    {
-        StageManager.instance.TimeOver();
-    }
     #endregion
 
     public void DestroyAllBullets()

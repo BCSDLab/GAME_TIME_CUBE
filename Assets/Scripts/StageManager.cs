@@ -96,17 +96,4 @@ public class StageManager : MonoBehaviour
         m_isSpawning = false;
         StopAllCoroutines();
     }
-
-    public void TimeOver()
-    {
-        BossController BC = m_boss.GetComponent<BossController>();
-        if (BC.CanSkipPhase())
-        {
-            BC.SkipPhase();
-        }
-        else
-        {
-            GameManager.instance.GameOver();
-        }
-    }
 }

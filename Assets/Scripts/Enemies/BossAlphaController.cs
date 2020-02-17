@@ -29,6 +29,10 @@ public class BossAlphaController : Enemy
     [Header("자코 배치")]
     private MobInfo[] m_mobInfoes = null;
 
+    [SerializeField]
+    [Header("페이즈별 시간 제한")]
+    private float[] m_phaseTimeLimits = null;
+
     #region PATTERNS
     //Phase1
     private Homing m_homing;
@@ -124,8 +128,6 @@ public class BossAlphaController : Enemy
 
                 BGMManager.instance.Play(1);
                 StartPhase();
-
-                InGameUIManager.instance.EnableBossTimer();
             }
         }
 
@@ -148,8 +150,12 @@ public class BossAlphaController : Enemy
         m_phase++;
         m_phaseHP += m_maxPhaseHP;
         m_zacoSpawnTime = 0f;
-        InGameUIManager.instance.DisplayBossHPSlider(hp: m_phaseHP);
         GameManager.instance.DestroyAllBullets();
+        InGameUIManager.instance.UpdateBossPhase(m_phase);
+        StopCoroutine("Timer");
+        StartCoroutine("Timer");
+        InGameUIManager.instance.InitStartPhase(phaseHP: m_phaseHP, phaseTimeLimit: m_phaseTimeLimits[m_phase - 1]);
+        if (m_phase == PHASE_COUNT) InGameUIManager.instance.ChangeBossTimerColor(Color.red);
 
         Debug.Log("보스 페이즈 전환: m_phase = " + m_phase.ToString() + " HP = " + m_totalHP.ToString());
 
@@ -213,9 +219,28 @@ public class BossAlphaController : Enemy
         }
     }
 
-    public int GetTotalHP()
+    IEnumerator Timer()
     {
-        return m_totalHP;
+        float timeLimit = m_phaseTimeLimits[m_phase - 1];
+        float timeLeft = timeLimit;
+        while (timeLeft > 0.0001f)
+        {
+            yield return new WaitForSeconds(1f);
+
+            timeLeft -= 1f;
+            InGameUIManager.instance.UpdateBossTimer(timeLeft);
+        }
+
+        if (m_phase != PHASE_COUNT) SkipPhase();
+        else GameManager.instance.GameOver();
+    }
+
+    public void SkipPhase()
+    {
+        m_totalHP -= m_phaseHP;
+        m_phaseHP = 0;
+
+        StartPhase();
     }
 
     IEnumerator SpawnZaco(int index)
@@ -248,8 +273,6 @@ public class BossAlphaController : Enemy
 
         if (m_phaseHP <= 0)
         {
-            InGameUIManager.instance.UpdateBossPhase(m_phase);
-
             if (m_totalHP <= 0)
             {
                 StartCoroutine("Die");
