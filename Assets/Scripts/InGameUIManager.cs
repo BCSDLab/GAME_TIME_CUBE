@@ -405,6 +405,15 @@ public class InGameUIManager : MonoBehaviour
     {
         m_bossTimer.GetComponent<Image>().fillAmount = timeLeft / m_bossTimeLimit;
         m_bossTimerText.text = timeLeft.ToString();
+
+        int iTimeLeft = (int)timeLeft;
+        if(timeLeft - iTimeLeft <= float.Epsilon)
+        {
+            if(iTimeLeft == 30 || (0 < iTimeLeft && iTimeLeft <= 5))
+            {
+                m_bossTimer.GetComponent<AudioSource>().Play();
+            }
+        }
     }
 
     public void ChangeBossTimerColor(Color color)
