@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour
     public bool isDialogueOn = false;  // 대화
     [System.NonSerialized]
     public bool isLoading = false;  // 스테이지 로딩
+    [System.NonSerialized]
+    public bool isGameOver = false;  // 플레이어 사망
     #endregion
 
     private bool m_pauseToggled = false;
@@ -265,6 +267,11 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver()
+    {
+        isGameOver = true;
+        Invoke("LateGameOver", 2f);
+    }
+    public void LateGameOver()
     {
         Time.timeScale = 0f;
         InGameUIManager.instance.GameOver();

@@ -108,7 +108,8 @@ public class PlayerController : MonoBehaviour
         //    return;
         //}
 
-        if (m_gameManager.isLoading) MoveOut();
+        if (m_gameManager.isGameOver) Die();
+        else if (m_gameManager.isLoading) MoveOut();
         else Move();
     }
 
@@ -140,6 +141,20 @@ public class PlayerController : MonoBehaviour
         Vector2 velocity = m_rigidbody.velocity;
         velocity.x = 8f;
         m_rigidbody.velocity = velocity;
+    }
+
+    void Die()
+    {
+        Vector2 velocity = m_rigidbody.velocity;
+        velocity.x = -4f;
+        velocity.y = -2f;
+        m_rigidbody.velocity = velocity;
+
+        transform.Find("Hit Area").gameObject.SetActive(false);
+        SpriteRenderer SPR = transform.Find("Character Sprite").gameObject.GetComponent<SpriteRenderer>();
+        Color color = SPR.color;
+        color.a -= Time.deltaTime;
+        SPR.color = color;
     }
 
     #region ATTACK
