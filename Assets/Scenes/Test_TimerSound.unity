@@ -28357,6 +28357,7 @@ MonoBehaviour:
   m_pausePanel: {fileID: 66208672929507683}
   m_gameOverPanel: {fileID: 66208671515817133}
   m_timeOverText: {fileID: 1696145256}
+  m_gameOverSound: {fileID: 8300000, guid: d91311de2a737084fb461773dc7928e2, type: 3}
   m_stageClearPanel: {fileID: 66208672310794368}
   m_killCountText: {fileID: 66208673157491213}
   m_hitCountText: {fileID: 66208672191215190}

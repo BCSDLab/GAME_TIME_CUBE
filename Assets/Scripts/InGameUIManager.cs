@@ -50,6 +50,8 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private GameObject m_timeOverText = null;
     [SerializeField]
+    private AudioClip m_gameOverSound = null;
+    [SerializeField]
     private GameObject m_stageClearPanel = null;
     [SerializeField]
     private Text m_killCountText = null;
@@ -437,6 +439,10 @@ public class InGameUIManager : MonoBehaviour
     public void GameOver()
     {
         m_gameOverPanel.SetActive(true);
+
+        if(m_audioSource == null) m_audioSource = gameObject.AddComponent<AudioSource>();
+        m_audioSource.clip = m_gameOverSound;
+        m_audioSource.Play();
     }
 
     public void EnableTimeOverText()
@@ -451,7 +457,7 @@ public class InGameUIManager : MonoBehaviour
 
         paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
 
-        m_audioSource = gameObject.AddComponent<AudioSource>();
+        if(!m_audioSource) m_audioSource = gameObject.AddComponent<AudioSource>();
         m_audioSource.clip = m_scoreSound;
         m_audioSource.loop = false;
 
