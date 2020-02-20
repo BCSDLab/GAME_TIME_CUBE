@@ -407,6 +407,9 @@ public class InGameUIManager : MonoBehaviour
 
     public void UpdateBossTimer(float timeLeft)
     {
+        // 게임 오버일 때 BossController에서 타이머를 정지시키면 더 좋을 것 같음
+        if (GameManager.instance.isGameOver) return;
+
         m_bossTimer.GetComponent<Image>().fillAmount = timeLeft / m_bossTimeLimit;
         m_bossTimerText.text = timeLeft.ToString();
 
