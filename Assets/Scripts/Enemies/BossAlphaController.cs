@@ -232,7 +232,11 @@ public class BossAlphaController : Enemy
         }
 
         if (m_phase != PHASE_COUNT) SkipPhase();
-        else GameManager.instance.GameOver();
+        else
+        {
+            GameManager.instance.GameOver();
+            InGameUIManager.instance.EnableTimeOverText();
+        }
     }
 
     public void SkipPhase()

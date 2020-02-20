@@ -48,6 +48,8 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private GameObject m_gameOverPanel = null;
     [SerializeField]
+    private GameObject m_timeOverText = null;
+    [SerializeField]
     private GameObject m_stageClearPanel = null;
     [SerializeField]
     private Text m_killCountText = null;
@@ -435,6 +437,11 @@ public class InGameUIManager : MonoBehaviour
     public void GameOver()
     {
         m_gameOverPanel.SetActive(true);
+    }
+
+    public void EnableTimeOverText()
+    {
+        m_timeOverText.SetActive(true);
     }
 
     public void ClearStage(int killCount, int hitCount, float stageScore, float totalScore)
