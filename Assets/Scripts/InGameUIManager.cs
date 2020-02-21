@@ -50,8 +50,6 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private GameObject m_timeOverText = null;
     [SerializeField]
-    private AudioClip m_gameOverSound = null;
-    [SerializeField]
     private GameObject m_stageClearPanel = null;
     [SerializeField]
     private Text m_killCountText = null;
@@ -62,12 +60,11 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private Text m_totalScoreText = null;
     [SerializeField]
-    private AudioClip m_scoreSound = null;
-    [SerializeField]
     private Text m_continueText = null;
     #endregion
 
-    private AudioSource m_audioSource;
+    private AudioSource m_scoreAudio;
+    private AudioSource m_gameOverAudio;
     private object[] paramArr; // killCount, hitCount, stageScore, totalScore
     private int paramIdx;
     private const float UPDATE_DELAY = 0.05f;
@@ -94,6 +91,10 @@ public class InGameUIManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
+
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        m_scoreAudio = audioSources[0];
+        m_gameOverAudio = audioSources[1];
     }
 
     void OnEnable()
@@ -306,7 +307,7 @@ public class InGameUIManager : MonoBehaviour
         }
 
         paramIdx++;
-        m_audioSource.Play();
+        m_scoreAudio.Play();
     }
     public void CallUpdateClearPanel()
     {
@@ -442,10 +443,7 @@ public class InGameUIManager : MonoBehaviour
     public void GameOver()
     {
         m_gameOverPanel.SetActive(true);
-
-        if(m_audioSource == null) m_audioSource = gameObject.AddComponent<AudioSource>();
-        m_audioSource.clip = m_gameOverSound;
-        m_audioSource.Play();
+        m_gameOverAudio.Play();
     }
 
     public void EnableTimeOverText()
@@ -459,10 +457,6 @@ public class InGameUIManager : MonoBehaviour
         m_bossTimerText.gameObject.SetActive(false);
 
         paramArr = new object[4] { killCount, hitCount, stageScore, totalScore };
-
-        if(!m_audioSource) m_audioSource = gameObject.AddComponent<AudioSource>();
-        m_audioSource.clip = m_scoreSound;
-        m_audioSource.loop = false;
 
         m_scoreText.gameObject.SetActive(false);
 

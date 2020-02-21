@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/_Title.unity
     guid: da6f1abb6bdc85d408e81bf0bf35146f
   - enabled: 1
-    path: Assets/Scenes/AlphaStage.unity
+    path: Assets/Scenes/Obsolete/AlphaStage.unity
     guid: 18d52692250dfc348a577ed614731471
   m_configObjects: {}

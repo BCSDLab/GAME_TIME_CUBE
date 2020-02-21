@@ -15638,10 +15638,11 @@ AudioSource:
   m_GameObject: {fileID: 1289509193}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243836163948178342, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: c1e0614964b1de14396914175b159a86, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -28357,13 +28358,11 @@ MonoBehaviour:
   m_pausePanel: {fileID: 66208672929507683}
   m_gameOverPanel: {fileID: 66208671515817133}
   m_timeOverText: {fileID: 1696145256}
-  m_gameOverSound: {fileID: 8300000, guid: d91311de2a737084fb461773dc7928e2, type: 3}
   m_stageClearPanel: {fileID: 66208672310794368}
   m_killCountText: {fileID: 66208673157491213}
   m_hitCountText: {fileID: 66208672191215190}
   m_stageScoreText: {fileID: 66208672319704732}
   m_totalScoreText: {fileID: 66208672703989372}
-  m_scoreSound: {fileID: 8300000, guid: e87b25a44437cd743b6446f3b0646d39, type: 3}
   m_continueText: {fileID: 66208671763512981}
 --- !u!224 &66208671289413016
 RectTransform:
