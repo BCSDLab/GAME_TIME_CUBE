@@ -10275,53 +10275,35 @@ MonoBehaviour:
     repeatCount: 4
     repeatDelay: 0.5
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 5fceb2f0507cc3b48b2f3a44fbb1f8ac, type: 3}
+    pathName: Sky
+    engageTime: 38
+    repeatCount: 3
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 5fceb2f0507cc3b48b2f3a44fbb1f8ac, type: 3}
+    pathName: Ground
+    engageTime: 38
+    repeatCount: 3
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 09615d35da23ad54083840cc3dd0502e, type: 3}
+    pathName: Center
+    engageTime: 49
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: c9ed7c2191292b9458fde4d40d360e3c, type: 3}
+    pathName: B2
+    engageTime: 54
+    repeatCount: 4
+    repeatDelay: 0.5
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: c9ed7c2191292b9458fde4d40d360e3c, type: 3}
+    pathName: B1
+    engageTime: 58
+    repeatCount: 4
+    repeatDelay: 0.5
     engagePhase: 0
   m_bossEngageTime: 63
   m_boss: {fileID: 513728053}
