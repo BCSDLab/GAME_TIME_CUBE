@@ -259,7 +259,7 @@ MonoBehaviour:
   target: {fileID: 0}
   count: 5
   speed: 2
-  delay: 1
+  delay: 2
   angleRange: 60
 --- !u!114 &2128469474297340662
 MonoBehaviour:

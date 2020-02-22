@@ -10275,13 +10275,13 @@ MonoBehaviour:
     repeatCount: 4
     repeatDelay: 0.5
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 5fceb2f0507cc3b48b2f3a44fbb1f8ac, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 2cf9a0a83578eaa4c8db4d6dade979a7, type: 3}
     pathName: Sky
     engageTime: 38
     repeatCount: 3
     repeatDelay: 3
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 5fceb2f0507cc3b48b2f3a44fbb1f8ac, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 2cf9a0a83578eaa4c8db4d6dade979a7, type: 3}
     pathName: Ground
     engageTime: 38
     repeatCount: 3
@@ -10293,19 +10293,37 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: c9ed7c2191292b9458fde4d40d360e3c, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: a2af9fd105c79ec4fb5ae78cb76ae794, type: 3}
     pathName: B2
     engageTime: 54
     repeatCount: 4
     repeatDelay: 0.5
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: c9ed7c2191292b9458fde4d40d360e3c, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: a2af9fd105c79ec4fb5ae78cb76ae794, type: 3}
     pathName: B1
     engageTime: 58
     repeatCount: 4
     repeatDelay: 0.5
     engagePhase: 0
-  m_bossEngageTime: 63
+  - mob: {fileID: 7466608742450977111, guid: a071a3bb70407af4e899a5b2a7b6a3d5, type: 3}
+    pathName: Sky
+    engageTime: 65
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: a071a3bb70407af4e899a5b2a7b6a3d5, type: 3}
+    pathName: Ground
+    engageTime: 67
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
+    engagePhase: 0
+  m_bossEngageTime: 85
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   nextSceneName: _Title
