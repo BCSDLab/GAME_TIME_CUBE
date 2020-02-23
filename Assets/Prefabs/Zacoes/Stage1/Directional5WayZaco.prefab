@@ -259,7 +259,7 @@ MonoBehaviour:
   target: {fileID: 0}
   count: 5
   speed: 2
-  delay: 2
+  delay: 2.3
   angleRange: 60
 --- !u!114 &2128469474297340662
 MonoBehaviour:
@@ -281,6 +281,7 @@ MonoBehaviour:
     items: []
     counts: 
   m_isZacoInvincible: 0
+  m_hasZacoEndPattern: 1
 --- !u!1 &8600243800013536277
 GameObject:
   m_ObjectHideFlags: 0

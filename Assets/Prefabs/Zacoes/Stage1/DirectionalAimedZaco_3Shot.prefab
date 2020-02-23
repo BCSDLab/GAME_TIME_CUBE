@@ -4919,8 +4919,8 @@ MonoBehaviour:
   m_ShotSFX: {fileID: 0}
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  count: 8
-  speed: 6
+  count: 6
+  speed: 4
 --- !u!114 &3298016160526166707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4962,9 +4962,10 @@ MonoBehaviour:
   m_dropItemList:
     items:
     - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
-    counts: 04000000
+    - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
+    counts: 0200000003000000
   m_isZacoInvincible: 0
-  m_hasZacoEndPattern: 0
+  m_hasZacoEndPattern: 1
 --- !u!82 &1331919750288802457
 AudioSource:
   m_ObjectHideFlags: 0

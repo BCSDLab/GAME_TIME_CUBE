@@ -4774,6 +4774,7 @@ GameObject:
   - component: {fileID: 1297947435120890667}
   - component: {fileID: 1331919750288802457}
   - component: {fileID: 2367973179709494735}
+  - component: {fileID: 1101567388136068931}
   - component: {fileID: 2128469474297340662}
   m_Layer: 0
   m_Name: Directional7WayZaco
@@ -5020,6 +5021,25 @@ MonoBehaviour:
   speed: 4
   delay: 1
   angleRange: 60
+--- !u!114 &1101567388136068931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spawnPos: {fileID: 0}
+  m_startDelay: 0
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
+  m_ShotSFXVolum: 0.5
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  count: 8
+  speed: 4
 --- !u!114 &2128469474297340662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5037,6 +5057,10 @@ MonoBehaviour:
   m_hp: 400
   m_destroyOnArrival: 0
   m_dropItemList:
-    items: []
-    counts: 
+    items:
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
+    - {fileID: 6944185424850292006, guid: b6976bce5d893914885974b11f86574f, type: 3}
+    counts: 010000000300000001000000
   m_isZacoInvincible: 0
+  m_hasZacoEndPattern: 1
