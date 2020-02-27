@@ -7088,10 +7088,9 @@ MonoBehaviour:
   nodes:
   - {x: 10, y: -3, z: 0}
   - {x: 6, y: -3, z: 0}
-  - {x: 0, y: -2, z: 0}
+  - {x: 2, y: -2, z: 0}
   - {x: 6, y: -1, z: 0}
-  - {x: 10, y: -1, z: 0}
-  nodeCount: 5
+  nodeCount: 4
   initialized: 1
   initialName: New Path 2
   pathVisible: 1
@@ -8721,10 +8720,9 @@ MonoBehaviour:
   nodes:
   - {x: 10, y: 3, z: 0}
   - {x: 6, y: 3, z: 0}
-  - {x: 0, y: 2, z: 0}
+  - {x: 2, y: 2, z: 0}
   - {x: 6, y: 1, z: 0}
-  - {x: 10, y: 1, z: 0}
-  nodeCount: 5
+  nodeCount: 4
   initialized: 1
   initialName: New Path 2
   pathVisible: 1
@@ -10317,13 +10315,73 @@ MonoBehaviour:
     repeatCount: 2
     repeatDelay: 4
     engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: 411bca3c7953a964a9480f93aeed32ad, type: 3}
+    pathName: UTurn_Up
+    engageTime: 77
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: 411bca3c7953a964a9480f93aeed32ad, type: 3}
+    pathName: UTurn_Down
+    engageTime: 78
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
+    pathName: Right3
+    engageTime: 89
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
+    pathName: Right2
+    engageTime: 91
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
+    pathName: Right1
+    engageTime: 93
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: eaeb3e0de2265cf409ef74d1e1239416, type: 3}
+    pathName: B3
+    engageTime: 100
+    repeatCount: 4
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: eaeb3e0de2265cf409ef74d1e1239416, type: 3}
+    pathName: B4
+    engageTime: 105
+    repeatCount: 4
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 98ba1448160bb79499d8df5a5202fbee, type: 3}
+    pathName: Right2
+    engageTime: 112
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: a2af9fd105c79ec4fb5ae78cb76ae794, type: 3}
+    pathName: B1
+    engageTime: 115
+    repeatCount: 4
+    repeatDelay: 0.5
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: a2af9fd105c79ec4fb5ae78cb76ae794, type: 3}
+    pathName: B2
+    engageTime: 118
+    repeatCount: 4
+    repeatDelay: 0.5
+    engagePhase: 0
   - mob: {fileID: 0}
     pathName: 
     engageTime: 0
     repeatCount: 0
     repeatDelay: 0
     engagePhase: 0
-  m_bossEngageTime: 85
+  m_bossEngageTime: 128
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   nextSceneName: _Title
@@ -30837,7 +30895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -519.89954, y: -30}
+  m_AnchoredPosition: {x: -519.95, y: -30}
   m_SizeDelta: {x: 300, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1263577489177241833

@@ -4777,7 +4777,7 @@ GameObject:
   - component: {fileID: 5875172913077719939}
   - component: {fileID: 172328664871883220}
   m_Layer: 0
-  m_Name: DirectionalAimedZaco_1Shot
+  m_Name: DirectionalAimedZaco_1Shot_Left
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4791,7 +4791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7473877153406667978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 0, z: 0}
+  m_LocalPosition: {x: -12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5858929876569704990}
@@ -5020,7 +5020,7 @@ MonoBehaviour:
   count: 1
   speed: 5
   inDelay: 0.1
-  outDelay: 3
+  outDelay: 2
 --- !u!114 &5875172913077719939
 MonoBehaviour:
   m_ObjectHideFlags: 0
