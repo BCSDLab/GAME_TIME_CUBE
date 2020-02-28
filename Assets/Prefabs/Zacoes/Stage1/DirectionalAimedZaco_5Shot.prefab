@@ -4962,7 +4962,7 @@ MonoBehaviour:
   m_dropItemList:
     items:
     - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
-    - {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e, type: 3}
+    - {fileID: 8453631172040760662, guid: fb181b3a27f6a0f45b5478b8dc4cde0a, type: 3}
     counts: 0400000001000000
   m_isZacoInvincible: 0
   m_hasZacoEndPattern: 0
