@@ -6710,6 +6710,8 @@ Transform:
   - {fileID: 671062276}
   - {fileID: 399462195}
   - {fileID: 201928525}
+  - {fileID: 1704439551}
+  - {fileID: 1195739167}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10450,59 +10452,59 @@ MonoBehaviour:
     repeatCount: 2
     repeatDelay: 4
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 92a601ecf2af1fe43ab533b7796ca0f7, type: 3}
+    pathName: Right2
+    engageTime: 35
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7466608742450977111, guid: c4656601ed5e6714ea94b09cd5feb7a6, type: 3}
+    pathName: B1
+    engageTime: 36
+    repeatCount: 3
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: c4656601ed5e6714ea94b09cd5feb7a6, type: 3}
+    pathName: B2
+    engageTime: 37
+    repeatCount: 2
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 58b604c64d508d44da1b293047feebc3, type: 3}
+    pathName: Right1
+    engageTime: 41
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 58b604c64d508d44da1b293047feebc3, type: 3}
+    pathName: Right3
+    engageTime: 41
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: 2e1772db8b756e54ba57f468d1f365cd, type: 3}
+    pathName: Middle_Up
+    engageTime: 43
+    repeatCount: 3
+    repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: 2e1772db8b756e54ba57f468d1f365cd, type: 3}
+    pathName: Middle_Down
+    engageTime: 44
+    repeatCount: 3
+    repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: 2e32638ab03b10a458bb3182a0c7790f, type: 3}
+    pathName: Sky
+    engageTime: 50
+    repeatCount: 2
+    repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: 2e32638ab03b10a458bb3182a0c7790f, type: 3}
+    pathName: Ground
+    engageTime: 51
+    repeatCount: 2
+    repeatDelay: 2
     engagePhase: 0
   - mob: {fileID: 0}
     pathName: 
@@ -10707,6 +10709,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7375464638601983788}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1195739166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195739167}
+  - component: {fileID: 1195739168}
+  m_Layer: 0
+  m_Name: Middle_Down
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1195739167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195739166}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195739168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195739166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Middle_Down
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 10, y: 0, z: 0}
+  - {x: -0.24545956, y: -1.293362, z: 0}
+  - {x: -5.9179626, y: -7.952238, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1 &1197100711
 GameObject:
   m_ObjectHideFlags: 0
@@ -27655,6 +27710,59 @@ Transform:
   m_Father: {fileID: 837894285}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1704439550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704439551}
+  - component: {fileID: 1704439552}
+  m_Layer: 0
+  m_Name: Middle_Up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704439551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704439550}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1704439552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704439550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Middle_Up
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 10, y: 0, z: 0}
+  - {x: -0.24545956, y: 1.2933617, z: 0}
+  - {x: -5.9179626, y: 7.952238, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1 &1733676294
 GameObject:
   m_ObjectHideFlags: 0

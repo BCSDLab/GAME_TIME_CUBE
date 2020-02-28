@@ -6710,9 +6710,64 @@ Transform:
   - {fileID: 671062276}
   - {fileID: 399462195}
   - {fileID: 201928525}
+  - {fileID: 312030940}
+  - {fileID: 661461115}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &312030939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 312030940}
+  - component: {fileID: 312030941}
+  m_Layer: 0
+  m_Name: Middle_Up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &312030940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312030939}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &312030941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312030939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Middle_Up
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 10, y: 0, z: 0}
+  - {x: -0.24545956, y: 1.2933617, z: 0}
+  - {x: -5.9179626, y: 7.952238, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1 &316603150
 GameObject:
   m_ObjectHideFlags: 0
@@ -8654,6 +8709,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634180028}
   m_CullTransparentMesh: 0
+--- !u!1 &661461114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 661461115}
+  - component: {fileID: 661461116}
+  m_Layer: 0
+  m_Name: Middle_Down
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &661461115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661461114}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &661461116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661461114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Middle_Down
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 10, y: 0, z: 0}
+  - {x: -0.24545956, y: -1.293362, z: 0}
+  - {x: -5.9179626, y: -7.952238, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1 &661846127
 GameObject:
   m_ObjectHideFlags: 0
@@ -10408,23 +10516,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mobInfoes:
-  - mob: {fileID: 7473877153406667978, guid: cbc7f2ef62dba0a498784e4bcaf57619, type: 3}
-    pathName: Right2
-    engageTime: 2
+  - mob: {fileID: 7473877153406667978, guid: 58b604c64d508d44da1b293047feebc3, type: 3}
+    pathName: Right3
+    engageTime: 1
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: dd02260273f9af9489ac3fc2e2934478, type: 3}
-    pathName: Sky
-    engageTime: 5
-    repeatCount: 2
-    repeatDelay: 4
+  - mob: {fileID: 7473877153406667978, guid: 58b604c64d508d44da1b293047feebc3, type: 3}
+    pathName: Right1
+    engageTime: 1
+    repeatCount: 1
+    repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: dd02260273f9af9489ac3fc2e2934478, type: 3}
-    pathName: Ground
-    engageTime: 7
+  - mob: {fileID: 7473877153406667978, guid: 2e1772db8b756e54ba57f468d1f365cd, type: 3}
+    pathName: Middle_Up
+    engageTime: 3
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2e1772db8b756e54ba57f468d1f365cd, type: 3}
+    pathName: Middle_Down
+    engageTime: 4
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2e32638ab03b10a458bb3182a0c7790f, type: 3}
+    pathName: Sky
+    engageTime: 10
     repeatCount: 2
-    repeatDelay: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2e32638ab03b10a458bb3182a0c7790f, type: 3}
+    pathName: Ground
+    engageTime: 11
+    repeatCount: 2
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
+    repeatDelay: 0
     engagePhase: 0
   - mob: {fileID: 0}
     pathName: 
