@@ -5782,7 +5782,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &201928526
 MonoBehaviour:
@@ -6021,7 +6021,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &235452308
 MonoBehaviour:
@@ -6701,6 +6701,7 @@ Transform:
   - {fileID: 193007771}
   - {fileID: 908331260}
   - {fileID: 32764009}
+  - {fileID: 761310324}
   - {fileID: 1229761990}
   - {fileID: 2005393095}
   - {fileID: 814599657}
@@ -6712,6 +6713,7 @@ Transform:
   - {fileID: 201928525}
   - {fileID: 1704439551}
   - {fileID: 1195739167}
+  - {fileID: 751708085}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7140,7 +7142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &399462196
 MonoBehaviour:
@@ -8772,7 +8774,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &671062277
 MonoBehaviour:
@@ -8931,6 +8933,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737200883}
   m_CullTransparentMesh: 0
+--- !u!1 &751708084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751708085}
+  - component: {fileID: 751708086}
+  m_Layer: 0
+  m_Name: Left2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751708085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751708084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751708086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751708084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Left2
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -10, y: 0, z: 0}
+  - {x: -7, y: 0, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!82 &752172817
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9028,6 +9082,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &761310323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 761310324}
+  - component: {fileID: 761310325}
+  m_Layer: 0
+  m_Name: Ground_Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &761310324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761310323}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761310325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761310323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Ground_Left
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -9.94221, y: -4, z: 0}
+  - {x: 0.5223944, y: -4, z: 0}
+  - {x: 9.92189, y: -4, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1 &775704560
 GameObject:
   m_ObjectHideFlags: 0
@@ -9230,7 +9337,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &814599658
 MonoBehaviour:
@@ -9710,7 +9817,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &940278595
 MonoBehaviour:
@@ -10506,11 +10613,227 @@ MonoBehaviour:
     repeatCount: 2
     repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
+  - mob: {fileID: 7473877153406667978, guid: 80e1a7a8c4f92fe4982965064d9f7558, type: 3}
+    pathName: Right1
+    engageTime: 58
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 80e1a7a8c4f92fe4982965064d9f7558, type: 3}
+    pathName: Right3
+    engageTime: 58
     repeatCount: 0
     repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 838fb11f3aa89f542a53137dd87784b2, type: 3}
+    pathName: Right2
+    engageTime: 59
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 838fb11f3aa89f542a53137dd87784b2, type: 3}
+    pathName: Right1
+    engageTime: 68
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 838fb11f3aa89f542a53137dd87784b2, type: 3}
+    pathName: Right3
+    engageTime: 68
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 58b604c64d508d44da1b293047feebc3, type: 3}
+    pathName: Right2
+    engageTime: 69
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fdc9b77385cc1948903e2447c60b511, type: 3}
+    pathName: B1
+    engageTime: 76
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fdc9b77385cc1948903e2447c60b511, type: 3}
+    pathName: B2
+    engageTime: 77
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 17bdfdb4162b48b4e8c85c1636940e3a, type: 3}
+    pathName: Center
+    engageTime: 85
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: 674ae0262032fca48b54156f74b2b361, type: 3}
+    pathName: SKy
+    engageTime: 86
+    repeatCount: 3
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: 674ae0262032fca48b54156f74b2b361, type: 3}
+    pathName: Ground
+    engageTime: 86
+    repeatCount: 3
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: bc4868b23efc0ad44a53eed69e794a6e, type: 3}
+    pathName: B3
+    engageTime: 91
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: bc4868b23efc0ad44a53eed69e794a6e, type: 3}
+    pathName: B4
+    engageTime: 92
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 43c760979c128f34981a967cce554735, type: 3}
+    pathName: Right2
+    engageTime: 96
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fdc9b77385cc1948903e2447c60b511, type: 3}
+    pathName: B2
+    engageTime: 99
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fdc9b77385cc1948903e2447c60b511, type: 3}
+    pathName: B1
+    engageTime: 100
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4be3bdde54c37684aba5e58b05f9ace0, type: 3}
+    pathName: Left2
+    engageTime: 104
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: c4656601ed5e6714ea94b09cd5feb7a6, type: 3}
+    pathName: A1
+    engageTime: 108
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: c4656601ed5e6714ea94b09cd5feb7a6, type: 3}
+    pathName: A2
+    engageTime: 109
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 41210a957760b7042a6e1351849e44a7, type: 3}
+    pathName: Right2
+    engageTime: 114
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: 42c479bc5ae62304794381892e730f86, type: 3}
+    pathName: Sky
+    engageTime: 117
+    repeatCount: 4
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fdc9b77385cc1948903e2447c60b511, type: 3}
+    pathName: Right2
+    engageTime: 119
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: 1c8d3e54b7bf21b4a86c45ed6bbdcbb7, type: 3}
+    pathName: Ground_Left
+    engageTime: 123
+    repeatCount: 4
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 20e7e4c665b31094090f6d0569d1634b, type: 3}
+    pathName: Left2
+    engageTime: 125
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 80e1a7a8c4f92fe4982965064d9f7558, type: 3}
+    pathName: Right1
+    engageTime: 130
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 80e1a7a8c4f92fe4982965064d9f7558, type: 3}
+    pathName: Right3
+    engageTime: 130
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2f481626160588442bc221ec5d78a6ac, type: 3}
+    pathName: Middle_Up
+    engageTime: 131
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2f481626160588442bc221ec5d78a6ac, type: 3}
+    pathName: Middle_Down
+    engageTime: 132
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: d0438773356aafa47ae150e253bc8812, type: 3}
+    pathName: Right1
+    engageTime: 142
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: d0438773356aafa47ae150e253bc8812, type: 3}
+    pathName: Right3
+    engageTime: 142
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 30ea623f097554444a17392886fad451, type: 3}
+    pathName: B3
+    engageTime: 144
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 30ea623f097554444a17392886fad451, type: 3}
+    pathName: B4
+    engageTime: 145
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 1379f5c8bfa61b74a9ddbdf2c5459214, type: 3}
+    pathName: Center
+    engageTime: 153
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 30ea623f097554444a17392886fad451, type: 3}
+    pathName: B3
+    engageTime: 157
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2f481626160588442bc221ec5d78a6ac, type: 3}
+    pathName: B1
+    engageTime: 158
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 30ea623f097554444a17392886fad451, type: 3}
+    pathName: B4
+    engageTime: 159
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2f481626160588442bc221ec5d78a6ac, type: 3}
+    pathName: B2
+    engageTime: 160
+    repeatCount: 4
+    repeatDelay: 2
     engagePhase: 0
   - mob: {fileID: 0}
     pathName: 
@@ -10518,79 +10841,7 @@ MonoBehaviour:
     repeatCount: 0
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  m_bossEngageTime: 128
+  m_bossEngageTime: 172
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   nextSceneName: _Title
@@ -10738,7 +10989,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1195739168
 MonoBehaviour:
@@ -11001,7 +11252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1229761991
 MonoBehaviour:
@@ -15913,7 +16164,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1280037520
 MonoBehaviour:
@@ -27739,7 +27990,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1704439552
 MonoBehaviour:
@@ -28466,7 +28717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2005393096
 MonoBehaviour:

@@ -5019,7 +5019,7 @@ MonoBehaviour:
   target: {fileID: 0}
   count: 8
   speed: 4
-  delay: 0.5
+  delay: 1
   radius: 0.9
 --- !u!114 &5875172913077719939
 MonoBehaviour:
