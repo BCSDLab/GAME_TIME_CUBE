@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     [System.NonSerialized]
     public int orbitorCount = 0;
     [System.NonSerialized]
+    public int followerCount = 0;
+    [System.NonSerialized]
     public float totalScore = 0;
     [System.NonSerialized]
     public bool isPlayerAttacking = false;
@@ -87,12 +89,22 @@ public class GameManager : MonoBehaviour
         StageChanger sc = StageChanger.instance;
         sc.LoadData();
 
+        Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
+
         if (orbitorCount != 0)
         {
-            Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
             for (int i = 1; i <= orbitorCount; i++)
             {
                 Instantiate(sc.orbitor, playerTR.position, Quaternion.identity).name = sc.orbitor.name + "_" + i;
+            }
+            sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
+        }
+
+        if (followerCount != 0)
+        {
+            for(int i = 1; i <= followerCount; i++)
+            {
+                Instantiate(sc.follower, playerTR.position, Quaternion.identity).name = sc.follower.name + "_" + i;
             }
             sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
         }

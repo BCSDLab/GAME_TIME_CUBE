@@ -12,10 +12,12 @@ public class StageChanger : MonoBehaviour
     private int m_savedPlayerHP = GameManager.PLAYER_HP_INIT;
     private float m_savedTotalScore = 0;
     private int m_savedOrbitorCount = 0;
+    private int m_savedFollowerCount = 0;
 
     [Header("보조무기 프리팹")]
     public GameObject subWeaponItem = null;
     public GameObject orbitor = null;
+    public GameObject follower = null;
 
     void Awake()
     {
@@ -52,6 +54,7 @@ public class StageChanger : MonoBehaviour
         m_savedPlayerPower = GameManager.instance.playerPower;
         m_savedPlayerHP = GameManager.instance.GetPlayerHP();
         m_savedOrbitorCount = GameManager.instance.orbitorCount;
+        m_savedFollowerCount = GameManager.instance.followerCount;
         m_savedTotalScore += GameManager.instance.GetScore();
     }
 
@@ -61,6 +64,7 @@ public class StageChanger : MonoBehaviour
         GameManager.instance.playerPower = m_savedPlayerPower;
         GameManager.instance.playerHP = m_savedPlayerHP;
         GameManager.instance.orbitorCount = m_savedOrbitorCount;
+        GameManager.instance.followerCount = m_savedFollowerCount;
         GameManager.instance.totalScore = m_savedTotalScore;
     }
 

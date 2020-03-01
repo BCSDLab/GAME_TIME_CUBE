@@ -7,14 +7,20 @@ public class SubWeaponItem : Item
 {
     public GameObject subWeapon;
 
-    protected override void PickUp()
+    protected override void PickUp() // 추가 작업 필요
     {
-        GameManager.instance.orbitorCount++;
-        Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
-
         if (subWeapon.name == "Orbitor")
         {
+            GameManager.instance.orbitorCount++;
+            Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
             InitOrbitorPosition();
+        }
+
+        if (subWeapon.name == "Follower")
+        {
+            GameManager.instance.followerCount++;
+            Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
+            InitFollowerPosition();
         }
     }
 
@@ -27,5 +33,9 @@ public class SubWeaponItem : Item
         {
             orbitors[i].m_alpha = dist * i;
         }
+    }
+    public void InitFollowerPosition() // 추가 작업 필요
+    {
+
     }
 }
