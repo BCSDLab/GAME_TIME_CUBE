@@ -17,7 +17,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider bgmVolumeSlider;
     public Text bgmVolumeText;
     public Dropdown resolutionDropdown;
-    public Toggle fullscreenToggle;
+    public Toggle fullScreenToggle;
 
     private AudioSource m_audioSource;
     private Resolution[] resolutions;
@@ -25,18 +25,21 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         m_audioSource = GetComponent<AudioSource>();
+        LoadSetting();
 
-        audioMixer.GetFloat("SFXVolume", out float volume);
-        sfxVolumeSlider.value = Mathf.Pow(10f, (volume / 20f));
-        sfxVolumeText.text = $"{sfxVolumeSlider.value * 100f:F0}%";
+        //audioMixer.GetFloat("SFXVolume", out float volume);
+        //sfxVolumeSlider.value = Mathf.Pow(10f, (volume / 20f));
+        //sfxVolumeText.text = $"{sfxVolumeSlider.value * 100f:F0}%";
         sfxVolumeSlider.GetComponent<SFXVolumeTester>().StopCoroutine("TestSFX");
 
-        audioMixer.GetFloat("BGMVolume", out volume);
-        bgmVolumeSlider.value = Mathf.Pow(10f, (volume / 20f));
-        bgmVolumeText.text = $"{bgmVolumeSlider.value * 100f:F0}%";
+        //audioMixer.GetFloat("BGMVolume", out volume);
+        //bgmVolumeSlider.value = Mathf.Pow(10f, (volume / 20f));
+        //bgmVolumeText.text = $"{bgmVolumeSlider.value * 100f:F0}%";
 
         InitializeResolution();
-        fullscreenToggle.isOn = Screen.fullScreen;
+        //fullscreenToggle.isOn = Screen.fullScreen;
+
+        this.gameObject.SetActive(false);
     }
 
     void Update()
@@ -69,6 +72,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetSFXVolume(float value)
     {
+        Debug.Log("SFX" + value);
+
         float volume = Mathf.Log10(value) * 20f;
         audioMixer.SetFloat("SFXVolume", volume);
         sfxVolumeText.text = $"{value * 100f:F0}%";
@@ -76,6 +81,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetBGMVolume(float value)
     {
+        Debug.Log("BGM" + value);
+
         float volume = Mathf.Log10(value) * 20f;
         audioMixer.SetFloat("BGMVolume", volume);
         bgmVolumeText.text = $"{value * 100f:F0}%";
@@ -108,5 +115,28 @@ public class SettingsMenu : MonoBehaviour
         {
             transform.GetChild(transform.childCount-1).GetComponent<Button>().onClick.Invoke();
         }
+    }
+
+    public void SaveSetting()
+    {
+        Debug.Log("Setting Saved...!");
+
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
+        PlayerPrefs.SetFloat("BGMVolume", bgmVolumeSlider.value);
+
+        PlayerPrefs.SetInt("IsFullScreen", Screen.fullScreen ? 1 : 0);
+    }
+    public void LoadSetting()
+    {
+        Debug.Log("Setting Loaded...!");
+
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+        bgmVolumeSlider.value = PlayerPrefs.GetFloat("BGMVolume");
+
+        SetSFXVolume(sfxVolumeSlider.value);
+        SetBGMVolume(bgmVolumeSlider.value);
+
+        Screen.fullScreen = PlayerPrefs.GetInt("IsFullScreen") == 1 ? true : false;
+        fullScreenToggle.isOn = Screen.fullScreen;
     }
 }
