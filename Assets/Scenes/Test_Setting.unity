@@ -667,7 +667,7 @@ MonoBehaviour:
   bgmVolumeSlider: {fileID: 1449958245}
   bgmVolumeText: {fileID: 362331670}
   resolutionDropdown: {fileID: 1569801914}
-  fullscreenToggle: {fileID: 1905749273}
+  fullScreenToggle: {fileID: 1905749273}
 --- !u!82 &340352487
 AudioSource:
   m_ObjectHideFlags: 0

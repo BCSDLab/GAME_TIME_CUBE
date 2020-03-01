@@ -17,7 +17,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider bgmVolumeSlider;
     public Text bgmVolumeText;
     public Dropdown resolutionDropdown;
-    public Toggle fullscreenToggle;
+    public Toggle fullScreenToggle;
 
     private AudioSource m_audioSource;
     private Resolution[] resolutions;
@@ -137,6 +137,6 @@ public class SettingsMenu : MonoBehaviour
         SetBGMVolume(bgmVolumeSlider.value);
 
         Screen.fullScreen = PlayerPrefs.GetInt("IsFullScreen") == 1 ? true : false;
-        fullscreenToggle.isOn = Screen.fullScreen;
+        fullScreenToggle.isOn = Screen.fullScreen;
     }
 }
