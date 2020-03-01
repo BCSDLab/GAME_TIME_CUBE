@@ -37,7 +37,7 @@ public class SettingsMenu : MonoBehaviour
         //bgmVolumeText.text = $"{bgmVolumeSlider.value * 100f:F0}%";
 
         InitializeResolution();
-        fullscreenToggle.isOn = Screen.fullScreen;
+        //fullscreenToggle.isOn = Screen.fullScreen;
 
         this.gameObject.SetActive(false);
     }
@@ -123,6 +123,8 @@ public class SettingsMenu : MonoBehaviour
 
         PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
         PlayerPrefs.SetFloat("BGMVolume", bgmVolumeSlider.value);
+
+        PlayerPrefs.SetInt("IsFullScreen", Screen.fullScreen ? 1 : 0);
     }
     public void LoadSetting()
     {
@@ -133,5 +135,8 @@ public class SettingsMenu : MonoBehaviour
 
         SetSFXVolume(sfxVolumeSlider.value);
         SetBGMVolume(bgmVolumeSlider.value);
+
+        Screen.fullScreen = PlayerPrefs.GetInt("IsFullScreen") == 1 ? true : false;
+        fullscreenToggle.isOn = Screen.fullScreen;
     }
 }
