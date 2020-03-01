@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 273016974476332622}
   - component: {fileID: 273016974476332621}
   - component: {fileID: 273016974476332620}
-  - component: {fileID: 9170704057963198923}
+  - component: {fileID: 3041713408131437749}
   - component: {fileID: 2495123922678834812}
   m_Layer: 0
   m_Name: SlowStopBullet
@@ -104,8 +104,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &9170704057963198923
-CircleCollider2D:
+--- !u!70 &3041713408131437749
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,8 +118,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.24
+  m_Size: {x: 0.3, y: 0.42}
+  m_Direction: 0
 --- !u!114 &2495123922678834812
 MonoBehaviour:
   m_ObjectHideFlags: 0

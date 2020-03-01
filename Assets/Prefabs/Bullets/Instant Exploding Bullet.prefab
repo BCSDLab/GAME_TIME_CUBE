@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1655474644624277733
+--- !u!1 &6189394045322033645
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 205702376639127615}
-  - component: {fileID: 2074153100469836821}
-  - component: {fileID: 4548687611100440075}
+  - component: {fileID: 5551973726229641112}
+  - component: {fileID: 5046670775957188712}
+  - component: {fileID: 4248435563432643987}
   m_Layer: 0
   m_Name: Particle System Out
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &205702376639127615
+--- !u!4 &5551973726229641112
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655474644624277733}
+  m_GameObject: {fileID: 6189394045322033645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 12, y: 0, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 8760339693924824442}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &2074153100469836821
+--- !u!198 &5046670775957188712
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655474644624277733}
+  m_GameObject: {fileID: 6189394045322033645}
   serializedVersion: 6
   lengthInSec: 0.2
   simulationSpeed: 1
@@ -4697,14 +4697,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &4548687611100440075
+--- !u!199 &4248435563432643987
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655474644624277733}
+  m_GameObject: {fileID: 6189394045322033645}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -4769,14 +4769,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8760339693924824442}
   - component: {fileID: 8760339693924824441}
-  - component: {fileID: 2344794077409281681}
   - component: {fileID: 8760339693924824440}
-  - component: {fileID: 3678523195342357770}
+  - component: {fileID: 182083523986767946}
   - component: {fileID: 8454583245673594259}
-  - component: {fileID: 7920666757558760578}
-  - component: {fileID: 4277351289230969200}
+  - component: {fileID: 7449139287740821109}
+  - component: {fileID: 7929180320099664006}
   m_Layer: 0
-  m_Name: N-Way Cracking Bullet
+  m_Name: Instant Exploding Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4793,7 +4792,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 205702376639127615}
+  - {fileID: 5551973726229641112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4834,9 +4833,9 @@ SpriteRenderer:
   m_SortingLayerID: 1879705621
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300006, guid: 566466c3883597c4bbcee1bbc91a6e0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 566466c3883597c4bbcee1bbc91a6e0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}
@@ -4845,25 +4844,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2344794077409281681
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8760339693924824446}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f9e57fe43306daa48b34505c3de1b066, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &8760339693924824440
 Rigidbody2D:
   serializedVersion: 4
@@ -4885,8 +4865,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &3678523195342357770
-PolygonCollider2D:
+--- !u!61 &182083523986767946
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4895,37 +4875,22 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.05, y: 1.05}
+    oldSize: {x: 0.63, y: 0.63}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.18, y: 0.39}
-      - {x: 0, y: 0.3}
-      - {x: 0.18, y: 0.39}
-      - {x: 0.18, y: 0.18}
-      - {x: 0.39, y: 0.18}
-      - {x: 0.3, y: 0}
-      - {x: 0.39, y: -0.18}
-      - {x: 0.18, y: -0.18}
-      - {x: 0.18, y: -0.39}
-      - {x: 0, y: -0.3}
-      - {x: -0.18, y: -0.39}
-      - {x: -0.18, y: -0.18}
-      - {x: -0.39, y: -0.18}
-      - {x: -0.3, y: 0}
-      - {x: -0.39, y: 0.18}
-      - {x: -0.18, y: 0.18}
+  serializedVersion: 2
+  m_Size: {x: 0.21, y: 0.21}
+  m_EdgeRadius: 0
 --- !u!82 &8454583245673594259
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4937,9 +4902,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243836163948178342, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 088cbf7ba8799aa47895a0da2549e8b6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5023,7 +4988,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7920666757558760578
+--- !u!114 &7449139287740821109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5032,29 +4997,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 8760339693924824446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2915d855cb8593347bf57e247bb34766, type: 3}
+  m_Script: {fileID: 11500000, guid: d8334bcbe7c660e4db823228d9fc3e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 0
+  m_explodeDistance: 999
+  m_alpha: 200
+--- !u!114 &7929180320099664006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760339693924824446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c62600e8d41e7d458c248d4a3e35156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  m_ShotSFX: {fileID: 0}
+  m_ShotSFX: {fileID: 8300000, guid: 088cbf7ba8799aa47895a0da2549e8b6, type: 3}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  target: {fileID: 0}
-  count: 3
+  bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
+  count: 15
   speed: 3
-  delay: 0.5
-  angleRange: 40
---- !u!114 &4277351289230969200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8760339693924824446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c769971709509b74fbbbe33c6d45faa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_crackTime: 2
+  inDelay: 99
+  m_isCountChange: 0

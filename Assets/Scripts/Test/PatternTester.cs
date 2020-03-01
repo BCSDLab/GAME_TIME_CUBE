@@ -9,7 +9,7 @@ public class PatternTester : MonoBehaviour
 
     void Start()
     {
-        m_testPattern = GetComponent<DirectionalAimedNWay>();
+        m_testPattern = GetComponent<Laser>();
 
         m_testPattern.StartPattern();
     }

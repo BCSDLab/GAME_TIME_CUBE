@@ -14,21 +14,18 @@ public abstract class Zaco : Enemy
     [SerializeField]
     protected bool m_hasZacoEndPattern = false;
 
-    private Cross m_cross;
     private AudioSource[] m_audioSources;
 
     void Awake()
     {
         m_audioSources = GetComponents<AudioSource>();
-        m_cross = GetComponent<Cross>();
 
         m_isInvincible = true;
     }
 
     void OnBecameVisible()
     {
-        if(!m_isZacoInvincible)
-            m_isInvincible = false;
+        if (!m_isZacoInvincible) m_isInvincible = false;
     }
 
     public override void Damage(int damage)
@@ -55,9 +52,6 @@ public abstract class Zaco : Enemy
 
     public override void Die()
     {
-        if(m_hasZacoEndPattern)
-            m_cross.StartPattern();
-
         m_isInvincible = true;
         DropItems(m_dropItemList);
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8760339693924824442}
   - component: {fileID: 8760339693924824441}
   m_Layer: 0
-  m_Name: LockOn Mark
+  m_Name: LockOn Mark L
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 1879705621
   m_SortingLayer: 2
   m_SortingOrder: -100
-  m_Sprite: {fileID: 21300000, guid: 5a1f2c7898bdabb4295367a265c0737f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6361547e104638f4dbf08df624ea6609, type: 3}
   m_Color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0.5882353}
   m_FlipX: 1
   m_FlipY: 0
