@@ -91,7 +91,7 @@ public class ExplodingHomingBullet : Bullet
     {
         m_isExploding = true;
         StopAllCoroutines();
-        m_collider.enabled = true;
+        m_collider.enabled = false;
         m_spriteRenderer.enabled = false;
         m_bulletPattern.StartPattern();
         m_explosionAudio.Play();

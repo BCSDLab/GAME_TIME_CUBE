@@ -4777,7 +4777,7 @@ GameObject:
   - component: {fileID: 5875172913077719939}
   - component: {fileID: 172328664871883220}
   m_Layer: 0
-  m_Name: DirAimZaco
+  m_Name: DirAimZaco1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5054,7 +5054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 10
-  m_hp: 1000
+  m_hp: 500
   m_destroyOnArrival: 0
   m_dropItemList:
     items:

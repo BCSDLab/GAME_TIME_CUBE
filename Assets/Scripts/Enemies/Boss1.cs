@@ -38,9 +38,13 @@ public class Boss1 : Enemy
 
     // 패턴용
     [SerializeField]
-    private GameObject m_lockOnMarkXL = null;
+    private GameObject m_lockOnMarkXL;
     [SerializeField]
-    private GameObject m_instantExplodingBullet = null;
+    private GameObject m_instantExplodingBullet;
+    [SerializeField]
+    private GameObject m_lockOnMarkRhombus;
+    [SerializeField]
+    private GameObject m_arrowMark;
 
     private DialogueTrigger m_dialogueTrigger;
     private ParticleSystem m_inParticle;
@@ -51,7 +55,7 @@ public class Boss1 : Enemy
     private AudioSource m_chargeAudio;
     private AudioSource m_bigShotAudio;
 
-    private const int PHASE_COUNT = 6;
+    private const int PHASE_COUNT = 5;
     private int m_phase = 0;
     private int m_maxPhaseHP; // 각 페이즈 최대 HP
     private int m_phaseHP;  // 현재 페이즈 HP
@@ -158,9 +162,9 @@ public class Boss1 : Enemy
             yield return new WaitForSeconds(0.8f);
             m_bigShotAudio.Play();
             m_bigShot.StartPattern();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
             m_bigShot.StopPattern();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1.4f);
         }
     }
     IEnumerator Phase2()
@@ -174,18 +178,16 @@ public class Boss1 : Enemy
         {
             toPos.y = Random.Range(-3.7f, 2.9f);
             iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-            yield return new WaitForSeconds(m_moveTime-0.5f);
+            yield return new WaitForSeconds(m_moveTime - 0.5f);
             m_bigLockOnMissile.StartPattern();
             yield return new WaitForSeconds(0.5f);
             m_bigLockOnMissile.StopPattern();
             yield return new WaitForSeconds(2f);
         }
     }
-    
     IEnumerator Phase3()
     {
         // y축 중앙으로 이동하고, 조준 후 해당 위치에 폭발탄 생성
-        Debug.Log("Phase3 Start");
         iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
         yield return new WaitForSeconds(m_moveTime + 0.5f);
         m_machinegun2.StartPattern();
@@ -200,6 +202,167 @@ public class Boss1 : Enemy
             instantExplodingBulletInst.transform.position = lockOnMarkXL.transform.position + Vector3.right * 0.05f;
             instantExplodingBulletInst.SetActive(true);
             yield return new WaitForSeconds(1.2f);
+        }
+    }
+    IEnumerator Phase4()
+    {
+        // 플레이어가 이동하는 방향을 따라 폭격
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(m_moveTime + 0.5f);
+        Vector3 lockOnPos;
+        Vector3 arrowMarkPos;
+        Vector3 explodePos;
+
+        while (true)
+        {
+            // 조준
+            lockOnPos = m_target.position;
+            GameObject lockOnMark = Instantiate(m_lockOnMarkRhombus, lockOnPos, Quaternion.identity);
+            yield return new WaitForSeconds(1f);
+
+            // 화살표
+            const float MIN_MAGNITUDE = 3f;
+            Vector3 dist = m_target.position - lockOnPos;
+            float angle;
+            if (dist.magnitude > MIN_MAGNITUDE)  // 거리가 멀면 플레이어 위치에 생성
+            {
+                arrowMarkPos = m_target.position;
+            }
+            else  // 거리가 0이면 랜덤, 가까우면 해당 방향으로 생성
+            {
+                if (dist.magnitude < 0.001f) angle = Random.Range(0f, 2f * Mathf.PI);
+                else
+                {
+                    float at = Mathf.Atan2(dist.y, dist.x);
+                    angle = at * Mathf.Rad2Deg;
+                }
+                float cos = Mathf.Cos(angle);
+                float sin = Mathf.Sin(angle);
+                Vector3 vec = Vector3.right * cos + Vector3.up * sin;
+                arrowMarkPos = lockOnPos + vec * MIN_MAGNITUDE;
+            }
+            Vector3 direction = arrowMarkPos - lockOnPos;
+            float atan = Mathf.Atan2(direction.y, direction.x);
+            float arrowAngle = atan * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(arrowAngle, Vector3.forward);
+            GameObject arrowMark = Instantiate(m_arrowMark, arrowMarkPos, rotation);
+            yield return new WaitForSeconds(0.5f);
+
+            explodePos = lockOnPos;
+            const int EXPLOSION_COUNT = 3;
+            for (int i = 0; i < EXPLOSION_COUNT; i++)
+            {
+                GameObject instantExplodingBulletInst = PoolManager.instance.PopFromPool(m_instantExplodingBullet.name);
+                instantExplodingBulletInst.transform.position = explodePos + Vector3.right * 0.05f;
+                instantExplodingBulletInst.SetActive(true);
+                Vector3 distance = direction / (EXPLOSION_COUNT - 1);
+                explodePos += distance;
+                yield return new WaitForSeconds(0.3f);
+            }
+
+            Destroy(lockOnMark);
+            Destroy(arrowMark);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    IEnumerator Phase5()
+    {
+        // 조합
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(m_moveTime + 0.5f);
+        m_machinegun2.StartPattern();
+
+        Vector3 toPos = transform.position;
+        GameObject lockOnMarkXL;
+        Vector3 lockOnPos;
+        Vector3 arrowMarkPos;
+        Vector3 explodePos;
+
+        while (true)
+        {
+            // Phase 1
+            toPos.y = m_target.position.y;
+            iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(m_moveTime - 0.5f);
+            m_chargeAudio.Play();
+            yield return new WaitForSeconds(0.8f);
+            m_bigShotAudio.Play();
+            m_bigShot.StartPattern();
+            yield return new WaitForSeconds(0.5f);
+            m_bigShot.StopPattern();
+            yield return new WaitForSeconds(1f);
+
+            // Phase 2
+            toPos.y = Random.Range(-3.7f, 2.9f);
+            iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(m_moveTime - 0.5f);
+            m_bigLockOnMissile.StartPattern();
+            yield return new WaitForSeconds(0.5f);
+            m_bigLockOnMissile.StopPattern();
+            yield return new WaitForSeconds(2f);
+
+            // Phase 3
+            iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(m_moveTime + 0.5f);
+            lockOnMarkXL = Instantiate(m_lockOnMarkXL);
+            m_chargeAudio.Play();
+            iTween.MoveTo(lockOnMarkXL, iTween.Hash("position", m_target.position, "time", 0.7f, "easetype", iTween.EaseType.easeInOutSine));
+            yield return new WaitForSeconds(1.2f);
+            GameObject instantExplodingBulletInst = PoolManager.instance.PopFromPool(m_instantExplodingBullet.name);
+            instantExplodingBulletInst.transform.position = lockOnMarkXL.transform.position + Vector3.right * 0.05f;
+            instantExplodingBulletInst.SetActive(true);
+            yield return new WaitForSeconds(1.2f);
+            Destroy(lockOnMarkXL);
+
+            // Phase 4
+            // 조준
+            lockOnPos = m_target.position;
+            GameObject lockOnMark = Instantiate(m_lockOnMarkRhombus, lockOnPos, Quaternion.identity);
+            yield return new WaitForSeconds(1f);
+
+            // 화살표
+            const float MIN_MAGNITUDE = 3f;
+            Vector3 dist = m_target.position - lockOnPos;
+            float angle;
+            if (dist.magnitude > MIN_MAGNITUDE)  // 거리가 멀면 플레이어 위치에 생성
+            {
+                arrowMarkPos = m_target.position;
+            }
+            else  // 거리가 0이면 랜덤, 가까우면 해당 방향으로 생성
+            {
+                if (dist.magnitude < 0.001f) angle = Random.Range(0f, 2f * Mathf.PI);
+                else
+                {
+                    float at = Mathf.Atan2(dist.y, dist.x);
+                    angle = at * Mathf.Rad2Deg;
+                }
+                float cos = Mathf.Cos(angle);
+                float sin = Mathf.Sin(angle);
+                Vector3 vec = Vector3.right * cos + Vector3.up * sin;
+                arrowMarkPos = lockOnPos + vec * MIN_MAGNITUDE;
+            }
+            Vector3 direction = arrowMarkPos - lockOnPos;
+            float atan = Mathf.Atan2(direction.y, direction.x);
+            float arrowAngle = atan * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(arrowAngle, Vector3.forward);
+            GameObject arrowMark = Instantiate(m_arrowMark, arrowMarkPos, rotation);
+            yield return new WaitForSeconds(0.5f);
+
+            explodePos = lockOnPos;
+            const int EXPLOSION_COUNT = 3;
+            for (int i = 0; i < EXPLOSION_COUNT; i++)
+            {
+                GameObject bulletInst = PoolManager.instance.PopFromPool(m_instantExplodingBullet.name);
+                bulletInst.transform.position = explodePos + Vector3.right * 0.05f;
+                bulletInst.SetActive(true);
+                Vector3 distance = direction / (EXPLOSION_COUNT - 1);
+                explodePos += distance;
+                yield return new WaitForSeconds(0.3f);
+            }
+
+            Destroy(lockOnMark);
+            Destroy(arrowMark);
+            yield return new WaitForSeconds(1f);
         }
     }
 
@@ -240,19 +403,16 @@ public class Boss1 : Enemy
 
             case 4:
                 StopCoroutine("Phase3");
+                StopAllPatterns();
+                StartCoroutine("Phase4");
                 GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
                 break;
 
             case 5:
+                StopCoroutine("Phase4");
+                StopAllPatterns();
+                StartCoroutine("Phase5");
                 GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
-                    "looptype", iTween.LoopType.loop, "movetopath", false));
-                break;
-
-            case 6:
-                GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
                 break;
 
             default:
@@ -333,7 +493,6 @@ public class Boss1 : Enemy
             StartPhase();
         }
     }
-
     public override void SpellDamage(int damage)
     {
         Damage(damage);
@@ -342,7 +501,10 @@ public class Boss1 : Enemy
     public override void Die()
     {
         m_isInvincible = true;
+        StopAllCoroutines();
         StopAllPatterns();
+        GameManager.instance.DestroyAllZacos();
+        GameManager.instance.DestroyAllBullets();
         GameManager.instance.BossDefeated();
         StartCoroutine("Blow");
     }
