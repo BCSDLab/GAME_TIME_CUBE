@@ -15,10 +15,12 @@ public abstract class Zaco : Enemy
     protected bool m_hasZacoEndPattern = false;
 
     private AudioSource[] m_audioSources;
+    private Cross m_cross;
 
     void Awake()
     {
         m_audioSources = GetComponents<AudioSource>();
+        m_cross = GetComponent<Cross>();
 
         m_isInvincible = true;
     }
@@ -53,6 +55,7 @@ public abstract class Zaco : Enemy
     public override void Die()
     {
         m_isInvincible = true;
+        if (m_hasZacoEndPattern) m_cross.StartPattern();
         DropItems(m_dropItemList);
 
         ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
