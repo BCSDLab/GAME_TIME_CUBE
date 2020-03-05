@@ -10496,29 +10496,29 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 6a7782f6d039c0d4cbe5d7179acf4cd7, type: 3}
+    pathName: Ground
+    engageTime: 23
+    repeatCount: 4
+    repeatDelay: 1
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 8a095e1b9607db944ad81560649635cd, type: 3}
+    pathName: Center
+    engageTime: 29
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B1
+    engageTime: 32
+    repeatCount: 4
+    repeatDelay: 1
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B2
+    engageTime: 33
+    repeatCount: 3
+    repeatDelay: 1
     engagePhase: 0
   - mob: {fileID: 0}
     pathName: 
@@ -31800,6 +31800,10 @@ MonoBehaviour:
     m_poolCount: 50
     m_pooledItems: []
   - prefab: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: 7ad2e0b1efdfe7d4d9deec210d010f78,
       type: 3}
     m_poolCount: 50
     m_pooledItems: []
