@@ -11,8 +11,6 @@ public class StageChanger : MonoBehaviour
     private int m_savedPlayerPower = 0;
     private int m_savedPlayerHP = GameManager.PLAYER_HP_INIT;
     private float m_savedTotalScore = 0;
-    //private int m_savedOrbitorCount = 0;
-    //private int m_savedFollowerCount = 0;
     private int[] m_savedSubWeaponCount;
 
     [Header("보조무기 프리팹")]
@@ -59,7 +57,7 @@ public class StageChanger : MonoBehaviour
         m_savedSpellEnergy = GameManager.instance.spellEnergy;
         m_savedPlayerPower = GameManager.instance.playerPower;
         m_savedPlayerHP = GameManager.instance.GetPlayerHP();
-        m_savedSubWeaponCount = GameManager.instance.subWeaponCount; // 
+        m_savedSubWeaponCount = GameManager.instance.subWeaponCount;
         m_savedTotalScore += GameManager.instance.GetScore();
     }
 
@@ -68,7 +66,7 @@ public class StageChanger : MonoBehaviour
         GameManager.instance.spellEnergy = m_savedSpellEnergy;
         GameManager.instance.playerPower = m_savedPlayerPower;
         GameManager.instance.playerHP = m_savedPlayerHP;
-        GameManager.instance.subWeaponCount = m_savedSubWeaponCount; //
+        GameManager.instance.subWeaponCount = m_savedSubWeaponCount;
         GameManager.instance.totalScore = m_savedTotalScore;
     }
 

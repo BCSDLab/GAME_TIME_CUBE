@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void InitializeStat()
+    void InitializeStat() // 추가 작업 필요
     {
         StageChanger sc = StageChanger.instance;
         sc.LoadData();

@@ -32,19 +32,6 @@ public class SubWeaponItem : Item
             default:
                 break;
         }
-        //if (subWeapon.name == "Orbitor")
-        //{
-        //    GameManager.instance.orbitorCount++;
-        //    Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
-        //    InitOrbitorPosition();
-        //}
-
-        //if (subWeapon.name == "Follower")
-        //{
-        //    GameManager.instance.followerCount++;
-        //    Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
-        //    InitFollowerPosition();
-        //}
     }
 
     public void InitOrbitorPosition()
