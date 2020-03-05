@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b46772f6e63d14384abf3e10e16e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subWeapon: {fileID: 7789033408323666331, guid: 0f5a079cd9c4a7f44838ee0cbf441064,
-    type: 3}
+  subWeapon:
+  - {fileID: 7789033408323666331, guid: 0f5a079cd9c4a7f44838ee0cbf441064, type: 3}
+  - {fileID: 5131648617499383124, guid: 7c46f6a1227f42a4097da89d6449debf, type: 3}
 --- !u!198 &3044762844447576565
 ParticleSystem:
   m_ObjectHideFlags: 0

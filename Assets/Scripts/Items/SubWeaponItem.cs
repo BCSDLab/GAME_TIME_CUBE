@@ -5,23 +5,46 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer), typeof(ParticleSystem))]
 public class SubWeaponItem : Item
 {
-    public GameObject subWeapon;
+    public GameObject[] subWeapon;
+
+    public enum SubWeapon
+    {
+        Orbitor,
+        Follower
+    }
 
     protected override void PickUp() // 추가 작업 필요
     {
-        if (subWeapon.name == "Orbitor")
-        {
-            GameManager.instance.orbitorCount++;
-            Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
-            InitOrbitorPosition();
-        }
+        SubWeapon sw = (SubWeapon)Random.Range(0, subWeapon.Length);
+        int swIdx = (int)sw;
 
-        if (subWeapon.name == "Follower")
+        GameManager.instance.subWeaponCount[swIdx]++;
+        Instantiate(subWeapon[swIdx], transform.position, Quaternion.identity).name = subWeapon[swIdx].name + "_" + GameManager.instance.subWeaponCount[swIdx];
+
+        switch (sw)
         {
-            GameManager.instance.followerCount++;
-            Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
-            InitFollowerPosition();
+            case SubWeapon.Orbitor:
+                InitOrbitorPosition();
+                break;
+            case SubWeapon.Follower:
+                InitFollowerPosition();
+                break;
+            default:
+                break;
         }
+        //if (subWeapon.name == "Orbitor")
+        //{
+        //    GameManager.instance.orbitorCount++;
+        //    Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
+        //    InitOrbitorPosition();
+        //}
+
+        //if (subWeapon.name == "Follower")
+        //{
+        //    GameManager.instance.followerCount++;
+        //    Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
+        //    InitFollowerPosition();
+        //}
     }
 
     public void InitOrbitorPosition()

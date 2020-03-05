@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     [System.NonSerialized]
     public int followerCount = 0;
     [System.NonSerialized]
+    public int[] subWeaponCount;
+    [System.NonSerialized]
     public float totalScore = 0;
     [System.NonSerialized]
     public bool isPlayerAttacking = false;
@@ -91,18 +93,18 @@ public class GameManager : MonoBehaviour
 
         Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (orbitorCount != 0)
+        if (subWeaponCount[0] != 0)
         {
-            for (int i = 1; i <= orbitorCount; i++)
+            for (int i = 1; i <= subWeaponCount[0]; i++)
             {
                 Instantiate(sc.orbitor, playerTR.position, Quaternion.identity).name = sc.orbitor.name + "_" + i;
             }
             sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
         }
 
-        if (followerCount != 0)
+        if (subWeaponCount[1] != 0)
         {
-            for(int i = 1; i <= followerCount; i++)
+            for(int i = 1; i <= subWeaponCount[1]; i++)
             {
                 Instantiate(sc.follower, playerTR.position, Quaternion.identity).name = sc.follower.name + "_" + i;
             }
