@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1008030662981549094
+--- !u!1 &7396039962379868496
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5858929876569704990}
-  - component: {fileID: 3220378124382964523}
-  - component: {fileID: 3126325684977582957}
+  - component: {fileID: 3416962401047842317}
+  - component: {fileID: 7757861354090124720}
+  - component: {fileID: 518965151444527107}
   m_Layer: 0
   m_Name: Particle System Out
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5858929876569704990
+--- !u!4 &3416962401047842317
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008030662981549094}
+  m_GameObject: {fileID: 7396039962379868496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 7473877153406667971}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &3220378124382964523
+--- !u!198 &7757861354090124720
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008030662981549094}
+  m_GameObject: {fileID: 7396039962379868496}
   serializedVersion: 6
   lengthInSec: 0.2
   simulationSpeed: 1
@@ -4697,14 +4697,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &3126325684977582957
+--- !u!199 &518965151444527107
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008030662981549094}
+  m_GameObject: {fileID: 7396039962379868496}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -4773,11 +4773,10 @@ GameObject:
   - component: {fileID: 2208657292544630285}
   - component: {fileID: 1297947435120890667}
   - component: {fileID: 1331919750288802457}
-  - component: {fileID: 5875172913077719939}
-  - component: {fileID: 2418033338936930996}
-  - component: {fileID: 8964153674587467642}
+  - component: {fileID: 1373616609631690547}
+  - component: {fileID: 1647472415312198137}
   m_Layer: 0
-  m_Name: DirectionalZaco_5Shot
+  m_Name: RadialZaco
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4794,7 +4793,7 @@ Transform:
   m_LocalPosition: {x: 12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5858929876569704990}
+  - {fileID: 3416962401047842317}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4999,7 +4998,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5875172913077719939
+--- !u!114 &1373616609631690547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5008,17 +5007,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7473877153406667978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df68e21c804f07a4faff17abdc00ef59, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c62600e8d41e7d458c248d4a3e35156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
-  m_startDelay: 0
-  m_ShotSFX: {fileID: 0}
+  m_startDelay: 3
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 8
-  speed: 6
---- !u!114 &2418033338936930996
+  speed: 3
+  inDelay: 0.5
+  m_isCountChange: 1
+--- !u!114 &1647472415312198137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5027,40 +5028,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7473877153406667978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebf68ad9cde7444599213c4caffebd2, type: 3}
+  m_Script: {fileID: 11500000, guid: 651cd7a03a830384eaf21cf9e817e47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 
-  speed: 4
-  m_hp: 300
-  m_destroyOnArrival: 1
+  speed: 10
+  m_hp: 1000
+  m_destroyOnArrival: 0
   m_dropItemList:
     items:
-    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    - {fileID: 1796773464430945974, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2, type: 3}
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
-    counts: 0200000002000000
+    counts: 0400000004000000
   m_isZacoInvincible: 0
   m_hasZacoEndPattern: 0
---- !u!114 &8964153674587467642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2bbd56e350c66a46b3d8b887dda24f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spawnPos: {fileID: 0}
-  m_startDelay: 0
-  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
-  m_ShotSFXVolum: 0.5
-  bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
-  count: 5
-  speed: 5
-  inDelay: 0.1
-  outDelay: 2
-  spawnPosArr:
-  - {fileID: 0}

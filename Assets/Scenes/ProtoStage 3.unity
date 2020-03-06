@@ -10466,19 +10466,19 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 61486e33d3be38a468652d07a4bb67ce, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
     pathName: Right3
     engageTime: 13
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 61486e33d3be38a468652d07a4bb67ce, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
     pathName: Right2
     engageTime: 14
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 61486e33d3be38a468652d07a4bb67ce, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
     pathName: Right1
     engageTime: 18
     repeatCount: 1
@@ -10490,7 +10490,7 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 61486e33d3be38a468652d07a4bb67ce, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
     pathName: Right2
     engageTime: 19
     repeatCount: 1
@@ -10512,132 +10512,126 @@ MonoBehaviour:
     pathName: B1
     engageTime: 32
     repeatCount: 4
-    repeatDelay: 1
+    repeatDelay: 2
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
     pathName: B2
     engageTime: 33
     repeatCount: 3
-    repeatDelay: 1
+    repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 22c527a7fa020db4c9928d7c8c2b63dc, type: 3}
+    pathName: Right1
+    engageTime: 44
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 22c527a7fa020db4c9928d7c8c2b63dc, type: 3}
+    pathName: Right3
+    engageTime: 44
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 8431939857ff495419ef4fa183253f1a, type: 3}
+    pathName: Center
+    engageTime: 48
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B2
+    engageTime: 49
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B1
+    engageTime: 50
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: de27f88e438cb384cbe4a0ffb038fa86, type: 3}
+    pathName: A1
+    engageTime: 56
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: de27f88e438cb384cbe4a0ffb038fa86, type: 3}
+    pathName: A2
+    engageTime: 56
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: dd234bb214560df43b76891b81e4f90f, type: 3}
+    pathName: B3
+    engageTime: 66
+    repeatCount: 2
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: dd234bb214560df43b76891b81e4f90f, type: 3}
+    pathName: B4
+    engageTime: 67
+    repeatCount: 2
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: cd94e2f91665d50418a1d9de613f846e, type: 3}
+    pathName: B1
+    engageTime: 68
+    repeatCount: 2
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: cd94e2f91665d50418a1d9de613f846e, type: 3}
+    pathName: B2
+    engageTime: 69
+    repeatCount: 2
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2a68869840676244d9cb1ef4cc74063a, type: 3}
+    pathName: Right1
+    engageTime: 80
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 2a68869840676244d9cb1ef4cc74063a, type: 3}
+    pathName: Right3
+    engageTime: 80
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: a9a6551bdc7f9e5459d43ece4cb6e05f, type: 3}
+    pathName: Center
+    engageTime: 80
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7466608742450977111, guid: c50563c833106aa4f96614d47b57c4e4, type: 3}
+    pathName: Sky
+    engageTime: 90
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: c50563c833106aa4f96614d47b57c4e4, type: 3}
+    pathName: Ground
+    engageTime: 90
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 97fb88c7a6a43fb4b978b32e511e8e4e, type: 3}
+    pathName: Right2
+    engageTime: 99
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 97fb88c7a6a43fb4b978b32e511e8e4e, type: 3}
+    pathName: Right1
+    engageTime: 100
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
+  - mob: {fileID: 7473877153406667978, guid: 97fb88c7a6a43fb4b978b32e511e8e4e, type: 3}
+    pathName: Right3
+    engageTime: 100
+    repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
   - mob: {fileID: 0}

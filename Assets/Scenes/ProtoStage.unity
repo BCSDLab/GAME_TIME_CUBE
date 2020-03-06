@@ -10340,7 +10340,7 @@ MonoBehaviour:
     repeatCount: 4
     repeatDelay: 3
     engagePhase: 0
-  m_bossEngageTime: 1
+  m_bossEngageTime: 200
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   nextSceneName: _Title

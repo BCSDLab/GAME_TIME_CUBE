@@ -10310,28 +10310,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mobInfoes:
-  - mob: {fileID: 7473877153406667978, guid: 8a095e1b9607db944ad81560649635cd, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: a9a6551bdc7f9e5459d43ece4cb6e05f, type: 3}
     pathName: Center
     engageTime: 1
     repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 0}
-    pathName: 
-    engageTime: 0
-    repeatCount: 0
     repeatDelay: 0
     engagePhase: 0
   - mob: {fileID: 0}

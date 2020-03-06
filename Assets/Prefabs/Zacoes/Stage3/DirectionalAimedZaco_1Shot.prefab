@@ -4773,11 +4773,11 @@ GameObject:
   - component: {fileID: 2208657292544630285}
   - component: {fileID: 1297947435120890667}
   - component: {fileID: 1331919750288802457}
+  - component: {fileID: 3298016160526166707}
   - component: {fileID: 5875172913077719939}
-  - component: {fileID: 2418033338936930996}
-  - component: {fileID: 8964153674587467642}
+  - component: {fileID: 172328664871883220}
   m_Layer: 0
-  m_Name: DirectionalZaco_5Shot
+  m_Name: DirectionalAimedZaco_1Shot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4999,6 +4999,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3298016160526166707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e26b5d1969335f488e81eddb5ff7b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spawnPos: {fileID: 0}
+  m_startDelay: 0
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
+  m_ShotSFXVolum: 0.5
+  bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
+  target: {fileID: 0}
+  count: 1
+  speed: 5
+  inDelay: 0.1
+  outDelay: 3
 --- !u!114 &5875172913077719939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5018,7 +5040,7 @@ MonoBehaviour:
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 8
   speed: 6
---- !u!114 &2418033338936930996
+--- !u!114 &172328664871883220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5027,40 +5049,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7473877153406667978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebf68ad9cde7444599213c4caffebd2, type: 3}
+  m_Script: {fileID: 11500000, guid: ee1f36e349267ad4fa5e5200c24bd715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pathName: 
   speed: 4
-  m_hp: 300
+  m_hp: 80
   m_destroyOnArrival: 1
   m_dropItemList:
     items:
-    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
-    counts: 0200000002000000
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    counts: 0100000003000000
   m_isZacoInvincible: 0
   m_hasZacoEndPattern: 0
---- !u!114 &8964153674587467642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2bbd56e350c66a46b3d8b887dda24f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_spawnPos: {fileID: 0}
-  m_startDelay: 0
-  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
-  m_ShotSFXVolum: 0.5
-  bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
-  count: 5
-  speed: 5
-  inDelay: 0.1
-  outDelay: 2
-  spawnPosArr:
-  - {fileID: 0}
