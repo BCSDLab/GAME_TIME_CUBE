@@ -4777,7 +4777,7 @@ GameObject:
   - component: {fileID: 991686572995061719}
   - component: {fileID: 3045262825355129207}
   m_Layer: 0
-  m_Name: DirectionalZaco_Firework
+  m_Name: DirectionalZaco_Firework_Down
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5062,6 +5062,6 @@ MonoBehaviour:
   speed: 3
   inDelay: 0
   outDelay: 1.5
-  m_isShootDown: 0
+  m_isShootDown: 1
   spawnPosArr:
   - {fileID: 0}
