@@ -16,6 +16,7 @@ public class AccelerationBullet : Bullet
     private float m_minSpeed = 1f;
 
     private Rigidbody2D m_rigidbody;
+    private float m_accelData = 0;
 
     void Start()
     {
@@ -28,5 +29,22 @@ public class AccelerationBullet : Bullet
         if (m_useMinSpeed && m_rigidbody.velocity.magnitude <= m_minSpeed) return;
         Vector2 newVelocity = m_rigidbody.velocity * (m_accelRate * Time.deltaTime);
         m_rigidbody.velocity += newVelocity;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("TimeControlArea"))
+        {
+            m_accelData = m_accelRate;
+            m_accelRate = 0;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("TimeControlArea"))
+        {
+            m_accelRate = m_accelData;
+        }
     }
 }

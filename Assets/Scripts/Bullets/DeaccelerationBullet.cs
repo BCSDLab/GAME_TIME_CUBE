@@ -10,6 +10,7 @@ public class DeaccelerationBullet : Bullet
     private Vector2 m_Speedvector;
 
     private bool m_Callcount = true;
+    private float m_accelData;
 
     void Awake()
     {
@@ -31,5 +32,22 @@ public class DeaccelerationBullet : Bullet
     void OnDisable()
     {
         m_Callcount = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("TimeControlArea"))
+        {
+            m_accelData = accelRate;
+            accelRate = 0;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("TimeControlArea"))
+        {
+            accelRate = m_accelData;
+        }
     }
 }
