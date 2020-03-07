@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class SineBullet : Bullet
 {
-    public float CurveSpeed;
-    public float fTime = 2;
+    public float curveSpeed;
+
+    private float m_fTime = 0f;
 
     private Rigidbody2D m_rigidbody;
     private Vector3 m_direction;
-    private Vector3 m_orthogonal;
     
     void Start()
     {
         m_rigidbody = GetComponent<Rigidbody2D>();
-        m_direction = m_rigidbody.velocity;
+        m_direction = Vector3.zero;
     }
-    
+
+    void OnEnable()
+    {
+        m_fTime = 0f;
+    }
+
     void FixedUpdate()
     {
-        fTime += Time.deltaTime * CurveSpeed;
+        m_fTime += Time.deltaTime * curveSpeed;
 
-        Vector3 vSin = new Vector3(Mathf.Sin(fTime), -Mathf.Sin(fTime), 0);
+        Vector3 vSin = new Vector3(Mathf.Sin(m_fTime), -Mathf.Sin(m_fTime), 0);
         Vector3 vLin = m_direction;
         transform.localPosition += (vSin + vLin) * Time.deltaTime;
     }

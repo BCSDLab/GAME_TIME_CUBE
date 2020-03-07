@@ -4911,5 +4911,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cb3b6076197ed4b9d7b1ff2fa48603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurveSpeed: 5
+  curveSpeed: 3
   fTime: 0
