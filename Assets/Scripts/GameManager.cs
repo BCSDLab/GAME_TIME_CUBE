@@ -29,9 +29,7 @@ public class GameManager : MonoBehaviour
     [System.NonSerialized]
     public int playerPower = 0;
     [System.NonSerialized]
-    public int orbitorCount = 0;
-    [System.NonSerialized]
-    public int followerCount = 0;
+    public int[] subWeaponCount; // Orbitor, Follower
     [System.NonSerialized]
     public float totalScore = 0;
     [System.NonSerialized]
@@ -86,27 +84,17 @@ public class GameManager : MonoBehaviour
 
     void InitializeStat()
     {
-        StageChanger sc = StageChanger.instance;
-        sc.LoadData();
+        StageChanger.instance.LoadData();
+        SubWeaponItem sw = StageChanger.instance.subWeaponItem.GetComponent<SubWeaponItem>();
 
         Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
-
-        if (orbitorCount != 0)
+        for(int swIdx = 0; swIdx < subWeaponCount.Length; swIdx++)
         {
-            for (int i = 1; i <= orbitorCount; i++)
+            for(int i = 1; i <= subWeaponCount[swIdx]; i++)
             {
-                Instantiate(sc.orbitor, playerTR.position, Quaternion.identity).name = sc.orbitor.name + "_" + i;
+                Instantiate(sw.subWeapon[swIdx], playerTR.position, Quaternion.identity).name = sw.subWeapon[swIdx].name + "_" + i;
+                sw.InitSubWeaponPosition(swIdx);
             }
-            sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
-        }
-
-        if (followerCount != 0)
-        {
-            for(int i = 1; i <= followerCount; i++)
-            {
-                Instantiate(sc.follower, playerTR.position, Quaternion.identity).name = sc.follower.name + "_" + i;
-            }
-            sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
         }
     }
 

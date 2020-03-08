@@ -5,22 +5,37 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer), typeof(ParticleSystem))]
 public class SubWeaponItem : Item
 {
-    public GameObject subWeapon;
-
-    protected override void PickUp() // 추가 작업 필요
+    public enum SubWeapon
     {
-        if (subWeapon.name == "Orbitor")
-        {
-            GameManager.instance.orbitorCount++;
-            Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
-            InitOrbitorPosition();
-        }
+        Orbitor,
+        Follower
+    }
 
-        if (subWeapon.name == "Follower")
+    public GameObject[] subWeapon;
+
+    protected override void PickUp()
+    {
+        int swIdx = Random.Range(0, subWeapon.Length);
+
+        GameManager.instance.subWeaponCount[swIdx]++;
+        Instantiate(subWeapon[swIdx], transform.position, Quaternion.identity).name = subWeapon[swIdx].name + "_" + GameManager.instance.subWeaponCount[swIdx];
+        InitSubWeaponPosition(swIdx);
+    }
+
+    #region Position
+    public void InitSubWeaponPosition(int swIdx)
+    {
+        switch ((SubWeapon)swIdx)
         {
-            GameManager.instance.followerCount++;
-            Instantiate(subWeapon, transform.position, Quaternion.identity).name = subWeapon.name + "_" + GameManager.instance.orbitorCount;
-            InitFollowerPosition();
+            case SubWeapon.Orbitor:
+                InitOrbitorPosition();
+                break;
+            case SubWeapon.Follower:
+                InitFollowerPosition();
+                break;
+            default:
+                Debug.Log("Invalid SubWeapon");
+                break;
         }
     }
 
@@ -38,4 +53,5 @@ public class SubWeaponItem : Item
     {
 
     }
+    #endregion
 }

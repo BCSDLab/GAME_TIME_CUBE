@@ -11,13 +11,10 @@ public class StageChanger : MonoBehaviour
     private int m_savedPlayerPower = 0;
     private int m_savedPlayerHP = GameManager.PLAYER_HP_INIT;
     private float m_savedTotalScore = 0;
-    private int m_savedOrbitorCount = 0;
-    private int m_savedFollowerCount = 0;
+    private int[] m_savedSubWeaponCount;
 
     [Header("보조무기 프리팹")]
     public GameObject subWeaponItem = null;
-    public GameObject orbitor = null;
-    public GameObject follower = null;
 
     void Awake()
     {
@@ -25,6 +22,11 @@ public class StageChanger : MonoBehaviour
         else Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        m_savedSubWeaponCount = new int[subWeaponItem.GetComponent<SubWeaponItem>().subWeapon.Length];
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -53,8 +55,7 @@ public class StageChanger : MonoBehaviour
         m_savedSpellEnergy = GameManager.instance.spellEnergy;
         m_savedPlayerPower = GameManager.instance.playerPower;
         m_savedPlayerHP = GameManager.instance.GetPlayerHP();
-        m_savedOrbitorCount = GameManager.instance.orbitorCount;
-        m_savedFollowerCount = GameManager.instance.followerCount;
+        m_savedSubWeaponCount = GameManager.instance.subWeaponCount;
         m_savedTotalScore += GameManager.instance.GetScore();
     }
 
@@ -63,8 +64,7 @@ public class StageChanger : MonoBehaviour
         GameManager.instance.spellEnergy = m_savedSpellEnergy;
         GameManager.instance.playerPower = m_savedPlayerPower;
         GameManager.instance.playerHP = m_savedPlayerHP;
-        GameManager.instance.orbitorCount = m_savedOrbitorCount;
-        GameManager.instance.followerCount = m_savedFollowerCount;
+        GameManager.instance.subWeaponCount = m_savedSubWeaponCount;
         GameManager.instance.totalScore = m_savedTotalScore;
     }
 
@@ -74,6 +74,9 @@ public class StageChanger : MonoBehaviour
         m_savedPlayerPower = 0;
         m_savedPlayerHP = GameManager.PLAYER_HP_INIT;
         m_savedTotalScore = 0;
-        m_savedOrbitorCount = 0;
+        foreach(int swIdx in m_savedSubWeaponCount)
+        {
+            m_savedSubWeaponCount[swIdx] = 0;
+        }
     }
 }
