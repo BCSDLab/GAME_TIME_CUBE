@@ -15,8 +15,6 @@ public class StageChanger : MonoBehaviour
 
     [Header("보조무기 프리팹")]
     public GameObject subWeaponItem = null;
-    public GameObject orbitor = null;
-    public GameObject follower = null;
 
     void Awake()
     {

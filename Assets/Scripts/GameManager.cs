@@ -29,10 +29,6 @@ public class GameManager : MonoBehaviour
     [System.NonSerialized]
     public int playerPower = 0;
     [System.NonSerialized]
-    public int orbitorCount = 0;
-    [System.NonSerialized]
-    public int followerCount = 0;
-    [System.NonSerialized]
     public int[] subWeaponCount;
     [System.NonSerialized]
     public float totalScore = 0;
@@ -91,25 +87,35 @@ public class GameManager : MonoBehaviour
         StageChanger sc = StageChanger.instance;
         sc.LoadData();
 
+        SubWeaponItem sw = sc.subWeaponItem.GetComponent<SubWeaponItem>();
+
         Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
-
-        if (subWeaponCount[0] != 0)
+        for(int swIdx = 0; swIdx < subWeaponCount.Length; swIdx++)
         {
-            for (int i = 1; i <= subWeaponCount[0]; i++)
+            for(int i = 1; i <= subWeaponCount[swIdx]; i++)
             {
-                Instantiate(sc.orbitor, playerTR.position, Quaternion.identity).name = sc.orbitor.name + "_" + i;
+                Instantiate(sw.subWeapon[swIdx], playerTR.position, Quaternion.identity).name = sw.subWeapon[swIdx].name + "_" + i;
+                sw.InitSubWeaponPosition(swIdx);
             }
-            sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
         }
 
-        if (subWeaponCount[1] != 0)
-        {
-            for(int i = 1; i <= subWeaponCount[1]; i++)
-            {
-                Instantiate(sc.follower, playerTR.position, Quaternion.identity).name = sc.follower.name + "_" + i;
-            }
-            sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
-        }
+        //if (subWeaponCount[0] != 0)
+        //{
+        //    for (int i = 1; i <= subWeaponCount[0]; i++)
+        //    {
+        //        Instantiate(sc.orbitor, playerTR.position, Quaternion.identity).name = sc.orbitor.name + "_" + i;
+        //    }
+        //    sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
+        //}
+
+        //if (subWeaponCount[1] != 0)
+        //{
+        //    for(int i = 1; i <= subWeaponCount[1]; i++)
+        //    {
+        //        Instantiate(sc.follower, playerTR.position, Quaternion.identity).name = sc.follower.name + "_" + i;
+        //    }
+        //    sc.subWeaponItem.GetComponent<SubWeaponItem>().InitOrbitorPosition();
+        //}
     }
 
     void InitializeUI()

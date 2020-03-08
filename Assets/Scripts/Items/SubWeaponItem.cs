@@ -15,13 +15,19 @@ public class SubWeaponItem : Item
 
     protected override void PickUp() // 추가 작업 필요
     {
-        SubWeapon sw = (SubWeapon)Random.Range(0, subWeapon.Length);
-        int swIdx = (int)sw;
+        //SubWeapon sw = (SubWeapon)Random.Range(0, subWeapon.Length);
+        //int swIdx = (int)sw;
+        int swIdx = Random.Range(0, subWeapon.Length);
 
         GameManager.instance.subWeaponCount[swIdx]++;
         Instantiate(subWeapon[swIdx], transform.position, Quaternion.identity).name = subWeapon[swIdx].name + "_" + GameManager.instance.subWeaponCount[swIdx];
+        InitSubWeaponPosition(swIdx);
+    }
 
-        switch (sw)
+    #region Position
+    public void InitSubWeaponPosition(int swIdx)
+    {
+        switch ((SubWeapon)swIdx)
         {
             case SubWeapon.Orbitor:
                 InitOrbitorPosition();
@@ -30,6 +36,7 @@ public class SubWeaponItem : Item
                 InitFollowerPosition();
                 break;
             default:
+                Debug.Log("Invalid SubWeapon");
                 break;
         }
     }
@@ -48,4 +55,5 @@ public class SubWeaponItem : Item
     {
 
     }
+    #endregion
 }
