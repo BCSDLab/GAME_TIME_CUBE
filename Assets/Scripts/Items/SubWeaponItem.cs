@@ -5,18 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer), typeof(ParticleSystem))]
 public class SubWeaponItem : Item
 {
-    public GameObject[] subWeapon;
-
     public enum SubWeapon
     {
         Orbitor,
         Follower
     }
 
-    protected override void PickUp() // 추가 작업 필요
+    public GameObject[] subWeapon;
+
+    protected override void PickUp()
     {
-        //SubWeapon sw = (SubWeapon)Random.Range(0, subWeapon.Length);
-        //int swIdx = (int)sw;
         int swIdx = Random.Range(0, subWeapon.Length);
 
         GameManager.instance.subWeaponCount[swIdx]++;
