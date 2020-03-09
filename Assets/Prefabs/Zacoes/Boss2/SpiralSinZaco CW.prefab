@@ -4773,7 +4773,7 @@ GameObject:
   - component: {fileID: 2820051706132095419}
   - component: {fileID: 1843434643050139291}
   m_Layer: 0
-  m_Name: SpiralZaco CCW
+  m_Name: SpiralSinZaco CW
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5011,12 +5011,12 @@ MonoBehaviour:
   m_startDelay: 2
   m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  bullet: {fileID: 9015490077321555750, guid: 9fec3672519a49b48ab4f69cbc908aad, type: 3}
   count: 3
   speed: 3
-  inDelay: 0.2
+  inDelay: 0.5
   m_angle: 0
-  m_omega: -4
+  m_omega: 4
 --- !u!114 &1843434643050139291
 MonoBehaviour:
   m_ObjectHideFlags: 0

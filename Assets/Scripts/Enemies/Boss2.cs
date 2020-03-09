@@ -9,6 +9,8 @@ public class Boss2 : Enemy
     [SerializeField]
     private Transform m_enterPos = null;
     [SerializeField]
+    private Transform m_frontPos = null;
+    [SerializeField]
     private string[] m_pathNames = null;
     [SerializeField]
     [Tooltip("일부 경로 이동 시간")]
@@ -39,6 +41,8 @@ public class Boss2 : Enemy
     // 패턴용
     [SerializeField]
     private GameObject m_bullet = null;
+    [SerializeField]
+    private GameObject m_infCrackingBullet = null;
 
     private DialogueTrigger m_dialogueTrigger;
     private ParticleSystem m_inParticle;
@@ -64,6 +68,10 @@ public class Boss2 : Enemy
     #region PATTERNS
     DirectionalAimedNWay m_accelNWay = null;
     DirectionalAimedRandom m_deaccelRandom = null;
+    DirectionalAimedRandom m_deaccelRandom2 = null;
+    DirectionalAimed m_directionalAimed = null;
+    Homing m_lockOnMissile = null;
+    DirectionalAimedNWay m_sineNWay = null;
     #endregion
 
     void Awake()
@@ -81,8 +89,14 @@ public class Boss2 : Enemy
         // 패턴
         DirectionalAimedNWay[] m_directionalAimedNWays = GetComponents<DirectionalAimedNWay>();
         DirectionalAimedRandom[] m_directionalAimedRandoms = GetComponents<DirectionalAimedRandom>();
+        DirectionalAimed[] m_directionalAimeds = GetComponents<DirectionalAimed>();
+        Homing[] m_homings = GetComponents<Homing>();
         m_accelNWay = m_directionalAimedNWays[0];
         m_deaccelRandom = m_directionalAimedRandoms[0];
+        m_deaccelRandom2 = m_directionalAimedRandoms[1];
+        m_directionalAimed = m_directionalAimeds[0];
+        m_lockOnMissile = m_homings[0];
+        m_sineNWay = m_directionalAimedNWays[1];
     }
 
     protected override void Start()
@@ -144,11 +158,11 @@ public class Boss2 : Enemy
 
         while (true)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 7; i++)
             {
                 toPos.y = Random.Range(-3.2f, 2.4f);
-                iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", 0.5f, "easetype", iTween.EaseType.easeOutQuint));
-                yield return new WaitForSeconds(0.5f);
+                iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", 0.3f, "easetype", iTween.EaseType.easeOutQuint));
+                yield return new WaitForSeconds(0.3f);
 
                 m_chargeAudio.Play();
                 Vector3 bulletPos = toPos + Vector3.left * 0.5f;
@@ -159,8 +173,8 @@ public class Boss2 : Enemy
                 yield return new WaitForSeconds(0.05f);
             }
 
-            iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-            yield return new WaitForSeconds(m_moveTime + 0.5f);
+            iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", 0.5f, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(0.5f);
 
             foreach (GameObject bullet in bullets)
             {
@@ -174,28 +188,107 @@ public class Boss2 : Enemy
     }
     IEnumerator Phase2()
     {
-        // 상하 임의 위치로 이동하면서 감속탄 + 가속탄
-        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        // SineBullet
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_frontPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
         yield return new WaitForSeconds(m_moveTime + 0.5f);
-        Vector3 toPos = transform.position;
 
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed, "easetype", iTween.EaseType.easeInOutSine,
-                    "looptype", iTween.LoopType.loop, "movetopath", true));
-        m_accelNWay.StartPattern();
-        m_deaccelRandom.StartPattern();
-
-        while (true)
-        {
-            toPos.y = Random.Range(-3.2f, 2.4f);
-            iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-            yield return new WaitForSeconds(5f);
-        }
+        m_sineNWay.StartPattern();
     }
     IEnumerator Phase3()
     {
         // 맵 바깥쪽에서 탄 생성
         iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
         yield return new WaitForSeconds(m_moveTime + 0.5f);
+
+        m_directionalAimed.StartPattern();
+        Vector3 from, to;
+        while (true)
+        {
+            if (Random.Range(0, 2) == 0) // 화면 횡단
+            {
+                if (Random.Range(0, 2) == 0)  // 좌 --> 우
+                {
+                    from = new Vector3(-10f, Random.Range(-6f, 6f));
+                    to = new Vector3(10f, Random.Range(-6f, 6f));
+                }
+                else  // 우 --> 좌
+                {
+                    from = new Vector3(10f, Random.Range(-6f, 6f));
+                    to = new Vector3(-10f, Random.Range(-6f, 6f));
+                }
+            }
+            else  // 화면 종단
+            {
+                if (Random.Range(0, 2) == 0) // 상 --> 하
+                {
+                    from = new Vector3(Random.Range(-10f, 10f), 6f);
+                    to = new Vector3(Random.Range(-10f, 10f), -6f);
+                }
+                else
+                {
+                    from = new Vector3(Random.Range(-10f, 10f), -6f);
+                    to = new Vector3(Random.Range(-10f, 10f), 6f);
+                }
+            }
+
+            Vector3 direction = to - from;
+            float atan = Mathf.Atan2(direction.y, direction.x);
+            float cos = Mathf.Cos(atan);
+            float sin = Mathf.Sin(atan);
+            float angle = atan * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            GameObject bulletInst = PoolManager.instance.PopFromPool(m_bullet.name);
+            bulletInst.transform.position = from;
+            bulletInst.transform.rotation = rotation;
+            bulletInst.SetActive(true);
+            float speed = 1f;
+            bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * cos, speed * sin);
+
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    IEnumerator Phase4()
+    {
+        // Cracking
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(m_moveTime + 0.5f);
+        Vector3 toPos = transform.position;
+
+        while (true)
+        {
+            toPos.y = Random.Range(-3.7f, 2.9f);
+            iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(m_moveTime - 0.5f);
+            m_lockOnMissile.StartPattern();
+            yield return new WaitForSeconds(0.5f);
+            m_lockOnMissile.StopPattern();
+            yield return new WaitForSeconds(5f);
+        }
+    }
+    IEnumerator Phase5()
+    {
+        // 이동하면서 감속탄 + 가속탄
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(m_moveTime + 0.5f);
+
+        bool isPhase5_2 = false;
+        m_accelNWay.StartPattern();
+        m_deaccelRandom.StartPattern();
+        Vector3 toPos = transform.position;
+
+        while (true)
+        {
+            if (!isPhase5_2 && m_phaseHP < m_maxPhaseHP / 2)
+            {
+                isPhase5_2 = true;
+                m_deaccelRandom.StopPattern();
+                m_deaccelRandom2.StartPattern();
+            }
+
+            toPos.y = Random.Range(-3.2f, 2.4f);
+            iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(5f);
+        }
     }
     void StartPhase()
     {
@@ -364,6 +457,10 @@ public class Boss2 : Enemy
     {
         m_accelNWay.StopPattern();
         m_deaccelRandom.StopPattern();
+        m_deaccelRandom2.StopPattern();
+        m_directionalAimed.StopPattern();
+        m_lockOnMissile.StopPattern();
+        m_sineNWay.StopPattern();
     }
 
     void DropSubWeaponItem()
