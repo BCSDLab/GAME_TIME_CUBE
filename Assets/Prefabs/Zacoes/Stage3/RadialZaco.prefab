@@ -5037,7 +5037,7 @@ MonoBehaviour:
   m_destroyOnArrival: 0
   m_dropItemList:
     items:
-    - {fileID: 1796773464430945974, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2, type: 3}
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
     counts: 0400000004000000
   m_isZacoInvincible: 0
