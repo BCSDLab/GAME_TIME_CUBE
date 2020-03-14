@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class ExplodingHomingBullet : Bullet
 {
     public GameObject target = null;
@@ -14,22 +15,38 @@ public class ExplodingHomingBullet : Bullet
     //private int m_hp = 70;
 
     private BulletPattern m_bulletPattern;
+    private SpriteRenderer m_spriteRenderer;
     private Rigidbody2D m_rigidbody;
+    private Collider2D m_collider;
+    private AudioSource m_explosionAudio;
+
+    private bool m_isExploding = false;
 
     void Awake()
     {
         m_bulletPattern = GetComponent<RadialMulti>();
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+        m_rigidbody = GetComponent<Rigidbody2D>();
+        m_collider = GetComponent<Collider2D>();
+        m_explosionAudio = GetComponent<AudioSource>();
     }
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
-        m_rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
+        m_spriteRenderer.enabled = true;
+        m_collider.enabled = true;
+        m_isExploding = false;
     }
 
     void FixedUpdate()
     {
         if (target == null) return;
+        if (m_isExploding) return;
 
         Vector2 direction = transform.position - target.transform.position;
         direction.Normalize();
@@ -72,8 +89,13 @@ public class ExplodingHomingBullet : Bullet
 
     IEnumerator Explode()
     {
+        m_isExploding = true;
+        StopAllCoroutines();
+        m_collider.enabled = false;
+        m_spriteRenderer.enabled = false;
         m_bulletPattern.StartPattern();
-        yield return new WaitForSeconds(0.01f);
+        m_explosionAudio.Play();
+        yield return new WaitForSeconds(m_explosionAudio.clip.length + 0.1f);
         PoolManager.instance.PushToPool(gameObject);
     }
 }

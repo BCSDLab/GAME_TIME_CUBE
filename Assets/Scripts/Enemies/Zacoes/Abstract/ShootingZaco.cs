@@ -9,7 +9,7 @@ public abstract class ShootingZaco : Zaco
 
     void OnBecameVisible()
     {
-        m_isInvincible = false;
+        if (!m_isZacoInvincible) m_isInvincible = false;
 
         if (m_bulletPattern != null)
         {

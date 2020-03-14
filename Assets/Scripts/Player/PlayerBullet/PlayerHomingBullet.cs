@@ -49,6 +49,8 @@ public class PlayerHomingBullet : PlayerBullet
         if (collision.CompareTag("Enemy"))
         {
             Enemy enemyController = collision.GetComponent<Enemy>();
+            if (enemyController == null) return;
+
             if (!enemyController.IsInvincible())
             {
                 enemyController.Damage(damage);
@@ -71,6 +73,7 @@ public class PlayerHomingBullet : PlayerBullet
 
         foreach (var enemy in enemies)
         {
+            if (enemy.GetComponent<Enemy>() == null) continue;
             distance = Vector2.Distance(transform.position, enemy.transform.position);
             if (distance < minDistance)
             {

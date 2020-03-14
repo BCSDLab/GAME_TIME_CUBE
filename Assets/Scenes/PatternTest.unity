@@ -396,6 +396,14 @@ MonoBehaviour:
       type: 3}
     m_poolCount: 100
     m_pooledItems: []
+  - prefab: {fileID: 9015490077321555750, guid: 9fec3672519a49b48ab4f69cbc908aad,
+      type: 3}
+    m_poolCount: 100
+    m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: e6f3f6b70e5ddd64890488a16ea49f93,
+      type: 3}
+    m_poolCount: 100
+    m_pooledItems: []
 --- !u!4 &366789821
 Transform:
   m_ObjectHideFlags: 0
@@ -1098,6 +1106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 3
   speed: 3
@@ -1215,6 +1225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: f4406a2f56003414fae1496b67105500, type: 3}
   count: 2
   speed: 3
@@ -1234,6 +1246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   target: {fileID: 0}
   count: 10
@@ -1256,6 +1270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
   speed: 2
   angle1: 0
@@ -1278,7 +1294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
+  bullet: {fileID: 9015490077321555750, guid: 9fec3672519a49b48ab4f69cbc908aad, type: 3}
   target: {fileID: 0}
   count: 8
   speed: 3
@@ -1298,6 +1316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 15
   speed: 2
@@ -1332,6 +1352,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 2
   speed: 3
@@ -1355,6 +1377,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 1
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   m_hitPoint: {fileID: 92274901}
   m_preheatTime: 2
 --- !u!120 &1723751485

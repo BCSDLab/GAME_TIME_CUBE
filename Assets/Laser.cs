@@ -65,6 +65,7 @@ public class Laser : Pattern
 
     protected override IEnumerator Fire()
     {
+        Debug.Log("Laser Fire() called");
         yield return new WaitForSeconds(m_startDelay);
 
         m_isHeating = true;

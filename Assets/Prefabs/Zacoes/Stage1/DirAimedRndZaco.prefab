@@ -262,7 +262,7 @@ MonoBehaviour:
   maxSpeed: 5
   inDelay: 0.05
   outDelay: 1.5
-  angleRange: 0.2
+  angleRange: 20
 --- !u!114 &5053945860251094232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
     - {fileID: 8453631172040760662, guid: fb181b3a27f6a0f45b5478b8dc4cde0a, type: 3}
     counts: 0500000001000000
-  m_isZacoInvincible: 1
+  m_isZacoInvincible: 0
   m_hasZacoEndPattern: 0
 --- !u!1 &6923694916376720830
 GameObject:

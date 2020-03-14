@@ -14,7 +14,7 @@ public class DirectionalAimedRandom : AimedBulletPattern
     private Vector3 m_targetPos;
     private float m_dx;
     private float m_dy;
-    private float m_angleRange;
+    private float m_angle;
     private float m_speed;
 
     private void Start()
@@ -35,14 +35,15 @@ public class DirectionalAimedRandom : AimedBulletPattern
             {
                 m_audioSource.PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
 
-                m_angleRange = Random.Range(-angleRange, angleRange);
+                m_angle = Random.Range(-angleRange, angleRange);
                 m_speed = Random.Range(minSpeed, maxSpeed);
 
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                 bulletInst.transform.position = m_spawnPos.position;
+                bulletInst.transform.rotation = Quaternion.AngleAxis((atan + m_angle) * Mathf.Rad2Deg, Vector3.forward);
                 bulletInst.SetActive(true);
 
-                bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(m_speed * Mathf.Cos(atan + m_angleRange), m_speed * Mathf.Sin(atan + m_angleRange));
+                bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(m_speed * Mathf.Cos(atan + m_angle), m_speed * Mathf.Sin(atan + m_angle));
 
                 yield return new WaitForSeconds(inDelay);
             }

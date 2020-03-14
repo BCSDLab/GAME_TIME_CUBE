@@ -4891,11 +4891,13 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.10443717, y: 0.14005727}
-      - {x: -0.32036507, y: 0.14268245}
-      - {x: -0.31518698, y: -0.14009343}
+      - {x: -0.1056048, y: 0.1344224}
+      - {x: -0.3206936, y: -0.002426654}
+      - {x: -0.0928233, y: -0.13486993}
       - {x: 0.10221064, y: -0.13632254}
-      - {x: 0.3177758, y: -0.069286995}
-      - {x: 0.3151089, y: 0.06668485}
+      - {x: 0.31226915, y: -0.13536707}
+      - {x: 0.2379291, y: -0.003206931}
+      - {x: 0.31235558, y: 0.13827154}
 --- !u!82 &8454583245673594259
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5023,6 +5025,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
   count: 10
   speed: 1

@@ -17,6 +17,11 @@ public class BossTracker : MonoBehaviour
 
     void Update()
     {
+        if (m_boss == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         position.y = m_boss.position.y;
         transform.position = position;
     }

@@ -314,11 +314,11 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            Enemy enemyController = enemy.GetComponent<Enemy>();
-            if (enemyController != null && enemy.name != "Boss")
+            if (enemy.name != "Boss")
             {
-                Destroy(enemy);
-                enemyController.Die();
+                Enemy enemyController = enemy.GetComponent<Enemy>();
+                if (enemyController != null) enemyController.Die();
+                else Destroy(enemy);
             }
         }
     }

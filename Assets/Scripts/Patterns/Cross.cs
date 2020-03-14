@@ -6,6 +6,7 @@ public class Cross : BulletPattern
 {
     public int count;
     public float speed;
+    public float delay = 1f;
 
     protected override IEnumerator Fire()
     {
@@ -21,6 +22,6 @@ public class Cross : BulletPattern
             bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(Mathf.PI * 2f * i / count), speed * Mathf.Sin(Mathf.PI * 2f * i / count));
         }
 
-        yield return new WaitForSeconds(0f);
+        yield return new WaitForSeconds(delay);
     }
 }
