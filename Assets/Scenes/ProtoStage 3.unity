@@ -5782,7 +5782,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &201928526
 MonoBehaviour:
@@ -6021,7 +6021,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &235452308
 MonoBehaviour:
@@ -6701,7 +6701,9 @@ Transform:
   - {fileID: 193007771}
   - {fileID: 908331260}
   - {fileID: 32764009}
+  - {fileID: 761310324}
   - {fileID: 1229761990}
+  - {fileID: 2005393095}
   - {fileID: 814599657}
   - {fileID: 235452307}
   - {fileID: 940278594}
@@ -6709,6 +6711,9 @@ Transform:
   - {fileID: 671062276}
   - {fileID: 399462195}
   - {fileID: 201928525}
+  - {fileID: 1704439551}
+  - {fileID: 1195739167}
+  - {fileID: 751708085}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7068,7 +7073,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &399462196
 MonoBehaviour:
@@ -7087,10 +7092,9 @@ MonoBehaviour:
   nodes:
   - {x: 10, y: -3, z: 0}
   - {x: 6, y: -3, z: 0}
-  - {x: 0, y: -2, z: 0}
+  - {x: 2, y: -2, z: 0}
   - {x: 6, y: -1, z: 0}
-  - {x: 10, y: -1, z: 0}
-  nodeCount: 5
+  nodeCount: 4
   initialized: 1
   initialName: New Path 2
   pathVisible: 1
@@ -8701,7 +8705,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &671062277
 MonoBehaviour:
@@ -8720,10 +8724,9 @@ MonoBehaviour:
   nodes:
   - {x: 10, y: 3, z: 0}
   - {x: 6, y: 3, z: 0}
-  - {x: 0, y: 2, z: 0}
+  - {x: 2, y: 2, z: 0}
   - {x: 6, y: 1, z: 0}
-  - {x: 10, y: 1, z: 0}
-  nodeCount: 5
+  nodeCount: 4
   initialized: 1
   initialName: New Path 2
   pathVisible: 1
@@ -8861,6 +8864,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737200883}
   m_CullTransparentMesh: 0
+--- !u!1 &751708084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751708085}
+  - component: {fileID: 751708086}
+  m_Layer: 0
+  m_Name: Left2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751708085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751708084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &751708086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751708084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Left2
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -10, y: 0, z: 0}
+  - {x: -7, y: 0, z: 0}
+  nodeCount: 2
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!82 &752172817
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8958,6 +9013,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &761310323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 761310324}
+  - component: {fileID: 761310325}
+  m_Layer: 0
+  m_Name: Ground_Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &761310324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761310323}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761310325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761310323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Ground_Left
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: -9.94221, y: -4, z: 0}
+  - {x: 0.5223944, y: -4, z: 0}
+  - {x: 9.92189, y: -4, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1 &775704560
 GameObject:
   m_ObjectHideFlags: 0
@@ -9091,7 +9199,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &814599658
 MonoBehaviour:
@@ -9571,7 +9679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &940278595
 MonoBehaviour:
@@ -10202,145 +10310,283 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mobInfoes:
-  - mob: {fileID: 7473877153406667978, guid: 53fcb0b08a4f26447b06165d5d68506d, type: 3}
+  - mob: {fileID: 7466608742450977111, guid: 6fbbe76cd52edae4f9474a1101c0d673, type: 3}
     pathName: B1
     engageTime: 2
-    repeatCount: 6
-    repeatDelay: 1
+    repeatCount: 3
+    repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 53fcb0b08a4f26447b06165d5d68506d, type: 3}
+  - mob: {fileID: 7466608742450977111, guid: 6fbbe76cd52edae4f9474a1101c0d673, type: 3}
     pathName: B2
     engageTime: 3
-    repeatCount: 6
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 5ba51f48fe43d0742870584443243fae, type: 3}
+    pathName: Right1
+    engageTime: 13
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
+    pathName: Right3
+    engageTime: 13
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
+    pathName: Right2
+    engageTime: 14
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
+    pathName: Right1
+    engageTime: 18
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 5ba51f48fe43d0742870584443243fae, type: 3}
+    pathName: Right3
+    engageTime: 18
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
+    pathName: Right2
+    engageTime: 19
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 6a7782f6d039c0d4cbe5d7179acf4cd7, type: 3}
+    pathName: Ground
+    engageTime: 23
+    repeatCount: 4
     repeatDelay: 1
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 9264918247df4214fbd49810c9409d62, type: 3}
-    pathName: A1
-    engageTime: 9
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 9264918247df4214fbd49810c9409d62, type: 3}
-    pathName: A2
-    engageTime: 9
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: a09e9985551458a4ba752e94a1b1bf0f, type: 3}
-    pathName: B3
-    engageTime: 19
-    repeatCount: 2
-    repeatDelay: 3
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: a09e9985551458a4ba752e94a1b1bf0f, type: 3}
-    pathName: B4
-    engageTime: 20
-    repeatCount: 2
-    repeatDelay: 3
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: fd9d32c6e18fd0a43997c47936c3686d, type: 3}
-    pathName: B1
-    engageTime: 28
-    repeatCount: 2
-    repeatDelay: 3
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: fd9d32c6e18fd0a43997c47936c3686d, type: 3}
-    pathName: B2
-    engageTime: 29
-    repeatCount: 2
-    repeatDelay: 3
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: e45f3773a30c1e443a44021c35b8dc2d, type: 3}
-    pathName: Right1
-    engageTime: 40
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: e45f3773a30c1e443a44021c35b8dc2d, type: 3}
-    pathName: Right3
-    engageTime: 40
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: e8ae1f05ddc14144d8a33ce5b3746f5c, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 8a095e1b9607db944ad81560649635cd, type: 3}
     pathName: Center
-    engageTime: 40
+    engageTime: 29
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: 2a72c144a280e5b4185030f895294b1c, type: 3}
-    pathName: Sky
-    engageTime: 50
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: 2a72c144a280e5b4185030f895294b1c, type: 3}
-    pathName: Ground
-    engageTime: 50
-    repeatCount: 2
-    repeatDelay: 4
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
-    pathName: Right2
-    engageTime: 59
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
-    pathName: Right1
-    engageTime: 60
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: aa6820de4011ebd4995e1b158fa36540, type: 3}
-    pathName: Right3
-    engageTime: 60
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
-    pathName: Down
-    engageTime: 66
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B1
+    engageTime: 32
     repeatCount: 4
     repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: b204af0cd1f27ea468cdf0a1d78f095e, type: 3}
-    pathName: Right2
-    engageTime: 75
-    repeatCount: 1
-    repeatDelay: 0
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B2
+    engageTime: 33
+    repeatCount: 3
+    repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 60213ed9576452e499aacb93d220facb, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 22c527a7fa020db4c9928d7c8c2b63dc, type: 3}
     pathName: Right1
-    engageTime: 76
+    engageTime: 44
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 60213ed9576452e499aacb93d220facb, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 22c527a7fa020db4c9928d7c8c2b63dc, type: 3}
     pathName: Right3
-    engageTime: 76
+    engageTime: 44
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 8bf0f92d8d9cdff4c89aad17b6a1b6af, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 8431939857ff495419ef4fa183253f1a, type: 3}
     pathName: Center
-    engageTime: 83
+    engageTime: 48
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 136829175979225950, guid: bf825506467e18e488999d29e3ee288a, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B2
+    engageTime: 49
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B1
+    engageTime: 50
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: de27f88e438cb384cbe4a0ffb038fa86, type: 3}
+    pathName: A1
+    engageTime: 56
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: de27f88e438cb384cbe4a0ffb038fa86, type: 3}
+    pathName: A2
+    engageTime: 56
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: dd234bb214560df43b76891b81e4f90f, type: 3}
+    pathName: B3
+    engageTime: 66
+    repeatCount: 2
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: dd234bb214560df43b76891b81e4f90f, type: 3}
+    pathName: B4
+    engageTime: 67
+    repeatCount: 2
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: cd94e2f91665d50418a1d9de613f846e, type: 3}
+    pathName: B1
+    engageTime: 68
+    repeatCount: 2
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: cd94e2f91665d50418a1d9de613f846e, type: 3}
+    pathName: B2
+    engageTime: 69
+    repeatCount: 2
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2a68869840676244d9cb1ef4cc74063a, type: 3}
+    pathName: Right1
+    engageTime: 80
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2a68869840676244d9cb1ef4cc74063a, type: 3}
+    pathName: Right3
+    engageTime: 80
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: a9a6551bdc7f9e5459d43ece4cb6e05f, type: 3}
+    pathName: Center
+    engageTime: 80
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: c50563c833106aa4f96614d47b57c4e4, type: 3}
     pathName: Sky
     engageTime: 90
-    repeatCount: 4
-    repeatDelay: 3
+    repeatCount: 2
+    repeatDelay: 4
     engagePhase: 0
-  - mob: {fileID: 136829175979225950, guid: bf825506467e18e488999d29e3ee288a, type: 3}
+  - mob: {fileID: 7466608742450977111, guid: c50563c833106aa4f96614d47b57c4e4, type: 3}
     pathName: Ground
     engageTime: 90
+    repeatCount: 2
+    repeatDelay: 4
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 97fb88c7a6a43fb4b978b32e511e8e4e, type: 3}
+    pathName: Right2
+    engageTime: 99
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 97fb88c7a6a43fb4b978b32e511e8e4e, type: 3}
+    pathName: Right1
+    engageTime: 100
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 97fb88c7a6a43fb4b978b32e511e8e4e, type: 3}
+    pathName: Right3
+    engageTime: 100
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: 17518d54fdb4ee549a942527e5cfd37c, type: 3}
+    pathName: Down
+    engageTime: 106
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: f79770b771c430c499981e769250f97f, type: 3}
+    pathName: Right2
+    engageTime: 117
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2cc2373e250c6b846a799e7360d61adf, type: 3}
+    pathName: Right3
+    engageTime: 118
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2cc2373e250c6b846a799e7360d61adf, type: 3}
+    pathName: Right1
+    engageTime: 118
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: fd8a2245e1080e847bb9e83e66e7bc59, type: 3}
+    pathName: Center
+    engageTime: 125
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 136829175979225950, guid: c52331261e893584ea37f71b317864ac, type: 3}
+    pathName: Sky
+    engageTime: 132
     repeatCount: 4
     repeatDelay: 3
     engagePhase: 0
-  m_bossEngageTime: 200
+  - mob: {fileID: 136829175979225950, guid: c52331261e893584ea37f71b317864ac, type: 3}
+    pathName: Ground
+    engageTime: 132
+    repeatCount: 4
+    repeatDelay: 3
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 6a7782f6d039c0d4cbe5d7179acf4cd7, type: 3}
+    pathName: Ground
+    engageTime: 146
+    repeatCount: 3
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 692babf928acd404da8e85d9855a9a18, type: 3}
+    pathName: Sky
+    engageTime: 147
+    repeatCount: 2
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2961245ab58e1f047bbe12a80b9ef9d3, type: 3}
+    pathName: B3
+    engageTime: 154
+    repeatCount: 2
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B1
+    engageTime: 154
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 2961245ab58e1f047bbe12a80b9ef9d3, type: 3}
+    pathName: B4
+    engageTime: 155
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
+    pathName: B2
+    engageTime: 155
+    repeatCount: 4
+    repeatDelay: 2
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: dbefbe94965281045916b7f1953fabf0, type: 3}
+    pathName: Right1
+    engageTime: 165
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 8a095e1b9607db944ad81560649635cd, type: 3}
+    pathName: Right3
+    engageTime: 165
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  m_bossEngageTime: 175
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   nextSceneName: _Title
@@ -10459,6 +10705,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7375464638601983788}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1195739166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195739167}
+  - component: {fileID: 1195739168}
+  m_Layer: 0
+  m_Name: Middle_Down
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1195739167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195739166}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195739168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195739166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Middle_Down
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 10, y: 0, z: 0}
+  - {x: -0.24545956, y: -1.293362, z: 0}
+  - {x: -5.9179626, y: -7.952238, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1 &1197100711
 GameObject:
   m_ObjectHideFlags: 0
@@ -10698,7 +10997,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1229761991
 MonoBehaviour:
@@ -15610,7 +15909,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 309461420}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1280037520
 MonoBehaviour:
@@ -27338,6 +27637,59 @@ Transform:
   m_Father: {fileID: 837894285}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1704439550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704439551}
+  - component: {fileID: 1704439552}
+  m_Layer: 0
+  m_Name: Middle_Up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704439551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704439550}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1704439552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704439550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Middle_Up
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 10, y: 0, z: 0}
+  - {x: -0.24545956, y: 1.2933617, z: 0}
+  - {x: -5.9179626, y: 7.952238, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!1 &1733676294
 GameObject:
   m_ObjectHideFlags: 0
@@ -28012,6 +28364,59 @@ Transform:
   m_Father: {fileID: 1527668812}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2005393094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2005393095}
+  - component: {fileID: 2005393096}
+  m_Layer: 0
+  m_Name: Middle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2005393095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005393094}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 309461420}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005393096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005393094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: Middle
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 9.94221, y: 0, z: 0}
+  - {x: -0.5223944, y: 0, z: 0}
+  - {x: -9.92189, y: 0, z: 0}
+  nodeCount: 3
+  initialized: 1
+  initialName: New Path 2
+  pathVisible: 1
 --- !u!4 &2008734643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7266687512420095472, guid: 25b1505320c0e9d418d54ba42ada10e5,
@@ -30801,7 +31206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -519.89954, y: -30}
+  m_AnchoredPosition: {x: -519.95, y: -30}
   m_SizeDelta: {x: 300, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1263577489177241833
@@ -31155,6 +31560,10 @@ MonoBehaviour:
     m_poolCount: 50
     m_pooledItems: []
   - prefab: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: 7ad2e0b1efdfe7d4d9deec210d010f78,
       type: 3}
     m_poolCount: 50
     m_pooledItems: []

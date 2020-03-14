@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b9492bdf23ea734888b12f34f4a0a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 1000
+  score: 500
 --- !u!198 &8453631172040760660
 ParticleSystem:
   m_ObjectHideFlags: 0

@@ -5007,14 +5007,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d0ac817435f31e4799c3f256f655386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spawnPos: {fileID: 0}
+  m_startDelay: 2.2
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
+  m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
-  startDelay: 3
-  count: 2
-  speed: 7
-  delay: 0.2
-  angle: 0
-  alpha: -0.05
+  count: 6
+  speed: 3
+  inDelay: 0.2
+  m_angle: 0
+  m_omega: 4
 --- !u!114 &1843434643050139291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5029,5 +5031,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 700
-  isDestroyed: 0
+  m_hp: 1500
+  m_destroyOnArrival: 0
+  m_dropItemList:
+    items:
+    - {fileID: 6944185424850292006, guid: b6976bce5d893914885974b11f86574f, type: 3}
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    counts: 0100000003000000
+  m_isZacoInvincible: 0
+  m_hasZacoEndPattern: 0

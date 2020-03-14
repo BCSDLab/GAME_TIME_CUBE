@@ -4769,11 +4769,11 @@ GameObject:
   - component: {fileID: 431137591380629858}
   - component: {fileID: 2208657292544630285}
   - component: {fileID: 1297947435120890667}
-  - component: {fileID: 3298016160526166707}
-  - component: {fileID: 172328664871883220}
   - component: {fileID: 1331919750288802457}
+  - component: {fileID: 2820051706132095419}
+  - component: {fileID: 1843434643050139291}
   m_Layer: 0
-  m_Name: DirectionalAimedZaco_OneShot_Left
+  m_Name: SpiralZaco_BiClockwise
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4787,7 +4787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7473877153406667978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 0, z: 0}
+  m_LocalPosition: {x: 12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3627086322253096522}
@@ -4898,42 +4898,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.455
---- !u!114 &3298016160526166707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e26b5d1969335f488e81eddb5ff7b0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
-  audioclip: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
-  startDelay: 1
-  target: {fileID: 0}
-  count: 1
-  speed: 4
-  inDelay: 0.3
-  outDelay: 1
---- !u!114 &172328664871883220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7473877153406667978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee1f36e349267ad4fa5e5200c24bd715, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: 
-  speed: 5
-  m_hp: 200
-  isDestroyed: 1
 --- !u!82 &1331919750288802457
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5031,3 +4995,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2820051706132095419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0ac817435f31e4799c3f256f655386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spawnPos: {fileID: 0}
+  m_startDelay: 2.2
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
+  m_ShotSFXVolum: 0.5
+  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  count: 6
+  speed: 3
+  inDelay: 0.2
+  m_angle: 0
+  m_omega: -4
+--- !u!114 &1843434643050139291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473877153406667978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2c46b29ae70c0448cb43e54618cd3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: 
+  speed: 5
+  m_hp: 1500
+  m_destroyOnArrival: 0
+  m_dropItemList:
+    items:
+    - {fileID: 6944185424850292006, guid: b6976bce5d893914885974b11f86574f, type: 3}
+    - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
+    counts: 0100000004000000
+  m_isZacoInvincible: 0
+  m_hasZacoEndPattern: 0
