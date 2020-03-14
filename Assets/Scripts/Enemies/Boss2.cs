@@ -189,8 +189,8 @@ public class Boss2 : Enemy
     IEnumerator Phase2()
     {
         // SineBullet
-        iTween.MoveTo(gameObject, iTween.Hash("position", m_frontPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-        yield return new WaitForSeconds(m_moveTime + 0.5f);
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_frontPos, "time", 3f, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(3.5f);
 
         m_sineNWay.StartPattern();
     }
