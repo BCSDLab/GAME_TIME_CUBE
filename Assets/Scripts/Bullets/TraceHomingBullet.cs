@@ -2,32 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomingBullet : Bullet
+// 인터페이스를 활용했다면...
+public class TraceHomingBullet : Bullet
 {
+    [Header("Homing")]
     public GameObject target;
-    public float speed = 5f;
+    public float speed = 4f;
     [SerializeField]
-    private float m_alpha = 200f;
+    private float m_alpha =100f;
     [SerializeField]
-    private int m_hp = 70;
+    private int m_hp = 100;
     [SerializeField]
-    private float lifeTime = 15f;
+    private float m_lifeTime = 15f;
+    [Header("Trace")]
+    [SerializeField]
+    private float m_traceTime = 1f;
+    [SerializeField]
+    private float m_traceLifeTime = 3f;
+    [SerializeField]
+    private GameObject m_traceBullet = null;
 
     private Rigidbody2D m_rigidbody;
     private AudioSource m_audioSource;
+    private float m_time = 0f;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         m_rigidbody = GetComponent<Rigidbody2D>();
         m_audioSource = GetComponent<AudioSource>();
+    }
 
-        // TODO: 풀링 방식으로 변경
-        Destroy(gameObject, lifeTime);
+    void OnEnable()
+    {
+        m_time = 0f;
     }
 
     void FixedUpdate()
     {
+        m_time += Time.deltaTime;
+
+        if (m_lifeTime < m_time)
+        {
+            Blow();
+            PoolManager.instance.PushToPool(gameObject);
+        }
+
+        if (m_traceTime < m_time)
+        {
+            LeaveTrace();
+        }
+
         if (target == null) return;
 
         Vector2 direction = transform.position - target.transform.position;
@@ -38,10 +63,20 @@ public class HomingBullet : Bullet
         m_rigidbody.angularVelocity = -m_alpha * crossZ;
     }
 
+    void LeaveTrace()
+    {
+        m_time = 0f;
+
+        GameObject bulletInst = PoolManager.instance.PopFromPool(m_traceBullet.name);
+        bulletInst.transform.position = transform.position;
+        bulletInst.SetActive(true);
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("PlayerBullet"))
         {
+            return;
             m_hp -= collision.GetComponent<PlayerBullet>().damage;
             m_audioSource.Play();
             

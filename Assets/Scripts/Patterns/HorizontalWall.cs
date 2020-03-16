@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VerticalLeft : BulletPattern
+public class HorizontalWall : BulletPattern
 {
     public int count = 2;
     public float speed = 3f;
     public float inDelay = 0.15f;
     public float outDelay = 5f;
     [SerializeField]
-    private float m_x = 9f;
+    private bool m_isRising = false;
     [SerializeField]
-    private float m_top = 5f;
+    private float m_y = 5f;
     [SerializeField]
-    private float m_bottom = -5f;
+    private float m_minX = -9f;
+    [SerializeField]
+    private float m_maxX = 9f;
     [SerializeField]
     private int m_bulletCount = 20;
 
@@ -22,7 +24,7 @@ public class VerticalLeft : BulletPattern
     void Start()
     {
         m_audioSource = GetComponent<AudioSource>();
-        dist = Mathf.Abs(m_top - m_bottom) / m_bulletCount;
+        dist = Mathf.Abs(m_maxX - m_minX) / m_bulletCount;
     }
 
     protected override IEnumerator Fire()
@@ -38,9 +40,19 @@ public class VerticalLeft : BulletPattern
                 for (int j = 0; j <= m_bulletCount; j++)
                 {
                     GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
-                    bulletInst.transform.position = new Vector3(m_x, m_bottom + dist * j);
+                    bulletInst.transform.position = new Vector3(m_minX + dist * j, m_y);
                     bulletInst.SetActive(true);
-                    bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, 0f);
+
+                    if (m_isRising)
+                    {
+                        bulletInst.transform.rotation = Quaternion.Euler(0, 0, 90f);
+                        bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, speed);
+                    }
+                    else
+                    {
+                        bulletInst.transform.rotation = Quaternion.Euler(0, 0, -90f);
+                        bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -speed);
+                    }
                 }
                 
                 yield return new WaitForSeconds(inDelay);

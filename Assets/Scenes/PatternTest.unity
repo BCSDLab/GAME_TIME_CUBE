@@ -404,6 +404,30 @@ MonoBehaviour:
       type: 3}
     m_poolCount: 100
     m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: e23e3e6586e4edb4db3c0f2209f59dbe,
+      type: 3}
+    m_poolCount: 100
+    m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: 4960be440f1796446bc1f1e934ef8657,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 6527906457772606533, guid: 910d546782bfd9d47bc06f59f18f12b1,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: 148b9542224bfec4f9d5765284e705ab,
+      type: 3}
+    m_poolCount: 256
+    m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: 59ea3d236578107479f126907732d67f,
+      type: 3}
+    m_poolCount: 256
+    m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: 7681179aa40ac254a9c75ee0fac0a2b3,
+      type: 3}
+    m_poolCount: 256
+    m_pooledItems: []
 --- !u!4 &366789821
 Transform:
   m_ObjectHideFlags: 0
@@ -1002,13 +1026,14 @@ GameObject:
   - component: {fileID: 1723751473}
   - component: {fileID: 1723751477}
   - component: {fileID: 1723751475}
-  - component: {fileID: 1723751480}
-  - component: {fileID: 1723751481}
-  - component: {fileID: 1723751479}
-  - component: {fileID: 1723751478}
-  - component: {fileID: 1723751476}
   - component: {fileID: 1723751482}
   - component: {fileID: 1723751483}
+  - component: {fileID: 1723751486}
+  - component: {fileID: 1723751479}
+  - component: {fileID: 1723751481}
+  - component: {fileID: 1723751480}
+  - component: {fileID: 1723751478}
+  - component: {fileID: 1723751476}
   - component: {fileID: 1723751485}
   - component: {fileID: 1723751484}
   m_Layer: 0
@@ -1248,14 +1273,14 @@ MonoBehaviour:
   m_startDelay: 0
   m_ShotSFX: {fileID: 0}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  bullet: {fileID: 5394255979628684254, guid: e23e3e6586e4edb4db3c0f2209f59dbe, type: 3}
   target: {fileID: 0}
   count: 10
   minSpeed: 3
   maxSpeed: 6
   inDelay: 0.05
-  outDelay: 0.5
-  angleRange: 60
+  outDelay: 0.3
+  angleRange: 30
 --- !u!114 &1723751480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,7 +1297,7 @@ MonoBehaviour:
   m_startDelay: 0
   m_ShotSFX: {fileID: 0}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 5394255979628684254, guid: e108d3964f2a32a4fb0dfeb9d2687a2f, type: 3}
+  bullet: {fileID: 5394255979628684254, guid: 4960be440f1796446bc1f1e934ef8657, type: 3}
   speed: 2
   angle1: 0
   angle2: 180
@@ -1296,11 +1321,11 @@ MonoBehaviour:
   m_startDelay: 0
   m_ShotSFX: {fileID: 0}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 9015490077321555750, guid: 9fec3672519a49b48ab4f69cbc908aad, type: 3}
+  bullet: {fileID: 6527906457772606533, guid: 910d546782bfd9d47bc06f59f18f12b1, type: 3}
   target: {fileID: 0}
   count: 8
   speed: 3
-  delay: 0.5
+  delay: 5
   angleRange: 60
 --- !u!114 &1723751482
 MonoBehaviour:
@@ -1316,28 +1341,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  m_ShotSFX: {fileID: 0}
+  m_ShotSFX: {fileID: 8300000, guid: 81229358c3f9b27458feded7a933dd8d, type: 3}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  bullet: {fileID: 5394255979628684254, guid: 59ea3d236578107479f126907732d67f, type: 3}
   count: 15
   speed: 2
-  inDelay: 0.2
-  outDelay: 1
+  inDelay: 0.4
+  outDelay: 2
   m_spawnPositions:
-  - {x: -3.5, y: -5}
+  - {x: -9, y: 5}
+  - {x: -8, y: 5}
+  - {x: -7, y: 5}
+  - {x: -6, y: 5}
+  - {x: -5, y: 5}
+  - {x: -4, y: 5}
   - {x: -3, y: 5}
-  - {x: -2.5, y: -5}
   - {x: -2, y: 5}
-  - {x: -1.5, y: -5}
   - {x: -1, y: 5}
-  - {x: -0.5, y: -5}
   - {x: 0, y: 5}
-  - {x: 0.5, y: -5}
   - {x: 1, y: 5}
-  - {x: 1.5, y: -5}
   - {x: 2, y: 5}
-  - {x: 2.5, y: -5}
   - {x: 3, y: 5}
+  - {x: 4, y: 5}
 --- !u!114 &1723751483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1354,7 +1379,7 @@ MonoBehaviour:
   m_startDelay: 0
   m_ShotSFX: {fileID: 0}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  bullet: {fileID: 5394255979628684254, guid: e23e3e6586e4edb4db3c0f2209f59dbe, type: 3}
   count: 2
   speed: 3
   inDelay: 0.15
@@ -1476,6 +1501,30 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &1723751486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723751472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39541d20fe4d92c4cb063d6a4b782e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spawnPos: {fileID: 0}
+  m_startDelay: 0
+  m_ShotSFX: {fileID: 0}
+  m_ShotSFXVolum: 0.5
+  bullet: {fileID: 8760339693924824446, guid: 148b9542224bfec4f9d5765284e705ab, type: 3}
+  count: 10
+  speed: 5
+  inDelay: 0.02
+  outDelay: 1
+  m_spawnX: 7
+  m_minY: -4.7
+  m_maxY: 3.9
 --- !u!1 &1922312850
 GameObject:
   m_ObjectHideFlags: 0

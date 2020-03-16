@@ -28,9 +28,15 @@ public class Vertical : BulletPattern
                     bulletInst.SetActive(true);
 
                     if (m_bulletSpawnPos.y < 0)
+                    {
+                        bulletInst.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                         bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, speed);
+                    }
                     else
+                    {
+                        bulletInst.transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                         bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -speed);
+                    }
                 }
 
                 yield return new WaitForSeconds(inDelay);

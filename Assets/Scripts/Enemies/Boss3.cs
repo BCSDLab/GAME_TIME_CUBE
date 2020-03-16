@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D), typeof(SpriteRenderer), typeof(DialogueTrigger))]
-public class BossAlphaController : Enemy
+public class Boss3 : Enemy
 {
     #region PATHS
     [SerializeField]
     private Transform m_enterPos = null;
+    [SerializeField]
+    private Transform m_frontPos = null;
     [SerializeField]
     private string[] m_pathNames = null;
     [SerializeField]
@@ -33,25 +35,12 @@ public class BossAlphaController : Enemy
     [Header("페이즈별 시간 제한")]
     private float[] m_phaseTimeLimits = null;
 
-    #region PATTERNS
-    //Phase1
-    private Homing m_homing;
-    private DonutAimed m_donutAimed;
-    //Phase2
-    private SpiralMulti m_spiralMulti;
-    private DirectionalNormal m_directionalNormal;
-    //Phase3
-    private Homing1 m_homing1;
-    private RadialMulti m_radialMulti;
-    //Phase4
-    private PosToPos m_posToPos;
-    private DirectionalAimedNWay m_directionalAimedNWay;
-    //Phase5
-    private VerticalWall m_verticalLeft;
-    private DirectionalAimedRandom m_directionalAimedRandom;
-    //Phase6
-    private BiDirectional m_biDirectional;
-    #endregion
+    [SerializeField]
+    private Transform m_target = null;
+
+    // 패턴용
+    [SerializeField]
+    private GameObject m_bullet = null;
 
     private DialogueTrigger m_dialogueTrigger;
     private ParticleSystem m_inParticle;
@@ -59,17 +48,34 @@ public class BossAlphaController : Enemy
     private AudioSource m_inParticleAudio;
     private AudioSource m_outParticleAudio;
 
-    private const int PHASE_COUNT = 6;
+    private AudioSource m_chargeAudio;
+    private AudioSource m_shotAudio;
+
+    private const int PHASE_COUNT = 5;
     private int m_phase = 0;
     private int m_maxPhaseHP; // 각 페이즈 최대 HP
     private int m_phaseHP;  // 현재 페이즈 HP
     private int m_totalHP;  // 총 HP
     private bool m_hasTalked = false;
 
-    // 보스 소환수 소환
+    // 보스 소환수
     private bool m_isSpawning = true;
     private int m_indexToSpawn = 0;
     private float m_zacoSpawnTime = 0f;
+
+    #region PATTERNS
+    DirectionalAimedNWay m_traceHomingNWay = null;
+    DirectionalAimedRandom m_backwardRandom = null;
+    SpawnOnX m_spawnXToX = null;
+    HorizontalWall m_horizontalWallFall = null;
+    HorizontalWall m_horizontalWallRise = null;
+    HorizontalWall m_horizontalWallFall2 = null;
+    HorizontalWall m_horizontalWallRise2 = null;
+    VerticalWall m_verticalWall = null;
+    VerticalWall m_verticalWallReverse = null;
+    VerticalWall m_verticalWall2 = null;
+    VerticalWall m_verticalWall2Reverse = null;
+    #endregion
 
     void Awake()
     {
@@ -79,25 +85,27 @@ public class BossAlphaController : Enemy
         m_outParticle = transform.GetChild(1).GetComponent<ParticleSystem>();
         m_inParticleAudio = transform.GetChild(0).GetComponent<AudioSource>();
         m_outParticleAudio = transform.GetChild(1).GetComponent<AudioSource>();
+        AudioSource[] audioSources = transform.GetChild(2).GetComponents<AudioSource>();
+        m_chargeAudio = audioSources[0];
+        m_shotAudio = audioSources[1];
 
         // 패턴
-        // Phase1
-        m_homing = GetComponent<Homing>();
-        m_donutAimed = GetComponent<DonutAimed>();
-        // Phase2
-        m_spiralMulti = GetComponent<SpiralMulti>();
-        m_directionalNormal = GetComponent<DirectionalNormal>();
-        // Phase3
-        m_homing1 = GetComponent<Homing1>();
-        m_radialMulti = GetComponent<RadialMulti>();
-        // Phase4
-        m_posToPos = GetComponent<PosToPos>();
-        m_directionalAimedNWay = GetComponent<DirectionalAimedNWay>();
-        // Phase5
-        m_verticalLeft = GetComponent<VerticalWall>();
-        m_directionalAimedRandom = GetComponent<DirectionalAimedRandom>();
-        // Phase6
-        m_biDirectional = GetComponent<BiDirectional>();
+        DirectionalAimedNWay[] directionalAimedNWays = GetComponents<DirectionalAimedNWay>();
+        m_traceHomingNWay = directionalAimedNWays[0];
+        DirectionalAimedRandom[] directionalAimedRandoms = GetComponents<DirectionalAimedRandom>();
+        m_backwardRandom = directionalAimedRandoms[0];
+        SpawnOnX[] spawnOnXes = GetComponents<SpawnOnX>();
+        m_spawnXToX = spawnOnXes[0];
+        HorizontalWall[] horizontalWalls = GetComponents<HorizontalWall>();
+        m_horizontalWallFall = horizontalWalls[0];
+        m_horizontalWallRise = horizontalWalls[1];
+        m_horizontalWallFall2 = horizontalWalls[2];
+        m_horizontalWallRise2 = horizontalWalls[3];
+        VerticalWall[] verticalWalls = GetComponents<VerticalWall>();
+        m_verticalWall = verticalWalls[0];
+        m_verticalWallReverse = verticalWalls[1];
+        m_verticalWall2 = verticalWalls[2];
+        m_verticalWall2Reverse = verticalWalls[3];
     }
 
     protected override void Start()
@@ -114,6 +122,12 @@ public class BossAlphaController : Enemy
         // 보스 HP 초기화
         m_maxPhaseHP = m_hp;
         m_totalHP = m_maxPhaseHP * PHASE_COUNT;
+
+        // 플레이어 타깃
+        if (m_target == null)
+        {
+            m_target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     void Update()
@@ -140,10 +154,70 @@ public class BossAlphaController : Enemy
             m_indexToSpawn++;
         }
 
-        Debug.Log(m_indexToSpawn);
         m_zacoSpawnTime += Time.deltaTime;
     }
 
+    IEnumerator Phase1()
+    {
+        // Spawn X To X Bullet
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(m_moveTime + 0.5f);
+        m_spawnXToX.StartPattern();
+    }
+    IEnumerator Phase2()
+    {
+        // Moving Bullet Backward
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(m_moveTime);
+        Vector3 toPos = transform.position;
+        m_backwardRandom.StartPattern();
+
+        while (true)
+        {
+            toPos.y = Random.Range(-3.2f, 2.4f);
+            iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", 2f, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    IEnumerator Phase3()
+    {
+        // Trace Homing Bullet
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_frontPos, "time", 4f, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(3f);
+        Vector3 toPos = transform.position;
+
+        while (true)
+        {
+            toPos.y = Random.Range(-3.2f, 2.4f);
+            iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", 2f, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(1f);
+
+            m_traceHomingNWay.StartPattern();
+            yield return new WaitForSeconds(0.1f);
+            m_traceHomingNWay.StopPattern();
+            yield return new WaitForSeconds(2f);
+        }
+    }
+    IEnumerator Phase4()
+    {
+        // HorizontalWall + VerticalWall (Deacceleration)
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(m_moveTime + 0.5f);
+        m_horizontalWallFall2.StartPattern();
+        m_horizontalWallRise2.StartPattern();
+        m_verticalWall2.StartPattern();
+        m_verticalWall2Reverse.StartPattern();
+    }
+    IEnumerator Phase5()
+    {
+        // HorizontalWall + VerticalWall (MovingBullet)
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        yield return new WaitForSeconds(m_moveTime + 0.5f);
+        m_horizontalWallFall.StartPattern();
+        m_horizontalWallRise.StartPattern();
+        m_verticalWall.StartPattern();
+        m_verticalWallReverse.StartPattern();
+    }
     void StartPhase()
     {
         m_isInvincible = false;
@@ -162,56 +236,35 @@ public class BossAlphaController : Enemy
         switch (m_phase)
         {
             case 1:
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
-                    "looptype", iTween.LoopType.loop, "movetopath", false));
-                m_homing.StartPattern();
-                m_donutAimed.StartPattern();
+                StartCoroutine("Phase1");
                 break;
 
             case 2:
-                m_homing.StopPattern();
-                m_donutAimed.StopPattern();
+                StopCoroutine("Phase1");
+                StopAllPatterns();
                 GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-                m_spiralMulti.StartPattern();
-                m_directionalNormal.StartPattern();
+                StartCoroutine("Phase2");
                 break;
 
             case 3:
-                m_spiralMulti.StopPattern();
-                m_directionalNormal.StopPattern();
+                StopCoroutine("Phase2");
+                StopAllPatterns();
                 GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[0]), "speed", m_moveSpeed * 1.2f, "easetype", iTween.EaseType.linear,
-                    "looptype", iTween.LoopType.loop, "movetopath", false));
-                m_homing1.StartPattern();
-                m_radialMulti.StartPattern();
+                StartCoroutine("Phase3");
                 break;
 
             case 4:
-                m_homing1.StopPattern();
-                m_radialMulti.StopPattern();
+                StopCoroutine("Phase3");
+                StopAllPatterns();
+                StartCoroutine("Phase4");
                 GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-                m_posToPos.StartPattern();
-                m_directionalAimedNWay.StartPattern();
                 break;
 
             case 5:
-                m_posToPos.StopPattern();
-                m_directionalAimedNWay.StopPattern();
+                StopCoroutine("Phase4");
+                StopAllPatterns();
+                StartCoroutine("Phase5");
                 GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(m_pathNames[1]), "speed", m_moveSpeed, "easetype", iTween.EaseType.linear,
-                    "looptype", iTween.LoopType.loop, "movetopath", false));
-                m_verticalLeft.StartPattern();
-                m_directionalAimedRandom.StartPattern();
-                break;
-
-            case 6:
-                m_verticalLeft.StopPattern();
-                m_directionalAimedRandom.StopPattern();
-                GameManager.instance.DestroyAllZacos();
-                iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
-                m_biDirectional.StartPattern();
                 break;
 
             default:
@@ -292,7 +345,6 @@ public class BossAlphaController : Enemy
             StartPhase();
         }
     }
-
     public override void SpellDamage(int damage)
     {
         Damage(damage);
@@ -301,7 +353,10 @@ public class BossAlphaController : Enemy
     public override void Die()
     {
         m_isInvincible = true;
+        StopAllCoroutines();
         StopAllPatterns();
+        GameManager.instance.DestroyAllZacos();
+        GameManager.instance.DestroyAllBullets();
         GameManager.instance.BossDefeated();
         StartCoroutine("Blow");
     }
@@ -328,17 +383,17 @@ public class BossAlphaController : Enemy
 
     void StopAllPatterns()
     {
-        m_homing.StopPattern();
-        m_donutAimed.StopPattern();
-        m_spiralMulti.StopPattern();
-        m_directionalNormal.StopPattern();
-        m_homing1.StopPattern();
-        m_radialMulti.StopPattern();
-        m_posToPos.StopPattern();
-        m_directionalAimedNWay.StopPattern();
-        m_verticalLeft.StopPattern();
-        m_directionalAimedRandom.StopPattern();
-        m_biDirectional.StopPattern();
+        m_traceHomingNWay.StopPattern();
+        m_backwardRandom.StopPattern();
+        m_spawnXToX.StopPattern();
+        m_horizontalWallFall.StopPattern();
+        m_horizontalWallRise.StopPattern();
+        m_horizontalWallFall2.StopPattern();
+        m_horizontalWallRise2.StopPattern();
+        m_verticalWall.StopPattern();
+        m_verticalWallReverse.StopPattern();
+        m_verticalWall2.StopPattern();
+        m_verticalWall2Reverse.StopPattern();
     }
 
     void DropSubWeaponItem()

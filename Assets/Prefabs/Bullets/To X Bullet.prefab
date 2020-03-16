@@ -4770,9 +4770,10 @@ GameObject:
   - component: {fileID: 8760339693924824442}
   - component: {fileID: 8760339693924824441}
   - component: {fileID: 8760339693924824440}
-  - component: {fileID: 2770738210494695253}
+  - component: {fileID: 1175943879738692215}
+  - component: {fileID: 8100988943607555223}
   m_Layer: 0
-  m_Name: Bullet XL
+  m_Name: To X Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4830,7 +4831,7 @@ SpriteRenderer:
   m_SortingLayerID: 1879705621
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300008, guid: b8eba9676b83dd7448bc98f385a0cb95, type: 3}
+  m_Sprite: {fileID: 21300006, guid: b8eba9676b83dd7448bc98f385a0cb95, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4862,7 +4863,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &2770738210494695253
+--- !u!60 &1175943879738692215
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4879,7 +4880,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.77, y: 0.77}
+    oldSize: {x: 0.63, y: 0.63}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4887,7 +4888,27 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.3}
-      - {x: 0.3, y: 0}
-      - {x: 0, y: -0.3}
-      - {x: -0.3, y: 0}
+    - - {x: 0, y: 0.24}
+      - {x: 0.24, y: 0}
+      - {x: 0, y: -0.24}
+      - {x: -0.24, y: 0}
+--- !u!114 &8100988943607555223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760339693924824446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611468c4f13bcb84d82e1ae51517658b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  m_toXes:
+  - 4
+  - 1
+  - -2
+  - -5
+  m_minY: -4.7
+  m_maxY: 3.9
