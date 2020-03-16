@@ -162,7 +162,15 @@ public class Boss3 : Enemy
         // Spawn X To X Bullet
         iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
         yield return new WaitForSeconds(m_moveTime + 0.5f);
+        Vector3 toPos = transform.position;
         m_spawnXToX.StartPattern();
+
+        while (true)
+        {
+            toPos.y = Random.Range(-3.2f, 2.4f);
+            iTween.MoveTo(gameObject, iTween.Hash("position", toPos, "time", 2f, "easetype", iTween.EaseType.easeOutQuint));
+            yield return new WaitForSeconds(2f);
+        }
     }
     IEnumerator Phase2()
     {
