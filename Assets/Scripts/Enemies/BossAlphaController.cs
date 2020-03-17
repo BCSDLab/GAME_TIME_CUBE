@@ -56,6 +56,7 @@ public class BossAlphaController : Enemy
     private DialogueTrigger m_dialogueTrigger;
     private ParticleSystem m_inParticle;
     private ParticleSystem m_outParticle;
+    private ParticleSystem m_hitParticle;
     private AudioSource m_inParticleAudio;
     private AudioSource m_outParticleAudio;
 
@@ -77,6 +78,7 @@ public class BossAlphaController : Enemy
         ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
         m_inParticle = transform.GetChild(0).GetComponent<ParticleSystem>();
         m_outParticle = transform.GetChild(1).GetComponent<ParticleSystem>();
+        m_hitParticle = transform.GetChild(2).GetComponent<ParticleSystem>();
         m_inParticleAudio = transform.GetChild(0).GetComponent<AudioSource>();
         m_outParticleAudio = transform.GetChild(1).GetComponent<AudioSource>();
 
@@ -296,6 +298,7 @@ public class BossAlphaController : Enemy
     public override void SpellDamage(int damage)
     {
         Damage(damage);
+        m_hitParticle.Play();
     }
 
     public override void Die()
