@@ -38,9 +38,12 @@ public class SpiralMulti : BulletPattern
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(a + m_angle), speed * Mathf.Sin(a + m_angle));
                 //obj.transform.Rotate(new Vector3(0f, 0f, 360f * i / SpiralShooting - 90f));
 
-                m_angle += m_omega;
                 //TODO: 오버플로 예방
+                //Debug.Log("SprialMulti : m_angle = " + m_angle);
+                //Debug.Log("SprialMulti : m_omega = " + m_omega);
+                //Debug.Log(m_omega);
             }
+            m_angle += m_omega;
 
             yield return new WaitForSeconds(inDelay);
         }

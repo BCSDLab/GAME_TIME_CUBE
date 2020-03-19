@@ -46,7 +46,12 @@ public class BiDirectional : BulletPattern
 
                 angle1 += omega1;
                 angle2 += omega2;
+
                 //TODO: 오버플로 예방
+                Debug.Log("BiDirectional : angle1 = " + angle1);
+                Debug.Log("BiDirectional : omega1 = " + omega1);
+                Debug.Log("BiDirectional : angle2 = " + angle2);
+                Debug.Log("BiDirectional : omega2 = " + omega2);
             }
             yield return new WaitForSeconds(delay);
         }
