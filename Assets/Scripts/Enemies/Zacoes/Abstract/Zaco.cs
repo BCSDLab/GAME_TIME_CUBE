@@ -47,9 +47,17 @@ public abstract class Zaco : Enemy
 
     public override void SpellDamage(int damage)
     {
-        if (m_isInvincible) return;
+        if (m_isInvincible)
+            return;
 
-        Die();
+        Damage(damage);
+        ParticleSystem[] particleSystems = GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem particleSystem in particleSystems)
+        {
+            GameObject particleInst = Instantiate(particleSystem.gameObject, transform.position, Quaternion.identity, null);
+            particleInst.GetComponent<ParticleSystem>().Play();
+            Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
+        }
     }
 
     public override void Die()
