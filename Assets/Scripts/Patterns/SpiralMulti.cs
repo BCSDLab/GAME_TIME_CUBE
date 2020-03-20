@@ -14,11 +14,14 @@ public class SpiralMulti : BulletPattern
     [Tooltip("각속도")]
     private float m_omega = 10f;
 
+    private const float circumference = 2f * Mathf.PI;
+
     void Start()
     {
         m_audioSource = GetComponent<AudioSource>();
-        m_angle *= Mathf.Deg2Rad;
-        m_omega *= Mathf.Deg2Rad;
+
+        m_angle = (m_angle % 360) * Mathf.Deg2Rad;
+        m_omega = (m_omega % 360) * Mathf.Deg2Rad;
     }
 
     protected override IEnumerator Fire()
@@ -34,16 +37,19 @@ public class SpiralMulti : BulletPattern
                 bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.SetActive(true);
 
-                float a = 2f * Mathf.PI * i / count;
+                float a = circumference * i / count;
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(a + m_angle), speed * Mathf.Sin(a + m_angle));
                 //obj.transform.Rotate(new Vector3(0f, 0f, 360f * i / SpiralShooting - 90f));
 
                 //TODO: 오버플로 예방
-                //Debug.Log("SprialMulti : m_angle = " + m_angle);
                 //Debug.Log("SprialMulti : m_omega = " + m_omega);
-                //Debug.Log(m_omega);
             }
-            m_angle += m_omega;
+            //m_angle += m_omega;
+            //m_angle %= 2f * Mathf.PI;
+
+            m_angle = (m_angle + m_omega) % circumference;
+            //m_angle = m_angle % 2f * Mathf.PI + m_omega % 2f * Mathf.PI;
+            Debug.Log("SprialMulti : m_angle = " + m_angle);
 
             yield return new WaitForSeconds(inDelay);
         }
