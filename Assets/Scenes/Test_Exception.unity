@@ -7903,12 +7903,12 @@ MonoBehaviour:
     counts: 0a0000000a000000
   m_mobInfoes: []
   m_phaseTimeLimits:
-  - 10
-  - 60
-  - 10
-  - 10
-  - 10
-  - 10
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 100
 --- !u!70 &513728069
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

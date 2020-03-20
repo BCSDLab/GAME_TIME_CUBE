@@ -12,13 +12,19 @@ public class BiDirectional : BulletPattern
     public int spiral = 1;
     public float delay = 0.3f;
 
+    private const float circumference = 2f * Mathf.PI;
+
     void Start()
     {
         m_audioSource = GetComponent<AudioSource>();
-        angle1 *= Mathf.Deg2Rad;
-        angle2 *= Mathf.Deg2Rad;
-        omega1 *= Mathf.Deg2Rad;
-        omega2 *= Mathf.Deg2Rad;
+        //angle1 *= Mathf.Deg2Rad;
+        //angle2 *= Mathf.Deg2Rad;
+        //omega1 *= Mathf.Deg2Rad;
+        //omega2 *= Mathf.Deg2Rad;
+        angle1 = (angle1 % 360) * Mathf.Deg2Rad;
+        omega1 = (omega1 % 360) * Mathf.Deg2Rad;
+        angle2 = (angle2 % 360) * Mathf.Deg2Rad;
+        omega2 = (omega2 % 360) * Mathf.Deg2Rad;
     }
 
     protected override IEnumerator Fire()
@@ -33,26 +39,29 @@ public class BiDirectional : BulletPattern
                 GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                 bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.SetActive(true);
-                float a = Mathf.PI * 2f * i / spiral + angle1;
+                float a = circumference * i / spiral + angle1;
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(a), speed * Mathf.Sin(a));
                 bulletInst.transform.Rotate(Vector3.forward * a * Mathf.Rad2Deg);
 
                 bulletInst = PoolManager.instance.PopFromPool(bullet.name);
                 bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.SetActive(true);
-                a = Mathf.PI * 2f * i / spiral + angle2;
+                a = circumference * i / spiral + angle2;
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(a), speed * Mathf.Sin(a));
                 bulletInst.transform.Rotate(Vector3.forward * a * Mathf.Rad2Deg);
 
-                angle1 += omega1;
-                angle2 += omega2;
+                //angle1 += omega1;
+                //angle2 += omega2;
 
                 //TODO: 오버플로 예방
-                Debug.Log("BiDirectional : angle1 = " + angle1);
-                Debug.Log("BiDirectional : omega1 = " + omega1);
-                Debug.Log("BiDirectional : angle2 = " + angle2);
-                Debug.Log("BiDirectional : omega2 = " + omega2);
+                //Debug.Log("BiDirectional : angle1 = " + angle1);
+                //Debug.Log("BiDirectional : omega1 = " + omega1);
+                //Debug.Log("BiDirectional : angle2 = " + angle2);
+                //Debug.Log("BiDirectional : omega2 = " + omega2);
             }
+            angle1 = (angle1 + omega1) % circumference;
+            angle2 = (angle2 + omega2) % circumference;
+
             yield return new WaitForSeconds(delay);
         }
     }
