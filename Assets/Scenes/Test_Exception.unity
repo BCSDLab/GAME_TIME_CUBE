@@ -7483,8 +7483,8 @@ MonoBehaviour:
   speed: 3
   angle1: 0
   angle2: 180
-  omega1: 2
-  omega2: -2
+  omega1: 7
+  omega2: -7
   spiral: 3
   delay: 0.1
 --- !u!114 &513728056
@@ -7904,11 +7904,11 @@ MonoBehaviour:
   m_mobInfoes: []
   m_phaseTimeLimits:
   - 1
+  - 20
   - 1
   - 1
   - 1
-  - 1
-  - 100
+  - 20
 --- !u!70 &513728069
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
