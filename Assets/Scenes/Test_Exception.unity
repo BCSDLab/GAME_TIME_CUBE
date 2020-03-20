@@ -7683,7 +7683,7 @@ MonoBehaviour:
   m_ShotSFX: {fileID: 0}
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
-  count: 3
+  count: 10
   speed: 3
   inDelay: 0.1
   m_angle: 0
