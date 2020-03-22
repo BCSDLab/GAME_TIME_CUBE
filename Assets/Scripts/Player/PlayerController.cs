@@ -150,8 +150,6 @@ public class PlayerController : MonoBehaviour
         velocity.y = -2f;
         m_rigidbody.velocity = velocity;
 
-        //transform.Find("Hit Area").gameObject.SetActive(false);
-
         SpriteRenderer SPR = transform.Find("Character Sprite").gameObject.GetComponent<SpriteRenderer>();
         Color color = SPR.color;
         color.a -= Time.deltaTime;
@@ -160,9 +158,7 @@ public class PlayerController : MonoBehaviour
 
     public void DisablePlayer()
     {
-        //transform.Find("Hit Area").gameObject.SetActive(false);
         GameObject hitArea = transform.Find("Hit Area").gameObject;
-        //hitArea.SetActive(false);
         hitArea.GetComponent<SpriteRenderer>().enabled = false;
         hitArea.GetComponent<CircleCollider2D>().enabled = false;
         hitArea.GetComponent<PolygonCollider2D>().enabled = false;

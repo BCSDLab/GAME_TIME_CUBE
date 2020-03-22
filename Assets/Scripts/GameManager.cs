@@ -227,7 +227,6 @@ public class GameManager : MonoBehaviour
     public void LifeUp(int scoreWhenMaxLife = 0)
     {
         if (playerHP == 0) {
-            // TODO: 플레이어 라이프 0 상태에서 라이프 아이템 획득 시
             Debug.Log("플레이어 라이프 0 상태에서 라이프 아이템 획득");
             return;
         }
