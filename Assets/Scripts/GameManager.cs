@@ -219,6 +219,7 @@ public class GameManager : MonoBehaviour
 
         if (playerHP == 0)
         {
+            PlayerController.instance.DisablePlayer();
             Invoke("GameOver", 1f);
         }
     }
@@ -269,6 +270,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
+
         Invoke("LateGameOver", 2f);
     }
     public void LateGameOver()

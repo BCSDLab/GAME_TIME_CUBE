@@ -79,6 +79,8 @@ public class PlayerHitArea : MonoBehaviour
 
         for (int i = 0; i < loopCount; i++)
         {
+            if (GameManager.instance.isGameOver) break;
+
             m_colliderRenderer.color = Color.red;
             m_characterRenderer.color = HIT_COLOR;
             yield return new WaitForSeconds(BLINK_DELAY);
