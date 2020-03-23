@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38780b9a0437ffe49b7d89bf5de416f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spellDestroyed: 1
   target: {fileID: 0}
   speed: 5
   m_lockOnMark: {fileID: 8760339693924824446, guid: 2776d0a3bd381ab4181b4000ee9ee2c1,

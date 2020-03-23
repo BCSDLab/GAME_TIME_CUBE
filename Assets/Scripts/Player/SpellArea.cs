@@ -67,7 +67,9 @@ public class SpellArea : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            PoolManager.instance.PushToPool(collision.gameObject);
+            Bullet bullet = collision.GetComponent<Bullet>();
+            if (bullet == null || !bullet.m_spellDestroyed)
+                PoolManager.instance.PushToPool(collision.gameObject);
         }
     }
 
