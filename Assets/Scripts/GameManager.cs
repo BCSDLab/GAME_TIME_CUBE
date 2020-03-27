@@ -96,6 +96,9 @@ public class GameManager : MonoBehaviour
                 sw.InitSubWeaponPosition(swIdx);
             }
         }
+
+        FadeInOutController.instance.FadeInPanel();
+        FadeInOutController.instance.FadeInText();
     }
 
     void InitializeUI()

@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Obsolete/AlphaStage.unity
     guid: 18d52692250dfc348a577ed614731471
+  - enabled: 1
+    path: Assets/Scenes/ProtoStage 1.unity
+    guid: 54cdd764d3724d948a3f1ed85eb12a26
+  - enabled: 1
+    path: Assets/Scenes/ProtoStage 2.unity
+    guid: 55018ba6e20f46046b0681fc2db955f0
+  - enabled: 1
+    path: Assets/Scenes/ProtoStage 3.unity
+    guid: adcc65e92b257b44e89b4e0399ecc4e7
   m_configObjects: {}
