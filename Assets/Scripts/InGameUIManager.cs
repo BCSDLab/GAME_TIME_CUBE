@@ -328,9 +328,10 @@ public class InGameUIManager : MonoBehaviour
 
             m_continueText.text = "CONTINUE >>>";
 
-            float totalScore = (float)paramArr[paramIdx - 1];
+            float totalScore = (float)paramArr[paramArr.Length - 1];
             if (float.Parse(m_highScoreText.text) < totalScore) {
                 GameManager.instance.UpdateHighScore(totalScore);
+
                 m_highScoreText.text = totalScore.ToString();
                 m_newText.SetActive(true);
             }

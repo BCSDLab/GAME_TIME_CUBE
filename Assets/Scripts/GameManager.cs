@@ -32,8 +32,6 @@ public class GameManager : MonoBehaviour
     public int[] subWeaponCount; // Orbitor, Follower
     [System.NonSerialized]
     public float totalScore = 0;
-    //[System.NonSerialized]
-    //public float highScore = 0;
     [System.NonSerialized]
     public bool isPlayerAttacking = false;
     [System.NonSerialized]
