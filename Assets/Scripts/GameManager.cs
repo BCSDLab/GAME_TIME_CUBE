@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     public int[] subWeaponCount; // Orbitor, Follower
     [System.NonSerialized]
     public float totalScore = 0;
+    //[System.NonSerialized]
+    //public float highScore = 0;
     [System.NonSerialized]
     public bool isPlayerAttacking = false;
     [System.NonSerialized]
@@ -192,6 +194,16 @@ public class GameManager : MonoBehaviour
     public float GetScore()
     {
         return m_score;
+    }
+
+    public void UpdateHighScore(float score = 0)
+    {
+        PlayerPrefs.SetFloat("HighScore", score);
+    }
+
+    public float GetHighScore()
+    {
+        return PlayerPrefs.HasKey("HighScore") ? PlayerPrefs.GetFloat("HighScore") : 0;
     }
 
     void ResetScore()

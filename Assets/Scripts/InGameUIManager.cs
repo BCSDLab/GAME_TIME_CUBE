@@ -50,6 +50,8 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private GameObject m_timeOverText = null;
     [SerializeField]
+    private GameObject m_newText = null;
+    [SerializeField]
     private GameObject m_stageClearPanel = null;
     [SerializeField]
     private Text m_killCountText = null;
@@ -59,6 +61,8 @@ public class InGameUIManager : MonoBehaviour
     private Text m_stageScoreText = null;
     [SerializeField]
     private Text m_totalScoreText = null;
+    [SerializeField]
+    private Text m_highScoreText = null;
     [SerializeField]
     private Text m_continueText = null;
     #endregion
@@ -250,6 +254,7 @@ public class InGameUIManager : MonoBehaviour
         m_hitCountText.text = "0";
         m_stageScoreText.text = "0";
         m_totalScoreText.text = "0";
+        m_highScoreText.text = ((int)GameManager.instance.GetHighScore()).ToString();
         m_continueText.text = "";
 }
 
@@ -322,6 +327,13 @@ public class InGameUIManager : MonoBehaviour
             CancelInvoke("CallUpdateClearPanel");
 
             m_continueText.text = "CONTINUE >>>";
+
+            float totalScore = (float)paramArr[paramIdx - 1];
+            if (float.Parse(m_highScoreText.text) < totalScore) {
+                GameManager.instance.UpdateHighScore(totalScore);
+                m_highScoreText.text = totalScore.ToString();
+                m_newText.SetActive(true);
+            }
             paramIdx = 0;
 
             StageChanger.instance.GetComponent<BoxCollider2D>().enabled = true;
