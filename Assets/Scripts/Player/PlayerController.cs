@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
     private GameObject[] m_enemies;
     private Transform m_target;
 
+    private SpriteRenderer characterSPR = null;
+
     void Awake()
     {
         if (instance == null) instance = this;
@@ -150,11 +152,21 @@ public class PlayerController : MonoBehaviour
         velocity.y = -2f;
         m_rigidbody.velocity = velocity;
 
-        transform.Find("Hit Area").gameObject.SetActive(false);
-        SpriteRenderer SPR = transform.Find("Character Sprite").gameObject.GetComponent<SpriteRenderer>();
-        Color color = SPR.color;
+        Color color = characterSPR.color;
         color.a -= Time.deltaTime;
-        SPR.color = color;
+        characterSPR.color = color;
+    }
+
+    public void DisablePlayer()
+    {
+        GameObject hitArea = transform.Find("Hit Area").gameObject;
+        hitArea.GetComponent<SpriteRenderer>().enabled = false;
+        hitArea.GetComponent<CircleCollider2D>().enabled = false;
+        hitArea.GetComponent<PolygonCollider2D>().enabled = false;
+
+        GameObject characterSprite = transform.Find("Character Sprite").gameObject;
+        characterSPR = characterSprite.GetComponent<SpriteRenderer>();
+        characterSprite.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     #region ATTACK

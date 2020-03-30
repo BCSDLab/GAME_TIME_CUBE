@@ -197,6 +197,16 @@ public class GameManager : MonoBehaviour
         return m_score;
     }
 
+    public void UpdateHighScore(float score = 0)
+    {
+        PlayerPrefs.SetFloat("HighScore", score);
+    }
+
+    public float GetHighScore()
+    {
+        return PlayerPrefs.HasKey("HighScore") ? PlayerPrefs.GetFloat("HighScore") : 0;
+    }
+
     void ResetScore()
     {
         m_score = 0;
@@ -222,6 +232,7 @@ public class GameManager : MonoBehaviour
 
         if (playerHP == 0)
         {
+            PlayerController.instance.DisablePlayer();
             Invoke("GameOver", 1f);
         }
     }
@@ -229,7 +240,6 @@ public class GameManager : MonoBehaviour
     public void LifeUp(int scoreWhenMaxLife = 0)
     {
         if (playerHP == 0) {
-            // TODO: 플레이어 라이프 0 상태에서 라이프 아이템 획득 시
             Debug.Log("플레이어 라이프 0 상태에서 라이프 아이템 획득");
             return;
         }
@@ -272,6 +282,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
+
         Invoke("LateGameOver", 2f);
     }
     public void LateGameOver()
