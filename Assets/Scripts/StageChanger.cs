@@ -37,6 +37,7 @@ public class StageChanger : MonoBehaviour
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
             GameManager.instance.isLoading = true;
+            FadeInOutController.instance.FadeOutPanel();
             Invoke("LoadNextStage", 2f);
         }
     }
