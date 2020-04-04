@@ -200,11 +200,11 @@ public class GameManager : MonoBehaviour
     public void UpdateHighScore(float score = 0)
     {
         string sceneName = SceneManager.GetActiveScene().name;
-        if(sceneName.StartsWith("Stage "))
+        if(sceneName.StartsWith("Stage"))
         {
-            PlayerPrefs.SetFloat("HighScore_" + sceneName.Replace("Stage ", ""), score);
+            PlayerPrefs.SetFloat("HighScore_" + sceneName.Replace("Stage", ""), score);
 
-            Debug.Log("New HighScore_" + sceneName + " : " + score);
+            //Debug.Log("New HighScore_" + sceneName + " : " + score);
         }
     }
 
@@ -212,9 +212,9 @@ public class GameManager : MonoBehaviour
     {
         string highScoreName = "HighScore_", sceneName = SceneManager.GetActiveScene().name;
 
-        if (stage == -1 && sceneName.StartsWith("Stage "))
+        if (stage == -1 && sceneName.StartsWith("Stage"))
         {
-            highScoreName += sceneName.Replace("Stage ", "");
+            highScoreName += sceneName.Replace("Stage", "");
         }
         else
         {
