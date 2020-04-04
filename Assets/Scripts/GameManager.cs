@@ -199,12 +199,29 @@ public class GameManager : MonoBehaviour
 
     public void UpdateHighScore(float score = 0)
     {
-        PlayerPrefs.SetFloat("HighScore", score);
+        string sceneName = SceneManager.GetActiveScene().name;
+        if(sceneName.StartsWith("Stage "))
+        {
+            PlayerPrefs.SetFloat("HighScore_" + sceneName.Replace("Stage ", ""), score);
+
+            Debug.Log("New HighScore_" + sceneName + " : " + score);
+        }
     }
 
-    public float GetHighScore()
+    public float GetHighScore(int stage = -1)
     {
-        return PlayerPrefs.HasKey("HighScore") ? PlayerPrefs.GetFloat("HighScore") : 0;
+        string highScoreName = "HighScore_", sceneName = SceneManager.GetActiveScene().name;
+
+        if (stage == -1 && sceneName.StartsWith("Stage "))
+        {
+            highScoreName += sceneName.Replace("Stage ", "");
+        }
+        else
+        {
+            highScoreName += stage;
+        }
+
+        return PlayerPrefs.HasKey(highScoreName) ? PlayerPrefs.GetFloat(highScoreName) : 0;
     }
 
     void ResetScore()
