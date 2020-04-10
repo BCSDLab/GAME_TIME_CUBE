@@ -269,13 +269,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  m_ShotSFX: {fileID: 0}
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 5ce7c69fcfe2249459d91bcd1a8fe630, type: 3}
   count: 4
   speed: 1
   inDelay: 0.2
   m_isCountChange: 0
+  m_hasDestroyedSound: 1
 --- !u!1 &9192482403653531270
 GameObject:
   m_ObjectHideFlags: 0
