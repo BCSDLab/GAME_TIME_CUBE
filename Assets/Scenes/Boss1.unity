@@ -7492,7 +7492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  m_ShotSFX: {fileID: 0}
+  m_ShotSFX: {fileID: 8300000, guid: 429ff56d7f88e9448a261e618491d7bd, type: 3}
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: c90809046a829ff47b3dc56d68efd9f6, type: 3}
   count: 1
@@ -33204,11 +33204,13 @@ MonoBehaviour:
   m_pausePanel: {fileID: 66208672929507683}
   m_gameOverPanel: {fileID: 66208671515817133}
   m_timeOverText: {fileID: 1150005642}
+  m_newText: {fileID: 0}
   m_stageClearPanel: {fileID: 66208672310794368}
   m_killCountText: {fileID: 66208673157491213}
   m_hitCountText: {fileID: 66208672191215190}
   m_stageScoreText: {fileID: 66208672319704732}
   m_totalScoreText: {fileID: 66208672703989372}
+  m_highScoreText: {fileID: 0}
   m_continueText: {fileID: 66208671763512981}
 --- !u!82 &66208671284566070
 AudioSource:
@@ -35625,14 +35627,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8453631172040760657, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8453631172040760661, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
         type: 3}
       propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453631172040760657, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

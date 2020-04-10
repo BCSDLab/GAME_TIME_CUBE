@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38780b9a0437ffe49b7d89bf5de416f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spellDestroyed: 0
   target: {fileID: 0}
   speed: 4
   m_lockOnMark: {fileID: 8760339693924824446, guid: 300172479735d3640b3a54228119243d,
@@ -268,13 +269,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  m_ShotSFX: {fileID: 0}
+  m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
   count: 10
   speed: 1
   inDelay: 0.2
   m_isCountChange: 0
+  m_hasDestroyedSound: 1
 --- !u!1 &9192482403653531270
 GameObject:
   m_ObjectHideFlags: 0

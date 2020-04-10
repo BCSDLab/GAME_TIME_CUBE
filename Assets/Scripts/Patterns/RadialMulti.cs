@@ -9,6 +9,8 @@ public class RadialMulti : BulletPattern
     public float inDelay = 0.2f;
     [SerializeField]
     private bool m_isCountChange = false;
+    [SerializeField]
+    private bool m_hasDestroyedSound = false;
 
     private float m_theta;
 
@@ -31,6 +33,11 @@ public class RadialMulti : BulletPattern
                 bulletInst.transform.position = m_spawnPos.position;
                 bulletInst.transform.rotation = Quaternion.Euler(Vector3.forward * (m_theta * i - 90f));
                 bulletInst.SetActive(true);
+
+                if(m_hasDestroyedSound && i == 0)
+                {
+                    bulletInst.GetComponent<AudioSource>().PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
+                }
 
                 float a = 2f * Mathf.PI * i / count;
                 bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(a), speed * Mathf.Sin(a));

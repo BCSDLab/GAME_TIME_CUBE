@@ -7710,6 +7710,7 @@ MonoBehaviour:
   speed: 3
   inDelay: 1.2
   m_isCountChange: 1
+  m_hasDestroyedSound: 0
 --- !u!114 &513728061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10561,7 +10562,7 @@ MonoBehaviour:
     repeatCount: 0
     repeatDelay: 0
     engagePhase: 0
-  m_bossEngageTime: 1
+  m_bossEngageTime: 124
   m_boss: {fileID: 513728053}
   m_bossTracker: {fileID: 4125893928747804409}
   nextSceneName: ProtoStage 2
@@ -33564,11 +33565,13 @@ MonoBehaviour:
   m_pausePanel: {fileID: 66208672929507683}
   m_gameOverPanel: {fileID: 66208671515817133}
   m_timeOverText: {fileID: 1150005642}
+  m_newText: {fileID: 0}
   m_stageClearPanel: {fileID: 66208672310794368}
   m_killCountText: {fileID: 66208673157491213}
   m_hitCountText: {fileID: 66208672191215190}
   m_stageScoreText: {fileID: 66208672319704732}
   m_totalScoreText: {fileID: 66208672703989372}
+  m_highScoreText: {fileID: 0}
   m_continueText: {fileID: 66208671763512981}
 --- !u!82 &66208671284566070
 AudioSource:
@@ -35985,14 +35988,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8453631172040760657, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8453631172040760661, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
         type: 3}
       propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453631172040760657, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

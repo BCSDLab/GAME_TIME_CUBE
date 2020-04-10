@@ -5097,12 +5097,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
-  m_ShotSFX: {fileID: 0}
-  m_ShotSFXVolum: 0.5
+  m_ShotSFX: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
+  m_ShotSFXVolum: 0.15
   bullet: {fileID: 8760339693924824446, guid: 51b037e97a4ba93409672eba868cb14a, type: 3}
   count: 4
   speed: 2.5
   delay: 1
+  m_hasDestroyedSound: 1
 --- !u!114 &4277351289230969200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5115,5 +5116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c769971709509b74fbbbe33c6d45faa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spellDestroyed: 0
   m_crackTime: 2
   m_redMask: {fileID: 2158987036392458468}
