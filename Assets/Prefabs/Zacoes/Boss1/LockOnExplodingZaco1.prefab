@@ -5037,6 +5037,7 @@ MonoBehaviour:
   bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
   count: 16
   speed: 6
+  delay: 1
 --- !u!114 &1919022456
 MonoBehaviour:
   m_ObjectHideFlags: 0

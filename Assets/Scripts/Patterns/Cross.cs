@@ -19,6 +19,7 @@ public class Cross : BulletPattern
             bulletInst.transform.position = m_spawnPos.position;
             bulletInst.transform.rotation = Quaternion.Euler(Vector3.forward * (theta * i));
             bulletInst.SetActive(true);
+
             bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(Mathf.PI * 2f * i / count), speed * Mathf.Sin(Mathf.PI * 2f * i / count));
         }
 
