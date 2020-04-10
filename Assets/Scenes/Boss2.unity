@@ -7567,7 +7567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 500
+  m_hp: 5000
   m_destroyOnArrival: 1
   m_enterPos: {fileID: 911354489}
   m_frontPos: {fileID: 194131277}
@@ -33482,11 +33482,13 @@ MonoBehaviour:
   m_pausePanel: {fileID: 66208672929507683}
   m_gameOverPanel: {fileID: 66208671515817133}
   m_timeOverText: {fileID: 1150005642}
+  m_newText: {fileID: 0}
   m_stageClearPanel: {fileID: 66208672310794368}
   m_killCountText: {fileID: 66208673157491213}
   m_hitCountText: {fileID: 66208672191215190}
   m_stageScoreText: {fileID: 66208672319704732}
   m_totalScoreText: {fileID: 66208672703989372}
+  m_highScoreText: {fileID: 0}
   m_continueText: {fileID: 66208671763512981}
 --- !u!82 &66208671284566070
 AudioSource:

@@ -23,9 +23,11 @@ public class Cross : BulletPattern
             bulletInst.transform.rotation = Quaternion.Euler(Vector3.forward * (theta * i));
             bulletInst.SetActive(true);
 
-            if (m_hasDestroyedSound && i == 0)
+            if (m_hasDestroyedSound && i == 0 && bulletInst.GetComponent<AudioSource>().isPlaying)
+                yield return new WaitForSeconds(0f);
+            else
             {
-                bulletInst.GetComponent<AudioSource>().PlayOneShot(m_ShotSFX, m_ShotSFXVolum/8f);
+                FindObjectOfType<Boss2>().GetComponent<AudioSource>().PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
             }
 
             bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(Mathf.PI * 2f * i / count), speed * Mathf.Sin(Mathf.PI * 2f * i / count));
