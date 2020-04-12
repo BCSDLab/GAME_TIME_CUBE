@@ -97,9 +97,12 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        Attack();
-        Spell();
-        TimeControl();
+        if(m_gameManager.playerHP != 0)
+        {
+            Attack();
+            Spell();
+            TimeControl();
+        }
     }
 
     void FixedUpdate()
