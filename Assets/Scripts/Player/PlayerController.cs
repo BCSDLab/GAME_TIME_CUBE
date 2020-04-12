@@ -191,7 +191,7 @@ public class PlayerController : MonoBehaviour
             m_isAttackToggled = false;
         }
 
-        if (!GameManager.instance.isPlayerAttacking || m_hitArea.IsInvincible() || m_hasAttacked)
+        if (!GameManager.instance.isPlayerAttacking || m_hasAttacked)
             return;
 
         Shoot();
