@@ -5110,12 +5110,13 @@ MonoBehaviour:
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
   m_ShotSFX: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  m_ShotSFXVolum: 0.5
+  m_ShotSFXVolum: 0.2
   bullet: {fileID: 8760339693924824446, guid: 550c2ce6cf5c81b4e9abc7b2a0851977, type: 3}
   count: 5
   speed: 2
   delay: 1
-  m_hasDestroyedSound: 1
+  m_hasDestroyedSound: 0
+  m_hasDestroyedSound_Boss2: 1
 --- !u!114 &4277351289230969200
 MonoBehaviour:
   m_ObjectHideFlags: 0

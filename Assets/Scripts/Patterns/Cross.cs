@@ -10,12 +10,13 @@ public class Cross : BulletPattern
 
     [SerializeField]
     private bool m_hasDestroyedSound = false;
+    [SerializeField]
+    private bool m_hasDestroyedSound_Boss2 = false;
 
     protected override IEnumerator Fire()
     {
         float theta = 360f / count;
         m_audioSource.PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
-
         for (int i = 0; i < count; i++)
         {
             GameObject bulletInst = PoolManager.instance.PopFromPool(bullet.name);
@@ -24,6 +25,9 @@ public class Cross : BulletPattern
             bulletInst.SetActive(true);
 
             if (m_hasDestroyedSound && i == 0)
+                bulletInst.GetComponent<AudioSource>().PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
+
+            if (m_hasDestroyedSound_Boss2 && i == 0)
             {
                 if (!FindObjectOfType<Boss2>().GetComponent<AudioSource>().isPlaying)
                     FindObjectOfType<Boss2>().GetComponent<AudioSource>().PlayOneShot(m_ShotSFX, m_ShotSFXVolum);

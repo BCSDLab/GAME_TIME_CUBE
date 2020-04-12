@@ -5038,6 +5038,8 @@ MonoBehaviour:
   count: 16
   speed: 6
   delay: 1
+  m_hasDestroyedSound: 1
+  m_hasDestroyedSound_Boss2: 0
 --- !u!114 &1919022456
 MonoBehaviour:
   m_ObjectHideFlags: 0
