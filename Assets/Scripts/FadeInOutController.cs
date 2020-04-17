@@ -15,8 +15,6 @@ public class FadeInOutController : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     public void FadeOutPanel(float time = 2f)
