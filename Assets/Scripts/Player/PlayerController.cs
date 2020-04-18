@@ -97,9 +97,12 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        Attack();
-        Spell();
-        TimeControl();
+        if(m_gameManager.playerHP != 0)
+        {
+            Attack();
+            Spell();
+            TimeControl();
+        }
     }
 
     void FixedUpdate()
@@ -191,7 +194,7 @@ public class PlayerController : MonoBehaviour
             m_isAttackToggled = false;
         }
 
-        if (!GameManager.instance.isPlayerAttacking || m_hitArea.IsInvincible() || m_hasAttacked)
+        if (!GameManager.instance.isPlayerAttacking || m_hasAttacked)
             return;
 
         Shoot();
