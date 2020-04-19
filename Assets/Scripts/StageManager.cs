@@ -70,11 +70,12 @@ public class StageManager : MonoBehaviour
             mobInfo.repeatCount--;
 
             GameObject mobInst = Instantiate(mobInfo.mob);
+            string pathName = mobInfo.pathName;
 
-            if (mobInfo.pathName.Length > 0)
+            if (pathName.Length > 0)
             {
-                mobInst.GetComponent<Enemy>().pathName = mobInfo.pathName;
-                if (mobInfo.pathName.EndsWith("Left"))
+                mobInst.GetComponent<Enemy>().pathName = pathName;
+                if (pathName.EndsWith("Left"))
                     InGameUIManager.instance.WarningSide();
             }
 

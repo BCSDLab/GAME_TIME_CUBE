@@ -460,7 +460,7 @@ public class InGameUIManager : MonoBehaviour
         while(dt < 1f)
         {
             dt += 0.05f;
-            Debug.Log(dt);
+
             Color color = m_warningBar.color;
             color.a = Mathf.Sin(dt * 3.14f);
             m_warningBar.color = color;
