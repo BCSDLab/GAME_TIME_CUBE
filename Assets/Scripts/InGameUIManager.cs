@@ -65,6 +65,8 @@ public class InGameUIManager : MonoBehaviour
     private Text m_highScoreText = null;
     [SerializeField]
     private Text m_continueText = null;
+    [SerializeField]
+    private Image m_warningBar = null;
     #endregion
 
     private AudioSource m_scoreAudio;
@@ -447,6 +449,25 @@ public class InGameUIManager : MonoBehaviour
         m_bossTimer.SetActive(false);
     }
     #endregion
+
+    public void WarningSide()
+    {
+        StartCoroutine("WarningLeft");
+    }
+    IEnumerator WarningLeft()
+    {
+        float dt = 0f;
+        while(dt < 1f)
+        {
+            dt += 0.05f;
+            Debug.Log(dt);
+            Color color = m_warningBar.color;
+            color.a = Mathf.Sin(dt * 3.14f);
+            m_warningBar.color = color;
+
+            yield return new WaitForSeconds(UPDATE_DELAY);
+        }
+    }
 
     public void PauseGame(bool pause)
     {

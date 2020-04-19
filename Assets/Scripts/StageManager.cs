@@ -72,7 +72,11 @@ public class StageManager : MonoBehaviour
             GameObject mobInst = Instantiate(mobInfo.mob);
 
             if (mobInfo.pathName.Length > 0)
+            {
                 mobInst.GetComponent<Enemy>().pathName = mobInfo.pathName;
+                if (mobInfo.pathName.EndsWith("Left"))
+                    InGameUIManager.instance.WarningSide();
+            }
 
             yield return new WaitForSeconds(mobInfo.repeatDelay);
         }
