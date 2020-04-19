@@ -28600,7 +28600,7 @@ GameObject:
   - component: {fileID: 1760810762}
   - component: {fileID: 1760810761}
   m_Layer: 5
-  m_Name: Warning
+  m_Name: WarningBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
