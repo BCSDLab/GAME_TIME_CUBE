@@ -42,7 +42,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -110,9 +110,9 @@ TextureImporter:
       name: standing-Niam-open_0
       rect:
         serializedVersion: 2
-        x: 919
+        x: 906
         y: 0
-        width: 863
+        width: 876
         height: 2400
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d1041ba42c668249966c96864368e7b
+      spriteID: 0ec0eaaa5f747ae499a5c63ff5e8550b
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d39b959315846224f8c07b9e9352a12c
+    spriteID: 2652b8117fdbfa64bbe6af66468d8ccc
     vertices: []
     indices: 
     edges: []

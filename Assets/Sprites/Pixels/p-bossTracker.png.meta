@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 2ad03fe501a388a4c88f2dce094ed592
+guid: 2197c166bb1c5fa48a66493f05476d0c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: standing-Niam-close_0
+    21300000: p-bossindicator_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: standing-Niam-close_0
+      name: p-bossindicator_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 0
-        width: 875
-        height: 2400
+        x: 21
+        y: 21
+        width: 42
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 218d6726e5519b24096ae7a938103ad9
+      spriteID: 152e4b4578a599b4fa14d999386ddfd1
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cf35e73c6f354d74cb17615150b069c9
+    spriteID: e8a28bc567890b2478c6017a1f83c5c2
     vertices: []
     indices: 
     edges: []

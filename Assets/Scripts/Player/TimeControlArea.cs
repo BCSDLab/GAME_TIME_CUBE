@@ -18,12 +18,19 @@ public class TimeControlArea : MonoBehaviour
     public float reverseMultiplier;  // 원래 속도로 복귀시키기 위한 계수
 
     private Vector3 m_originalScale;  // 시간 제어 영역 초기 크기
+    private Quaternion m_originalRotation;
     private List<Rigidbody2D> m_collidingBullets = new List<Rigidbody2D>();  // 통과 중인 탄 리스트
 
     void Start()
     {
         reverseMultiplier = 1f / velocityMultiplier;
         m_originalScale = transform.localScale;
+        m_originalRotation = transform.localRotation;
+    }
+
+    void Update()
+    {
+        transform.Rotate(Vector3.forward);
     }
 
     void OnEnable()  // SetActive(true) 시 호출됨
@@ -42,6 +49,7 @@ public class TimeControlArea : MonoBehaviour
     {
         StopAllCoroutines();
         transform.localScale = m_originalScale;
+        transform.localRotation = m_originalRotation;
 
         foreach (Rigidbody2D bullet in m_collidingBullets)
         {

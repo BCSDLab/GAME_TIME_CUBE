@@ -19,13 +19,20 @@ public class SpellArea : MonoBehaviour
     private PlayerController m_playerController;
     private float m_sizeAdder;
     private Vector3 m_originalScale;
+    private Quaternion m_originalRotation;
 
     void Start()
     {
         m_playerController = GetComponentInParent<PlayerController>();
         m_originalScale = transform.localScale;
+        m_originalRotation = transform.localRotation;
 
         InGameUIManager.instance.InitDynSpellSlider(time);
+    }
+
+    void Update()
+    {
+        transform.Rotate(-Vector3.forward * 0.6f);
     }
 
     void OnEnable()
@@ -40,6 +47,7 @@ public class SpellArea : MonoBehaviour
         InGameUIManager.instance.EnableDynSpellSlider(false);
         StopAllCoroutines();
         transform.localScale = m_originalScale;
+        transform.localRotation = m_originalRotation;
     }
 
     IEnumerator Spell()

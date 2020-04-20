@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 35a063562e58b324cb4638a4e1250ce1
+guid: 67f9e33575e97ab449e15a9b5a443111
 TextureImporter:
   fileIDToRecycleName:
-    21300000: p-auburn-idle_0
-    21300002: p-auburn-idle_1
-    21300004: p-auburn-idle_2
-    21300006: p-auburn-idle_3
-    21300008: p-auburn-idle_4
-    21300010: p-auburn-idle_5
-    21300012: p-auburn-idle_6
-    21300014: p-auburn-idle_7
+    21300000: p-epine-idle_0
+    21300002: p-epine-idle_1
+    21300004: p-epine-idle_2
+    21300006: p-epine-idle_3
+    21300008: p-epine-idle_4
+    21300010: p-epine-idle_5
+    21300012: p-epine-idle_6
+    21300014: p-epine-idle_7
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -114,13 +114,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: p-auburn-idle_0
+      name: p-epine-idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1750
-        height: 1470
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,19 +128,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe910a77ce2eca4ab7e0c00c80858e0
+      spriteID: b7387d4ff78f39340b5da80b33fd7d0e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p-auburn-idle_1
+      name: p-epine-idle_1
       rect:
         serializedVersion: 2
-        x: 1750
+        x: 1400
         y: 0
-        width: 1750
-        height: 1470
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,19 +148,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e797218d2df32c48bd1de90439e1457
+      spriteID: 4d35ebb93fb9278458093afc8bdcf9b5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p-auburn-idle_2
+      name: p-epine-idle_2
       rect:
         serializedVersion: 2
-        x: 3500
+        x: 2800
         y: 0
-        width: 1750
-        height: 1470
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,19 +168,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c4ba836871e18b4bbdf27f45e7d8e00
+      spriteID: ce8127afde1974847b80434a3010c0ef
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p-auburn-idle_3
+      name: p-epine-idle_3
       rect:
         serializedVersion: 2
-        x: 5250
+        x: 4200
         y: 0
-        width: 1750
-        height: 1470
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,19 +188,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 411f0df82dd55f048987043b4e7de4b5
+      spriteID: 631fca501e783ac40b2707c12f1bca6b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p-auburn-idle_4
+      name: p-epine-idle_4
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 1400
+        height: 1400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585d749d87dbba642a68f1cb78972576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: p-epine-idle_5
       rect:
         serializedVersion: 2
         x: 7000
         y: 0
-        width: 1750
-        height: 1470
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,19 +228,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4240aaeb107602c41a0611c531f96a8d
+      spriteID: 2ce9176a17a6c20408d4f830c93a363a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p-auburn-idle_5
+      name: p-epine-idle_6
       rect:
         serializedVersion: 2
-        x: 8750
+        x: 8400
         y: 0
-        width: 1750
-        height: 1470
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,19 +248,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16f0cc43415c3c648952af8f9961ac67
+      spriteID: 313d9ffe54e869748867a251cd582deb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p-auburn-idle_6
+      name: p-epine-idle_7
       rect:
         serializedVersion: 2
-        x: 10500
+        x: 9800
         y: 0
-        width: 1750
-        height: 1470
+        width: 1400
+        height: 1400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,27 +268,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4766c78271367b040be5f4bb5f2aadb2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: p-auburn-idle_7
-      rect:
-        serializedVersion: 2
-        x: 12250
-        y: 0
-        width: 1750
-        height: 1470
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b58f9754afcb2194d863d86349b7464f
+      spriteID: 3b34e563a0179fc44a3609cbb6bbb904
       vertices: []
       indices: 
       edges: []
@@ -276,7 +276,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 767d1f83d8eb4c340b0a3379811c8811
+    spriteID: 6db52beb06d448144b7be99360bdeb61
     vertices: []
     indices: 
     edges: []
