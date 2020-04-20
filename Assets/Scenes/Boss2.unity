@@ -7873,18 +7873,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dialogue:
-    nameL: "\uC5D0\uD53C\uB124"
-    nameR: "\uD50C\uB808"
-    isSpeakerLeft: 00
+    nameL: "\uD50C\uB808"
+    nameR: "\uC5D0\uD53C\uB124"
+    isSpeakerLeft: 010001000100010001
     sentences:
-    - "\u31411"
-    spriteNs: 00000000
+    - "(......\uC774 \uB140\uC11D\uC740 \uB610 \uBB50\uC57C?)"
+    - "\uC774 \uB140\uC11D\uC740 \uBB50\uB0D0\uACE0 \uC0DD\uAC01\uD588\uC9C0?"
+    - "\uC544... \uC544\uB2CC\uB370? (\uC0DD\uAC01\uC744 \uC77D\uC744 \uC218 \uC788\uB294
+      \uAC74\uAC00?!)"
+    - "\uC774\uBC88\uC5D0\uB294 \uB300\uB2E8\uD558\uB2E4\uACE0 \uC0DD\uAC01\uD588\uC9C0?"
+    - "...\uADF8\uAC74 \uC9C4\uC9DC \uC544\uB2CC\uB370."
+    - "\uB2E8\uB3C4\uC9C1\uC785\uC801\uC73C\uB85C \uB9D0\uD558\uC790\uBA74, \uB09C
+      \uB124 \uD050\uBE0C\uB97C \uBE7C\uC557\uACE0 \uC2F6\uC5B4\uC11C \uC654\uC5B4."
+    - "\uADF8\uB7FC \uC774\uBC88\uC5D4 \uB0B4\uAC00 \uBB34\uC2A8 \uC0DD\uAC01\uC744
+      \uD588\uB294\uC9C0 \uB9DE\uCDB0 \uBD10."
+    - "\uC74C... \uD798\uB4E0 \uC2F8\uC6C0\uC774 \uB420 \uAC83 \uAC19\uB2E4\uAD6C?"
+    - "\uC0AC\uC2E4\uC740 \uC544\uBB34 \uC0DD\uAC01\uB3C4 \uC548 \uD588\uC5B4."
+    spriteNs: 000000000000000001000000000000000100000000000000010000000000000001000000
     imagesL:
     - {fileID: 21300000, guid: 2ad03fe501a388a4c88f2dce094ed592, type: 3}
     - {fileID: 21300000, guid: 83addb0bfd9d1b948ad0e20c9e211b3c, type: 3}
     imagesR:
-    - {fileID: 21300000, guid: ad2247531b78af74a92e656d16160602, type: 3}
-    - {fileID: 21300000, guid: ad2247531b78af74a92e656d16160602, type: 3}
+    - {fileID: 21300000, guid: 51af6eb6179794d4bacd59801f14192d, type: 3}
 --- !u!70 &513728069
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7911,7 +7921,7 @@ Animator:
   m_GameObject: {fileID: 513728053}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff7eae863c82b994f9058544f988cb82, type: 2}
+  m_Controller: {fileID: 9100000, guid: cd95064be14f7eb419e9a7dee0594b62, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7957,12 +7967,12 @@ SpriteRenderer:
   m_SortingLayerID: 276158161
   m_SortingLayer: 3
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 35a063562e58b324cb4638a4e1250ce1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67f9e33575e97ab449e15a9b5a443111, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 3.5000002, y: 3.5000002}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -35845,7 +35855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -519.89954, y: -30}
+  m_AnchoredPosition: {x: -550, y: 0}
   m_SizeDelta: {x: 300, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1263577489177241833
@@ -36457,7 +36467,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ad2247531b78af74a92e656d16160602, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51af6eb6179794d4bacd59801f14192d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -37170,7 +37180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 520, y: -30}
+  m_AnchoredPosition: {x: 550, y: 0}
   m_SizeDelta: {x: 300, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &7266687511865272999

@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 2ad03fe501a388a4c88f2dce094ed592
+guid: bf8ddbd4439a6194297dccf09397b95d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: standing-Niam-close_0
+    21300000: standing-Mir_0
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -107,12 +107,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: standing-Niam-close_0
+      name: standing-Mir_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 759
         y: 0
-        width: 875
+        width: 980
         height: 2400
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 218d6726e5519b24096ae7a938103ad9
+      spriteID: 9ae8828445e7436438a6c7adf4b6918c
       vertices: []
       indices: 
       edges: []
@@ -129,7 +129,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: cf35e73c6f354d74cb17615150b069c9
+    spriteID: cacc7390631693947a88e15c62201f17
     vertices: []
     indices: 
     edges: []
