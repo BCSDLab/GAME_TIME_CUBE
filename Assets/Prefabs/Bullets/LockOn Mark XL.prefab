@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8760339693924824441}
   m_Layer: 0
   m_Name: LockOn Mark XL
-  m_TagString: Enemy
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

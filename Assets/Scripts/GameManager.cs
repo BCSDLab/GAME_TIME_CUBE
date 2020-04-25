@@ -86,19 +86,16 @@ public class GameManager : MonoBehaviour
     {
         StageChanger.instance.LoadData();
         SubWeaponItem sw = StageChanger.instance.subWeaponItem.GetComponent<SubWeaponItem>();
+        Transform playerTR = PlayerController.instance.transform;
 
-        Transform playerTR = GameObject.FindGameObjectWithTag("Player").transform;
         for(int swIdx = 0; swIdx < subWeaponCount.Length; swIdx++)
         {
-            for(int i = 1; i <= subWeaponCount[swIdx]; i++)
+            for(int i = 0; i < subWeaponCount[swIdx]; i++)
             {
                 Instantiate(sw.subWeapon[swIdx], playerTR.position, Quaternion.identity).name = sw.subWeapon[swIdx].name + "_" + i;
                 sw.InitSubWeaponPosition(swIdx);
             }
         }
-
-        FadeInOutController.instance.FadeInPanel();
-        FadeInOutController.instance.FadeInText();
     }
 
     void InitializeUI()
@@ -111,6 +108,9 @@ public class GameManager : MonoBehaviour
         {
             InGameUIManager.instance.DamagePlayer(hpSlot - 1);
         }
+
+        FadeInOutController.instance.FadeInPanel();
+        FadeInOutController.instance.FadeInText();
     }
 
     #region TIME CUBE
@@ -316,9 +316,12 @@ public class GameManager : MonoBehaviour
         foreach (GameObject bullet in bullets)
         {
             ParticleSystem particleSystem = bullet.GetComponentInChildren<ParticleSystem>();
-            GameObject particleInst = Instantiate(particleSystem.gameObject, bullet.transform.position, Quaternion.identity, null);
-            particleInst.GetComponent<ParticleSystem>().Play();
-            Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
+            if (particleSystem)
+            {
+                GameObject particleInst = Instantiate(particleSystem.gameObject, bullet.transform.position, Quaternion.identity, null);
+                particleInst.GetComponent<ParticleSystem>().Play();
+                Destroy(particleInst, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
+            }
 
             PoolManager.instance.PushToPool(bullet);
         }
