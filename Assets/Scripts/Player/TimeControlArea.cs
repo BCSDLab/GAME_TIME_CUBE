@@ -28,7 +28,7 @@ public class TimeControlArea : MonoBehaviour
         m_originalRotation = transform.localRotation;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.Rotate(Vector3.forward);
     }

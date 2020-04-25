@@ -5193,7 +5193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c757674f2873d22488bb5fb8e58dea97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellCharge: 100
+  spellCharge: 20
 --- !u!58 &92154769
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5655,7 +5655,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: b8d87229ca3995b4eb9bec48b2445e0f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7046,7 +7046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &316603151
 Transform:
   m_ObjectHideFlags: 0
@@ -15193,10 +15193,10 @@ MonoBehaviour:
     repeatCount: 0
     repeatDelay: 0
     engagePhase: 0
-  m_bossEngageTime: 124
+  m_bossEngageTime: 1
   m_boss: {fileID: 1748340883}
   m_bossTracker: {fileID: 765851966}
-  nextSceneName: ProtoStage 2
+  nextSceneName: Stage 2
 --- !u!1 &1150005642
 GameObject:
   m_ObjectHideFlags: 0
@@ -15670,7 +15670,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274748752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519612455}
@@ -15680,7 +15680,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1274748754
 MonoBehaviour:
@@ -23055,8 +23055,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dialogue:
-    nameL: "\uD50C\uB808"
-    nameR: "\uBE0C\uB77C\uC774\uC5B8"
+    nameL: Niam
+    nameR: Brian
     isSpeakerLeft: 00010001000001
     sentences:
     - What business are you here for?
@@ -38077,6 +38077,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796773464430945977, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2,
+        type: 3}
+      propertyPath: power
+      value: 3000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2, type: 3}

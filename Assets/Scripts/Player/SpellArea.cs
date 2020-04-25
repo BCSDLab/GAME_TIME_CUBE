@@ -30,7 +30,7 @@ public class SpellArea : MonoBehaviour
         InGameUIManager.instance.InitDynSpellSlider(time);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.Rotate(-Vector3.forward * 0.6f);
     }

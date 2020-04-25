@@ -5140,7 +5140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c757674f2873d22488bb5fb8e58dea97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellCharge: 100
+  spellCharge: 20
 --- !u!58 &92154769
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6658,7 +6658,7 @@ Transform:
   - {fileID: 324638826}
   - {fileID: 92154767}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280897795
 GameObject:
@@ -20668,7 +20668,7 @@ MonoBehaviour:
   m_bossEngageTime: 175
   m_boss: {fileID: 1147280331}
   m_bossTracker: {fileID: 170566064}
-  nextSceneName: Test_Setting
+  nextSceneName: _Title
 --- !u!1 &1123973912
 GameObject:
   m_ObjectHideFlags: 0
@@ -20700,7 +20700,7 @@ Transform:
   - {fileID: 170566063}
   - {fileID: 1407785102}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147280331
 GameObject:
@@ -21106,8 +21106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dialogue:
-    nameL: "\uD50C\uB808"
-    nameR: "\uBBF8\uB974"
+    nameL: Niam
+    nameR: Mir
     isSpeakerLeft: 000100010001010001
     sentences:
     - I'm so touched that you came all the way here to find me!
@@ -34353,7 +34353,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910852608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 641545338}
@@ -34363,7 +34363,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1910852610
 MonoBehaviour:

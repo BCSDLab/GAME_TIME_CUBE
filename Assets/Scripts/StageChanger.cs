@@ -22,10 +22,7 @@ public class StageChanger : MonoBehaviour
         else Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-    }
 
-    private void Start()
-    {
         m_savedSubWeaponCount = new int[subWeaponItem.GetComponent<SubWeaponItem>().subWeapon.Length];
     }
 
