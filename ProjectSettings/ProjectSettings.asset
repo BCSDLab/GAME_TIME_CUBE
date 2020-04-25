@@ -592,7 +592,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: 2ee6963b-96c0-498f-8e39-bd6269191a90
   framebufferDepthMemorylessMode: 0
-  projectName: TimeCube (1)
+  projectName: TimeCube
   organizationId: time-cube
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

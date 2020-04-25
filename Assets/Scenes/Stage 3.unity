@@ -5478,9 +5478,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243597088706285276, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: b8d87229ca3995b4eb9bec48b2445e0f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 382328fc788048e44aae3d3b23560a5f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5575,9 +5575,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243597088706285276, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3278f26573ddb89429b668e3794eb7c9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c905a1a4c4792234bb23f0b18a11ab3e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -21110,21 +21110,16 @@ MonoBehaviour:
     nameR: "\uBBF8\uB974"
     isSpeakerLeft: 000100010001010001
     sentences:
-    - "\uB0A0 \uCC3E\uC73C\uB7EC \uC5EC\uAE30\uAE4C\uC9C0 \uC640 \uC8FC\uB2E4\uB2C8
-      \uC815\uB9D0 \uAC10\uB3D9\uC774\uC57C!"
-    - "\uBBF8\uB974! \uC774\uAC8C \uB300\uCCB4 \uBB50 \uD558\uB294 \uC9D3\uC774\uC57C!"
-    - "\uC7A0\uC790\uCF54 \uD0C0\uC784 \uD050\uBE0C\uB97C \uB0B4\uAC8C \uC918! \uADF8\uB7EC\uBA74
-      \uB204\uAD6C\uB3C4 \uB2E4\uCE58\uC9C0 \uC54A\uC744 \uAC70\uC57C."
-    - "\uC815\uB9D0? \uB3D9\uC0DD\uC774 \uAC00\uC9C0\uACE0 \uC2F6\uB2E4\uBA74 \uC918\uC57C\uC9C0.
-      \uCC98\uC74C\uBD80\uD130 \uB9D0\uD558\uC9C0 \uADF8\uB7AC\uC5B4."
-    - "\uC9C4\uC9DC \uC8FC\uB294 \uAC70\uC57C?"
-    - "\uC544\uB2C8."
-    - "...\uB124\uAC00 \uD0C0\uC784 \uD050\uBE0C \uB450 \uAC1C\uB97C \uAC16\uAC8C
-      \uB418\uBA74 \uBB34\uC2A8 \uC9D3\uC744 \uBC8C\uC77C\uC9C0 \uC54C \uC218\uAC00
-      \uC5C6\uC5B4."
-    - "......\uADF8\uB807\uB2E4\uBA74 \uBB34\uB825\uC73C\uB85C\uB77C\uB3C4 \uBE7C\uC557\uB294
-      \uC218\uBC16\uC5D0. \uC8FD\uC5B4\uB77C-!!"
-    - "(\uC774\uAC8C \uC5B8\uB2C8\uD55C\uD14C \uD560 \uB9D0\uC778\uAC00.)"
+    - I'm so touched that you came all the way here to find me!
+    - Mir! What the hell are you doing?
+    - Give me the Cube in good manners! Then no one will get hurt.
+    - Really? I'll give it to my sister if she wants it. You should have told me from
+      the beginning.
+    - Are you really giving it to me?
+    - No.
+    - '...I can''t expect what would happen when you have two Cubes.'
+    - '......Then I have no choice but to take it by force. Die-!!'
+    - (Is this what you say to your sister?)
     spriteNs: 000000000100000000000000010000000000000001000000010000000000000000000000
     imagesL:
     - {fileID: 21300000, guid: 2ad03fe501a388a4c88f2dce094ed592, type: 3}

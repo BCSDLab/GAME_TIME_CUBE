@@ -5653,9 +5653,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243597088706285276, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 135979b4788d49c43a6b8f9787b60360, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b8d87229ca3995b4eb9bec48b2445e0f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5750,9 +5750,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243597088706285276, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6309f313583fb7546b3afe0ff96d1f8b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3278f26573ddb89429b668e3794eb7c9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -14037,7 +14037,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &837894284
 GameObject:
@@ -23059,14 +23059,13 @@ MonoBehaviour:
     nameR: "\uBE0C\uB77C\uC774\uC5B8"
     isSpeakerLeft: 00010001000001
     sentences:
-    - "\uBB34\uC2A8 \uC6A9\uBB34\uB85C \uC624\uC168\uC2B5\uB2C8\uAE4C?"
-    - "\uB85C\uCF13 \uBC1C\uC0AC \uC554\uD638\uAC00 \uD544\uC694\uD574\uC11C\uC694."
-    - "\uC554\uD638\uB294 \uC65C \uD544\uC694\uD558\uC2ED\uB2C8\uAE4C?"
-    - "\uC81C \uB3D9\uC0DD\uC774 \uB2EC\uC5D0 \uB0A9\uCE58\uB2F9\uD588\uAC70\uB4E0\uC694."
-    - "\uADF8\uB7F0 \uC0AC\uC5F0\uC774 \uC788\uC5C8\uAD70\uC694. \uC554\uD638\uB294
-      3A..."
-    - "\uB77C\uACE0 \uD560 \uC904 \uC544\uC168\uC2B5\uB2C8\uAE4C?"
-    - "\uC5ED\uC2DC \uC548 \uB418\uB098?"
+    - What business are you here for?
+    - I need a rocket launch code.
+    - Why do you need that?
+    - My sister is on the moon, because she was kidnapped.
+    - That's such a thing. The code is 3A...
+    - '......Did you think I''d tell you?'
+    - Of course not.
     spriteNs: 00000000010000000000000001000000000000000000000001000000
     imagesL:
     - {fileID: 21300000, guid: 2ad03fe501a388a4c88f2dce094ed592, type: 3}
@@ -37285,7 +37284,7 @@ Transform:
   m_Children:
   - {fileID: 4248338703142506794}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4248338703276155682
 MonoBehaviour:
