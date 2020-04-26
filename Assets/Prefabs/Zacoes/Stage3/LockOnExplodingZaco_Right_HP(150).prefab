@@ -4920,7 +4920,7 @@ MonoBehaviour:
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: f4406a2f56003414fae1496b67105500, type: 3}
   count: 1
-  delay: 3
+  delay: 2.9
 --- !u!114 &1919022456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5060,3 +5060,6 @@ MonoBehaviour:
   bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
   count: 10
   speed: 2
+  delay: 1
+  m_hasDestroyedSound: 0
+  m_hasDestroyedSound_Boss2: 0
