@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         SubWeaponItem sw = StageChanger.instance.subWeaponItem.GetComponent<SubWeaponItem>();
         Transform playerTR = PlayerController.instance.transform;
 
-        for(int swIdx = 0; swIdx < subWeaponCount.Length; swIdx++)
+        for (int swIdx = 0; swIdx < subWeaponCount.Length; swIdx++)
         {
             for(int i = 0; i < subWeaponCount[swIdx]; i++)
             {

@@ -21,6 +21,13 @@ public class SubWeaponItem : Item
         Instantiate(subWeapon[swIdx], transform.position, Quaternion.identity).name = subWeapon[swIdx].name + "_" + GameManager.instance.subWeaponCount[swIdx];
         InitSubWeaponPosition(swIdx);
     }
+    public void PickUpWithName(string swName)
+    {
+        int swIdx = (int)System.Enum.Parse(typeof(SubWeapon), swName);
+        GameManager.instance.subWeaponCount[swIdx]++;
+        Instantiate(subWeapon[swIdx], PlayerController.instance.transform.position, Quaternion.identity).name = subWeapon[swIdx].name + "_" + GameManager.instance.subWeaponCount[swIdx];
+        InitSubWeaponPosition(swIdx);
+    }
 
     #region Position
     public void InitSubWeaponPosition(int swIdx)

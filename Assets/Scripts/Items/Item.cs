@@ -83,7 +83,6 @@ public abstract class Item : MonoBehaviour
         float atan = Mathf.Atan2(direction.y, direction.x);
         float cos = Mathf.Cos(atan);
         float sin = Mathf.Sin(atan);
-
         m_rigidbody.velocity = new Vector2(AUTO_ACHIEVE_SPEED * cos, AUTO_ACHIEVE_SPEED * sin);
     }
 
