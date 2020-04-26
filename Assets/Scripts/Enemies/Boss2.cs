@@ -25,6 +25,8 @@ public class Boss2 : Enemy
     [SerializeField]
     private GameObject m_subWeaponItem = null;
     [SerializeField]
+    private GameObject m_lifeItem = null;
+    [SerializeField]
     private ItemList[] m_dropItemLists = null;
 
     [SerializeField]
@@ -448,6 +450,7 @@ public class Boss2 : Enemy
         m_bossTracker.SetActive(false);
         yield return new WaitForSeconds(0.4f);
 
+        DropLifeItem();
         DropSubWeaponItem();
         m_outParticleAudio.Play();
         yield return new WaitForSeconds(3f);
@@ -471,6 +474,14 @@ public class Boss2 : Enemy
         if (m_subWeaponItem)
         {
             DropItem(m_subWeaponItem);
+        }
+    }
+
+    void DropLifeItem()
+    {
+        if (m_lifeItem)
+        {
+            DropItem(m_lifeItem);
         }
     }
 }
