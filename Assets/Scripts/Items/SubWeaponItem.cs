@@ -15,7 +15,6 @@ public class SubWeaponItem : Item
 
     protected override void PickUp()
     {
-        Debug.Log("PickUp!");
         int swIdx = Random.Range(0, subWeapon.Length);
 
         GameManager.instance.subWeaponCount[swIdx]++;

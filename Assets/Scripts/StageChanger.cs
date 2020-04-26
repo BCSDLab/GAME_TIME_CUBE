@@ -50,15 +50,10 @@ public class StageChanger : MonoBehaviour
 
     public void SaveData()
     {
-        Debug.Log("Saved");
         m_savedSpellEnergy = GameManager.instance.spellEnergy;
         m_savedPlayerPower = GameManager.instance.playerPower;
         m_savedPlayerHP = GameManager.instance.GetPlayerHP();
         m_savedSubWeaponCount = GameManager.instance.subWeaponCount;
-        for(int i = 0; i < m_savedSubWeaponCount.Length; i++)
-        {
-            Debug.Log("m_savedSubWeaponCount[" + i + "] : " + m_savedSubWeaponCount[i]);
-        }
         m_savedTotalScore += GameManager.instance.GetScore();
     }
 

@@ -88,10 +88,8 @@ public class GameManager : MonoBehaviour
         SubWeaponItem sw = StageChanger.instance.subWeaponItem.GetComponent<SubWeaponItem>();
         Transform playerTR = PlayerController.instance.transform;
 
-        Debug.Log("subWeaponCount.Length : " + subWeaponCount.Length);
         for (int swIdx = 0; swIdx < subWeaponCount.Length; swIdx++)
         {
-            Debug.Log("subWeaponCount[" + swIdx + "] : " + subWeaponCount[swIdx]);
             for(int i = 0; i < subWeaponCount[swIdx]; i++)
             {
                 Instantiate(sw.subWeapon[swIdx], playerTR.position, Quaternion.identity).name = sw.subWeapon[swIdx].name + "_" + i;

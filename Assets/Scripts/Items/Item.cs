@@ -53,7 +53,7 @@ public abstract class Item : MonoBehaviour
             m_rigidbody.AddForce(Vector2.down);
         }
 
-        if (!m_isAutoAchieved && GameManager.instance.isPlayerSpelling || GameManager.instance.isDialogueOn /*|| GameManager.instance.isBossDefeated*/)
+        if (!m_isAutoAchieved && GameManager.instance.isPlayerSpelling || GameManager.instance.isDialogueOn)
         {
             m_isAutoAchieved = true;
         }

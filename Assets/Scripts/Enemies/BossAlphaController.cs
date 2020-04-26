@@ -348,7 +348,8 @@ public class BossAlphaController : Enemy
     {
         if (m_subWeaponItem)
         {
-            DropItem(m_subWeaponItem);
+            DropItem(m_subWeaponItem); // 아래와 같이 사용
+            // m_subWeaponItem.GetComponent<SubWeaponItem>().PickUpWithName("Orbitor");
         }
     }
 }
