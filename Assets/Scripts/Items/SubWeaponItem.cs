@@ -15,8 +15,16 @@ public class SubWeaponItem : Item
 
     protected override void PickUp()
     {
+        Debug.Log("PickUp!");
         int swIdx = Random.Range(0, subWeapon.Length);
 
+        GameManager.instance.subWeaponCount[swIdx]++;
+        Instantiate(subWeapon[swIdx], transform.position, Quaternion.identity).name = subWeapon[swIdx].name + "_" + GameManager.instance.subWeaponCount[swIdx];
+        InitSubWeaponPosition(swIdx);
+    }
+    public void PickUpWithName(string swName)
+    {
+        int swIdx = (int)System.Enum.Parse(typeof(SubWeapon), swName);
         GameManager.instance.subWeaponCount[swIdx]++;
         Instantiate(subWeapon[swIdx], transform.position, Quaternion.identity).name = subWeapon[swIdx].name + "_" + GameManager.instance.subWeaponCount[swIdx];
         InitSubWeaponPosition(swIdx);

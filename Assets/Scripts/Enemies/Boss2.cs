@@ -470,7 +470,8 @@ public class Boss2 : Enemy
     {
         if (m_subWeaponItem)
         {
-            DropItem(m_subWeaponItem);
+            //DropItem(m_subWeaponItem);
+            m_subWeaponItem.GetComponent<SubWeaponItem>().PickUpWithName("Orbitor");
         }
     }
 }

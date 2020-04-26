@@ -22970,8 +22970,9 @@ MonoBehaviour:
   m_moveTime: 1
   m_moveSpeed: 4
   m_bossTracker: {fileID: 765851966}
-  m_subWeaponItem: {fileID: 5131648617499383124, guid: 7c46f6a1227f42a4097da89d6449debf,
+  m_subWeaponItem: {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e,
     type: 3}
+  m_lifeItem: {fileID: 0}
   m_dropItemLists:
   - items:
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
