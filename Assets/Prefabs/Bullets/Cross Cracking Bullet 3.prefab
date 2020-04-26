@@ -5098,7 +5098,7 @@ MonoBehaviour:
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
   m_ShotSFX: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
-  m_ShotSFXVolum: 0.5
+  m_ShotSFXVolum: 0.3
   bullet: {fileID: 8760339693924824446, guid: 51b037e97a4ba93409672eba868cb14a, type: 3}
   count: 4
   speed: 2.5

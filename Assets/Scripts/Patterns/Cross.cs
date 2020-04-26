@@ -29,8 +29,8 @@ public class Cross : BulletPattern
 
             if (m_hasDestroyedSound_Boss2 && i == 0)
             {
-                if (!FindObjectOfType<Boss2>().GetComponent<AudioSource>().isPlaying)
-                    FindObjectOfType<Boss2>().GetComponent<AudioSource>().PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
+                bulletInst.GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+                bulletInst.GetComponent<AudioSource>().PlayOneShot(m_ShotSFX, m_ShotSFXVolum);
             }
 
             bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * Mathf.Cos(Mathf.PI * 2f * i / count), speed * Mathf.Sin(Mathf.PI * 2f * i / count));
