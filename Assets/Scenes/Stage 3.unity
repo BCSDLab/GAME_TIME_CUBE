@@ -20665,7 +20665,7 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  m_bossEngageTime: 175
+  m_bossEngageTime: 178
   m_boss: {fileID: 1147280331}
   m_bossTracker: {fileID: 170566064}
   nextSceneName: _Title
@@ -39098,6 +39098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796773464430945977, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2,
+        type: 3}
+      propertyPath: power
+      value: 3500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2, type: 3}

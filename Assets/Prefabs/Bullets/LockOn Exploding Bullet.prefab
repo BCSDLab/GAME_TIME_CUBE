@@ -151,7 +151,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: d92f251fcf57ed24eab922b79ff629e4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_spawnPos: {fileID: 0}
   m_startDelay: 0
   m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
-  m_ShotSFXVolum: 0.5
+  m_ShotSFXVolum: 0.3
   bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
   count: 10
   speed: 1
