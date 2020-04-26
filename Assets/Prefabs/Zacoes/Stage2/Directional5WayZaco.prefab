@@ -5040,6 +5040,9 @@ MonoBehaviour:
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 8
   speed: 3
+  delay: 1
+  m_hasDestroyedSound: 0
+  m_hasDestroyedSound_Boss2: 0
 --- !u!114 &2128469474297340662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5060,6 +5063,6 @@ MonoBehaviour:
     items:
     - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
-    counts: 0400000003000000
+    counts: 0300000003000000
   m_isZacoInvincible: 0
   m_hasZacoEndPattern: 1

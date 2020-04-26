@@ -4777,7 +4777,7 @@ GameObject:
   - component: {fileID: 5875172913077719939}
   - component: {fileID: 172328664871883220}
   m_Layer: 0
-  m_Name: DirectionalAimedZaco_1Shot_Right_HP(130)
+  m_Name: DirectionalAimedZaco_1Shot_Right_HP(100)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5012,13 +5012,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawnPos: {fileID: 0}
-  m_startDelay: 0
+  m_startDelay: 1
   m_ShotSFX: {fileID: 8300000, guid: e24c7a498073a264e93ed07bc4dafe1a, type: 3}
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 43694bc3713ea5a45870dab2de1c5e9f, type: 3}
   target: {fileID: 0}
   count: 1
-  speed: 4
+  speed: 5
   inDelay: 0.1
   outDelay: 3
 --- !u!114 &5875172913077719939
@@ -5057,12 +5057,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 4
-  m_hp: 130
+  m_hp: 100
   m_destroyOnArrival: 1
   m_dropItemList:
     items:
     - {fileID: 7266687512420095478, guid: 25b1505320c0e9d418d54ba42ada10e5, type: 3}
     - {fileID: 1796773464430945974, guid: d02bef780c7d53d4783693fcbc50bc0b, type: 3}
-    counts: 0200000002000000
+    counts: 0300000001000000
   m_isZacoInvincible: 0
   m_hasZacoEndPattern: 0

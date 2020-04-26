@@ -4935,7 +4935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 3
-  m_hp: 300
+  m_hp: 240
   m_destroyOnArrival: 1
   m_dropItemList:
     items:
@@ -5060,3 +5060,6 @@ MonoBehaviour:
   bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
   count: 10
   speed: 2
+  delay: 1
+  m_hasDestroyedSound: 0
+  m_hasDestroyedSound_Boss2: 0

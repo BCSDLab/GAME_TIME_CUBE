@@ -7046,7 +7046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &316603151
 Transform:
   m_ObjectHideFlags: 0
@@ -15103,17 +15103,17 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: a2af9fd105c79ec4fb5ae78cb76ae794, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 50912acfc61c34b48b12f2aa82115c6d, type: 3}
     pathName: B2
     engageTime: 54
-    repeatCount: 4
-    repeatDelay: 0.5
+    repeatCount: 6
+    repeatDelay: 0.7
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: a2af9fd105c79ec4fb5ae78cb76ae794, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 50912acfc61c34b48b12f2aa82115c6d, type: 3}
     pathName: B1
     engageTime: 58
-    repeatCount: 4
-    repeatDelay: 0.5
+    repeatCount: 6
+    repeatDelay: 0.7
     engagePhase: 0
   - mob: {fileID: 7466608742450977111, guid: a071a3bb70407af4e899a5b2a7b6a3d5, type: 3}
     pathName: Sky
@@ -15139,20 +15139,20 @@ MonoBehaviour:
     repeatCount: 2
     repeatDelay: 4
     engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
-    pathName: Right3
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
     engageTime: 89
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
-    pathName: Right2
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
     engageTime: 91
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: 0def18519496e31429be8775db68b0bc, type: 3}
-    pathName: Right1
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
     engageTime: 93
     repeatCount: 1
     repeatDelay: 0
@@ -15175,13 +15175,13 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: a2af9fd105c79ec4fb5ae78cb76ae794, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 5afa68f752b7825469fdac1d96fb7ae6, type: 3}
     pathName: B1
     engageTime: 115
     repeatCount: 4
     repeatDelay: 0.5
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: a2af9fd105c79ec4fb5ae78cb76ae794, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 5afa68f752b7825469fdac1d96fb7ae6, type: 3}
     pathName: B2
     engageTime: 118
     repeatCount: 4
@@ -15193,7 +15193,7 @@ MonoBehaviour:
     repeatCount: 0
     repeatDelay: 0
     engagePhase: 0
-  m_bossEngageTime: 1
+  m_bossEngageTime: 132
   m_boss: {fileID: 1748340883}
   m_bossTracker: {fileID: 765851966}
   nextSceneName: Stage 2
@@ -22971,6 +22971,8 @@ MonoBehaviour:
   m_moveSpeed: 4
   m_bossTracker: {fileID: 765851966}
   m_subWeaponItem: {fileID: 5131648617499383124, guid: 7c46f6a1227f42a4097da89d6449debf,
+    type: 3}
+  m_lifeItem: {fileID: 7577444241290646184, guid: 2fbe291f5003d9a4f9e129d5f609ec0a,
     type: 3}
   m_dropItemLists:
   - items:
