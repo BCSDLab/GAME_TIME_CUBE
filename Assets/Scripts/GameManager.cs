@@ -293,7 +293,14 @@ public class GameManager : MonoBehaviour
     {
         StageChanger.instance.ResetStat();
         Time.timeScale = 1f;
-        SceneManager.LoadScene(gameObject.scene.name);
+        if (SceneManager.GetActiveScene().name.StartsWith("Stage"))
+        {
+            SceneManager.LoadScene("Stage 1");
+        }
+        else
+        {
+            SceneManager.LoadScene("Boss 1");
+        }
     }
 
     public void GameOver()

@@ -15115,6 +15115,30 @@ MonoBehaviour:
     repeatCount: 6
     repeatDelay: 0.7
     engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 50912acfc61c34b48b12f2aa82115c6d, type: 3}
+    pathName: B2
+    engageTime: 54
+    repeatCount: 6
+    repeatDelay: 0.7
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 50912acfc61c34b48b12f2aa82115c6d, type: 3}
+    pathName: B1
+    engageTime: 58
+    repeatCount: 6
+    repeatDelay: 0.7
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 50912acfc61c34b48b12f2aa82115c6d, type: 3}
+    pathName: B2
+    engageTime: 54
+    repeatCount: 6
+    repeatDelay: 0.7
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 50912acfc61c34b48b12f2aa82115c6d, type: 3}
+    pathName: B1
+    engageTime: 58
+    repeatCount: 6
+    repeatDelay: 0.7
+    engagePhase: 0
   - mob: {fileID: 7466608742450977111, guid: a071a3bb70407af4e899a5b2a7b6a3d5, type: 3}
     pathName: Sky
     engageTime: 65
@@ -15157,6 +15181,42 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
+    engageTime: 89
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
+    engageTime: 91
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
+    engageTime: 93
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
+    engageTime: 89
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
+    engageTime: 91
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
+    pathName: Down
+    engageTime: 93
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: eaeb3e0de2265cf409ef74d1e1239416, type: 3}
     pathName: B3
     engageTime: 100
@@ -15174,6 +15234,30 @@ MonoBehaviour:
     engageTime: 112
     repeatCount: 1
     repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 5afa68f752b7825469fdac1d96fb7ae6, type: 3}
+    pathName: B1
+    engageTime: 115
+    repeatCount: 4
+    repeatDelay: 0.5
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 5afa68f752b7825469fdac1d96fb7ae6, type: 3}
+    pathName: B2
+    engageTime: 118
+    repeatCount: 4
+    repeatDelay: 0.5
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 5afa68f752b7825469fdac1d96fb7ae6, type: 3}
+    pathName: B1
+    engageTime: 115
+    repeatCount: 4
+    repeatDelay: 0.5
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: 5afa68f752b7825469fdac1d96fb7ae6, type: 3}
+    pathName: B2
+    engageTime: 118
+    repeatCount: 4
+    repeatDelay: 0.5
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: 5afa68f752b7825469fdac1d96fb7ae6, type: 3}
     pathName: B1
@@ -22962,8 +23046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 3000
-  m_destroyOnArrival: 1
+  m_hp: 3500
+  m_destroyOnArrival: 0
   m_enterPos: {fileID: 676724709}
   m_pathNames:
   - BP0
@@ -23198,7 +23282,7 @@ Animator:
   m_GameObject: {fileID: 1748340883}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff7eae863c82b994f9058544f988cb82, type: 2}
+  m_Controller: {fileID: 9100000, guid: 47c043ba9f52f554a96adbfd2a9adda5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -23244,7 +23328,7 @@ SpriteRenderer:
   m_SortingLayerID: 276158161
   m_SortingLayer: 3
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 35a063562e58b324cb4638a4e1250ce1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f07d3d935f34a1b49b306eff89267feb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -36619,14 +36703,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8453631172040760661, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8453631172040760657, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
         type: 3}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453631172040760661, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
+        type: 3}
+      propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
