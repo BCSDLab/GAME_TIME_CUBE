@@ -21001,12 +21001,12 @@ MonoBehaviour:
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 5394255979628684254, guid: e23e3e6586e4edb4db3c0f2209f59dbe, type: 3}
   target: {fileID: 0}
-  count: 10
+  count: 50
   minSpeed: 3
   maxSpeed: 6
   inDelay: 0.05
   outDelay: 0.5
-  angleRange: 30
+  angleRange: 60
 --- !u!114 &1147280343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21024,7 +21024,7 @@ MonoBehaviour:
   m_ShotSFX: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
   m_ShotSFXVolum: 0.5
   bullet: {fileID: 8760339693924824446, guid: 148b9542224bfec4f9d5765284e705ab, type: 3}
-  count: 30
+  count: 100
   speed: 5
   inDelay: 0.05
   outDelay: 1
@@ -21045,8 +21045,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 5000
-  m_destroyOnArrival: 1
+  m_hp: 8000
+  m_destroyOnArrival: 0
   m_enterPos: {fileID: 2088488568}
   m_frontPos: {fileID: 1975231007}
   m_pathNames: []
@@ -21249,7 +21249,7 @@ Animator:
   m_GameObject: {fileID: 1147280331}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff7eae863c82b994f9058544f988cb82, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1a1745583b6eaa3439c7e6f158f6310d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -21295,12 +21295,12 @@ SpriteRenderer:
   m_SortingLayerID: 276158161
   m_SortingLayer: 3
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 35a063562e58b324cb4638a4e1250ce1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ccad2a7afa0348f46b946d031f90a908, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 3.5000002, y: 3.5000002}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -37638,14 +37638,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 8453631172040760661, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8453631172040760657, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
         type: 3}
       propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453631172040760661, guid: fb181b3a27f6a0f45b5478b8dc4cde0a,
+        type: 3}
+      propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

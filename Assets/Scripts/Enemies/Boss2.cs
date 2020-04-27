@@ -248,7 +248,7 @@ public class Boss2 : Enemy
             float speed = 1f;
             bulletInst.GetComponent<Rigidbody2D>().velocity = new Vector2(speed * cos, speed * sin);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
     IEnumerator Phase4()
