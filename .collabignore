@@ -1,33 +1,16 @@
-# ===========================
-# Default Collab Ignore Rules
-# ===========================
-
-# OS Generated
-# ============
-.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-[Tt]humbs.db
-[Dd]esktop.ini
-
-# Visual Studio / MonoDevelop generated
-# =====================================
-[Ee]xported[Oo]bj/
-*.userprefs
-*.csproj
-*.pidb
-*.suo
-*.sln
-*.user
-*.unityproj
-*.booproj
-
-# Unity generated
-# ===============
-[Oo]bj/
-[Bb]uild
-sysinfo.txt
-*.stackdump
+# ====================
+# 리소스 파일(사운드, 스프라이트) 외 전부 ignore
+# ====================
+*
+!Assets/Sounds/
+!Assets/Sounds/*
+!Assets/Sounds/*/*
+!Assets/Sounds/*/*/*
+!Assets/Sounds/*/*/*/*
+!Assets/Sounds/*/*/*/*/*
+!Assets/Sprites/
+!Assets/Sprites/*
+!Assets/Sprites/*/*
+!Assets/Sprites/*/*/*
+!Assets/Sprites/*/*/*/*
+!Assets/Sprites/*/*/*/*/*

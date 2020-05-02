@@ -5478,7 +5478,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243597088706285276, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 348f5f7808dd2524c81344b579f6709c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 94a7e157a14b4694baef91077a147470, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -5575,7 +5575,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243597088706285276, guid: 59dcd236faf19d54bb9e8c16fbdc5a6e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: b938872d01ca96d498c4b0089d7a1fc4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: aeaac5f92064af5429ba9ec28d33e6db, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -21226,7 +21226,7 @@ SpriteRenderer:
   m_Size: {x: 3.5000002, y: 3.5000002}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1150005642
