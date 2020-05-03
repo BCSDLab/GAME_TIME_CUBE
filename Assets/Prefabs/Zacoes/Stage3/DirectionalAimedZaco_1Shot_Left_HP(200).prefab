@@ -4777,7 +4777,7 @@ GameObject:
   - component: {fileID: 5875172913077719939}
   - component: {fileID: 172328664871883220}
   m_Layer: 0
-  m_Name: DirectionalAimedZaco_1Shot_Left_HP(130)
+  m_Name: DirectionalAimedZaco_1Shot_Left_HP(200)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5040,6 +5040,9 @@ MonoBehaviour:
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 8
   speed: 6
+  delay: 1
+  m_hasDestroyedSound: 0
+  m_hasDestroyedSound_Boss2: 0
 --- !u!114 &172328664871883220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5054,7 +5057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 4
-  m_hp: 130
+  m_hp: 200
   m_destroyOnArrival: 1
   m_dropItemList:
     items:
