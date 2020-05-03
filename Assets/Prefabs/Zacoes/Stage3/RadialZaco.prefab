@@ -5019,6 +5019,7 @@ MonoBehaviour:
   speed: 3
   inDelay: 0.5
   m_isCountChange: 1
+  m_hasDestroyedSound: 0
 --- !u!114 &1647472415312198137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5033,7 +5034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 10
-  m_hp: 1000
+  m_hp: 1500
   m_destroyOnArrival: 0
   m_dropItemList:
     items:

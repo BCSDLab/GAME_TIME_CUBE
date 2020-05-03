@@ -6887,7 +6887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &316603151
 Transform:
   m_ObjectHideFlags: 0
@@ -6907,6 +6907,7 @@ Transform:
   - {fileID: 1189885912}
   - {fileID: 2008734643}
   - {fileID: 1510409529}
+  - {fileID: 584734591}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8604,6 +8605,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!4 &584734591 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1781053994}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &588870175
 GameObject:
   m_ObjectHideFlags: 0
@@ -20407,7 +20414,7 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: a99c4dcbaf33160429c63d5d9bb75708, type: 3}
     pathName: Right3
     engageTime: 13
     repeatCount: 1
@@ -20419,7 +20426,7 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 4fad330d364c0974e999e01c0885e3d1, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 9013bfe4518a1a04ea7d704eacbf62f0, type: 3}
     pathName: Right1
     engageTime: 18
     repeatCount: 1
@@ -20443,7 +20450,7 @@ MonoBehaviour:
     repeatCount: 4
     repeatDelay: 1
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: 8a095e1b9607db944ad81560649635cd, type: 3}
+  - mob: {fileID: 7473877153406667978, guid: 9013bfe4518a1a04ea7d704eacbf62f0, type: 3}
     pathName: Center
     engageTime: 29
     repeatCount: 1
@@ -20452,14 +20459,14 @@ MonoBehaviour:
   - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
     pathName: B1
     engageTime: 32
-    repeatCount: 4
-    repeatDelay: 2
+    repeatCount: 5
+    repeatDelay: 1.5
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
     pathName: B2
     engageTime: 33
-    repeatCount: 3
-    repeatDelay: 2
+    repeatCount: 5
+    repeatDelay: 1.5
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: 22c527a7fa020db4c9928d7c8c2b63dc, type: 3}
     pathName: Right1
@@ -20482,26 +20489,26 @@ MonoBehaviour:
   - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
     pathName: B2
     engageTime: 49
-    repeatCount: 4
-    repeatDelay: 2
+    repeatCount: 5
+    repeatDelay: 1
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
     pathName: B1
     engageTime: 50
-    repeatCount: 3
-    repeatDelay: 2
+    repeatCount: 5
+    repeatDelay: 1
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: de27f88e438cb384cbe4a0ffb038fa86, type: 3}
     pathName: A1
     engageTime: 56
-    repeatCount: 2
-    repeatDelay: 4
+    repeatCount: 4
+    repeatDelay: 2
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: de27f88e438cb384cbe4a0ffb038fa86, type: 3}
     pathName: A2
     engageTime: 56
-    repeatCount: 2
-    repeatDelay: 4
+    repeatCount: 4
+    repeatDelay: 2
     engagePhase: 0
   - mob: {fileID: 7466608742450977111, guid: dd234bb214560df43b76891b81e4f90f, type: 3}
     pathName: B3
@@ -20551,7 +20558,7 @@ MonoBehaviour:
     repeatCount: 2
     repeatDelay: 4
     engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: c50563c833106aa4f96614d47b57c4e4, type: 3}
+  - mob: {fileID: 136829175979225950, guid: c52331261e893584ea37f71b317864ac, type: 3}
     pathName: Ground
     engageTime: 90
     repeatCount: 2
@@ -20632,7 +20639,7 @@ MonoBehaviour:
   - mob: {fileID: 7473877153406667978, guid: 2961245ab58e1f047bbe12a80b9ef9d3, type: 3}
     pathName: B3
     engageTime: 154
-    repeatCount: 2
+    repeatCount: 4
     repeatDelay: 2
     engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: 904b854da161a5a4e99961a1a0e162da, type: 3}
@@ -20653,9 +20660,9 @@ MonoBehaviour:
     repeatCount: 4
     repeatDelay: 2
     engagePhase: 0
-  - mob: {fileID: 7473877153406667978, guid: dbefbe94965281045916b7f1953fabf0, type: 3}
-    pathName: Right1
-    engageTime: 165
+  - mob: {fileID: 7473877153406667978, guid: a9a6551bdc7f9e5459d43ece4cb6e05f, type: 3}
+    pathName: Center
+    engageTime: 156
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
@@ -20663,6 +20670,18 @@ MonoBehaviour:
     pathName: Right3
     engageTime: 165
     repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 7473877153406667978, guid: dbefbe94965281045916b7f1953fabf0, type: 3}
+    pathName: Right1
+    engageTime: 165
+    repeatCount: 1
+    repeatDelay: 0
+    engagePhase: 0
+  - mob: {fileID: 0}
+    pathName: 
+    engageTime: 0
+    repeatCount: 0
     repeatDelay: 0
     engagePhase: 0
   m_bossEngageTime: 178
@@ -29118,6 +29137,85 @@ MonoBehaviour:
   initialized: 1
   initialName: New Path 2
   pathVisible: 1
+--- !u!1001 &1781053994
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 316603151}
+    m_Modifications:
+    - target: {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_Name
+      value: Sub Weapon Item (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576566, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 474f106ca2318a24bae4bdfac3211b3e, type: 3}
 --- !u!1 &1784693249
 GameObject:
   m_ObjectHideFlags: 0
@@ -38240,6 +38338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sub Weapon Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044762844447576563, guid: 474f106ca2318a24bae4bdfac3211b3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3044762844447576560, guid: 474f106ca2318a24bae4bdfac3211b3e,
         type: 3}

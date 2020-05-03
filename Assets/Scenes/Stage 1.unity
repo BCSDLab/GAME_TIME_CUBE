@@ -15181,42 +15181,6 @@ MonoBehaviour:
     repeatCount: 1
     repeatDelay: 0
     engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
-    pathName: Down
-    engageTime: 89
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
-    pathName: Down
-    engageTime: 91
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
-    pathName: Down
-    engageTime: 93
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
-    pathName: Down
-    engageTime: 89
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
-    pathName: Down
-    engageTime: 91
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
-  - mob: {fileID: 7466608742450977111, guid: b90b76e7603432942ae6b19711340533, type: 3}
-    pathName: Down
-    engageTime: 93
-    repeatCount: 1
-    repeatDelay: 0
-    engagePhase: 0
   - mob: {fileID: 7473877153406667978, guid: eaeb3e0de2265cf409ef74d1e1239416, type: 3}
     pathName: B3
     engageTime: 100

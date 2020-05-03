@@ -5018,6 +5018,9 @@ MonoBehaviour:
   bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
   count: 8
   speed: 6
+  delay: 1
+  m_hasDestroyedSound: 0
+  m_hasDestroyedSound_Boss2: 0
 --- !u!114 &991686572995061719
 MonoBehaviour:
   m_ObjectHideFlags: 0
