@@ -66,7 +66,7 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private Text m_continueText = null;
     [SerializeField]
-    private Image m_warningBar = null;
+    private Transform m_warningBars = null;
     #endregion
 
     private AudioSource m_scoreAudio;
@@ -92,6 +92,12 @@ public class InGameUIManager : MonoBehaviour
     private readonly Color CUBE_USE_COLOR = new Color32(200, 150, 250, 200);  // when cubeEnergy is being consumed
     private readonly Color SPELL_CHARGED_COLOR = new Color32(250, 100, 250, 200);
     private readonly Color SPELL_NOT_CHARGED_COLOR = new Color32(200, 100, 200, 150);
+
+    // Warning Bars
+    private Image m_warningBarL = null;
+    private Image m_warningBarR = null;
+    private Image m_warningBarU = null;
+    private Image m_warningBarD = null;
 
     void Awake()
     {
@@ -122,6 +128,11 @@ public class InGameUIManager : MonoBehaviour
         m_pausePanel.SetActive(false);
         m_gameOverPanel.SetActive(false);
         m_stageClearPanel.SetActive(false);
+
+        m_warningBarL = m_warningBars.GetChild(0).GetComponent<Image>();
+        m_warningBarR = m_warningBars.GetChild(1).GetComponent<Image>();
+        m_warningBarU = m_warningBars.GetChild(2).GetComponent<Image>();
+        m_warningBarD = m_warningBars.GetChild(3).GetComponent<Image>();
     }
 
     public void DamagePlayer(int playerHP)
@@ -450,9 +461,17 @@ public class InGameUIManager : MonoBehaviour
     }
     #endregion
 
-    public void WarningSide()
+    #region Warning
+    public void WarningSide(int key = 0b1000) // key : 0bLRUD
     {
-        StartCoroutine("WarningLeft");
+        if ((key & 1) == 1)
+            StartCoroutine("WarningDown");
+        if (((key >> 1) & 1) == 1)
+            StartCoroutine("WarningUp");
+        if (((key >> 2) & 1) == 1)
+            StartCoroutine("WarningRight");
+        if (((key >> 3) & 1) == 1)
+            StartCoroutine("WarningLeft");
     }
     IEnumerator WarningLeft()
     {
@@ -461,13 +480,56 @@ public class InGameUIManager : MonoBehaviour
         {
             dt += 0.05f;
 
-            Color color = m_warningBar.color;
+            Color color = m_warningBarL.color;
             color.a = Mathf.Sin(dt * 3.14f);
-            m_warningBar.color = color;
+            m_warningBarL.color = color;
 
             yield return new WaitForSeconds(UPDATE_DELAY);
         }
     }
+    IEnumerator WarningRight()
+    {
+        float dt = 0f;
+        while (dt < 1f)
+        {
+            dt += 0.05f;
+
+            Color color = m_warningBarR.color;
+            color.a = Mathf.Sin(dt * 3.14f);
+            m_warningBarR.color = color;
+
+            yield return new WaitForSeconds(UPDATE_DELAY);
+        }
+    }
+    IEnumerator WarningUp()
+    {
+        float dt = 0f;
+        while (dt < 1f)
+        {
+            dt += 0.05f;
+
+            Color color = m_warningBarU.color;
+            color.a = Mathf.Sin(dt * 3.14f);
+            m_warningBarU.color = color;
+
+            yield return new WaitForSeconds(UPDATE_DELAY);
+        }
+    }
+    IEnumerator WarningDown()
+    {
+        float dt = 0f;
+        while (dt < 1f)
+        {
+            dt += 0.05f;
+
+            Color color = m_warningBarD.color;
+            color.a = Mathf.Sin(dt * 3.14f);
+            m_warningBarD.color = color;
+
+            yield return new WaitForSeconds(UPDATE_DELAY);
+        }
+    }
+    #endregion
 
     public void PauseGame(bool pause)
     {

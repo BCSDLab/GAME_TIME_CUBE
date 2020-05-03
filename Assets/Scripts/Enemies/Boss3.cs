@@ -210,6 +210,7 @@ public class Boss3 : Enemy
     }
     IEnumerator Phase4()
     {
+        InGameUIManager.instance.WarningSide(0b1111);
         // HorizontalWall + VerticalWall (Deacceleration)
         iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
         yield return new WaitForSeconds(m_moveTime + 0.5f);
