@@ -21,11 +21,16 @@ public class TimeControlArea : MonoBehaviour
     private Quaternion m_originalRotation;
     private List<Rigidbody2D> m_collidingBullets = new List<Rigidbody2D>();  // 통과 중인 탄 리스트
 
-    void Start()
+    private GameObject circleBg;
+
+    void Awake()
     {
         reverseMultiplier = 1f / velocityMultiplier;
         m_originalScale = transform.localScale;
         m_originalRotation = transform.localRotation;
+
+        circleBg = transform.GetChild(0).gameObject;
+        circleBg.SetActive(false);
     }
 
     void FixedUpdate()
@@ -35,6 +40,7 @@ public class TimeControlArea : MonoBehaviour
 
     void OnEnable()  // SetActive(true) 시 호출됨
     {
+        circleBg.SetActive(false);
         m_collidingBullets = new List<Rigidbody2D>();
         StartCoroutine("Enlarge");
 
@@ -72,14 +78,24 @@ public class TimeControlArea : MonoBehaviour
 
         GameManager gameManager = GameManager.instance;
         float sizeAdder = m_sizeAdderBase;
+        int circleBgTimer = 0;
 
         while (true)
         {
             yield return new WaitForSeconds(0.01f);
+            circleBgTimer++;
 
             gameManager.UseCubeEnergy();
             transform.localScale += new Vector3(sizeAdder, sizeAdder, 0f);
             sizeAdder *= m_sizeAdderMultiplier;
+            if (gameManager.cubeEnergy < (int)(GameManager.CUBE_ENERGY_MAX * 0.2))
+            {
+                if (circleBgTimer >= 5)
+                {
+                    circleBg.SetActive(!circleBg.activeInHierarchy);
+                    circleBgTimer = 0;
+                }
+            }
         }
     }
 
@@ -87,6 +103,7 @@ public class TimeControlArea : MonoBehaviour
     {
         StopCoroutine("Enlarge");
         StartCoroutine("Shrink");
+        circleBg.SetActive(false);
     }
 
     IEnumerator Shrink()
