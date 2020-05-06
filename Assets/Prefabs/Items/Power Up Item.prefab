@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 30
+  score: 150
 --- !u!198 &1796773464430945972
 ParticleSystem:
   m_ObjectHideFlags: 0

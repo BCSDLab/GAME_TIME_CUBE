@@ -9,6 +9,8 @@ public class Boss1 : Enemy
     [SerializeField]
     private Transform m_enterPos = null;
     [SerializeField]
+    private Transform m_enterPos2 = null;
+    [SerializeField]
     private string[] m_pathNames = null;
     [SerializeField]
     [Tooltip("일부 경로 이동 시간")]
@@ -174,7 +176,7 @@ public class Boss1 : Enemy
     IEnumerator Phase2()
     {
         // 상하 임의 위치로 이동 후 플레이어 락온 후 미사일 발사
-        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos2, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
         yield return new WaitForSeconds(m_moveTime + 0.5f);
         Vector3 toPos = transform.position;
 
@@ -211,7 +213,7 @@ public class Boss1 : Enemy
     IEnumerator Phase4()
     {
         // 플레이어가 이동하는 방향을 따라 폭격
-        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
+        iTween.MoveTo(gameObject, iTween.Hash("position", m_enterPos2, "time", m_moveTime, "easetype", iTween.EaseType.easeOutQuint));
         yield return new WaitForSeconds(m_moveTime + 0.5f);
         Vector3 lockOnPos;
         Vector3 arrowMarkPos;
