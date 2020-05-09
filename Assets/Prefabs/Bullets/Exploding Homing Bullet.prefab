@@ -4834,7 +4834,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: 9d90fdf5cfe6b2241b45e8505bcb01ae, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7169812, g: 0.59184766, b: 0.59184766, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -5007,6 +5007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8334bcbe7c660e4db823228d9fc3e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spellDestroyed: 0
   target: {fileID: 0}
   speed: 5
   m_explodeDistance: 3
@@ -5032,3 +5033,4 @@ MonoBehaviour:
   speed: 1
   inDelay: 0.2
   m_isCountChange: 0
+  m_hasDestroyedSound: 0

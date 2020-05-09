@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2495123922678834812}
   - component: {fileID: 7663870319162111776}
   m_Layer: 0
-  m_Name: SlowStopBullet
+  m_Name: SlowStopBullet_FireWork
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ea08778033873df4a9791401f2db13a8, type: 3}
-  m_Color: {r: 0.7176471, g: 0.5921569, b: 0.5921569, a: 1}
+  m_Color: {r: 0.8679245, g: 0.45870242, b: 0.24154504, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

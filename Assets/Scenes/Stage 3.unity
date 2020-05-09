@@ -7397,6 +7397,9 @@ MonoBehaviour:
       type: 3}
     m_poolCount: 50
     m_pooledItems: []
+  - prefab: {fileID: 273016974476332618, guid: 1583374f2a36df6458ef8d067c2ccc6e, type: 3}
+    m_poolCount: 60
+    m_pooledItems: []
 --- !u!4 &350644536
 Transform:
   m_ObjectHideFlags: 0

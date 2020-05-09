@@ -20898,7 +20898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathName: 
   speed: 5
-  m_hp: 8000
+  m_hp: 800
   m_destroyOnArrival: 0
   m_enterPos: {fileID: 2088488568}
   m_frontPos: {fileID: 1975231007}
