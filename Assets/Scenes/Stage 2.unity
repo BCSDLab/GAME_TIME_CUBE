@@ -16529,7 +16529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1177583891
 GameObject:
@@ -35190,7 +35190,7 @@ Transform:
   m_Children:
   - {fileID: 66208672267123122}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66208671284566068
 GameObject:
@@ -35230,6 +35230,8 @@ MonoBehaviour:
   m_spellSlider1: {fileID: 661846129}
   m_spellSlider2: {fileID: 523137260}
   m_powerSlider: {fileID: 382942487}
+  m_sliderLine: {fileID: 3590460854332271232, guid: c8d629f8a3547304c8f7a2c431d40211,
+    type: 3}
   m_powerText: {fileID: 1784693251}
   m_powerIcons: {fileID: 1929868201}
   m_scoreText: {fileID: 457722382}
@@ -35254,8 +35256,6 @@ MonoBehaviour:
   m_highScoreText: {fileID: 2244922983464009795}
   m_continueText: {fileID: 66208671763512981}
   m_warningBars: {fileID: 1563885188}
-  m_sliderLine: {fileID: 3590460854332271232, guid: c8d629f8a3547304c8f7a2c431d40211,
-    type: 3}
 --- !u!82 &66208671284566070
 AudioSource:
   m_ObjectHideFlags: 0
