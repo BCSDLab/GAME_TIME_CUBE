@@ -6536,7 +6536,7 @@ MonoBehaviour:
   m_startDelay: 0
   m_ShotSFX: {fileID: 8300000, guid: fc2728f97c9e0c5488b7a0c10db00995, type: 3}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 5394255979628684254, guid: e6f3f6b70e5ddd64890488a16ea49f93, type: 3}
+  bullet: {fileID: 5394255979628684254, guid: 588a3d02264bf3b428d62d85f128a8df, type: 3}
   target: {fileID: 0}
   count: 8
   speed: 0.5
@@ -34782,6 +34782,10 @@ MonoBehaviour:
   - prefab: {fileID: 9015490077321555750, guid: 9fec3672519a49b48ab4f69cbc908aad,
       type: 3}
     m_poolCount: 256
+    m_pooledItems: []
+  - prefab: {fileID: 5394255979628684254, guid: 588a3d02264bf3b428d62d85f128a8df,
+      type: 3}
+    m_poolCount: 40
     m_pooledItems: []
 --- !u!4 &2100360594
 Transform:

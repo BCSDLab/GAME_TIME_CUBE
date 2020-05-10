@@ -4835,7 +4835,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: 566466c3883597c4bbcee1bbc91a6e0e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8584906, g: 0.4761487, b: 0.2794144, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4942,11 +4942,12 @@ MonoBehaviour:
   m_startDelay: 0
   m_ShotSFX: {fileID: 8300000, guid: de15865f585a9f64b9d81c8b6b844059, type: 3}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 273016974476332618, guid: 94cec8f811cbcaa4ab4d010fc47b5cfa, type: 3}
+  bullet: {fileID: 273016974476332618, guid: 1583374f2a36df6458ef8d067c2ccc6e, type: 3}
   count: 10
   speed: 2
   inDelay: 0.2
   m_isCountChange: 0
+  m_hasDestroyedSound: 0
 --- !u!114 &1537348068763202513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4959,6 +4960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc940e8cfddf8545a3b4c96f56251e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spellDestroyed: 0
   m_crackTime: 2
 --- !u!82 &8454583245673594259
 AudioSource:

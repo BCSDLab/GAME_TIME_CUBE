@@ -14080,6 +14080,17 @@ MonoBehaviour:
       type: 3}
     m_poolCount: 10
     m_pooledItems: []
+  - prefab: {fileID: 273016974476332618, guid: 478fade92e3390443babe6040fa44f65, type: 3}
+    m_poolCount: 30
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: 530449269c5602e468bc494a98f5806b,
+      type: 3}
+    m_poolCount: 50
+    m_pooledItems: []
+  - prefab: {fileID: 8760339693924824446, guid: 958f7a08c6c6ee540a5fc51255067ac9,
+      type: 3}
+    m_poolCount: 40
+    m_pooledItems: []
 --- !u!4 &823928741
 Transform:
   m_ObjectHideFlags: 0

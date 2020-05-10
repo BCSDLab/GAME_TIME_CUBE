@@ -4914,7 +4914,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: 566466c3883597c4bbcee1bbc91a6e0e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.47912958, g: 0.8712032, b: 0.9150943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5099,7 +5099,7 @@ MonoBehaviour:
   m_startDelay: 0
   m_ShotSFX: {fileID: 0}
   m_ShotSFXVolum: 0.5
-  bullet: {fileID: 8760339693924824446, guid: 2ce2b02ceb8e5784aa9d56a4999d0ceb, type: 3}
+  bullet: {fileID: 8760339693924824446, guid: 958f7a08c6c6ee540a5fc51255067ac9, type: 3}
   target: {fileID: 0}
   count: 3
   speed: 3
@@ -5117,5 +5117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c769971709509b74fbbbe33c6d45faa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_spellDestroyed: 0
   m_crackTime: 2
   m_redMask: {fileID: 6066932779423930852}
