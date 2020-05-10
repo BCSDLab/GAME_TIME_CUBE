@@ -98,17 +98,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void InitializeUI() //
+    void InitializeUI()
     {
         InGameUIManager.instance.UpdateCubeSlider(cubeEnergy);
         InGameUIManager.instance.UpdateSpellSlider(spellEnergy);
         InGameUIManager.instance.UpdatePower(playerPower);
+        InGameUIManager.instance.DividePowerSlider(1000, 2000, 3000);
         InGameUIManager.instance.UpdateScoreText(m_score);
         for(int hpSlot = PLAYER_HP_MAX; hpSlot > playerHP; hpSlot--)
         {
             InGameUIManager.instance.DamagePlayer(hpSlot - 1);
         }
-        InGameUIManager.instance.DividePowerSlider(500, 3500);
 
         FadeInOutController.instance.FadeInPanel();
         FadeInOutController.instance.FadeInText();

@@ -221,18 +221,17 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
-    public void DividePowerSlider(params int[] upgradeNums) //
+    public void DividePowerSlider(params int[] powerLines)
     {
         var width = m_powerSlider.GetComponent<RectTransform>().rect.width;
 
-        for(int i = 0; i < upgradeNums.Length; i++)
+        for(int i = 0; i < powerLines.Length; i++)
         {
-            float dv = width * (((float)upgradeNums[i] / GameManager.PLAYER_POWER_MAX) - 0.5f);
-            Debug.Log(upgradeNums[i] + "dv : " + dv);
+            float dv = width * (((float)powerLines[i] / GameManager.PLAYER_POWER_MAX) - 0.5f);
             Instantiate(m_sliderLine, m_powerSlider.transform).rectTransform.anchoredPosition = new Vector2(dv, 0);
         }
     }
-    public void UpdatePower(int power) // 
+    public void UpdatePower(int power)
     {
         m_powerSlider.value = power;
         StopCoroutine("CountUpToPower");
