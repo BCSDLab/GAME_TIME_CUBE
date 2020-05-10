@@ -67,6 +67,8 @@ public class InGameUIManager : MonoBehaviour
     private Text m_continueText = null;
     [SerializeField]
     private Transform m_warningBars = null;
+    [SerializeField]
+    private Image m_sliderLine = null;
     #endregion
 
     private AudioSource m_scoreAudio;
@@ -98,6 +100,7 @@ public class InGameUIManager : MonoBehaviour
     private Image m_warningBarR = null;
     private Image m_warningBarU = null;
     private Image m_warningBarD = null;
+
 
     void Awake()
     {
@@ -218,7 +221,18 @@ public class InGameUIManager : MonoBehaviour
         }
     }
 
-    public void UpdatePower(int power)
+    public void DividePowerSlider(params int[] upgradeNums) //
+    {
+        var width = m_powerSlider.GetComponent<RectTransform>().rect.width;
+
+        for(int i = 0; i < upgradeNums.Length; i++)
+        {
+            float dv = width * (((float)upgradeNums[i] / GameManager.PLAYER_POWER_MAX) - 0.5f);
+            Debug.Log(upgradeNums[i] + "dv : " + dv);
+            Instantiate(m_sliderLine, m_powerSlider.transform).rectTransform.anchoredPosition = new Vector2(dv, 0);
+        }
+    }
+    public void UpdatePower(int power) // 
     {
         m_powerSlider.value = power;
         StopCoroutine("CountUpToPower");

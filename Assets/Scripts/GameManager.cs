@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void InitializeUI()
+    void InitializeUI() //
     {
         InGameUIManager.instance.UpdateCubeSlider(cubeEnergy);
         InGameUIManager.instance.UpdateSpellSlider(spellEnergy);
@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
         {
             InGameUIManager.instance.DamagePlayer(hpSlot - 1);
         }
+        InGameUIManager.instance.DividePowerSlider(500, 3500);
 
         FadeInOutController.instance.FadeInPanel();
         FadeInOutController.instance.FadeInText();
