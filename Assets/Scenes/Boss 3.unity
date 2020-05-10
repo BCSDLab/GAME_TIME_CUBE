@@ -35214,6 +35214,8 @@ MonoBehaviour:
   m_highScoreText: {fileID: 2998938777859918442}
   m_continueText: {fileID: 66208671763512981}
   m_warningBars: {fileID: 1523587499}
+  m_sliderLine: {fileID: 3590460854332271232, guid: c8d629f8a3547304c8f7a2c431d40211,
+    type: 3}
 --- !u!82 &66208671284566070
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38766,15 +38768,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1796773464430945977, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2,
-        type: 3}
-      propertyPath: power
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 1796773464430945973, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2,
         type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796773464430945977, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2,
+        type: 3}
+      propertyPath: power
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b55c7a5de25ad0f4db76dc8fdf3c15b2, type: 3}
