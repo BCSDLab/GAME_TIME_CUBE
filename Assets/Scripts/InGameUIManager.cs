@@ -20,6 +20,8 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private Slider m_powerSlider = null;
     [SerializeField]
+    private Image m_sliderLine = null;
+    [SerializeField]
     private Text m_powerText = null;
     [SerializeField]
     private Transform m_powerIcons = null;
@@ -65,10 +67,9 @@ public class InGameUIManager : MonoBehaviour
     private Text m_highScoreText = null;
     [SerializeField]
     private Text m_continueText = null;
+    [Header("기타UI")]
     [SerializeField]
     private Transform m_warningBars = null;
-    [SerializeField]
-    private Image m_sliderLine = null;
     #endregion
 
     private AudioSource m_scoreAudio;
@@ -175,7 +176,6 @@ public class InGameUIManager : MonoBehaviour
             m_dynCubeSlider.transform.position = screenPoint + Vector3.up * 50;
         }
     }
-
     public void InitDynSpellSlider(float maxValue)
     {
         m_dynSpellSlider.maxValue = maxValue;
@@ -240,7 +240,6 @@ public class InGameUIManager : MonoBehaviour
         m_powerIcons.GetChild(1).gameObject.SetActive(power >= 2000);
         m_powerIcons.GetChild(2).gameObject.SetActive(power >= 3000);
     }
-
     IEnumerator CountUpToPower(int targetPower)
     {
         int origPower = m_power;
