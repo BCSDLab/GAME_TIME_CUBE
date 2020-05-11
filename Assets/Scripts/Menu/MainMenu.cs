@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     private const string AXIS_VERTICAL = "Vertical";
     private const string AXIS_FIRE = "Fire";
     private const float AXIS_MIN = 0.3f;
-    private const int BUTTON_N = 3;
+    private const int BUTTON_N = 4;
 
     private AudioSource m_audioSource;
 

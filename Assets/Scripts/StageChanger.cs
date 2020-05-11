@@ -7,7 +7,7 @@ public class StageChanger : MonoBehaviour
 {
     public static StageChanger instance = null;
 
-    private int m_savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+    private int m_savedSpellEnergy = GameManager.SPELL_ENERGY_INIT;
     private int m_savedPlayerPower = 0;
     private int m_savedPlayerHP = GameManager.PLAYER_HP_INIT;
     private float m_savedTotalScore = 0;
@@ -68,7 +68,7 @@ public class StageChanger : MonoBehaviour
 
     public void ResetStat()
     {
-        m_savedSpellEnergy = GameManager.SPELL_ENERGY_MAX;
+        m_savedSpellEnergy = GameManager.SPELL_ENERGY_INIT;
         m_savedPlayerPower = 0;
         m_savedPlayerHP = GameManager.PLAYER_HP_INIT;
         m_savedTotalScore = 0;

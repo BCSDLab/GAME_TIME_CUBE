@@ -14,11 +14,11 @@ public class InGameUIManager : MonoBehaviour
     [SerializeField]
     private Slider m_cubeSlider = null;
     [SerializeField]
-    private Slider m_spellSlider1 = null;
-    [SerializeField]
-    private Slider m_spellSlider2 = null;
+    private Transform m_playerSpellSlots = null;
     [SerializeField]
     private Slider m_powerSlider = null;
+    [SerializeField]
+    private Image m_sliderLine = null;
     [SerializeField]
     private Text m_powerText = null;
     [SerializeField]
@@ -65,8 +65,9 @@ public class InGameUIManager : MonoBehaviour
     private Text m_highScoreText = null;
     [SerializeField]
     private Text m_continueText = null;
+    [Header("기타UI")]
     [SerializeField]
-    private Image m_warningBar = null;
+    private Transform m_warningBars = null;
     #endregion
 
     private AudioSource m_scoreAudio;
@@ -75,8 +76,6 @@ public class InGameUIManager : MonoBehaviour
     private int paramIdx;
     private const float UPDATE_DELAY = 0.05f;
     private Image m_cubeSliderFill;
-    private Image m_spellSliderFill1;
-    private Image m_spellSliderFill2;
     private Transform m_playerTransform;
 
     private int m_power = 0;
@@ -93,6 +92,13 @@ public class InGameUIManager : MonoBehaviour
     private readonly Color SPELL_CHARGED_COLOR = new Color32(250, 100, 250, 200);
     private readonly Color SPELL_NOT_CHARGED_COLOR = new Color32(200, 100, 200, 150);
 
+    // Warning Bars
+    private Image m_warningBarL = null;
+    private Image m_warningBarR = null;
+    private Image m_warningBarU = null;
+    private Image m_warningBarD = null;
+
+
     void Awake()
     {
         if (instance == null) instance = this;
@@ -106,13 +112,16 @@ public class InGameUIManager : MonoBehaviour
     void OnEnable()
     {
         m_cubeSliderFill = m_cubeSlider.fillRect.gameObject.GetComponent<Image>();
-        m_spellSliderFill1 = m_spellSlider1.fillRect.gameObject.GetComponent<Image>();
-        m_spellSliderFill2 = m_spellSlider2.fillRect.gameObject.GetComponent<Image>();
+        
         m_playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
+        // 슬라이더 최댓값 설정
         m_cubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
-        m_spellSlider1.maxValue = GameManager.SPELL_ENERGY_USAGE;
-        m_spellSlider2.maxValue = GameManager.SPELL_ENERGY_MAX - GameManager.SPELL_ENERGY_USAGE;
+        foreach (Slider spellSlider in m_playerSpellSlots.GetComponentsInChildren<Slider>())
+        {
+            spellSlider.maxValue = GameManager.SPELL_ENERGY_USAGE;
+        }
+
         m_powerSlider.maxValue = GameManager.PLAYER_POWER_MAX;
         m_dynCubeSlider.maxValue = GameManager.CUBE_ENERGY_MAX;
         m_dynCubeSlider.gameObject.SetActive(false);
@@ -122,18 +131,21 @@ public class InGameUIManager : MonoBehaviour
         m_pausePanel.SetActive(false);
         m_gameOverPanel.SetActive(false);
         m_stageClearPanel.SetActive(false);
+
+        m_warningBarL = m_warningBars.GetChild(0).GetComponent<Image>();
+        m_warningBarR = m_warningBars.GetChild(1).GetComponent<Image>();
+        m_warningBarU = m_warningBars.GetChild(2).GetComponent<Image>();
+        m_warningBarD = m_warningBars.GetChild(3).GetComponent<Image>();
     }
 
     public void DamagePlayer(int playerHP)
     {
         m_playerHPSlots.GetChild(playerHP).gameObject.SetActive(false);
     }
-
     public void HealPlayer(int playerHP)
     {
         m_playerHPSlots.GetChild(playerHP-1).gameObject.SetActive(true);
     }
-
 
     public void UpdateCubeSlider(int cubeEnergy)
     {
@@ -145,7 +157,6 @@ public class InGameUIManager : MonoBehaviour
         Vector3 screenPoint = camera.WorldToScreenPoint(m_playerTransform.position);
         m_dynCubeSlider.transform.position = screenPoint + Vector3.up * 50;
     }
-
     public void ResetCubeSliderColor()
     {
         m_cubeSliderFill.color = CUBE_BASE_COLOR;
@@ -161,7 +172,6 @@ public class InGameUIManager : MonoBehaviour
             m_dynCubeSlider.transform.position = screenPoint + Vector3.up * 50;
         }
     }
-
     public void InitDynSpellSlider(float maxValue)
     {
         m_dynSpellSlider.maxValue = maxValue;
@@ -189,24 +199,36 @@ public class InGameUIManager : MonoBehaviour
 
     public void UpdateSpellSlider(int spellEnergy)
     {
-        int remainder = spellEnergy - GameManager.SPELL_ENERGY_USAGE;
+        int remainder = spellEnergy / GameManager.SPELL_ENERGY_USAGE;
 
-        if (remainder >= 0)
+        for (int i = 0; i < m_playerSpellSlots.childCount; i++)
         {
-            m_spellSlider1.value = GameManager.SPELL_ENERGY_USAGE;
-            m_spellSlider2.value = remainder;
-            m_spellSliderFill1.color = SPELL_CHARGED_COLOR;
-            m_spellSliderFill2.color = (remainder >= GameManager.SPELL_ENERGY_USAGE) ? SPELL_CHARGED_COLOR : SPELL_NOT_CHARGED_COLOR;
-        }
-        else
-        {
-            m_spellSlider1.value = spellEnergy;
-            m_spellSlider2.value = 0f;
-            m_spellSliderFill1.color = SPELL_NOT_CHARGED_COLOR;
-            m_spellSliderFill2.color = SPELL_NOT_CHARGED_COLOR;
+            Slider spellSlider = m_playerSpellSlots.GetChild(i).GetComponent<Slider>();
+            Image spellSliderFill = spellSlider.fillRect.gameObject.GetComponent<Image>();
+            if (remainder > i)
+            {
+                spellSlider.value = GameManager.SPELL_ENERGY_MAX;
+                spellSliderFill.color = SPELL_CHARGED_COLOR;
+            }
+            else
+            {
+                spellSlider.value = Mathf.Max(0f, spellEnergy - i * GameManager.SPELL_ENERGY_USAGE);
+                spellSliderFill.color = SPELL_NOT_CHARGED_COLOR;
+            }
         }
     }
 
+    #region POWER
+    public void DividePowerSlider(params int[] powerLines)
+    {
+        var width = m_powerSlider.GetComponent<RectTransform>().rect.width;
+
+        for(int i = 0; i < powerLines.Length; i++)
+        {
+            float dv = width * (((float)powerLines[i] / GameManager.PLAYER_POWER_MAX) - 0.5f);
+            Instantiate(m_sliderLine, m_powerSlider.transform).rectTransform.anchoredPosition = new Vector2(dv, 0);
+        }
+    }
     public void UpdatePower(int power)
     {
         m_powerSlider.value = power;
@@ -216,7 +238,6 @@ public class InGameUIManager : MonoBehaviour
         m_powerIcons.GetChild(1).gameObject.SetActive(power >= 2000);
         m_powerIcons.GetChild(2).gameObject.SetActive(power >= 3000);
     }
-
     IEnumerator CountUpToPower(int targetPower)
     {
         int origPower = m_power;
@@ -229,7 +250,9 @@ public class InGameUIManager : MonoBehaviour
             yield return new WaitForSeconds(UPDATE_DELAY);
         }
     }
+    #endregion
 
+    #region SCORE
     public void UpdateScoreText(float score)
     {
         StopCoroutine("CountUpToScore");
@@ -248,8 +271,9 @@ public class InGameUIManager : MonoBehaviour
             yield return new WaitForSeconds(UPDATE_DELAY);
         }
     }
+    #endregion
 
-    #region Clear Panel
+    #region CLEAR PANEL
     private void InitClearPanel()
     {
         m_killCountText.text = "0";
@@ -450,9 +474,17 @@ public class InGameUIManager : MonoBehaviour
     }
     #endregion
 
-    public void WarningSide()
+    #region WARNING
+    public void WarningSide(int key = 0b1000) // key : 0bLRUD
     {
-        StartCoroutine("WarningLeft");
+        if ((key & 1) == 1)
+            StartCoroutine("WarningDown");
+        if (((key >> 1) & 1) == 1)
+            StartCoroutine("WarningUp");
+        if (((key >> 2) & 1) == 1)
+            StartCoroutine("WarningRight");
+        if (((key >> 3) & 1) == 1)
+            StartCoroutine("WarningLeft");
     }
     IEnumerator WarningLeft()
     {
@@ -461,13 +493,56 @@ public class InGameUIManager : MonoBehaviour
         {
             dt += 0.05f;
 
-            Color color = m_warningBar.color;
+            Color color = m_warningBarL.color;
             color.a = Mathf.Sin(dt * 3.14f);
-            m_warningBar.color = color;
+            m_warningBarL.color = color;
 
             yield return new WaitForSeconds(UPDATE_DELAY);
         }
     }
+    IEnumerator WarningRight()
+    {
+        float dt = 0f;
+        while (dt < 1f)
+        {
+            dt += 0.05f;
+
+            Color color = m_warningBarR.color;
+            color.a = Mathf.Sin(dt * 3.14f);
+            m_warningBarR.color = color;
+
+            yield return new WaitForSeconds(UPDATE_DELAY);
+        }
+    }
+    IEnumerator WarningUp()
+    {
+        float dt = 0f;
+        while (dt < 1f)
+        {
+            dt += 0.05f;
+
+            Color color = m_warningBarU.color;
+            color.a = Mathf.Sin(dt * 3.14f);
+            m_warningBarU.color = color;
+
+            yield return new WaitForSeconds(UPDATE_DELAY);
+        }
+    }
+    IEnumerator WarningDown()
+    {
+        float dt = 0f;
+        while (dt < 1f)
+        {
+            dt += 0.05f;
+
+            Color color = m_warningBarD.color;
+            color.a = Mathf.Sin(dt * 3.14f);
+            m_warningBarD.color = color;
+
+            yield return new WaitForSeconds(UPDATE_DELAY);
+        }
+    }
+    #endregion
 
     public void PauseGame(bool pause)
     {

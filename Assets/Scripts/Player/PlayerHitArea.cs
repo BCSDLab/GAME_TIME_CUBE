@@ -47,13 +47,15 @@ public class PlayerHitArea : MonoBehaviour
 
             if (!m_isInvincible && !GameManager.instance.isDialogueOn)
             {
-                int powerToDrop = (int)(GameManager.instance.playerPower * 0.375);  // 50% * 75%
+                int powerToDrop = (int)(GameManager.instance.playerPower * 0.3f);  // 30%
                 StartCoroutine("Damage");
-                PoolManager.instance.PushToPool(collision.gameObject);
+                if (collision.name != "Boss")
+                {
+                    PoolManager.instance.PushToPool(collision.gameObject);
+                }
 
                 // 아이템 드롭
                 DropItem(cubeChargeItem);
-                DropItem(spellChargeItem);
                 DropPowerItems(powerToDrop);
 
                 m_particleSystem.Play();

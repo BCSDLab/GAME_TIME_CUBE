@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerBullet : MonoBehaviour
 {
     public int baseDamage = 15;
@@ -10,9 +11,40 @@ public class PlayerBullet : MonoBehaviour
     public float speed = 20f;
     public int spellCharge = 10;
 
-    void Awake()
+    protected const float TIME_TO_MAX_TRANSPARENCY = 0.1f;
+    protected SpriteRenderer m_spriteRenderer;
+    protected float m_life;
+    protected bool m_isMaxTransparency;
+
+    protected void Awake()
     {
         damage = baseDamage;
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    protected void OnEnable()
+    {
+        m_life = 0f;
+        m_isMaxTransparency = false;
+        Color newColor = m_spriteRenderer.color;
+        newColor.a = 0f;
+        m_spriteRenderer.color = newColor;
+    }
+
+    protected void Update()
+    {
+        if (!m_isMaxTransparency)
+        {
+            Color newColor = m_spriteRenderer.color;
+            newColor.a = m_life / TIME_TO_MAX_TRANSPARENCY;
+            m_spriteRenderer.color = newColor;
+
+            m_life += Time.deltaTime;
+            if (m_life >= TIME_TO_MAX_TRANSPARENCY)
+            {
+                m_isMaxTransparency = true;
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -29,7 +61,6 @@ public class PlayerBullet : MonoBehaviour
             }
 
             PoolManager.instance.PushToPool(gameObject);
-            //Destroy(this.gameObject);  // 풀링 성능 테스트용
         }
     }
 

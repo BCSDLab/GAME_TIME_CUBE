@@ -78,7 +78,7 @@ public class StageManager : MonoBehaviour
                 //if (pathName.EndsWith("Left"))
                 //    InGameUIManager.instance.WarningSide();
                 if(mobInfo.mob.name.EndsWith("Left"))
-                    InGameUIManager.instance.WarningSide();
+                    InGameUIManager.instance.WarningSide(0b1000);
             }
 
             yield return new WaitForSeconds(mobInfo.repeatDelay);
