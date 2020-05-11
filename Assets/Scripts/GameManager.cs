@@ -9,8 +9,9 @@ public class GameManager : MonoBehaviour
 
     #region CONSTANTS
     public const int CUBE_ENERGY_MAX = 10000;
-    public const int SPELL_ENERGY_MAX = 10000;
-    public const int SPELL_ENERGY_USAGE = 5000;
+    public const int SPELL_ENERGY_MAX = 40000;
+    public const int SPELL_ENERGY_USAGE = 10000;
+    public const int SPELL_ENERGY_INIT = 20000;
     public const int PLAYER_POWER_MAX = 4000;
     public const int PLAYER_HP_INIT = 3;
     private const int PLAYER_HP_MAX = 5;
@@ -166,11 +167,6 @@ public class GameManager : MonoBehaviour
 
     public void AddSpellEnergy(int amount)
     {
-        if (spellEnergy >= SPELL_ENERGY_USAGE)
-        {
-            amount = (int)(amount * 0.7f);
-        }
-
         spellEnergy += amount;
         spellEnergy = (spellEnergy > SPELL_ENERGY_MAX) ? SPELL_ENERGY_MAX : spellEnergy;
         InGameUIManager.instance.UpdateSpellSlider(spellEnergy);
@@ -245,8 +241,11 @@ public class GameManager : MonoBehaviour
         InGameUIManager.instance.DamagePlayer(playerHP);
 
         // 파워 드롭
-        playerPower /= 2;  // 50%
+        playerPower = (int)(playerPower * 0.7f);  // 70%
         InGameUIManager.instance.UpdatePower(playerPower);
+        // 스펠 초기화
+        spellEnergy = SPELL_ENERGY_INIT;
+        InGameUIManager.instance.UpdateSpellSlider(spellEnergy);
 
         if (playerHP == 0)
         {
