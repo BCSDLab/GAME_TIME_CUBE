@@ -49,7 +49,10 @@ public class PlayerHitArea : MonoBehaviour
             {
                 int powerToDrop = (int)(GameManager.instance.playerPower * 0.3f);  // 30%
                 StartCoroutine("Damage");
-                PoolManager.instance.PushToPool(collision.gameObject);
+                if (collision.name != "Boss")
+                {
+                    PoolManager.instance.PushToPool(collision.gameObject);
+                }
 
                 // 아이템 드롭
                 DropItem(cubeChargeItem);
