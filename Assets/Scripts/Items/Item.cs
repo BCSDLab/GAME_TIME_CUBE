@@ -73,6 +73,11 @@ public abstract class Item : MonoBehaviour
             float duration = m_particleSystem.main.duration + m_particleSystem.main.startLifetime.constant;
             Destroy(gameObject, duration);
         }
+
+        if (collision.CompareTag("ItemArea"))
+        {
+            m_isAutoAchieved = true;
+        }
     }
 
     void AutoAchieve()

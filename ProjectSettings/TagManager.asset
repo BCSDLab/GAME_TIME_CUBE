@@ -16,6 +16,7 @@ TagManager:
   - HomingGuided
   - PatternTester
   - BulletTracker
+  - ItemArea
   layers:
   - Default
   - TransparentFX

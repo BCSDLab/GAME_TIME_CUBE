@@ -26,6 +26,7 @@ public class PlayerHitArea : MonoBehaviour
     private AudioSource m_audioSource;
 
     private PlayerController m_playerController;
+    private CircleCollider2D m_itemArea;
     private bool m_isInvincible = false;
 
     private readonly Color HIT_COLOR = new Color32(250, 100, 100, 150);
@@ -37,6 +38,12 @@ public class PlayerHitArea : MonoBehaviour
         m_particleSystem = GetComponent<ParticleSystem>();
         m_audioSource = GetComponent<AudioSource>();
         m_playerController = GetComponentInParent<PlayerController>();
+        m_itemArea = transform.GetChild(0).GetComponent<CircleCollider2D>();
+    }
+
+    void Update()
+    {
+        ItemAreaEnable();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -139,5 +146,10 @@ public class PlayerHitArea : MonoBehaviour
 
         GameObject itemInst = Instantiate(item, transform.position + new Vector3(1f,0), Quaternion.identity);
         itemInst.GetComponent<Rigidbody2D>().AddForce(direction * DROP_POWER);
+    }
+
+    private void ItemAreaEnable()
+    {
+        m_itemArea.enabled = !IsInvincible();
     }
 }
