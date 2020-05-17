@@ -167,9 +167,14 @@ public class PlayerController : MonoBehaviour
         hitArea.GetComponent<CircleCollider2D>().enabled = false;
         hitArea.GetComponent<PolygonCollider2D>().enabled = false;
 
-        GameObject characterSprite = transform.Find("Character Sprite").gameObject;
-        characterSPR = characterSprite.GetComponent<SpriteRenderer>();
-        characterSprite.GetComponent<PolygonCollider2D>().enabled = false;
+        Transform hitAreaTR = hitArea.transform;
+        hitAreaTR.Find("Item Pull Area").gameObject.SetActive(false);
+        hitAreaTR.Find("Item Gain Area").gameObject.SetActive(false);
+
+        //GameObject characterSprite = ;
+        //characterSPR = transform.Find("Character Sprite").gameObject.GetComponent<SpriteRenderer>();
+        characterSPR = GameObject.Find("Character Sprite").GetComponent<SpriteRenderer>();
+        //characterSprite.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     #region ATTACK
